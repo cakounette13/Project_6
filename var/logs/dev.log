@@ -1,0 +1,1 @@
+[2016-08-12 16:26:50] php.DEBUG: unlink(web/bundles/framework): No such file or directory {"type":2,"file":"/home/arthur/Desktop/Project_6/framework-standard-edition/vendor/symfony/symfony/src/Symfony/Component/Filesystem/Filesystem.php","line":178,"level":28928} []
