@@ -65,10 +65,9 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             'Monolog\\' => 8,
         ),
-        'J' => 
+        'L' => 
         array (
-            'JMS\\DiExtraBundle\\' => 18,
-            'JMS\\AopBundle\\' => 14,
+            'Limenius\\ReactBundle\\' => 21,
         ),
         'I' => 
         array (
@@ -203,13 +202,9 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'JMS\\DiExtraBundle\\' => 
+        'Limenius\\ReactBundle\\' => 
         array (
-            0 => __DIR__ . '/..' . '/jms/di-extra-bundle',
-        ),
-        'JMS\\AopBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jms/aop-bundle',
+            0 => __DIR__ . '/..' . '/limenius/react-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (
@@ -278,35 +273,12 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             array (
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
             ),
-            'PhpOption\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpoption/phpoption/src',
-            ),
-            'PhpCollection' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpcollection/phpcollection/src',
-            ),
         ),
-        'M' => 
+        'N' => 
         array (
-            'Metadata\\' => 
+            'Nacmartin\\PhpExecJs' => 
             array (
-                0 => __DIR__ . '/..' . '/jms/metadata/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'JMS\\SerializerBundle' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/serializer-bundle',
-            ),
-            'JMS\\Serializer' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/serializer/src',
-            ),
-            'JMS\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/parser-lib/src',
+                0 => __DIR__ . '/..' . '/nacmartin/phpexecjs/src',
             ),
         ),
         'E' => 
@@ -341,13 +313,6 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
-            ),
-        ),
-        'C' => 
-        array (
-            'CG\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/cg/src',
             ),
         ),
     );

@@ -10,3 +10,4 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: K6zn5gnh
+    assets_base_url: 'http://localhost:8080'
