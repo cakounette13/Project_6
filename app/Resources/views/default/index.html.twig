@@ -2,15 +2,14 @@
 
 
 {% block body %}
-    <style type="text/css">
-        html, body { height: 100%; margin: 0; padding: 0; }
-        #map { height: 100%; }
-    </style>
-    <div id="app"></div>
-    <div id="map">
+    <div id="search">
+        {{ form_start(search) }}
+        {{ form_end(search) }}
     </div>
+    <div id="js-notes-wrapper"></div>
+    <div id="map" style="width:500px; height: 500px;"></div>
     <script>
-        function initMap() {
+        function initMap() {111
             myLatLng = { lat: -34.397, lng: 150.644 }
             map = new google.maps.Map(document.getElementById('map'), {
                 center: myLatLng,
@@ -24,5 +23,74 @@
         });
         }
     </script>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>
+    <script type="text/babel">
+
+        var SearchClass = React.createClass(
+                <search url={{ path('json', {'datas' : datas}) }}/>,
+        );
+        var SearchBar = React.createClass({
+            render: function() {
+                return (
+                    <input type="search" className="form-control" placeholder="rechercher une espece" />
+                );
+            }
+        });
+        var SearchBar = React.createClass({
+            handleChange: function() {
+                this.props.onUserInput(
+                        this.refs.filterTextInput.getDOMNode().value
+                );
+            },
+            render: function() {
+                return (
+                    <form onSubmit={this.handleSubmit}>
+                        <input ref="filterTextInput" value={this.props.filterText} onChange={this.handleChange} type="search" className="form-control" placeholder="Search for episode" />
+                    </form>
+                );
+            }
+        });
+        var FilterableEpisodeTable = React.createClass({
+            getInitialState: function() {
+                return {
+                    filterText: ''
+                };
+            },
+
+            handleUserInput: function(filterText) {
+                this.setState({
+                    filterText: filterText
+                });
+            },
+
+            render: function() {
+                return (
+                        <div className="spacer">
+                            <SearchBar onUserInput={this.handleUserInput} filterText={this.state.filterText} />
+                            <EpisodeTable filterText={this.state.filterText} episodes={this.props.episodes} />
+                        </div>
+                );
+            }
+        });
+        var episodes = [{
+            title : "Angular with Yeoman",
+        },{
+            title : "Using D3 with Rickshaw and Angular",
+        },{
+            title : "Canvas with paper.js",
+        },{
+            title : "Express.js middleware",
+        }
+        ];
+
+        React.renderComponent(<FilterableEpisodeTable episodes={episodes} />, document.getElementById('container'));
+
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&callback=initMap" async defer></script>
+
 {% endblock %}

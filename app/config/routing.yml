@@ -1,16 +1,4 @@
-fos_rest:
-    view:
-        view_response_listener: 'force'
-    routing_loader:
-        default_format: json
-
-nelmio_api_doc: ~
-
 bird:
     resource: "@BirdBundle/Controller/"
     type:     annotation
     prefix:   /
-
-NelmioApiDocBundle:
-    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   /api/doc

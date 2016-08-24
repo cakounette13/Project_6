@@ -59,10 +59,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Cache\\' => 10,
-        ),
-        'N' => 
-        array (
-            'Negotiation\\' => 12,
+            'PackageVersions\\' => 16,
         ),
         'M' => 
         array (
@@ -80,10 +77,6 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
-        ),
-        'F' => 
-        array (
-            'FOS\\RestBundle\\' => 15,
         ),
         'D' => 
         array (
@@ -202,9 +195,9 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'Negotiation\\' => 
+        'PackageVersions\\' => 
         array (
-            0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
+            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
         'Monolog\\' => 
         array (
@@ -225,10 +218,6 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'FOS\\RestBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofsymfony/rest-bundle',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -298,19 +287,8 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
                 0 => __DIR__ . '/..' . '/phpcollection/phpcollection/src',
             ),
         ),
-        'N' => 
-        array (
-            'Nelmio\\ApiDocBundle' => 
-            array (
-                0 => __DIR__ . '/..' . '/nelmio/api-doc-bundle',
-            ),
-        ),
         'M' => 
         array (
-            'Michelf' => 
-            array (
-                0 => __DIR__ . '/..' . '/michelf/php-markdown',
-            ),
             'Metadata\\' => 
             array (
                 0 => __DIR__ . '/..' . '/jms/metadata/src',
@@ -318,10 +296,6 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         ),
         'J' => 
         array (
-            'JsonpCallbackValidator' => 
-            array (
-                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
-            ),
             'JMS\\SerializerBundle' => 
             array (
                 0 => __DIR__ . '/..' . '/jms/serializer-bundle',
