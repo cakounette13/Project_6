@@ -77,6 +77,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             'GuzzleHttp\\Psr7\\' => 16,
         ),
+        'F' => 
+        array (
+            'FOS\\JsRoutingBundle\\' => 20,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -214,6 +218,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
+        'FOS\\JsRoutingBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -279,6 +287,13 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             'Nacmartin\\PhpExecJs' => 
             array (
                 0 => __DIR__ . '/..' . '/nacmartin/phpexecjs/src',
+            ),
+        ),
+        'J' => 
+        array (
+            'JsonpCallbackValidator' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
             ),
         ),
         'E' => 

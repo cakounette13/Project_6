@@ -45,14 +45,13 @@ class SearchService
         $serializer = new Serializer($normalizer, $encode);
 
         return $serializer->serialize($datas, 'json');
-
     }
 
     public function createSearchField(Request $request)
     {
         $search = new Taxref();
         $form = $this->form->create(FormType::class, $search)
-            ->add('nomVern' , SearchType::class);
+            ->add('nomVern', SearchType::class);
         $form->handleRequest($request);
         if ( $form->isValid() && $form->isSubmitted() ) {
             $form = $this->em->getRepository('BirdBundle:Taxref')
