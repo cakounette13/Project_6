@@ -47,14 +47,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="bootstrap" level="application" />
-    <orderEntry type="library" name="bootstrap-datepicker" level="application" />
-    <orderEntry type="library" name="html5shiv" level="application" />
-    <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="library" name="jquery-ui" level="application" />
-    <orderEntry type="library" name="respond" level="application" />
-    <orderEntry type="library" name="browser" level="application" />
-    <orderEntry type="library" name="react" level="application" />
-    <orderEntry type="library" name="react-dom" level="application" />
   </component>
 </module>
