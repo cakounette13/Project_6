@@ -3,7 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <style type="text/css">
+                html, body { height: 100%; margin: 0; padding: 0; }
+                #map { height: 100%; }
+            </style>
+            <script type="text/javascript"
+                                       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw">
+            </script>
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
