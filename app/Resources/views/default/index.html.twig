@@ -3,8 +3,17 @@
 
 {% block body %}
     <div id="Map"></div>
+    <div id="BirdDatas"></div>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
     <script type="text/babel" src="{{ asset('js/app.react.js') }}"></script>
+    <script type="text/babel">
+        var BirdsDatas = '{{ path('json', {'birds' : birds}) }}';
+
+        ReactDOM.render(
+                <BirdDatas url={BirdsDatas}/>,
+                document.getElementByid('datas')
+        );
+    </script>
 {% endblock %}

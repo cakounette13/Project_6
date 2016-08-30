@@ -5,7 +5,6 @@ namespace BirdBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -20,7 +19,6 @@ class DefaultController extends Controller
         $search = $this->get('search_bird')->createSearchField($request);
         return [
             'search' => $search->createView(),
-            'datas' => []
         ];
     }
 
@@ -29,7 +27,7 @@ class DefaultController extends Controller
      */
     public function jsonAction()
     {
-        $datas = $this->get('search_bird')->json();
+        $datas = $this->get('search_bird')->FindBirdsEncodeJson();
         return new Response($datas);
     }
 }

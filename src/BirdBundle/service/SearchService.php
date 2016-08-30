@@ -37,8 +37,9 @@ class SearchService
         $this->form = $form;
     }
 
-    public function json() {
-        $datas = $this->em->getRepository('BirdBundle:Taxref')->findAll();
+    public function FindBirdsEncodeJson()
+    {
+        $datas = $this->em->getRepository('BirdBundle:Datas')->findAll();
         $encode = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = array(new ObjectNormalizer());
 
