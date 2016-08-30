@@ -61,6 +61,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             'Psr\\Cache\\' => 10,
             'PackageVersions\\' => 16,
         ),
+        'N' => 
+        array (
+            'Nelmio\\Alice\\' => 13,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -73,12 +77,17 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             'Incenteev\\ParameterHandler\\' => 27,
         ),
+        'H' => 
+        array (
+            'Hautelook\\AliceBundle\\' => 22,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
         ),
         'F' => 
         array (
+            'Faker\\' => 6,
             'FOS\\JsRoutingBundle\\' => 20,
         ),
         'D' => 
@@ -88,6 +97,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
+            'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
@@ -202,6 +212,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
+        'Nelmio\\Alice\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/alice/src/Nelmio/Alice',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -214,9 +228,17 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
         ),
+        'Hautelook\\AliceBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hautelook/alice-bundle/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'FOS\\JsRoutingBundle\\' => 
         array (
@@ -241,6 +263,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
+        ),
+        'Doctrine\\Bundle\\FixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
         ),
         'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
         array (
@@ -320,6 +346,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\DataFixtures' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib',
             ),
             'Doctrine\\Common\\Collections\\' => 
             array (

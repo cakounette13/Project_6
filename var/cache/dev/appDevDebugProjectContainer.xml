@@ -23,6 +23,8 @@
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
+      <parameter key="HautelookAliceBundle">Hautelook\AliceBundle\HautelookAliceBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
@@ -321,6 +323,15 @@
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
+    <parameter key="hautelook_alice.db_drivers" type="collection">
+      <parameter key="orm">true</parameter>
+      <parameter key="mongodb">null</parameter>
+      <parameter key="phpcr">null</parameter>
+    </parameter>
+    <parameter key="hautelook_alice.locale">en_US</parameter>
+    <parameter key="hautelook_alice.seed">1</parameter>
+    <parameter key="hautelook_alice.persist_once">false</parameter>
+    <parameter key="hautelook_alice.loading_limit">5</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -385,6 +396,8 @@
     </parameter>
     <parameter key="console.command.ids" type="collection">
       <parameter>sensio_distribution.security_checker.command</parameter>
+      <parameter>hautelook_alice.doctrine.command.deprecated_load_command</parameter>
+      <parameter>hautelook_alice.doctrine.command.load_command</parameter>
     </parameter>
   </parameters>
   <services>
@@ -507,7 +520,7 @@
                   <tag name="cache.pool"/>
                   <argument>WU3lzS7xZ9</argument>
                   <argument></argument>
-                  <argument>s7T7gG28HDDfz1RkNc83EA</argument>
+                  <argument>aBA4j5H7R8NlsOyqxvtM4Q</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -520,7 +533,7 @@
                   <tag name="cache.pool"/>
                   <argument>dp8IIoV33V</argument>
                   <argument></argument>
-                  <argument>s7T7gG28HDDfz1RkNc83EA</argument>
+                  <argument>aBA4j5H7R8NlsOyqxvtM4Q</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -852,7 +865,7 @@
       <tag name="cache.pool"/>
       <argument>IVV7tBE9Jf</argument>
       <argument></argument>
-      <argument>s7T7gG28HDDfz1RkNc83EA</argument>
+      <argument>aBA4j5H7R8NlsOyqxvtM4Q</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1600,7 +1613,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57c04838c543e0.73637494</argument>
+            <argument>57c541de77bf80.65594749</argument>
           </service>
         </argument>
       </argument>
@@ -1734,7 +1747,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57c04838c543e0.73637494</argument>
+            <argument>57c541de77bf80.65594749</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2265,6 +2278,8 @@
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
         <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
         <argument key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</argument>
+        <argument key="HautelookAliceBundle">Hautelook\AliceBundle\HautelookAliceBundle</argument>
+        <argument key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</argument>
       </argument>
     </service>
     <service id="fos_js_routing.controller" class="FOS\JsRoutingBundle\Controller\Controller">
@@ -2424,6 +2439,403 @@
     <service id="sensio_distribution.security_checker.command" class="SensioLabs\Security\Command\SecurityCheckerCommand">
       <tag name="console.command"/>
       <argument type="service" id="sensio_distribution.security_checker"/>
+    </service>
+    <service id="hautelook_alice.faker" class="Faker\Generator" lazy="true">
+      <argument>en_US</argument>
+      <call method="seed">
+        <argument>1</argument>
+      </call>
+      <factory class="Faker\Factory" method="create"/>
+    </service>
+    <service id="hautelook_alice.alice.processor_chain" class="Hautelook\AliceBundle\Alice\ProcessorChain" lazy="true">
+      <argument type="collection"/>
+    </service>
+    <service id="hautelook_alice.faker.provider_chain" class="Hautelook\AliceBundle\Faker\Provider\ProviderChain" lazy="true">
+      <argument type="collection"/>
+    </service>
+    <service id="hautelook_alice.doctrine.executor.fixtures_executor" class="Hautelook\AliceBundle\Doctrine\DataFixtures\Executor\FixturesExecutor" lazy="true"/>
+    <service id="hautelook_alice.alice.fixtures.loader" class="Hautelook\AliceBundle\Alice\DataFixtures\Fixtures\Loader">
+      <argument>en_US</argument>
+      <argument type="service" id="hautelook_alice.faker.provider_chain"/>
+      <argument>1</argument>
+      <argument type="collection">
+        <argument key="kernel.root_dir">/var/www/html/Project_6/app</argument>
+        <argument key="kernel.environment">dev</argument>
+        <argument key="kernel.debug">true</argument>
+        <argument key="kernel.name">app</argument>
+        <argument key="kernel.cache_dir">/var/www/html/Project_6/var/cache/dev</argument>
+        <argument key="kernel.logs_dir">/var/www/html/Project_6/var/logs</argument>
+        <argument key="kernel.bundles" type="collection">
+          <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
+          <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
+          <argument key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</argument>
+          <argument key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</argument>
+          <argument key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</argument>
+          <argument key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</argument>
+          <argument key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</argument>
+          <argument key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</argument>
+          <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
+          <argument key="LimeniusReactBundle">Limenius\ReactBundle\LimeniusReactBundle</argument>
+          <argument key="BirdBundle">BirdBundle\BirdBundle</argument>
+          <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
+          <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
+          <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
+          <argument key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</argument>
+          <argument key="HautelookAliceBundle">Hautelook\AliceBundle\HautelookAliceBundle</argument>
+          <argument key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</argument>
+        </argument>
+        <argument key="kernel.charset">UTF-8</argument>
+        <argument key="kernel.container_class">appDevDebugProjectContainer</argument>
+        <argument key="database_host">127.0.0.1</argument>
+        <argument key="database_port">null</argument>
+        <argument key="database_name">projet_6</argument>
+        <argument key="database_user">root</argument>
+        <argument key="database_password">Ad#Cg5#m</argument>
+        <argument key="mailer_transport">smtp</argument>
+        <argument key="mailer_host">127.0.0.1</argument>
+        <argument key="mailer_user">null</argument>
+        <argument key="mailer_password">null</argument>
+        <argument key="secret">K6zn5gnh</argument>
+        <argument key="assets_base_url">http://localhost:8080</argument>
+        <argument key="locale">en</argument>
+        <argument key="fragment.renderer.hinclude.global_template">null</argument>
+        <argument key="fragment.path">/_fragment</argument>
+        <argument key="kernel.secret">K6zn5gnh</argument>
+        <argument key="kernel.http_method_override">true</argument>
+        <argument key="kernel.trusted_hosts" type="collection"/>
+        <argument key="kernel.trusted_proxies" type="collection"/>
+        <argument key="kernel.default_locale">en</argument>
+        <argument key="session.metadata.storage_key">_sf2_meta</argument>
+        <argument key="session.storage.options" type="collection">
+          <argument key="cookie_httponly">true</argument>
+          <argument key="gc_probability">1</argument>
+        </argument>
+        <argument key="session.save_path">/var/www/html/Project_6/app/../var/sessions/dev</argument>
+        <argument key="session.metadata.update_threshold">0</argument>
+        <argument key="form.type_extension.csrf.enabled">true</argument>
+        <argument key="form.type_extension.csrf.field_name">_token</argument>
+        <argument key="templating.helper.code.file_link_format">null</argument>
+        <argument key="templating.loader.cache.path">null</argument>
+        <argument key="templating.engines" type="collection">
+          <argument>twig</argument>
+        </argument>
+        <argument key="validator.mapping.cache.prefix"></argument>
+        <argument key="validator.translation_domain">validators</argument>
+        <argument key="profiler_listener.only_exceptions">false</argument>
+        <argument key="profiler_listener.only_master_requests">false</argument>
+        <argument key="profiler.storage.dsn">file:/var/www/html/Project_6/var/cache/dev/profiler</argument>
+        <argument key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
+        <argument key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
+        <argument key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</argument>
+        <argument key="router.options.matcher_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
+        <argument key="router.options.matcher_base_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
+        <argument key="router.options.matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</argument>
+        <argument key="router.options.matcher.cache_class">appDevUrlMatcher</argument>
+        <argument key="router.options.generator.cache_class">appDevUrlGenerator</argument>
+        <argument key="router.request_context.host">localhost</argument>
+        <argument key="router.request_context.scheme">http</argument>
+        <argument key="router.request_context.base_url"></argument>
+        <argument key="router.resource">/var/www/html/Project_6/app/config/routing_dev.yml</argument>
+        <argument key="router.cache_class_prefix">appDev</argument>
+        <argument key="request_listener.http_port">80</argument>
+        <argument key="request_listener.https_port">443</argument>
+        <argument key="debug.error_handler.throw_at">-1</argument>
+        <argument key="debug.container.dump">/var/www/html/Project_6/var/cache/dev/appDevDebugProjectContainer.xml</argument>
+        <argument key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</argument>
+        <argument key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</argument>
+        <argument key="security.role_hierarchy.roles" type="collection"/>
+        <argument key="security.access.denied_url">null</argument>
+        <argument key="security.authentication.manager.erase_credentials">true</argument>
+        <argument key="security.authentication.session_strategy.strategy">migrate</argument>
+        <argument key="security.access.always_authenticate_before_granting">false</argument>
+        <argument key="security.authentication.hide_user_not_found">true</argument>
+        <argument key="twig.exception_listener.controller">twig.controller.exception:showAction</argument>
+        <argument key="twig.form.resources" type="collection">
+          <argument>form_div_layout.html.twig</argument>
+        </argument>
+        <argument key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</argument>
+        <argument key="monolog.gelf.publisher.class">Gelf\MessagePublisher</argument>
+        <argument key="monolog.gelfphp.publisher.class">Gelf\Publisher</argument>
+        <argument key="monolog.handler.stream.class">Monolog\Handler\StreamHandler</argument>
+        <argument key="monolog.handler.console.class">Symfony\Bridge\Monolog\Handler\ConsoleHandler</argument>
+        <argument key="monolog.handler.group.class">Monolog\Handler\GroupHandler</argument>
+        <argument key="monolog.handler.buffer.class">Monolog\Handler\BufferHandler</argument>
+        <argument key="monolog.handler.deduplication.class">Monolog\Handler\DeduplicationHandler</argument>
+        <argument key="monolog.handler.rotating_file.class">Monolog\Handler\RotatingFileHandler</argument>
+        <argument key="monolog.handler.syslog.class">Monolog\Handler\SyslogHandler</argument>
+        <argument key="monolog.handler.syslogudp.class">Monolog\Handler\SyslogUdpHandler</argument>
+        <argument key="monolog.handler.null.class">Monolog\Handler\NullHandler</argument>
+        <argument key="monolog.handler.test.class">Monolog\Handler\TestHandler</argument>
+        <argument key="monolog.handler.gelf.class">Monolog\Handler\GelfHandler</argument>
+        <argument key="monolog.handler.rollbar.class">Monolog\Handler\RollbarHandler</argument>
+        <argument key="monolog.handler.flowdock.class">Monolog\Handler\FlowdockHandler</argument>
+        <argument key="monolog.handler.browser_console.class">Monolog\Handler\BrowserConsoleHandler</argument>
+        <argument key="monolog.handler.firephp.class">Symfony\Bridge\Monolog\Handler\FirePHPHandler</argument>
+        <argument key="monolog.handler.chromephp.class">Symfony\Bridge\Monolog\Handler\ChromePhpHandler</argument>
+        <argument key="monolog.handler.debug.class">Symfony\Bridge\Monolog\Handler\DebugHandler</argument>
+        <argument key="monolog.handler.swift_mailer.class">Symfony\Bridge\Monolog\Handler\SwiftMailerHandler</argument>
+        <argument key="monolog.handler.native_mailer.class">Monolog\Handler\NativeMailerHandler</argument>
+        <argument key="monolog.handler.socket.class">Monolog\Handler\SocketHandler</argument>
+        <argument key="monolog.handler.pushover.class">Monolog\Handler\PushoverHandler</argument>
+        <argument key="monolog.handler.raven.class">Monolog\Handler\RavenHandler</argument>
+        <argument key="monolog.handler.newrelic.class">Monolog\Handler\NewRelicHandler</argument>
+        <argument key="monolog.handler.hipchat.class">Monolog\Handler\HipChatHandler</argument>
+        <argument key="monolog.handler.slack.class">Monolog\Handler\SlackHandler</argument>
+        <argument key="monolog.handler.cube.class">Monolog\Handler\CubeHandler</argument>
+        <argument key="monolog.handler.amqp.class">Monolog\Handler\AmqpHandler</argument>
+        <argument key="monolog.handler.error_log.class">Monolog\Handler\ErrorLogHandler</argument>
+        <argument key="monolog.handler.loggly.class">Monolog\Handler\LogglyHandler</argument>
+        <argument key="monolog.handler.logentries.class">Monolog\Handler\LogEntriesHandler</argument>
+        <argument key="monolog.handler.whatfailuregroup.class">Monolog\Handler\WhatFailureGroupHandler</argument>
+        <argument key="monolog.activation_strategy.not_found.class">Symfony\Bundle\MonologBundle\NotFoundActivationStrategy</argument>
+        <argument key="monolog.handler.fingers_crossed.class">Monolog\Handler\FingersCrossedHandler</argument>
+        <argument key="monolog.handler.fingers_crossed.error_level_activation_strategy.class">Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy</argument>
+        <argument key="monolog.handler.filter.class">Monolog\Handler\FilterHandler</argument>
+        <argument key="monolog.handler.mongo.class">Monolog\Handler\MongoDBHandler</argument>
+        <argument key="monolog.mongo.client.class">MongoClient</argument>
+        <argument key="monolog.handler.elasticsearch.class">Monolog\Handler\ElasticSearchHandler</argument>
+        <argument key="monolog.elastica.client.class">Elastica\Client</argument>
+        <argument key="monolog.use_microseconds">true</argument>
+        <argument key="monolog.swift_mailer.handlers" type="collection"/>
+        <argument key="monolog.handlers_to_channels" type="collection">
+          <argument key="monolog.handler.console" type="collection">
+            <argument key="type">exclusive</argument>
+            <argument key="elements" type="collection">
+              <argument>event</argument>
+              <argument>doctrine</argument>
+            </argument>
+          </argument>
+          <argument key="monolog.handler.main" type="collection">
+            <argument key="type">exclusive</argument>
+            <argument key="elements" type="collection">
+              <argument>event</argument>
+            </argument>
+          </argument>
+        </argument>
+        <argument key="monolog.additional_channels" type="collection"/>
+        <argument key="swiftmailer.class">Swift_Mailer</argument>
+        <argument key="swiftmailer.transport.sendmail.class">Swift_Transport_SendmailTransport</argument>
+        <argument key="swiftmailer.transport.mail.class">Swift_Transport_MailTransport</argument>
+        <argument key="swiftmailer.transport.failover.class">Swift_Transport_FailoverTransport</argument>
+        <argument key="swiftmailer.plugin.redirecting.class">Swift_Plugins_RedirectingPlugin</argument>
+        <argument key="swiftmailer.plugin.impersonate.class">Swift_Plugins_ImpersonatePlugin</argument>
+        <argument key="swiftmailer.plugin.messagelogger.class">Swift_Plugins_MessageLogger</argument>
+        <argument key="swiftmailer.plugin.antiflood.class">Swift_Plugins_AntiFloodPlugin</argument>
+        <argument key="swiftmailer.transport.smtp.class">Swift_Transport_EsmtpTransport</argument>
+        <argument key="swiftmailer.plugin.blackhole.class">Swift_Plugins_BlackholePlugin</argument>
+        <argument key="swiftmailer.spool.file.class">Swift_FileSpool</argument>
+        <argument key="swiftmailer.spool.memory.class">Swift_MemorySpool</argument>
+        <argument key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</argument>
+        <argument key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</argument>
+        <argument key="swiftmailer.mailer.default.transport.name">smtp</argument>
+        <argument key="swiftmailer.mailer.default.delivery.enabled">true</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.encryption">null</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.port">25</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.host">127.0.0.1</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.username">null</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.password">null</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.timeout">30</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.source_ip">null</argument>
+        <argument key="swiftmailer.spool.default.memory.path">/var/www/html/Project_6/var/cache/dev/swiftmailer/spool/default</argument>
+        <argument key="swiftmailer.mailer.default.spool.enabled">true</argument>
+        <argument key="swiftmailer.mailer.default.plugin.impersonate">null</argument>
+        <argument key="swiftmailer.mailer.default.single_address">null</argument>
+        <argument key="swiftmailer.spool.enabled">true</argument>
+        <argument key="swiftmailer.delivery.enabled">true</argument>
+        <argument key="swiftmailer.single_address">null</argument>
+        <argument key="swiftmailer.mailers" type="collection">
+          <argument key="default">swiftmailer.mailer.default</argument>
+        </argument>
+        <argument key="swiftmailer.default_mailer">default</argument>
+        <argument key="doctrine_cache.apc.class">Doctrine\Common\Cache\ApcCache</argument>
+        <argument key="doctrine_cache.apcu.class">Doctrine\Common\Cache\ApcuCache</argument>
+        <argument key="doctrine_cache.array.class">Doctrine\Common\Cache\ArrayCache</argument>
+        <argument key="doctrine_cache.chain.class">Doctrine\Common\Cache\ChainCache</argument>
+        <argument key="doctrine_cache.couchbase.class">Doctrine\Common\Cache\CouchbaseCache</argument>
+        <argument key="doctrine_cache.couchbase.connection.class">Couchbase</argument>
+        <argument key="doctrine_cache.couchbase.hostnames">localhost:8091</argument>
+        <argument key="doctrine_cache.file_system.class">Doctrine\Common\Cache\FilesystemCache</argument>
+        <argument key="doctrine_cache.php_file.class">Doctrine\Common\Cache\PhpFileCache</argument>
+        <argument key="doctrine_cache.memcache.class">Doctrine\Common\Cache\MemcacheCache</argument>
+        <argument key="doctrine_cache.memcache.connection.class">Memcache</argument>
+        <argument key="doctrine_cache.memcache.host">localhost</argument>
+        <argument key="doctrine_cache.memcache.port">11211</argument>
+        <argument key="doctrine_cache.memcached.class">Doctrine\Common\Cache\MemcachedCache</argument>
+        <argument key="doctrine_cache.memcached.connection.class">Memcached</argument>
+        <argument key="doctrine_cache.memcached.host">localhost</argument>
+        <argument key="doctrine_cache.memcached.port">11211</argument>
+        <argument key="doctrine_cache.mongodb.class">Doctrine\Common\Cache\MongoDBCache</argument>
+        <argument key="doctrine_cache.mongodb.collection.class">MongoCollection</argument>
+        <argument key="doctrine_cache.mongodb.connection.class">MongoClient</argument>
+        <argument key="doctrine_cache.mongodb.server">localhost:27017</argument>
+        <argument key="doctrine_cache.predis.client.class">Predis\Client</argument>
+        <argument key="doctrine_cache.predis.scheme">tcp</argument>
+        <argument key="doctrine_cache.predis.host">localhost</argument>
+        <argument key="doctrine_cache.predis.port">6379</argument>
+        <argument key="doctrine_cache.redis.class">Doctrine\Common\Cache\RedisCache</argument>
+        <argument key="doctrine_cache.redis.connection.class">Redis</argument>
+        <argument key="doctrine_cache.redis.host">localhost</argument>
+        <argument key="doctrine_cache.redis.port">6379</argument>
+        <argument key="doctrine_cache.riak.class">Doctrine\Common\Cache\RiakCache</argument>
+        <argument key="doctrine_cache.riak.bucket.class">Riak\Bucket</argument>
+        <argument key="doctrine_cache.riak.connection.class">Riak\Connection</argument>
+        <argument key="doctrine_cache.riak.bucket_property_list.class">Riak\BucketPropertyList</argument>
+        <argument key="doctrine_cache.riak.host">localhost</argument>
+        <argument key="doctrine_cache.riak.port">8087</argument>
+        <argument key="doctrine_cache.sqlite3.class">Doctrine\Common\Cache\SQLite3Cache</argument>
+        <argument key="doctrine_cache.sqlite3.connection.class">SQLite3</argument>
+        <argument key="doctrine_cache.void.class">Doctrine\Common\Cache\VoidCache</argument>
+        <argument key="doctrine_cache.wincache.class">Doctrine\Common\Cache\WinCacheCache</argument>
+        <argument key="doctrine_cache.xcache.class">Doctrine\Common\Cache\XcacheCache</argument>
+        <argument key="doctrine_cache.zenddata.class">Doctrine\Common\Cache\ZendDataCache</argument>
+        <argument key="doctrine_cache.security.acl.cache.class">Doctrine\Bundle\DoctrineCacheBundle\Acl\Model\AclCache</argument>
+        <argument key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</argument>
+        <argument key="doctrine.dbal.logger.profiling.class">Doctrine\DBAL\Logging\DebugStack</argument>
+        <argument key="doctrine.dbal.logger.class">Symfony\Bridge\Doctrine\Logger\DbalLogger</argument>
+        <argument key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</argument>
+        <argument key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</argument>
+        <argument key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</argument>
+        <argument key="doctrine.dbal.connection_factory.class">Doctrine\Bundle\DoctrineBundle\ConnectionFactory</argument>
+        <argument key="doctrine.dbal.events.mysql_session_init.class">Doctrine\DBAL\Event\Listeners\MysqlSessionInit</argument>
+        <argument key="doctrine.dbal.events.oracle_session_init.class">Doctrine\DBAL\Event\Listeners\OracleSessionInit</argument>
+        <argument key="doctrine.class">Doctrine\Bundle\DoctrineBundle\Registry</argument>
+        <argument key="doctrine.entity_managers" type="collection">
+          <argument key="default">doctrine.orm.default_entity_manager</argument>
+        </argument>
+        <argument key="doctrine.default_entity_manager">default</argument>
+        <argument key="doctrine.dbal.connection_factory.types" type="collection"/>
+        <argument key="doctrine.connections" type="collection">
+          <argument key="default">doctrine.dbal.default_connection</argument>
+        </argument>
+        <argument key="doctrine.default_connection">default</argument>
+        <argument key="doctrine.orm.configuration.class">Doctrine\ORM\Configuration</argument>
+        <argument key="doctrine.orm.entity_manager.class">Doctrine\ORM\EntityManager</argument>
+        <argument key="doctrine.orm.manager_configurator.class">Doctrine\Bundle\DoctrineBundle\ManagerConfigurator</argument>
+        <argument key="doctrine.orm.cache.array.class">Doctrine\Common\Cache\ArrayCache</argument>
+        <argument key="doctrine.orm.cache.apc.class">Doctrine\Common\Cache\ApcCache</argument>
+        <argument key="doctrine.orm.cache.memcache.class">Doctrine\Common\Cache\MemcacheCache</argument>
+        <argument key="doctrine.orm.cache.memcache_host">localhost</argument>
+        <argument key="doctrine.orm.cache.memcache_port">11211</argument>
+        <argument key="doctrine.orm.cache.memcache_instance.class">Memcache</argument>
+        <argument key="doctrine.orm.cache.memcached.class">Doctrine\Common\Cache\MemcachedCache</argument>
+        <argument key="doctrine.orm.cache.memcached_host">localhost</argument>
+        <argument key="doctrine.orm.cache.memcached_port">11211</argument>
+        <argument key="doctrine.orm.cache.memcached_instance.class">Memcached</argument>
+        <argument key="doctrine.orm.cache.redis.class">Doctrine\Common\Cache\RedisCache</argument>
+        <argument key="doctrine.orm.cache.redis_host">localhost</argument>
+        <argument key="doctrine.orm.cache.redis_port">6379</argument>
+        <argument key="doctrine.orm.cache.redis_instance.class">Redis</argument>
+        <argument key="doctrine.orm.cache.xcache.class">Doctrine\Common\Cache\XcacheCache</argument>
+        <argument key="doctrine.orm.cache.wincache.class">Doctrine\Common\Cache\WinCacheCache</argument>
+        <argument key="doctrine.orm.cache.zenddata.class">Doctrine\Common\Cache\ZendDataCache</argument>
+        <argument key="doctrine.orm.metadata.driver_chain.class">Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain</argument>
+        <argument key="doctrine.orm.metadata.annotation.class">Doctrine\ORM\Mapping\Driver\AnnotationDriver</argument>
+        <argument key="doctrine.orm.metadata.xml.class">Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver</argument>
+        <argument key="doctrine.orm.metadata.yml.class">Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver</argument>
+        <argument key="doctrine.orm.metadata.php.class">Doctrine\ORM\Mapping\Driver\PHPDriver</argument>
+        <argument key="doctrine.orm.metadata.staticphp.class">Doctrine\ORM\Mapping\Driver\StaticPHPDriver</argument>
+        <argument key="doctrine.orm.proxy_cache_warmer.class">Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer</argument>
+        <argument key="form.type_guesser.doctrine.class">Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser</argument>
+        <argument key="doctrine.orm.validator.unique.class">Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator</argument>
+        <argument key="doctrine.orm.validator_initializer.class">Symfony\Bridge\Doctrine\Validator\DoctrineInitializer</argument>
+        <argument key="doctrine.orm.security.user.provider.class">Symfony\Bridge\Doctrine\Security\User\EntityUserProvider</argument>
+        <argument key="doctrine.orm.listeners.resolve_target_entity.class">Doctrine\ORM\Tools\ResolveTargetEntityListener</argument>
+        <argument key="doctrine.orm.listeners.attach_entity_listeners.class">Doctrine\ORM\Tools\AttachEntityListenersListener</argument>
+        <argument key="doctrine.orm.naming_strategy.default.class">Doctrine\ORM\Mapping\DefaultNamingStrategy</argument>
+        <argument key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</argument>
+        <argument key="doctrine.orm.quote_strategy.default.class">Doctrine\ORM\Mapping\DefaultQuoteStrategy</argument>
+        <argument key="doctrine.orm.quote_strategy.ansi.class">Doctrine\ORM\Mapping\AnsiQuoteStrategy</argument>
+        <argument key="doctrine.orm.entity_listener_resolver.class">Doctrine\ORM\Mapping\DefaultEntityListenerResolver</argument>
+        <argument key="doctrine.orm.second_level_cache.default_cache_factory.class">Doctrine\ORM\Cache\DefaultCacheFactory</argument>
+        <argument key="doctrine.orm.second_level_cache.default_region.class">Doctrine\ORM\Cache\Region\DefaultRegion</argument>
+        <argument key="doctrine.orm.second_level_cache.filelock_region.class">Doctrine\ORM\Cache\Region\FileLockRegion</argument>
+        <argument key="doctrine.orm.second_level_cache.logger_chain.class">Doctrine\ORM\Cache\Logging\CacheLoggerChain</argument>
+        <argument key="doctrine.orm.second_level_cache.logger_statistics.class">Doctrine\ORM\Cache\Logging\StatisticsCacheLogger</argument>
+        <argument key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</argument>
+        <argument key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</argument>
+        <argument key="doctrine.orm.auto_generate_proxy_classes">true</argument>
+        <argument key="doctrine.orm.proxy_dir">/var/www/html/Project_6/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument key="doctrine.orm.proxy_namespace">Proxies</argument>
+        <argument key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</argument>
+        <argument key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</argument>
+        <argument key="sensio_framework_extra.routing.loader.annot_dir.class">Symfony\Component\Routing\Loader\AnnotationDirectoryLoader</argument>
+        <argument key="sensio_framework_extra.routing.loader.annot_file.class">Symfony\Component\Routing\Loader\AnnotationFileLoader</argument>
+        <argument key="sensio_framework_extra.routing.loader.annot_class.class">Sensio\Bundle\FrameworkExtraBundle\Routing\AnnotatedRouteControllerLoader</argument>
+        <argument key="sensio_framework_extra.converter.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener</argument>
+        <argument key="sensio_framework_extra.converter.manager.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterManager</argument>
+        <argument key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</argument>
+        <argument key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</argument>
+        <argument key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</argument>
+        <argument key="doctrine_migrations.dir_name">/var/www/html/Project_6/app/DoctrineMigrations</argument>
+        <argument key="doctrine_migrations.namespace">Application\Migrations</argument>
+        <argument key="doctrine_migrations.table_name">migration_versions</argument>
+        <argument key="doctrine_migrations.name">Application Migrations</argument>
+        <argument key="fos_js_routing.extractor.class">FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor</argument>
+        <argument key="fos_js_routing.controller.class">FOS\JsRoutingBundle\Controller\Controller</argument>
+        <argument key="fos_js_routing.cache_control" type="collection">
+          <argument key="enabled">false</argument>
+        </argument>
+        <argument key="limenius_react.default_rendering">both</argument>
+        <argument key="limenius_react.fail_loud">false</argument>
+        <argument key="limenius_react.trace">false</argument>
+        <argument key="web_profiler.debug_toolbar.position">bottom</argument>
+        <argument key="web_profiler.debug_toolbar.intercept_redirects">false</argument>
+        <argument key="web_profiler.debug_toolbar.mode">2</argument>
+        <argument key="hautelook_alice.db_drivers" type="collection">
+          <argument key="orm">true</argument>
+          <argument key="mongodb">null</argument>
+          <argument key="phpcr">null</argument>
+        </argument>
+        <argument key="hautelook_alice.locale">en_US</argument>
+        <argument key="hautelook_alice.seed">1</argument>
+        <argument key="hautelook_alice.persist_once">false</argument>
+        <argument key="hautelook_alice.loading_limit">5</argument>
+      </argument>
+      <call method="setLogger">
+        <argument type="service" id="logger" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="hautelook_alice.fixtures.loader" class="Hautelook\AliceBundle\Alice\DataFixtures\Loader">
+      <argument type="service" id="hautelook_alice.alice.fixtures.loader"/>
+      <argument type="service" id="hautelook_alice.alice.processor_chain"/>
+      <argument>false</argument>
+      <argument>5</argument>
+    </service>
+    <service id="hautelook_alice.bundle_resolver" class="Hautelook\AliceBundle\Resolver\BundlesResolver"/>
+    <service id="hautelook_alice.doctrine.command_factory" class="Hautelook\AliceBundle\Doctrine\Command\CommandFactory" lazy="true"/>
+    <service id="hautelook_alice.doctrine.orm.fixtures_finder" class="Hautelook\AliceBundle\Doctrine\Finder\FixturesFinder">
+      <argument>DataFixtures/ORM</argument>
+      <call method="setContainer">
+        <argument type="service" id="service_container"/>
+      </call>
+    </service>
+    <service id="hautelook_alice.doctrine.orm.loader_generator" class="Hautelook\AliceBundle\Doctrine\Generator\LoaderGenerator">
+      <argument type="service" id="hautelook_alice.doctrine.orm.fixtures_finder"/>
+    </service>
+    <service id="hautelook_alice.doctrine.command.deprecated_load_command" class="Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand" lazy="true">
+      <tag name="console.command"/>
+      <argument>hautelook_alice:fixtures:load</argument>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="hautelook_alice.fixtures.loader"/>
+      <argument type="service" id="hautelook_alice.alice.fixtures.loader"/>
+      <argument type="service" id="hautelook_alice.doctrine.orm.fixtures_finder"/>
+      <argument type="service" id="hautelook_alice.bundle_resolver"/>
+      <argument type="service" id="hautelook_alice.doctrine.orm.loader_generator"/>
+      <argument type="service" id="hautelook_alice.doctrine.executor.fixtures_executor"/>
+      <factory service="hautelook_alice.doctrine.command_factory" method="createCommand"/>
+    </service>
+    <service id="hautelook_alice.doctrine.command.load_command" class="Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand" lazy="true">
+      <tag name="console.command"/>
+      <argument>hautelook_alice:doctrine:fixtures:load</argument>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="hautelook_alice.fixtures.loader"/>
+      <argument type="service" id="hautelook_alice.alice.fixtures.loader"/>
+      <argument type="service" id="hautelook_alice.doctrine.orm.fixtures_finder"/>
+      <argument type="service" id="hautelook_alice.bundle_resolver"/>
+      <argument type="service" id="hautelook_alice.doctrine.orm.loader_generator"/>
+      <argument type="service" id="hautelook_alice.doctrine.executor.fixtures_executor"/>
+      <factory service="hautelook_alice.doctrine.command_factory" method="createCommand"/>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -2734,5 +3146,6 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
+    <service id="console.command.hautelook_alicebundle_doctrine_command_loaddatafixturescommand" alias="hautelook_alice.doctrine.command.load_command"/>
   </services>
 </container>
