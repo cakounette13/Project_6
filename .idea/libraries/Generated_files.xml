@@ -2,29 +2,11 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/dist/bundle-compiled.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/geojson/geojson.min-compiled.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/geojson/test/test-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/geojson/geojson-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/geojson/Gruntfile-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/JsonToGEOJson-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/dist/bundle-compiled.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/geojson/geojson.min-compiled.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/geojson/test/test-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/geojson/geojson-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/geojson/Gruntfile-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/JsonToGEOJson-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>
