@@ -40,12 +40,23 @@ class SearchService
     public function FindBirdsEncodeJson()
     {
         $datas = $this->em->getRepository('BirdBundle:Datas')->findAll();
+	    $birds = array();
+	    foreach ($datas as $item)
+	    {
+		    $birds[] = [
+			    'id' => $item->getId(),
+			    'lat' => $item->getLatitude(),
+			    'lng' => $item->getLongitude(),
+			    'nom' => $item->getNom()->getNomValide(),
+			    'nom' => $item->getNom()->getNomVern()
+		    ];
+	    }
         $encode = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = array(new ObjectNormalizer());
 
         $serializer = new Serializer($normalizer, $encode);
 
-        return $serializer->serialize($datas, 'json');
+        return $serializer->serialize($birds, 'json');
     }
 
     public function createSearchField(Request $request)

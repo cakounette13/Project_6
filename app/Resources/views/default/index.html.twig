@@ -2,18 +2,43 @@
 
 
 {% block body %}
-    <div id="Map"></div>
-    <div id="BirdDatas"></div>
+    <div id="map"></div>
+    <div id="datas"></div>
+    <div id="content"></div>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/babel" src="{{ asset('js/app.react.js') }}"></script>
     <script type="text/babel">
-        var BirdsDatas = '{{ path('json', {'birds' : birds}) }}';
+        import React from "react";
 
-        ReactDOM.render(
-                <BirdDatas url={BirdsDatas}/>,
-                document.getElementByid('datas')
+        var data = JSON.parse('{{ birds|raw }}');
+        var DataBlock = React.createClass({
+            getInitialState: function() {
+                return {
+                    data: null
+                };
+            },
+
+            componentDidMount: function() {
+                this.setState({
+                    data: this.props.url
+                });
+            },
+            render: function() {
+                return <div>
+                    <h4>the data:</h4>
+                    <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
+                </div>;
+            }
+        });
+
+        React.render(
+                <div>
+                    <DataBlock url={data}/>
+                </div>,
+            document.getElementById('content')
         );
     </script>
+    <script type="text/babel" src="{{ asset('js/app.react.js') }}"></script>
+
 {% endblock %}

@@ -7,6 +7,10 @@
             <script type="text/javascript"
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw">
             </script>
+            <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+            <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>

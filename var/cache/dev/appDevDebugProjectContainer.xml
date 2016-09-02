@@ -312,6 +312,7 @@
     <parameter key="doctrine_migrations.namespace">Application\Migrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.name">Application Migrations</parameter>
+    <parameter key="doctrine_migrations.organize_migrations">false</parameter>
     <parameter key="fos_js_routing.extractor.class">FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor</parameter>
     <parameter key="fos_js_routing.controller.class">FOS\JsRoutingBundle\Controller\Controller</parameter>
     <parameter key="fos_js_routing.cache_control" type="collection">
@@ -518,9 +519,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>BFunG2bYU8</argument>
+                  <argument>WU3lzS7xZ9</argument>
                   <argument></argument>
-                  <argument>2BT34HWR+MxdXf4p-gOcgQ</argument>
+                  <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -531,9 +532,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>MF2LsIqXGl</argument>
+                  <argument>dp8IIoV33V</argument>
                   <argument></argument>
-                  <argument>2BT34HWR+MxdXf4p-gOcgQ</argument>
+                  <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -854,7 +855,7 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>czuvmzUcD1</argument>
+      <argument>iwr4Ad3zvZ</argument>
       <argument></argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <call method="setLogger">
@@ -863,9 +864,9 @@
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>wGMOVFSDX0</argument>
+      <argument>IVV7tBE9Jf</argument>
       <argument></argument>
-      <argument>2BT34HWR+MxdXf4p-gOcgQ</argument>
+      <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1613,7 +1614,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57c5af1421a293.45501519</argument>
+            <argument>57c9381c63a597.37355657</argument>
           </service>
         </argument>
       </argument>
@@ -1747,7 +1748,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57c5af1421a293.45501519</argument>
+            <argument>57c9381c63a597.37355657</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2771,6 +2772,7 @@
         <argument key="doctrine_migrations.namespace">Application\Migrations</argument>
         <argument key="doctrine_migrations.table_name">migration_versions</argument>
         <argument key="doctrine_migrations.name">Application Migrations</argument>
+        <argument key="doctrine_migrations.organize_migrations">false</argument>
         <argument key="fos_js_routing.extractor.class">FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor</argument>
         <argument key="fos_js_routing.controller.class">FOS\JsRoutingBundle\Controller\Controller</argument>
         <argument key="fos_js_routing.cache_control" type="collection">

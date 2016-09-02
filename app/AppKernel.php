@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Limenius\ReactBundle\LimeniusReactBundle(),
-            new BirdBundle\BirdBundle(),
+	        new BirdBundle\BirdBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

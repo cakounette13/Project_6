@@ -64,6 +64,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'N' => 
         array (
             'Nelmio\\Alice\\' => 13,
+            'Negotiation\\' => 12,
         ),
         'M' => 
         array (
@@ -88,6 +89,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'F' => 
         array (
             'Faker\\' => 6,
+            'FOS\\RestBundle\\' => 15,
             'FOS\\JsRoutingBundle\\' => 20,
         ),
         'D' => 
@@ -216,6 +218,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/nelmio/alice/src/Nelmio/Alice',
         ),
+        'Negotiation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -239,6 +245,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'FOS\\RestBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/rest-bundle',
         ),
         'FOS\\JsRoutingBundle\\' => 
         array (
