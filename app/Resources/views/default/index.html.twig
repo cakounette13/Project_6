@@ -9,36 +9,8 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/babel">
-        import React from "react";
-
-        var data = JSON.parse('{{ birds|raw }}');
-        var DataBlock = React.createClass({
-            getInitialState: function() {
-                return {
-                    data: null
-                };
-            },
-
-            componentDidMount: function() {
-                this.setState({
-                    data: this.props.url
-                });
-            },
-            render: function() {
-                return <div>
-                    <h4>the data:</h4>
-                    <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
-                </div>;
-            }
-        });
-
-        React.render(
-                <div>
-                    <DataBlock url={data}/>
-                </div>,
-            document.getElementById('content')
-        );
+        var Birds = JSON{{ birds|raw }};
+        export default Birds;
     </script>
-    <script type="text/babel" src="{{ asset('js/app.react.js') }}"></script>
 
 {% endblock %}

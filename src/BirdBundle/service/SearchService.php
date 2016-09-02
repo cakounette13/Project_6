@@ -44,11 +44,10 @@ class SearchService
 	    foreach ($datas as $item)
 	    {
 		    $birds[] = [
-			    'id' => $item->getId(),
-			    'lat' => $item->getLatitude(),
-			    'lng' => $item->getLongitude(),
 			    'nom' => $item->getNom()->getNomValide(),
-			    'nom' => $item->getNom()->getNomVern()
+			    'nom' => $item->getNom()->getNomVern(),
+			    'lat' => $item->getLatitude(),
+			    'lng' => $item->getLongitude()
 		    ];
 	    }
         $encode = array(new XmlEncoder(), new JsonEncoder());
