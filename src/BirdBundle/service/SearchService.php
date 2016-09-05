@@ -44,7 +44,7 @@ class SearchService
 	    foreach ($datas as $item)
 	    {
 		    $birds[] = [
-			    'nom' => $item->getNom()->getNomValide(),
+			    'nomValide' => $item->getNom()->getNomValide(),
 			    'nom' => $item->getNom()->getNomVern(),
 			    'lat' => $item->getLatitude(),
 			    'lng' => $item->getLongitude()

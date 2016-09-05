@@ -31,3 +31,4 @@ tests/BirdBundle/
 web/assets/
 web/js/
 webpack.dev-server.js
+.idea/

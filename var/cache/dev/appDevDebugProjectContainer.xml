@@ -519,9 +519,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>WU3lzS7xZ9</argument>
-                  <argument></argument>
-                  <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
+                  <argument>BFunG2bYU8</argument>
+                  <argument>0</argument>
+                  <argument>WAQ4GDO5xG36JzVe-WYAzw</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -532,9 +532,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>dp8IIoV33V</argument>
-                  <argument></argument>
-                  <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
+                  <argument>MF2LsIqXGl</argument>
+                  <argument>0</argument>
+                  <argument>WAQ4GDO5xG36JzVe-WYAzw</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -855,8 +855,8 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>iwr4Ad3zvZ</argument>
-      <argument></argument>
+      <argument>czuvmzUcD1</argument>
+      <argument>0</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -864,9 +864,9 @@
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>IVV7tBE9Jf</argument>
-      <argument></argument>
-      <argument>rCJ-VBd7K8PXoFkAsz1VaQ</argument>
+      <argument>wGMOVFSDX0</argument>
+      <argument>0</argument>
+      <argument>WAQ4GDO5xG36JzVe-WYAzw</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1061,13 +1061,12 @@
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
       <argument type="service">
         <service class="Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationRequestHandler" public="false">
-          <argument type="service">
-            <service class="Symfony\Component\Form\Util\ServerParams" public="false">
-              <argument type="service" id="request_stack"/>
-            </service>
-          </argument>
+          <argument type="service" id="form.server_params"/>
         </service>
       </argument>
+    </service>
+    <service id="form.server_params" class="Symfony\Component\Form\Util\ServerParams" public="false">
+      <argument type="service" id="request_stack"/>
     </service>
     <service id="form.type_extension.form.validator" class="Symfony\Component\Form\Extension\Validator\Type\FormTypeValidatorExtension">
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
@@ -1091,6 +1090,7 @@
       <argument>_token</argument>
       <argument type="service" id="translator.default"/>
       <argument>validators</argument>
+      <argument type="service" id="form.server_params"/>
     </service>
     <service id="security.csrf.token_manager" class="Symfony\Component\Security\Csrf\CsrfTokenManager">
       <argument type="service">
@@ -1614,7 +1614,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57c9381c63a597.37355657</argument>
+            <argument>57cd5851769be3.30462905</argument>
           </service>
         </argument>
       </argument>
@@ -1748,7 +1748,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57c9381c63a597.37355657</argument>
+            <argument>57cd5851769be3.30462905</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2335,7 +2335,7 @@
     <service id="debug.dump_listener" class="Symfony\Component\HttpKernel\EventListener\DumpListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="var_dumper.cloner"/>
-      <argument type="service" id="data_collector.dump"/>
+      <argument type="service" id="var_dumper.cli_dumper"/>
     </service>
     <service id="var_dumper.cloner" class="Symfony\Component\VarDumper\Cloner\VarCloner">
       <call method="setMaxItems">

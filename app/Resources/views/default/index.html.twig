@@ -5,12 +5,10 @@
     <div id="map"></div>
     <div id="datas"></div>
     <div id="content"></div>
+    <div class="jsondatas">
+    </div>
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/babel">
-        var Birds = JSON{{ birds|raw }};
-        export default Birds;
-    </script>
-
 {% endblock %}
