@@ -31,6 +31,6 @@ class DefaultController extends Controller {
 	public function jsonDatas()
 	{
 		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
-		return new JsonResponse(['birds' => $birds]);
+		return new JsonResponse($birds);
 	}
 }
