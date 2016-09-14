@@ -1,0 +1,61 @@
+<?php
+
+namespace BirdBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Datas
+ *
+ * @ORM\Table(name="datas")
+ * @ORM\Entity
+ */
+class Datas
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateVue", type="datetime", nullable=false)
+     */
+    private $datevue;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Image", type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Latitude", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Longitude", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var \stdClass
+     *
+     * @ORM\Column(name="Nom", type="object", nullable=false)
+     */
+    private $nom;
+
+
+}
+
