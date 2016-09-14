@@ -1,5 +1,4 @@
 import { default as React, Component } from "react";
-import { default as update } from "react-addons-update";
 import $ from 'jquery';
 
 import { default as canUseDOM } from "can-use-dom";
@@ -10,13 +9,14 @@ export default class GoogleMapBirds extends Component {
     state = {
         bounds: null,
         center: GoogleMapBirds.mapCenter,
-        birds: {
+        markers: {
+            position: {
+                lat: [],
+                lng: [],
+            },
             nom: [],
             nomValide: [],
-            lat: [],
-            lng: []
         },
-        markers : []
     };
     static mapCenter = {
         lat: 46.867453,
@@ -55,26 +55,32 @@ export default class GoogleMapBirds extends Component {
                 nom.push(datas[i].nom);
                 nomValide.push(datas[i].nomValide);
             }
-            const birds = {...this.state.birds};
-            birds.lat = lat;
-            birds.lng = lng;
-            birds.nom = nom;
-            birds.nomValide = nomValide;
-            this.setState({birds: birds});
+            const markers = {...this.state.markers};
+            markers.position.lat = lat;
+            markers.position.lng = lng;
+            markers.nom = nom;
+            markers.nomValide = nomValide;
+            this.setState({markers: markers});
         });
         window.addEventListener(`resize`, this.handleWindowResize);
     };
 
-    componentWillUnmount() {
-        this.serverRequest.abort();
+    getLat(lat) {
+        var lattitude;
+        for (var i = 0; i<lat.length; i++)
+        {
+            lattitude = lat[i];
+        }
     };
+    getLng(lng) {
+        var longitude;
+        for (var i = 0; i<lng.length; i++)
+        {
+            longitude = lng[i];
+        }
+    }
 
     render() {
-        console.log(this.state.birds.nom[0]);
-        console.log(this.state.birds.nomValide[0]);
-        console.log(this.state.birds.lat[0]);
-        console.log(this.state.birds.lng[0]);
-        console.log(this.state.birds);
         return (
             <GoogleMapLoader
                 containerElement={
@@ -98,8 +104,13 @@ export default class GoogleMapBirds extends Component {
                             placeholder="Recherhez un oiseau"
                             style={GoogleMapBirds.inputStyle}
                         />,
-                        <Marker
-                        />
+                        {this.state.markers.map(function(marker, i) {
+                            return (
+                                <Marker key={ref} ref={ref}
+                                        position={marker.position}>
+                                </Marker>
+                            );
+                        })}
                     </GoogleMap>
                 }
             />

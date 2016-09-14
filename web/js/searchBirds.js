@@ -81,15 +81,6 @@ export default class SearchBirds extends Component {
     }
 
 
-
-    search() {
-        var hints = Array;
-        let birds = this.state.birds;
-        for (var datas = 0; datas<birds.length; datas++) {
-            hints[datas] = birds[datas].nom;
-        }
-    }
-
     render() {
         let birds = this.state.birds;
         console.log(birds);
