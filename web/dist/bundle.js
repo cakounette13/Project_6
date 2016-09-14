@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bed0b10028c6707303ab"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "50879bede063716d52fc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29933,7 +29933,12 @@
 	        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = GoogleMapBirds.__proto__ || (0, _getPrototypeOf2.default)(GoogleMapBirds)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	            bounds: null,
 	            center: GoogleMapBirds.mapCenter,
-	            birds: {},
+	            birds: {
+	                nom: [],
+	                nomValide: [],
+	                lat: [],
+	                lng: []
+	            },
 	            markers: []
 	        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	    }
@@ -29947,54 +29952,67 @@
 	                return;
 	            }
 	            _jquery2.default.getJSON("/index/json", function (json) {
-	                setTimeout(function () {
-	                    var birds = JSON.parse(json);
-	                    _this2.setState({ birds: birds });
-	                }, 300);
+	                var datas = JSON.parse(json);
+	                var lat = [];
+	                var lng = [];
+	                var nom = [];
+	                var nomValide = [];
+	                for (var i = 0; i < datas.length; i++) {
+	                    lat.push(datas[i].lat);
+	                    lng.push(datas[i].lng);
+	                    nom.push(datas[i].nom);
+	                    nomValide.push(datas[i].nomValide);
+	                }
+	                var birds = (0, _extends3.default)({}, _this2.state.birds);
+	                birds.lat = lat;
+	                birds.lng = lng;
+	                birds.nom = nom;
+	                birds.nomValide = nomValide;
+	                _this2.setState({ birds: birds });
 	            });
 	            window.addEventListener("resize", this.handleWindowResize);
 	        }
 	    }, {
-	        key: "getAllMarkers",
-	        value: function getAllMarkers() {
-	            var birds = this.state.birds;
-	            var latLng;
-	            for (var i = 0; i < birds.length; i++) {
-	                latLng = birds[i].latitude + "," + birds[i].longitude;
-	            }
-	            this.setState({ markers: latLng });
+	        key: "componentWillUnmount",
+	        value: function componentWillUnmount() {
+	            this.serverRequest.abort();
 	        }
 	    }, {
 	        key: "render",
 	        value: function render() {
-	            return _react2.default.createElement(
-	                "section",
-	                { style: { height: "100%" } },
-	                _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
-	                    containerElement: _react2.default.createElement("div", (0, _extends3.default)({}, props.containerElementProps, {
-	                        style: {
-	                            height: "100%"
-	                        }
-	                    })),
-	                    googleMapElement: _react2.default.createElement(
-	                        _reactGoogleMaps.GoogleMap,
-	                        {
-	                            ref: function ref(map) {
-	                                return console.log(map);
-	                            },
-	                            defaultZoom: 3,
-	                            defaultCenter: { lat: -25.363882, lng: 131.044922 },
-	                            onClick: props.onMapClick
+	            var _this3 = this;
+
+	            console.log(this.state.birds.nom[0]);
+	            console.log(this.state.birds.nomValide[0]);
+	            console.log(this.state.birds.lat[0]);
+	            console.log(this.state.birds.lng[0]);
+	            console.log(this.state.birds);
+	            return _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
+	                containerElement: _react2.default.createElement("div", (0, _extends3.default)({}, this.props, {
+	                    style: {
+	                        height: "100%"
+	                    }
+	                })),
+	                googleMapElement: _react2.default.createElement(
+	                    _reactGoogleMaps.GoogleMap,
+	                    {
+	                        ref: function ref(map) {
+	                            return (_this3._googleMapComponent = map) && console.log(map.getZoom());
 	                        },
-	                        props.markers.map(function (marker, index) {
-	                            return _react2.default.createElement(_reactGoogleMaps.Marker, (0, _extends3.default)({}, marker, {
-	                                onRightclick: function onRightclick() {
-	                                    return props.onMarkerRightclick(index);
-	                                } }));
-	                        })
-	                    )
-	                })
-	            );
+	                        defaultZoom: 3,
+	                        defaultCenter: { lat: -25.363882, lng: 131.044922 }
+	                    },
+	                    _react2.default.createElement(_reactGoogleMaps.SearchBox, {
+	                        id: "search",
+	                        controlPosition: google.maps.ControlPosition.TOP_LEFT,
+	                        ref: "searchBox",
+	                        placeholder: "Recherhez un oiseau",
+	                        style: GoogleMapBirds.inputStyle
+	                    }),
+	                    ",",
+	                    _react2.default.createElement(_reactGoogleMaps.Marker, null)
+	                )
+	            });
 	        }
 	    }]);
 	    return GoogleMapBirds;
