@@ -42,7 +42,8 @@
     "GetBirdsDatas": "latest",
     "basic-ajax": "latest",
     "basic-ajax": "latest",
-    "ajax": "latest"
+    "ajax": "latest",
+    "react-addons-create-fragment": "latest"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

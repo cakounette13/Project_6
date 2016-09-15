@@ -78,7 +78,7 @@ export default class GoogleMapBirds extends Component {
                     <GoogleMap
                         ref={(map) => (this._googleMapComponent = map)}
                         defaultZoom={3}
-                        defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
+                        defaultCenter={{ lat: 39.019184, lng: 16.964844 }}
                     >
                         <SearchBox
                             id="search"
@@ -87,12 +87,14 @@ export default class GoogleMapBirds extends Component {
                             placeholder="Recherhez un oiseau"
                             style={GoogleMapBirds.inputStyle}
                         />
-                        {markers.position.map(marker => (
-                            <Marker
-                                position={ marker }
-                                key={ marker }
-                            />
-                        ))}
+                        {markers.position.map(marker => {
+                            return (
+                                <Marker
+                                    position={ marker }
+                                    key={ marker }
+                                />
+                            );
+                        })}
                     </GoogleMap>
                 }
             />

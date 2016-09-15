@@ -2,6 +2,7 @@
   <dictionary name="arthur">
     <words>
       <w>,lng:</w>
+      <w>addons</w>
       <w>lat:</w>
       <w>marker.lat</w>
       <w>marker.lng</w>

@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d1c136a399e75bbf2338"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4cb48f6807002ae7f29e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29929,11 +29929,12 @@
 	        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = GoogleMapBirds.__proto__ || (0, _getPrototypeOf2.default)(GoogleMapBirds)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	            bounds: null,
 	            center: GoogleMapBirds.mapCenter,
-	            markers: {
+	            markers: [{
 	                position: [],
 	                nom: [],
-	                nomValide: []
-	            }
+	                nomValide: [],
+	                image: []
+	            }]
 	        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	    }
 
@@ -29952,18 +29953,77 @@
 	                var lng = [];
 	                var nom = [];
 	                var nomValide = [];
+	                var image = [];
 	                for (var i = 0; i < datas.length; i++) {
 	                    position.push(new google.maps.LatLng(lat.push(datas[i].lat), lng.push(datas[i].lng)));
 	                    nom.push(datas[i].nom);
 	                    nomValide.push(datas[i].nomValide);
+	                    image.push(datas[i].image);
 	                }
 	                var markers = (0, _extends3.default)({}, _this2.state.markers);
 	                markers.position = position;
 	                markers.nom = nom;
 	                markers.nomValide = nomValide;
+	                markers.image = image;
+	                /**
+	                 * datas.map = function(o, f, ctx) {
+	                    ctx = ctx || this;
+	                    var result = {};
+	                    Object.keys(o).forEach(function(k) {
+	                        result[k] = f.call(ctx, o[k], k, o);
+	                    });
+	                    return result;
+	                };
+	                 this.setState({markers: datas});
+	                 console.log(this.state.markers);
+	                 */
 	                _this2.setState({ markers: markers });
 	            });
 	            window.addEventListener("resize", this.handleWindowResize);
+	        }
+	    }, {
+	        key: "handleMarkerClick",
+	        value: function handleMarkerClick(marker) {
+	            marker.showInfo = true;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: "handleMarkerClose",
+	        value: function handleMarkerClose(marker) {
+	            marker.showInfo = false;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: "renderInfoWindow",
+	        value: function renderInfoWindow(ref, marker) {
+	            return (
+	                //You can nest components inside of InfoWindow!
+	                _react2.default.createElement(
+	                    InfoWindow,
+	                    {
+	                        key: ref + "_info_window",
+	                        onCloseclick: this.handleMarkerClose.bind(this, marker) },
+	                    ref === 'marker_1' ? _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        _react2.default.createElement(
+	                            "svg",
+	                            { id: "Layer_1", xmlns: "http://www.w3.org/2000/svg",
+	                                width: "16", height: "16", viewBox: "0 0 16 16" },
+	                            _react2.default.createElement("path", { d: "M6 14.5c0 .828-.672 1.5-1.5 1.5S3 15.328 3 14.5 3.672 13 4.5 13s1.5.672 1.5 1.5zM16 14.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5.672-1.5 1.5-1.5 1.5.672 1.5 1.5zM16 8V2H4c0-.552-.448-1-1-1H0v1h2l.75 6.438C2.294 8.805 2 9.368 2 10c0 1.105.895 2 2 2h12v-1H4c-.552 0-1-.448-1-1v-.01L16 8z" })
+	                        )
+	                    ) : _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        _react2.default.createElement(
+	                            "svg",
+	                            { id: "Layer_1", xmlns: "http://www.w3.org/2000/svg",
+	                                width: "16", height: "16", viewBox: "0 0 16 16" },
+	                            _react2.default.createElement("path", { d: "M3.5 0c-1.7 0-3 1.6-3 3.5 0 1.7 1 3 2.3 3.4l-.5 8c0 .6.4 1 1 1h.5c.5 0 1-.4 1-1L4 7C5.5 6.4 6.5 5 6.5 3.4c0-2-1.3-3.5-3-3.5zm10 0l-.8 5h-.6l-.3-5h-.4L11 5H10l-.8-5H9v6.5c0 .3.2.5.5.5h1.3l-.5 8c0 .6.4 1 1 1h.4c.6 0 1-.4 1-1l-.5-8h1.3c.3 0 .5-.2.5-.5V0h-.4z" })
+	                        )
+	                    )
+	                )
+	            );
 	        }
 	    }, {
 	        key: "render",
@@ -29985,7 +30045,7 @@
 	                            return _this3._googleMapComponent = map;
 	                        },
 	                        defaultZoom: 3,
-	                        defaultCenter: { lat: -25.363882, lng: 131.044922 }
+	                        defaultCenter: { lat: 40.272822, lng: 16.875 }
 	                    },
 	                    _react2.default.createElement(_reactGoogleMaps.SearchBox, {
 	                        id: "search",
@@ -29994,7 +30054,7 @@
 	                        placeholder: "Recherhez un oiseau",
 	                        style: GoogleMapBirds.inputStyle
 	                    }),
-	                    markers.position.map(function (marker) {
+	                    markers.map(function (marker) {
 	                        return _react2.default.createElement(_reactGoogleMaps.Marker, {
 	                            position: marker,
 	                            key: marker

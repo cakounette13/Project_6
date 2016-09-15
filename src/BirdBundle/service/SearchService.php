@@ -46,8 +46,8 @@ class SearchService
 		    $birds[] = [
 			    'nomValide' => $item->getNom()->getNomValide(),
 			    'nom' => $item->getNom()->getNomVern(),
-			    'lat' => $item->getLatitude(),
-			    'lng' => $item->getLongitude()
+			    'position' => [$item->getLatitude(), $item->getLongitude()],
+			    'image' => $item->getImage()
 		    ];
 	    }
         $encode = array(new XmlEncoder(), new JsonEncoder());
