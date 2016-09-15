@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "82309d3986e1d19615d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d1c136a399e75bbf2338"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29929,11 +29929,11 @@
 	        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = GoogleMapBirds.__proto__ || (0, _getPrototypeOf2.default)(GoogleMapBirds)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	            bounds: null,
 	            center: GoogleMapBirds.mapCenter,
-	            markers: [{
+	            markers: {
 	                position: [],
 	                nom: [],
 	                nomValide: []
-	            }]
+	            }
 	        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	    }
 
@@ -29970,7 +29970,7 @@
 	        value: function render() {
 	            var _this3 = this;
 
-	            var markers = this.state;
+	            var markers = this.state.markers;
 	            console.log(markers);
 	            return _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
 	                containerElement: _react2.default.createElement("div", (0, _extends3.default)({}, this.props, {
@@ -29982,7 +29982,7 @@
 	                    _reactGoogleMaps.GoogleMap,
 	                    {
 	                        ref: function ref(map) {
-	                            return (_this3._googleMapComponent = map) && console.log(map.getZoom());
+	                            return _this3._googleMapComponent = map;
 	                        },
 	                        defaultZoom: 3,
 	                        defaultCenter: { lat: -25.363882, lng: 131.044922 }
@@ -29994,10 +29994,10 @@
 	                        placeholder: "Recherhez un oiseau",
 	                        style: GoogleMapBirds.inputStyle
 	                    }),
-	                    markers.map(function (marker) {
+	                    markers.position.map(function (marker) {
 	                        return _react2.default.createElement(_reactGoogleMaps.Marker, {
-	                            position: marker.position,
-	                            key: marker.nomValide
+	                            position: marker,
+	                            key: marker
 	                        });
 	                    })
 	                )
