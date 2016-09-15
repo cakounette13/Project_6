@@ -10,10 +10,7 @@ export default class GoogleMapBirds extends Component {
         bounds: null,
         center: GoogleMapBirds.mapCenter,
         markers: {
-            position: {
-                lat: [],
-                lng: [],
-            },
+            position: [],
             nom: [],
             nomValide: [],
         },
@@ -45,19 +42,18 @@ export default class GoogleMapBirds extends Component {
         }
         $.getJSON("/index/json", (json) => {
             let datas = JSON.parse(json);
+            var position = [];
             var lat = [];
             var lng = [];
             var nom = [];
             var nomValide = [];
             for (var i = 0; i < datas.length; i++) {
-                lat.push(datas[i].lat);
-                lng.push(datas[i].lng);
+                position.push(new google.maps.LatLng(lat.push(datas[i].lat),lng.push(datas[i].lng)));
                 nom.push(datas[i].nom);
                 nomValide.push(datas[i].nomValide);
             }
             const markers = {...this.state.markers};
-            markers.position.lat = lat;
-            markers.position.lng = lng;
+            markers.position = position;
             markers.nom = nom;
             markers.nomValide = nomValide;
             this.setState({markers: markers});
@@ -65,22 +61,9 @@ export default class GoogleMapBirds extends Component {
         window.addEventListener(`resize`, this.handleWindowResize);
     };
 
-    getLat(lat) {
-        var lattitude;
-        for (var i = 0; i<lat.length; i++)
-        {
-            lattitude = lat[i];
-        }
-    };
-    getLng(lng) {
-        var longitude;
-        for (var i = 0; i<lng.length; i++)
-        {
-            longitude = lng[i];
-        }
-    }
-
     render() {
+        const markers = this.state.markers;
+        console.log(markers);
         return (
             <GoogleMapLoader
                 containerElement={
@@ -93,7 +76,7 @@ export default class GoogleMapBirds extends Component {
                 }
                 googleMapElement={
                     <GoogleMap
-                        ref={(map) => (this._googleMapComponent = map) && console.log(map.getZoom())}
+                        ref={(map) => (this._googleMapComponent = map)}
                         defaultZoom={3}
                         defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
                     >
@@ -103,14 +86,13 @@ export default class GoogleMapBirds extends Component {
                             ref="searchBox"
                             placeholder="Recherhez un oiseau"
                             style={GoogleMapBirds.inputStyle}
-                        />,
-                        {this.state.markers.map(function(marker, i) {
-                            return (
-                                <Marker key={ref} ref={ref}
-                                        position={marker.position}>
-                                </Marker>
-                            );
-                        })}
+                        />
+                        {markers.position.map(marker => (
+                            <Marker
+                                position={ marker }
+                                key={ marker }
+                            />
+                        ))}
                     </GoogleMap>
                 }
             />

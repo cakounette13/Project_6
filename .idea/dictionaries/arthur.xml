@@ -1,6 +1,10 @@
 <component name="ProjectDictionaryState">
   <dictionary name="arthur">
     <words>
+      <w>,lng:</w>
+      <w>lat:</w>
+      <w>marker.lat</w>
+      <w>marker.lng</w>
       <w>oiseau</w>
       <w>onreadystatechange</w>
       <w>recherhez</w>
