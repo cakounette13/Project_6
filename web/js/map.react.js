@@ -13,6 +13,7 @@ export default class GoogleMapBirds extends Component {
             position: [],
             nom: [],
             nomValide: [],
+            image: []
         },
     };
     static mapCenter = {
@@ -47,15 +48,18 @@ export default class GoogleMapBirds extends Component {
             var lng = [];
             var nom = [];
             var nomValide = [];
+            var image = [];
             for (var i = 0; i < datas.length; i++) {
                 position.push(new google.maps.LatLng(lat.push(datas[i].lat),lng.push(datas[i].lng)));
                 nom.push(datas[i].nom);
                 nomValide.push(datas[i].nomValide);
+                image.push(datas[i].image);
             }
             const markers = {...this.state.markers};
             markers.position = position;
             markers.nom = nom;
             markers.nomValide = nomValide;
+            markers.image = image;
             this.setState({markers: markers});
         });
         window.addEventListener(`resize`, this.handleWindowResize);
