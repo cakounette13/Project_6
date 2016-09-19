@@ -11,6 +11,7 @@
         <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/dist/bundle-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
@@ -29,6 +30,7 @@
       <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/dist/bundle-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />

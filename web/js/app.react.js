@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GoogleMapBirds from './map.react';
+import PopUpInfoWindow from './searchBirds';
 
 ReactDOM.render(
-    <GoogleMapBirds />,
-    document.getElementById('map')
+    <PopUpInfoWindow />,
+    document.getElementById('birds')
 );

@@ -41,14 +41,20 @@ class SearchService
     {
         $datas = $this->em->getRepository('BirdBundle:Datas')->findAll();
 	    $birds = array();
+	    $i = 0;
 	    foreach ($datas as $item)
 	    {
-		    $birds[] = [
-			    'nomValide' => $item->getNom()->getNomValide(),
-			    'nom' => $item->getNom()->getNomVern(),
-			    'position' => [$item->getLatitude(), $item->getLongitude()],
-			    'image' => $item->getImage()
-		    ];
+		    $birds[] =
+			    $bird[] = [
+			    	'key' => $i,
+				    'nomValide' => $item->getNom()->getNomValide(),
+				    'nom' => $item->getNom()->getNomVern(),
+				    'lat' => $item->getLatitude(),
+				    'lng' => $item->getLongitude(),
+				    'image' => $item->getImage(),
+				    'showInfo' => false
+			    ];
+		    $i++;
 	    }
         $encode = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = array(new ObjectNormalizer());

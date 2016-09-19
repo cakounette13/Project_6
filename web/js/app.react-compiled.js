@@ -8,12 +8,12 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _map = require('./map.react');
+var _searchBirds = require('./searchBirds');
 
-var _map2 = _interopRequireDefault(_map);
+var _searchBirds2 = _interopRequireDefault(_searchBirds);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_map2.default, null), document.getElementById('map'));
+_reactDom2.default.render(_react2.default.createElement(_searchBirds2.default, null), document.getElementById('birds'));
 
 //# sourceMappingURL=app.react-compiled.js.map

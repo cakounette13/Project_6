@@ -2,19 +2,21 @@ import { default as React, Component } from "react";
 import $ from 'jquery';
 
 import { default as canUseDOM } from "can-use-dom";
-import { GoogleMapLoader, GoogleMap, Marker, SearchBox } from "react-google-maps";
+import { GoogleMapLoader, GoogleMap, Marker, SearchBox, InfoWindow } from "react-google-maps";
 
 export default class GoogleMapBirds extends Component {
 
     state = {
         bounds: null,
         center: GoogleMapBirds.mapCenter,
-        markers: {
-            position: [],
-            nom: [],
-            nomValide: [],
-            image: []
-        },
+        markers: [{
+            nom: "",
+            nomValide: "",
+            showInfo: "",
+            image: "",
+            lat: "",
+            lng: "",
+        }]
     };
     static mapCenter = {
         lat: 46.867453,
@@ -43,65 +45,67 @@ export default class GoogleMapBirds extends Component {
         }
         $.getJSON("/index/json", (json) => {
             let datas = JSON.parse(json);
-            var position = [];
+            /** var position = [];
             var lat = [];
             var lng = [];
             var nom = [];
             var nomValide = [];
             var image = [];
+            var showInfo = [];
             for (var i = 0; i < datas.length; i++) {
                 position.push(new google.maps.LatLng(lat.push(datas[i].lat),lng.push(datas[i].lng)));
                 nom.push(datas[i].nom);
                 nomValide.push(datas[i].nomValide);
                 image.push(datas[i].image);
+                showInfo.push(datas[i].showInfo);
             }
             const markers = {...this.state.markers};
             markers.position = position;
             markers.nom = nom;
             markers.nomValide = nomValide;
             markers.image = image;
+            markers.showInfo = showInfo;
             this.setState({markers: markers});
+            **/
+            datas.map = function(o, f) {
+                var result = {};
+                Object.keys(o).forEach(function(k) {
+                    result[k] = f;
+                });
+                return result;
+            };
+            this.setState({markers: datas});
         });
         window.addEventListener(`resize`, this.handleWindowResize);
     };
 
     render() {
-        const markers = this.state.markers;
-        console.log(markers);
+        var birds = this.state.markers;
+        console.log(birds);
         return (
             <GoogleMapLoader
                 containerElement={
                     <div
                         {...this.props}
                         style={{
-                            height: `100%`,
-                        }}
-                    />
+                            height: '100%'
+                        }} >
+                    </div>
                 }
                 googleMapElement={
                     <GoogleMap
-                        ref={(map) => (this._googleMapComponent = map)}
-                        defaultZoom={3}
-                        defaultCenter={{ lat: 39.019184, lng: 16.964844 }}
-                    >
-                        <SearchBox
-                            id="search"
-                            controlPosition={google.maps.ControlPosition.TOP_LEFT}
-                            ref="searchBox"
-                            placeholder="Recherhez un oiseau"
-                            style={GoogleMapBirds.inputStyle}
-                        />
-                        {markers.position.map(marker => {
-                            return (
-                                <Marker
-                                    position={ marker }
-                                    key={ marker }
-                                />
-                            );
-                        })}
+                        center={this.state.center}
+                        defaultZoom={4}
+                        ref='map'>
+                        {birds.map((bird, i) => {
+                            console.log(bird);
+                            console.log(i);
+                        })
+                        }
                     </GoogleMap>
                 }
             />
+
         );
     }
 }
