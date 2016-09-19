@@ -7,8 +7,8 @@ export default class PopUpInfoWindow extends Component {
 
     state = {
         center: {
-            lat: -25.363882,
-            lng: 131.044922,
+            lat: 46.867453,
+            lng: 2.329102,
         },
         markers: [{
             nom: "",
@@ -82,7 +82,7 @@ export default class PopUpInfoWindow extends Component {
     }
 
     render() {
-        const markers = this.state.markers
+        const markers = this.state.markers;
         console.log(markers);
         return (
 
@@ -113,11 +113,6 @@ export default class PopUpInfoWindow extends Component {
                                     position={new google.maps.LatLng(marker.lat , marker.lng)}
                                     onClick={this.handleMarkerClick.bind(this, marker)} >
 
-                                    {/*
-                                     Show info window only if the 'showInfo' key of the marker is true.
-                                     That is, when the Marker pin has been clicked and 'handleMarkerClick' has been
-                                     Successfully fired.
-                                     */}
                                     {marker.showInfo ? this.renderInfoWindow(ref, marker) : null}
 
                                 </Marker>
