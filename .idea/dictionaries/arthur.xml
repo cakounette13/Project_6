@@ -3,7 +3,9 @@
     <words>
       <w>,lng:</w>
       <w>addons</w>
+      <w>autosuggest</w>
       <w>commun</w>
+      <w>datalist</w>
       <w>lat:</w>
       <w>marker.lat</w>
       <w>marker.lng</w>
@@ -13,6 +15,7 @@
       <w>rightclick</w>
       <w>scriptjs</w>
       <w>sientifique</w>
+      <w>typeahead</w>
       <w>unmount</w>
     </words>
   </dictionary>

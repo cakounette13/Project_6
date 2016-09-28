@@ -1,9 +1,9 @@
-import { default as React, Component } from "react";
+import { default as React, Component } from 'react';
 import $ from 'jquery';
+import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
+import Typeahead from 'react-bootstrap-typeahead';
 
-import { GoogleMapLoader, GoogleMap, InfoWindow, Marker, SearchBox } from "react-google-maps";
-
-export default class GoogleMapBirds extends Component {
+export default class GoogleMapBirds extends React.Component {
 
     static inputStyle = {
         "border": `1px solid transparent`,
@@ -33,7 +33,8 @@ export default class GoogleMapBirds extends Component {
             lat: "",
             lng: "",
         }],
-        inputValue: "",
+        search: "",
+        suggestions: []
     };
 
     componentDidMount() {
@@ -44,6 +45,10 @@ export default class GoogleMapBirds extends Component {
         });
     }
 
+    updateSearch(event){
+        this.setState({search: event.target.value});
+    }
+
     handleMarkerClick(marker) {
         marker.showInfo = true;
         this.setState(this.state);
@@ -52,7 +57,6 @@ export default class GoogleMapBirds extends Component {
         marker.showInfo = false;
         this.setState(this.state);
     }
-
 
     renderInfoWindow(ref, marker) {
         return (
@@ -70,9 +74,16 @@ export default class GoogleMapBirds extends Component {
         );
     }
 
-    render() {
-        return (
 
+    render() {
+        let birds = this.state.markers.filter(
+            (marker) => {
+                if (marker.nom === null) marker.nom = marker.nomValide;
+                return marker.nom.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+            }
+        );
+        console.log(birds);
+        return (
             <GoogleMapLoader
                 containerElement={
                     <div
@@ -87,9 +98,8 @@ export default class GoogleMapBirds extends Component {
                         center={this.state.center}
                         defaultZoom={4}
                         ref='map'>
-                        <SearchBox />
                         {
-                            this.state.markers.map((marker, index) => {
+                            birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
                                 return ( <Marker
                                         key={index}
@@ -99,17 +109,21 @@ export default class GoogleMapBirds extends Component {
                                         nom={marker.nom}
                                         nomValide={marker.nomValide}
                                         onClick={this.handleMarkerClick.bind(this, marker)}>
-
                                         {marker.showInfo ? this.renderInfoWindow(ref, marker) : null}
                                     </Marker>
                                 );
                             })
                         }
+                        <input list="hints"
+                               placeholder="Rechercher un oiseau"
+                               onChange={this.updateSearch.bind(this)} />
+                        <Typeahead
+                            onChange={this.updateSearch.bind(this)}
+                            options={birds.map(marker => {return (marker.nom)})}
+                        />
                     </GoogleMap>
                 }
-
-            /> //end of GoogleMapLoader
-
+            />
         );
     }
 }
