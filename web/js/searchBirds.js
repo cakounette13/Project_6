@@ -1,7 +1,6 @@
 import { default as React, Component } from 'react';
 import $ from 'jquery';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
-import Typeahead from 'react-bootstrap-typeahead';
 
 export default class GoogleMapBirds extends React.Component {
 
@@ -98,6 +97,23 @@ export default class GoogleMapBirds extends React.Component {
                         center={this.state.center}
                         defaultZoom={4}
                         ref='map'>
+                        <input list="hints"
+                               placeholder="Rechercher un oiseau"
+                               style={GoogleMapBirds.inputStyle}
+                               id="input-search"
+                               onChange={this.updateSearch.bind(this)} />
+                        <datalist id="hints">
+                            {birds.map((marker, index) => {
+                                const ref = `marker_${index}`;
+                                return ( <option key={index}
+                                                 ref={ref}
+                                                 value={marker.nom}
+                                    >
+                                        {marker.nom}
+                                    </option>
+                                )
+                            })}
+                        </datalist>
                         {
                             birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
@@ -114,13 +130,6 @@ export default class GoogleMapBirds extends React.Component {
                                 );
                             })
                         }
-                        <input list="hints"
-                               placeholder="Rechercher un oiseau"
-                               onChange={this.updateSearch.bind(this)} />
-                        <Typeahead
-                            onChange={this.updateSearch.bind(this)}
-                            options={birds.map(marker => {return (marker.nom)})}
-                        />
                     </GoogleMap>
                 }
             />
