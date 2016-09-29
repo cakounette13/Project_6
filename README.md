@@ -13,3 +13,4 @@ Project 6 N.A.O
         -open a new terminal (do not close the current)
         -php bin/console server:start;
         -npm run start;
+ 
