@@ -73,7 +73,6 @@ export default class GoogleMapBirds extends React.Component {
         );
     }
 
-
     render() {
         let birds = this.state.markers.filter(
             (marker) => {

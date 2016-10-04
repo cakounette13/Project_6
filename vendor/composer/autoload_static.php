@@ -89,6 +89,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'F' => 
         array (
             'Faker\\' => 6,
+            'FOS\\UserBundle\\' => 15,
             'FOS\\RestBundle\\' => 15,
             'FOS\\JsRoutingBundle\\' => 20,
         ),
@@ -245,6 +246,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'FOS\\UserBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
         ),
         'FOS\\RestBundle\\' => 
         array (

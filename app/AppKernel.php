@@ -17,8 +17,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new Limenius\ReactBundle\LimeniusReactBundle(),
+	        new FOS\UserBundle\FOSUserBundle(),
+	        new Limenius\ReactBundle\LimeniusReactBundle(),
 	        new BirdBundle\BirdBundle(),
+            new UserBundle\UserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
