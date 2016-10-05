@@ -14,12 +14,21 @@ class DefaultController extends Controller {
 	 * @Route("/", options={"expose"=true}, name="bird")
 	 * @Template("default/index.html.twig")
 	 */
-	public function indexAction( Request $request ) {
-		$search = $this->get( 'search_bird' )->createSearchField( $request );
-		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
+	public function indexAction() {
+		$birds  = $this->get('search_bird')->FindBirdsEncodeJson();
+		$cache = $this->get('doctrine_cache.providers.my_cache');
+		$key = md5($birds);
+		if ($cache->contains($key))
+		{
+			$birds = $cache->fetch($key);
+		}
+		else{
+			sleep(1);
+			$birds = $this->get('search_bird')->FindBirdsEncodeJson();
+			$cache->save($key, $birds);
+		}
 
 		return [
-			'search' => $search->createView(),
 			'birds'  => $birds
 		];
 	}

@@ -55,6 +55,13 @@ class Datas
      */
     private $nom;
 
+	/**
+	 * @var boolean
+	 *
+	 * @ORM\Column(name="valid", type="boolean")
+	 */
+	private $valid;
+
     /**
      * Get id
      *
@@ -172,4 +179,18 @@ class Datas
     {
         return $this->nom;
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getValid() {
+		return $this->valid;
+	}
+
+	/**
+	 * @param mixed $valid
+	 */
+	public function setValid( $valid ) {
+		$this->valid = $valid;
+	}
 }
