@@ -45,10 +45,13 @@ class DefaultController extends Controller {
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
 	 * @Template("default/new_observation.html.twig")
+	 * @param Request $request
+	 *
+	 * @return array
 	 */
-	public function addObservationAction()
+	public function addObservationAction(Request $request)
 	{
-		$observation = $this->get('add_bird')->addBird();
+		$observation = $this->get('add_bird')->formBuilder($request);
 		return [
 			'obs' => $observation->createView()
 		];

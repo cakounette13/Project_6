@@ -7,14 +7,13 @@
     <div id="birds"></div>
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }}
     <script>
         {# set a base url to '/' or maybe '/app_dev.php' #}
         window.baseUrl = '{{ path('bird') }}';
     </script>
     {% if app.environment == 'dev' %}
-        <script src="http://127.0.0.1:3000/static/bundle.js"></script>
+        <script src="http://127.0.0.1:3000/static/searchBird.js"></script>
     {% else %}
-        <script src="{{ asset('dist/bundle.js') }}"></script>
+        <script src="{{ asset('dist/searchBird.js') }}"></script>
     {% endif %}
 {% endblock %}

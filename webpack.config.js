@@ -3,15 +3,17 @@ var webpack = require('webpack');
 var node_modules_dir = path.join(__dirname, 'node_modules');
 
 var config = {
-    entry: [
-        'webpack-dev-server/client?http://127.0.0.1:3000',
-        'webpack/hot/only-dev-server',
-        './web/js/app.react.js',
-
-    ],
+    entry: {
+        "searchBird": [
+            'webpack-dev-server/client?http://127.0.0.1:3000',
+            'webpack/hot/only-dev-server',
+            './web/js/app.react.js',
+        ],
+        "addBird": './web/js/add.react.js',
+    },
     output: {
         path: path.join(__dirname, 'web/dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: 'http://127.0.0.1:3000/static/'
     },
     plugins: [

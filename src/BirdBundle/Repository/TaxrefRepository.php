@@ -11,12 +11,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class TaxrefRepository extends EntityRepository
 {
-    public function findBirdName($bird)
+    public function findBirdName()
     {
         return $this->createQueryBuilder('taxref')
-            ->andWhere('taxref.nomVern = :nomVern')
-            ->setParameter('nomVern', $bird)
+	        ->addOrderBy('taxref.nomVern', 'ASC')
             ->getQuery()
-            ->getOneOrNullResult();
+            ->getResult();
     }
 }

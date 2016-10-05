@@ -10,18 +10,26 @@
                     margin-left: 0;
                     height: 500px;
                 }
+                #add_bird {
+                    width: 500px;
+                    margin-left: 0;
+                    height: 500px;
+                }
                 input::-webkit-calendar-picker-indicator {
                     display: none;
                 }
             </style>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
                   rel="stylesheet">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
         {% block javascripts %}
         {% endblock %}
     </body>
