@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6731513704fc65075a14"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8354d10fbcb011d60bc1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30043,7 +30043,7 @@
 	        value: function componentDidMount() {
 	            var _this2 = this;
 
-	            _jquery2.default.getJSON("/index/json", function (json) {
+	            _jquery2.default.getJSON("/json", function (json) {
 	                var datas = JSON.parse(json);
 	                var markers = (0, _keys2.default)(datas).map(function (k) {
 	                    return datas[k];

@@ -37,7 +37,7 @@ export default class GoogleMapBirds extends React.Component {
     };
 
     componentDidMount() {
-        $.getJSON("/index/json", (json) => {
+        $.getJSON("/json", (json) => {
             let datas = JSON.parse(json);
             var markers = Object.keys(datas).map(function(k) { return datas[k] });
             this.setState({markers: markers});

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
 	/**
-	 * @Route("/index", options={"expose"=true}, name="bird")
+	 * @Route("/", options={"expose"=true}, name="bird")
 	 * @Template("default/index.html.twig")
 	 */
 	public function indexAction( Request $request ) {
@@ -25,7 +25,7 @@ class DefaultController extends Controller {
 	}
 
 	/**
-	 * @Route("/index/json", name="json_birds")
+	 * @Route("/json", name="json_birds")
 	 * @Method("GET")
 	 */
 	public function jsonDatas()
