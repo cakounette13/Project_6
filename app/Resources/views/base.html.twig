@@ -5,14 +5,10 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <style>
-                html, body {
-                    height: 600px;
-                    padding: 0;
-                }
                 #birds {
-                    width: 100%;
+                    width: 500px;
                     margin-left: 0;
-                    height: 100%;
+                    height: 500px;
                 }
                 input::-webkit-calendar-picker-indicator {
                     display: none;
@@ -20,7 +16,6 @@
             </style>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
                   rel="stylesheet">
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&libraries=geometry,visualization"></script>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -28,15 +23,6 @@
         {% block body %}
         {% endblock %}
         {% block javascripts %}
-            <script>
-                {# set a base url to '/' or maybe '/app_dev.php' #}
-                window.baseUrl = '{{ path('bird') }}';
-            </script>
-            {% if app.environment == 'dev' %}
-            <script src="http://127.0.0.1:3000/static/bundle.js"></script>
-            {% else %}
-            <script src="{{ asset('dist/bundle.js') }}"></script>
-            {% endif %}
         {% endblock %}
     </body>
 </html>

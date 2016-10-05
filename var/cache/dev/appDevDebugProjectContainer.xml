@@ -151,6 +151,8 @@
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
     <parameter key="monolog.handlers_to_channels" type="collection">
+      <parameter key="monolog.handler.chromephp">null</parameter>
+      <parameter key="monolog.handler.firephp">null</parameter>
       <parameter key="monolog.handler.console" type="collection">
         <parameter key="type">exclusive</parameter>
         <parameter key="elements" type="collection">
@@ -369,6 +371,14 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="fos_user.group_manager.class">FOS\UserBundle\Doctrine\GroupManager</parameter>
+    <parameter key="fos_user.model.group.class">UserBundle\Entity\Group</parameter>
+    <parameter key="fos_user.group.form.type">FOS\UserBundle\Form\Type\GroupFormType</parameter>
+    <parameter key="fos_user.group.form.name">fos_user_group_form</parameter>
+    <parameter key="fos_user.group.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
     <parameter key="limenius_react.default_rendering">both</parameter>
     <parameter key="limenius_react.fail_loud">false</parameter>
     <parameter key="limenius_react.trace">false</parameter>
@@ -458,6 +468,10 @@
   </parameters>
   <services>
     <service id="search_bird" class="BirdBundle\service\SearchService">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="form.factory"/>
+    </service>
+    <service id="add_bird" class="BirdBundle\service\AddBird">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="form.factory"/>
     </service>
@@ -574,9 +588,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>WU3lzS7xZ9</argument>
+                  <argument>BFunG2bYU8</argument>
                   <argument>0</argument>
-                  <argument>tHnAVhzGvqabpHpGLZZSsA</argument>
+                  <argument>SVyFpxZcwzqbg1319WkrxA</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -587,9 +601,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>dp8IIoV33V</argument>
+                  <argument>MF2LsIqXGl</argument>
                   <argument>0</argument>
-                  <argument>tHnAVhzGvqabpHpGLZZSsA</argument>
+                  <argument>SVyFpxZcwzqbg1319WkrxA</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1227,7 +1241,7 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>iwr4Ad3zvZ</argument>
+      <argument>czuvmzUcD1</argument>
       <argument>0</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <call method="setLogger">
@@ -1236,9 +1250,9 @@
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>IVV7tBE9Jf</argument>
+      <argument>wGMOVFSDX0</argument>
       <argument>0</argument>
-      <argument>tHnAVhzGvqabpHpGLZZSsA</argument>
+      <argument>SVyFpxZcwzqbg1319WkrxA</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1295,6 +1309,7 @@
               <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\GroupFormType">fos_user.group.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1856,6 +1871,22 @@
         </argument>
         <argument>0</argument>
       </call>
+      <call method="addListenerService">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument>monolog.handler.firephp</argument>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument>monolog.handler.chromephp</argument>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
@@ -2033,7 +2064,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57f4cb5e9ea726.79127101</argument>
+            <argument>57f4fd7b084276.66018723</argument>
           </service>
         </argument>
       </argument>
@@ -2327,7 +2358,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57f4cb5e9ea726.79127101</argument>
+            <argument>57f4fd7b084276.66018723</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2654,6 +2685,16 @@
       <argument>null</argument>
       <argument>true</argument>
       <argument type="collection"/>
+    </service>
+    <service id="monolog.handler.firephp" class="Symfony\Bridge\Monolog\Handler\FirePHPHandler">
+      <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse"/>
+      <argument>200</argument>
+      <argument>true</argument>
+    </service>
+    <service id="monolog.handler.chromephp" class="Symfony\Bridge\Monolog\Handler\ChromePhpHandler">
+      <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse"/>
+      <argument>200</argument>
+      <argument>true</argument>
     </service>
     <service id="swiftmailer.email_sender.listener" class="Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener">
       <tag name="kernel.event_subscriber"/>
@@ -2983,6 +3024,10 @@
         </argument>
       </argument>
     </service>
+    <service id="fos_user.object_manager" class="Doctrine\Common\Persistence\ObjectManager" public="false">
+      <argument>null</argument>
+      <factory service="doctrine" method="getManager"/>
+    </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.user_manager"/>
@@ -3075,6 +3120,19 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
+    </service>
+    <service id="fos_user.group.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_group_form</argument>
+      <argument>FOS\UserBundle\Form\Type\GroupFormType</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
+      <tag name="form.type" alias="fos_user_group"/>
+      <argument>UserBundle\Entity\Group</argument>
     </service>
     <service id="limenius_react.external_react_renderer" class="Limenius\ReactBundle\Renderer\ExternalServerReactRenderer">
       <argument type="service" id="logger"/>
@@ -3387,6 +3445,8 @@
         <argument key="monolog.use_microseconds">true</argument>
         <argument key="monolog.swift_mailer.handlers" type="collection"/>
         <argument key="monolog.handlers_to_channels" type="collection">
+          <argument key="monolog.handler.chromephp">null</argument>
+          <argument key="monolog.handler.firephp">null</argument>
           <argument key="monolog.handler.console" type="collection">
             <argument key="type">exclusive</argument>
             <argument key="elements" type="collection">
@@ -3606,6 +3666,14 @@
           <argument>ResetPassword</argument>
           <argument>Default</argument>
         </argument>
+        <argument key="fos_user.group_manager.class">FOS\UserBundle\Doctrine\GroupManager</argument>
+        <argument key="fos_user.model.group.class">UserBundle\Entity\Group</argument>
+        <argument key="fos_user.group.form.type">FOS\UserBundle\Form\Type\GroupFormType</argument>
+        <argument key="fos_user.group.form.name">fos_user_group_form</argument>
+        <argument key="fos_user.group.form.validation_groups" type="collection">
+          <argument>Registration</argument>
+          <argument>Default</argument>
+        </argument>
         <argument key="limenius_react.default_rendering">both</argument>
         <argument key="limenius_react.fail_loud">false</argument>
         <argument key="limenius_react.trace">false</argument>
@@ -3670,6 +3738,12 @@
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
       <call method="pushHandler">
@@ -3681,6 +3755,12 @@
     </service>
     <service id="monolog.logger.translation" class="Symfony\Bridge\Monolog\Logger">
       <argument>translation</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
@@ -3694,6 +3774,12 @@
     <service id="monolog.logger.cache" class="Symfony\Bridge\Monolog\Logger">
       <argument>cache</argument>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
       <call method="pushHandler">
@@ -3705,6 +3791,12 @@
     </service>
     <service id="monolog.logger.templating" class="Symfony\Bridge\Monolog\Logger">
       <argument>templating</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
@@ -3718,6 +3810,12 @@
     <service id="monolog.logger.profiler" class="Symfony\Bridge\Monolog\Logger">
       <argument>profiler</argument>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
       <call method="pushHandler">
@@ -3729,6 +3827,12 @@
     </service>
     <service id="monolog.logger.router" class="Symfony\Bridge\Monolog\Logger">
       <argument>router</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
@@ -3742,6 +3846,12 @@
     <service id="monolog.logger.php" class="Symfony\Bridge\Monolog\Logger">
       <argument>php</argument>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
       <call method="pushHandler">
@@ -3754,11 +3864,23 @@
     <service id="monolog.logger.event" class="Symfony\Bridge\Monolog\Logger">
       <argument>event</argument>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.security" class="Symfony\Bridge\Monolog\Logger">
       <argument>security</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
@@ -3771,6 +3893,12 @@
     </service>
     <service id="monolog.logger.doctrine" class="Symfony\Bridge\Monolog\Logger">
       <argument>doctrine</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
@@ -3913,6 +4041,12 @@
         <argument>true</argument>
       </call>
       <call method="pushHandler">
+        <argument type="service" id="monolog.handler.chromephp"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.firephp"/>
+      </call>
+      <call method="pushHandler">
         <argument type="service" id="monolog.handler.console"/>
       </call>
       <call method="pushHandler">
@@ -4004,13 +4138,12 @@
       <argument type="service" id="security.encoder_factory"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service">
-        <service class="Doctrine\Common\Persistence\ObjectManager" public="false">
-          <argument>null</argument>
-          <factory service="doctrine" method="getManager"/>
-        </service>
-      </argument>
+      <argument type="service" id="fos_user.object_manager"/>
       <argument>UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
+      <argument type="service" id="fos_user.object_manager"/>
+      <argument>UserBundle\Entity\Group</argument>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>

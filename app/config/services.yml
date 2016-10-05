@@ -7,6 +7,11 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
-    search_bird:
+
+  search_bird:
         class: BirdBundle\service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
+
+  add_bird:
+      class: BirdBundle\service\AddBird
+      arguments: ["@doctrine.orm.entity_manager", "@form.factory"]

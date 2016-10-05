@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
 	/**
-	 * @Route("/", options={"expose"=true}, name="bird")
+	 * @Route("/", name="bird")
 	 * @Template("default/index.html.twig")
 	 */
 	public function indexAction() {
@@ -23,7 +23,6 @@ class DefaultController extends Controller {
 			$birds = $cache->fetch($key);
 		}
 		else{
-			sleep(1);
 			$birds = $this->get('search_bird')->FindBirdsEncodeJson();
 			$cache->save($key, $birds);
 		}
@@ -41,5 +40,17 @@ class DefaultController extends Controller {
 	{
 		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
 		return new JsonResponse($birds);
+	}
+
+	/**
+	 * @Route("/nouvelle_observation", name="add_observation")
+	 * @Template("default/new_observation.html.twig")
+	 */
+	public function addObservationAction()
+	{
+		$observation = $this->get('add_bird')->addBird();
+		return [
+			'obs' => $observation->createView()
+		];
 	}
 }
