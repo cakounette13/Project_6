@@ -4,9 +4,15 @@
       <w>,lng:</w>
       <w>addons</w>
       <w>autosuggest</w>
+      <w>clickable</w>
       <w>commun</w>
+      <w>coords</w>
       <w>datalist</w>
+      <w>dragend</w>
+      <w>geolocation</w>
       <w>lat:</w>
+      <w>latbox</w>
+      <w>lngbox</w>
       <w>marker.lat</w>
       <w>marker.lng</w>
       <w>nouvelle</w>

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GoogleMapAddBird from './addBird';
+import GoogleMapBirds from './addBird';
 
 ReactDOM.render(
-    <GoogleMapAddBird />,
-    document.getElementById('add_bird')
+    <GoogleMapBirds />,
+document.getElementById('add_bird')
 );

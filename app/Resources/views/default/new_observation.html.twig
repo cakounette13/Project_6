@@ -5,10 +5,9 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    <div id="add_bird"></div>
     {{ form_start(obs) }}
-    {{ form_rest(obs) }}
-    <button type="submit" class="btn btn-primary">Ajouter</button>
+    {{ form_row(obs.datevue) }}
+    <div id="add_bird"></div>
     {{ form_end(obs) }}
 {% endblock %}
 {% block javascripts %}

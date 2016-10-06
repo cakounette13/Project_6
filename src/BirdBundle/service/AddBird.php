@@ -10,6 +10,7 @@ namespace BirdBundle\service;
 
 use BirdBundle\Entity\Datas;
 use Doctrine\ORM\EntityManager;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,8 +36,6 @@ class AddBird {
 	{
 		$bird = new Datas();
 		$form = $this->form->create(FormType::class, $bird)
-			->add('latitude')
-			->add('longitude')
 			->add('datevue')
 		;
 		$form->handleRequest($request);
