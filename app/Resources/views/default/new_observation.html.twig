@@ -2,13 +2,19 @@
 {% block stylesheets %}
     {{ parent() }}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&libraries=geometry,visualization"></script>
+    <style>
+        #lat_lng{
+            display: none;
+        }
+    </style>
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
     {{ form_start(obs) }}
-    {{ form_row(obs.datevue) }}
     <div id="add_bird"></div>
-    {{ form_end(obs) }}
+    {{ form_row(obs.nom) }}
+    {{ form_row(obs.datevue) }}
+    <input type="submit" value="Create" class="btn btn-default pull-right" />
 {% endblock %}
 {% block javascripts %}
     <script>
@@ -18,6 +24,6 @@
     {% if app.environment == 'dev' %}
         <script src="http://127.0.0.1:3000/static/addBird.js"></script>
     {% else %}
-        <script src="{{ asset('dist/addBird.js') }}"></script>
+        <script src="{{ asset('dist/addBird.js') }} ></script>
     {% endif %}
 {% endblock %}

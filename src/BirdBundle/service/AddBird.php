@@ -9,6 +9,7 @@
 namespace BirdBundle\service;
 
 use BirdBundle\Entity\Datas;
+use BirdBundle\Repository\TaxrefRepository;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -35,12 +36,25 @@ class AddBird {
 	public function formBuilder(Request $request)
 	{
 		$bird = new Datas();
+		$em = $this->em;
 		$form = $this->form->create(FormType::class, $bird)
+			->add('nom',  EntityType::class, [
+				'class' => 'BirdBundle:Taxref',
+				'query_builder' => function (TaxrefRepository $er) {
+					return $er->createQueryBuilder( 't' )
+					          ->orderBy( 't.nomComplet', 'ASC' );
+				},
+				'choice_label' => 'nomComplet'
+			])
 			->add('datevue')
+			->add('latitude')
+			->add('longitude')
 		;
 		$form->handleRequest($request);
 		if ( $form->isValid() && $form->isSubmitted() ) {
-			$this->em->persist($bird);
+			$em->persist($bird);
+			$em->flush();
+			return 'validate';
 		}
 		return $form;
 	}

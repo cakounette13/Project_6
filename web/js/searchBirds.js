@@ -84,17 +84,11 @@ export default class GoogleMapBirds extends React.Component {
         return (
             <GoogleMapLoader
                 containerElement={
-                    <div
-                        {...this.props}
-                        style={{
-                            height: '100%'
-                        }} >
-                    </div>
                 }
                 googleMapElement={
                     <GoogleMap
                         center={this.state.center}
-                        defaultZoom={4}
+                        defaultZoom={14}
                         ref='map'>
                         <input list="hints"
                                placeholder="Rechercher un oiseau"
