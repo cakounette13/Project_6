@@ -10,11 +10,17 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    {{ form_start(obs) }}
     <div id="add_bird"></div>
-    {{ form_row(obs.nom) }}
-    {{ form_row(obs.datevue) }}
     <input type="submit" value="Create" class="btn btn-default pull-right" />
+    <div>
+        <label htmlFor="form_longitude" className="required">Longitude</label>
+        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lng}></input>
+    </div>
+    <div>
+        <label htmlFor="form_latitude" className="required">Latitude</label>
+        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lat}></input>
+    </div>
+    <p>Placez le marker a l'endroit exact de l'observation :</p>
 {% endblock %}
 {% block javascripts %}
     <script>

@@ -9,7 +9,10 @@ var config = {
             'webpack/hot/only-dev-server',
             './web/js/app.react.js',
         ],
-        "addBird": './web/js/add.react.js',
+        "addBird": [
+            'webpack-dev-server/client?http://127.0.0.1:3000',
+            'webpack/hot/only-dev-server',
+            './web/js/add.react.js']
     },
     output: {
         path: path.join(__dirname, 'web/dist'),

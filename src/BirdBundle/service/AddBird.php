@@ -9,12 +9,14 @@
 namespace BirdBundle\service;
 
 use BirdBundle\Entity\Datas;
-use BirdBundle\Repository\TaxrefRepository;
+use BirdBundle\Form\BirdsType;
 use Doctrine\ORM\EntityManager;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class AddBird {
 
@@ -33,23 +35,22 @@ class AddBird {
 		$this->form = $form;
 	}
 
+	public function formToJson()
+	{
+		$bird = new Datas();
+		$form = $this->form->create(BirdsType::class, $bird);
+		$encode = array(new XmlEncoder(), new JsonEncoder());
+		$normalizer = array(new ObjectNormalizer());
+
+		$serializer = new Serializer($normalizer, $encode);
+
+		return $serializer->serialize($form, 'json');
+	}
 	public function formBuilder(Request $request)
 	{
 		$bird = new Datas();
 		$em = $this->em;
-		$form = $this->form->create(FormType::class, $bird)
-			->add('nom',  EntityType::class, [
-				'class' => 'BirdBundle:Taxref',
-				'query_builder' => function (TaxrefRepository $er) {
-					return $er->createQueryBuilder( 't' )
-					          ->orderBy( 't.nomComplet', 'ASC' );
-				},
-				'choice_label' => 'nomComplet'
-			])
-			->add('datevue')
-			->add('latitude')
-			->add('longitude')
-		;
+		$form = $this->form->create(BirdsType::class, $bird);
 		$form->handleRequest($request);
 		if ( $form->isValid() && $form->isSubmitted() ) {
 			$em->persist($bird);
@@ -57,5 +58,9 @@ class AddBird {
 			return 'validate';
 		}
 		return $form;
+	}
+
+	public function formValidate(Request $request)
+	{
 	}
 }

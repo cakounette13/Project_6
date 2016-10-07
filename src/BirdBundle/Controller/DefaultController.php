@@ -16,17 +16,6 @@ class DefaultController extends Controller {
 	 */
 	public function indexAction() {
 		$birds  = $this->get('search_bird')->FindBirdsEncodeJson();
-		$cache = $this->get('doctrine_cache.providers.my_cache');
-		$key = md5($birds);
-		if ($cache->contains($key))
-		{
-			$birds = $cache->fetch($key);
-		}
-		else{
-			$birds = $this->get('search_bird')->FindBirdsEncodeJson();
-			$cache->save($key, $birds);
-		}
-
 		return [
 			'birds'  => $birds
 		];
@@ -43,17 +32,23 @@ class DefaultController extends Controller {
 	}
 
 	/**
+	 * @Route("/json/form", name="json_form")
+	 * @Method("GET")
+	 */
+	public function jsonForm()
+	{
+		$birds = $this->get('add_bird')->formToJson();
+		return new JsonResponse($birds);
+	}
+
+	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
 	 * @Template("default/new_observation.html.twig")
-	 * @param Request $request
 	 *
-	 * @return array
 	 */
 	public function addObservationAction(Request $request)
 	{
-		$observation = $this->get('add_bird')->formBuilder($request);
 		return [
-			'obs' => $observation->createView()
 		];
 	}
 }
