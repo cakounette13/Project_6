@@ -48,6 +48,7 @@ class DefaultController extends Controller {
 	 */
 	public function addObservationAction(Request $request)
 	{
+
 		return [
 		];
 	}
