@@ -24,12 +24,9 @@ export default class GoogleMapAddBird extends React.Component {
     };
 
     componentDidMount() {
-        $.getJSON("/json/form", (json) => {
-            let datas = JSON.parse(json);
-            console.log(datas);
-            var form = Object.keys(datas).map(function(k) { return datas[k] });
-            this.setState({form: form});
-        });
+        $( "#add_bird_form" ).load( "form/ajax", function() {
+
+            this.setState({form : form}) });
         geolocation.getCurrentPosition((position) => {
             if (this.isUnmounted) {
                 return;
@@ -93,7 +90,7 @@ export default class GoogleMapAddBird extends React.Component {
                             <input id="form_date" name="form[date]" required="required" type="date"></input>
                         </div>
                         <p>Placez le marker a l'endroit exact de l'observation :</p>
-                        <input type="submit" value="Ajouter" class="btn btn-default pull-right" />
+                        <input type="submit" value="Ajouter" className="btn btn-default pull-right" />
                     </GoogleMap>
                 }
             />

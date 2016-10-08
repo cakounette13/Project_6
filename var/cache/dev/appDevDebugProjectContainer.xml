@@ -18,9 +18,9 @@
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
       <parameter key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</parameter>
-      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="LimeniusReactBundle">Limenius\ReactBundle\LimeniusReactBundle</parameter>
       <parameter key="BirdBundle">BirdBundle\BirdBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -329,11 +329,15 @@
     <parameter key="fos_js_routing.cache_control" type="collection">
       <parameter key="enabled">false</parameter>
     </parameter>
+    <parameter key="limenius_react.default_rendering">both</parameter>
+    <parameter key="limenius_react.fail_loud">false</parameter>
+    <parameter key="limenius_react.trace">false</parameter>
     <parameter key="fos_user.backend_type_orm">true</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
     <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
     <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
     <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.user.default_route">fos_user_profile_show</parameter>
     <parameter key="fos_user.storage">orm</parameter>
     <parameter key="fos_user.firewall_name">main</parameter>
     <parameter key="fos_user.model_manager_name">null</parameter>
@@ -378,9 +382,6 @@
       <parameter>Registration</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="limenius_react.default_rendering">both</parameter>
-    <parameter key="limenius_react.fail_loud">false</parameter>
-    <parameter key="limenius_react.trace">false</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -589,7 +590,7 @@
                   <tag name="cache.pool"/>
                   <argument>WU3lzS7xZ9</argument>
                   <argument>0</argument>
-                  <argument>CQMvs3k8bStgvTtZELfGMg</argument>
+                  <argument>U7T6HKQ3oqHuXbJwDeVgvw</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -602,7 +603,7 @@
                   <tag name="cache.pool"/>
                   <argument>dp8IIoV33V</argument>
                   <argument>0</argument>
-                  <argument>CQMvs3k8bStgvTtZELfGMg</argument>
+                  <argument>U7T6HKQ3oqHuXbJwDeVgvw</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -844,6 +845,13 @@
             <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
             <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
           </argument>
+          <argument key="lv" type="collection">
+            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lv.xlf</argument>
+            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
+            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lv.xlf</argument>
+            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lv.yml</argument>
+            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lv.yml</argument>
+          </argument>
           <argument key="nn" type="collection">
             <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nn.xlf</argument>
           </argument>
@@ -1033,11 +1041,6 @@
             <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.el.xlf</argument>
             <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml</argument>
             <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.el.yml</argument>
-          </argument>
-          <argument key="lv" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lv.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lv.yml</argument>
           </argument>
           <argument key="pt_PT" type="collection">
             <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_PT.xlf</argument>
@@ -1251,7 +1254,7 @@
       <tag name="cache.pool"/>
       <argument>IVV7tBE9Jf</argument>
       <argument>0</argument>
-      <argument>CQMvs3k8bStgvTtZELfGMg</argument>
+      <argument>U7T6HKQ3oqHuXbJwDeVgvw</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -2096,7 +2099,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57f7bc0da4f476.79323196</argument>
+            <argument>57f8d9966f4cf9.11825698</argument>
           </service>
         </argument>
       </argument>
@@ -2390,7 +2393,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57f7bc0da4f476.79323196</argument>
+            <argument>57f8d9966f4cf9.11825698</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3014,9 +3017,9 @@
         <argument key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</argument>
         <argument key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</argument>
         <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
-        <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
         <argument key="LimeniusReactBundle">Limenius\ReactBundle\LimeniusReactBundle</argument>
         <argument key="BirdBundle">BirdBundle\BirdBundle</argument>
+        <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
         <argument key="UserBundle">UserBundle\UserBundle</argument>
         <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
@@ -3045,6 +3048,27 @@
           <service class="Symfony\Component\Serializer\Encoder\JsonEncoder" public="false"/>
         </argument>
       </argument>
+    </service>
+    <service id="limenius_react.external_react_renderer" class="Limenius\ReactBundle\Renderer\ExternalServerReactRenderer">
+      <argument type="service" id="logger"/>
+      <argument>/var/www/html/Project_6/app/Resources/node-server/node.sock</argument>
+      <argument>false</argument>
+    </service>
+    <service id="limenius_react.phpexecjs_react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
+      <argument type="service" id="logger"/>
+      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
+      <argument>false</argument>
+    </service>
+    <service id="limenius_react.render_extension" class="Limenius\ReactBundle\Twig\ReactRenderExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="limenius_react.react_renderer" on-invalid="null"/>
+      <argument>both</argument>
+      <argument>false</argument>
+    </service>
+    <service id="limenius_react.react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
+      <argument type="service" id="logger"/>
+      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
+      <argument>false</argument>
     </service>
     <service id="fos_user.object_manager" class="Doctrine\Common\Persistence\ObjectManager" public="false">
       <argument>null</argument>
@@ -3155,27 +3179,6 @@
     <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
       <tag name="form.type" alias="fos_user_group"/>
       <argument>UserBundle\Entity\Group</argument>
-    </service>
-    <service id="limenius_react.external_react_renderer" class="Limenius\ReactBundle\Renderer\ExternalServerReactRenderer">
-      <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/node-server/node.sock</argument>
-      <argument>false</argument>
-    </service>
-    <service id="limenius_react.phpexecjs_react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
-      <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
-      <argument>false</argument>
-    </service>
-    <service id="limenius_react.render_extension" class="Limenius\ReactBundle\Twig\ReactRenderExtension">
-      <tag name="twig.extension"/>
-      <argument type="service" id="limenius_react.react_renderer"/>
-      <argument>both</argument>
-      <argument>false</argument>
-    </service>
-    <service id="limenius_react.react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
-      <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
-      <argument>false</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3334,9 +3337,9 @@
           <argument key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</argument>
           <argument key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</argument>
           <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
-          <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
           <argument key="LimeniusReactBundle">Limenius\ReactBundle\LimeniusReactBundle</argument>
           <argument key="BirdBundle">BirdBundle\BirdBundle</argument>
+          <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
           <argument key="UserBundle">UserBundle\UserBundle</argument>
           <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
           <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
@@ -3646,11 +3649,15 @@
         <argument key="fos_js_routing.cache_control" type="collection">
           <argument key="enabled">false</argument>
         </argument>
+        <argument key="limenius_react.default_rendering">both</argument>
+        <argument key="limenius_react.fail_loud">false</argument>
+        <argument key="limenius_react.trace">false</argument>
         <argument key="fos_user.backend_type_orm">true</argument>
         <argument key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</argument>
         <argument key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</argument>
         <argument key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</argument>
         <argument key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
+        <argument key="fos_user.user.default_route">fos_user_profile_show</argument>
         <argument key="fos_user.storage">orm</argument>
         <argument key="fos_user.firewall_name">main</argument>
         <argument key="fos_user.model_manager_name">null</argument>
@@ -3695,9 +3702,6 @@
           <argument>Registration</argument>
           <argument>Default</argument>
         </argument>
-        <argument key="limenius_react.default_rendering">both</argument>
-        <argument key="limenius_react.fail_loud">false</argument>
-        <argument key="limenius_react.trace">false</argument>
         <argument key="web_profiler.debug_toolbar.position">bottom</argument>
         <argument key="web_profiler.debug_toolbar.intercept_redirects">false</argument>
         <argument key="web_profiler.debug_toolbar.mode">2</argument>

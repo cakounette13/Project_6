@@ -57,6 +57,7 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Cache\\' => 10,
             'PackageVersions\\' => 16,
@@ -203,6 +204,10 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             0 => __DIR__ . '/..' . '/react/event-loop/src',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -314,10 +319,6 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'ProxyManager\\' => 
             array (
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',

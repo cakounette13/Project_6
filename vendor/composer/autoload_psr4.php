@@ -30,6 +30,7 @@ return array(
     'React\\Socket\\' => array($vendorDir . '/react/socket/src'),
     'React\\Http\\' => array($vendorDir . '/react/http/src'),
     'React\\EventLoop\\' => array($vendorDir . '/react/event-loop/src'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'PackageVersions\\' => array($vendorDir . '/ocramius/package-versions/src/PackageVersions'),

@@ -32,19 +32,19 @@ class DefaultController extends Controller {
 	}
 
 	/**
-	 * @Route("/json/form", name="json_form")
+	 * @Route("/form/ajax", name="form_ajax")
+	 * @Template("default/ajax_form.html.twig")
 	 * @Method("GET")
 	 */
 	public function jsonForm()
 	{
-		$birds = $this->get('add_bird')->formToJson();
-		return new JsonResponse($birds);
+		$form = $this->get('add_bird')->ajaxFrom();
+		return ['form' => $form->createView()];
 	}
 
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
 	 * @Template("default/new_observation.html.twig")
-	 *
 	 */
 	public function addObservationAction(Request $request)
 	{

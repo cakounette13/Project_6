@@ -35,16 +35,12 @@ class AddBird {
 		$this->form = $form;
 	}
 
-	public function formToJson()
+	public function ajaxFrom()
 	{
 		$bird = new Datas();
 		$form = $this->form->create(BirdsType::class, $bird);
-		$encode = array(new XmlEncoder(), new JsonEncoder());
-		$normalizer = array(new ObjectNormalizer());
 
-		$serializer = new Serializer($normalizer, $encode);
-
-		return $serializer->serialize($form, 'json');
+		return $form;
 	}
 	public function formBuilder(Request $request)
 	{

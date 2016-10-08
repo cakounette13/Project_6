@@ -18,10 +18,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 	        new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-	        new FOS\UserBundle\FOSUserBundle(),
 	        new Limenius\ReactBundle\LimeniusReactBundle(),
 	        new BirdBundle\BirdBundle(),
-            new UserBundle\UserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+	        new UserBundle\UserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
