@@ -29,7 +29,7 @@ class BirdsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
 	    $resolver->setDefaults(array(
-		    'data_class' => 'BirdBundle\Entity\Datas'
+		    'data_class' => 'BirdBundle\Entity\Datas',
 	    ));
     }
 

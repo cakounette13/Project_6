@@ -2,6 +2,7 @@
 
 namespace BirdBundle\Controller;
 
+use FOS\RestBundle\Controller\Annotations\Post;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -32,24 +33,12 @@ class DefaultController extends Controller {
 	}
 
 	/**
-	 * @Route("/form/ajax", name="form_ajax")
-	 * @Template("default/ajax_form.html.twig")
-	 * @Method("GET")
-	 */
-	public function jsonForm()
-	{
-		$form = $this->get('add_bird')->ajaxFrom();
-		return ['form' => $form->createView()];
-	}
-
-	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
 	 * @Template("default/new_observation.html.twig")
 	 */
 	public function addObservationAction(Request $request)
 	{
-
-		return [
-		];
+		$form = $this->get('add_bird')->ajaxFrom();
+		return ['form' => $form];
 	}
 }

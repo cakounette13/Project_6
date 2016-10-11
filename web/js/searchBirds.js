@@ -80,7 +80,6 @@ export default class GoogleMapBirds extends React.Component {
                 return marker.nom.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }
         );
-        console.log(birds);
         return (
             <GoogleMapLoader
                 containerElement={

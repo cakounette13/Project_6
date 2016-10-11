@@ -38,10 +38,10 @@ class AddBird {
 	public function ajaxFrom()
 	{
 		$bird = new Datas();
-		$form = $this->form->create(BirdsType::class, $bird);
-
+		$form = $this->form->create(BirdsType::class, $bird)->createView();
 		return $form;
 	}
+
 	public function formBuilder(Request $request)
 	{
 		$bird = new Datas();

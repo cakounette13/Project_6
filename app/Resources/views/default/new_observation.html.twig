@@ -10,15 +10,32 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    <div id="add_bird"></div>
+    <form>
+        <div>
+            {{ form_label(form.datevue) }}
+            {{ form_errors(form.datevue) }}
+            {{ form_widget(form.datevue) }}
+        </div>
+        <div>
+            {{ form_label(form.nom) }}
+            {{ form_errors(form.nom) }}
+            {{ form_widget(form.nom) }}
+        </div>
+        <div id="add_bird"></div>
+        <div>
+            {{ form_widget(form._token) }}
+            <input type="submit" value="Ajouter" className="btn btn-default"/>
+        </div>
+    </form>
+
 {% endblock %}
 {% block javascripts %}
     <script>
-        {# set a base url to '/' or maybe '/app_dev.php' #}
         window.baseUrl = '{{ path('add_observation') }}';
     </script>
     {% if app.environment == 'dev' %}
-        <script src="http://127.0.0.1:3000/static/addBird.js"></script>
+        <script src="http://127.0.0.1:3000/static/addBird.js">
+        </script>
     {% else %}
         <script src="{{ asset('dist/addBird.js') }} ></script>
     {% endif %}

@@ -37,6 +37,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="remarkable" level="application" />
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -49,6 +50,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="remarkable" level="application" />
   </component>
 </module>
