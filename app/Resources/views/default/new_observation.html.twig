@@ -10,7 +10,7 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    <form>
+    <form name="birds" method="post">
         <div>
             {{ form_label(form.datevue) }}
             {{ form_errors(form.datevue) }}

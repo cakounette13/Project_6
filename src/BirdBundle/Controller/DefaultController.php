@@ -38,7 +38,7 @@ class DefaultController extends Controller {
 	 */
 	public function addObservationAction(Request $request)
 	{
-		$form = $this->get('add_bird')->ajaxFrom();
-		return ['form' => $form];
+		$form = $this->get('add_bird')->formBuilder($request);
+		return ['form' => $form->createView()];
 	}
 }
