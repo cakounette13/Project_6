@@ -38,7 +38,7 @@ class AddBird {
 		$em = $this->em;
 		$form->handleRequest($request);
 		if ( $form->isValid() && $form->isSubmitted() ) {
-			$em->persist($form);
+			$em->persist($bird);
 			$em->flush();
 			return 'validate';
 		}

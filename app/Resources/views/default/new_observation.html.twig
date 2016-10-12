@@ -6,27 +6,18 @@
         #lat_lng{
             display: none;
         }
+        #birds{
+            height: auto;
+        }
     </style>
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    <form name="birds" method="post">
-        <div>
-            {{ form_label(form.datevue) }}
-            {{ form_errors(form.datevue) }}
-            {{ form_widget(form.datevue) }}
-        </div>
-        <div>
-            {{ form_label(form.nom) }}
-            {{ form_errors(form.nom) }}
-            {{ form_widget(form.nom) }}
-        </div>
+    {{ form_start(form) }}
+       {{ form_widget(form) }}
         <div id="add_bird"></div>
-        <div>
-            {{ form_widget(form._token) }}
-            <input type="submit" value="Ajouter" className="btn btn-default"/>
-        </div>
-    </form>
+        <input type="submit" value="Ajouter" className="btn btn-default"/>
+    {{ form_end(form) }}
 
 {% endblock %}
 {% block javascripts %}

@@ -20,9 +20,10 @@ class BirdsType extends AbstractType
 			},
 			'choice_label' => 'nomComplet'
 		])
-		          ->add('datevue')
-		          ->add('latitude')
-		          ->add('longitude')
+			->add('datevue')
+			->add('latitude')
+			->add('longitude')
+			->add('image')
 		;
     }
 
