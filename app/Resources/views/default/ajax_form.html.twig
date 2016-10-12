@@ -1,14 +1,3 @@
-{{ form_start(form) }}
-
-    <div>
-        {{ form_label(form.latitude) }}
-        {{ form_errors(form.latitude) }}
-        {{ form_widget(form.latitude) }}
-    </div>
-    <div>
-        {{ form_label(form.longitude) }}
-        {{ form_errors(form.longitude) }}
-        {{ form_widget(form.longitude) }}
-    </div>
-    <input type="submit" value="Ajouter" class="btn btn-default" />
-{{ form_end(form) }}
+<script>
+    var form = {{ form(form) }}
+</script>

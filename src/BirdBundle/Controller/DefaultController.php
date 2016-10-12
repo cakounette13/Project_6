@@ -2,13 +2,13 @@
 
 namespace BirdBundle\Controller;
 
-use FOS\RestBundle\Controller\Annotations\Post;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 	/**
@@ -31,6 +31,17 @@ class DefaultController extends Controller {
 		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
 		return new JsonResponse($birds);
 	}
+	/**
+	 * @Route("/json_form", name="json_form")
+	 * @Template("default/ajax_form.html.twig")
+	 * @Method("GET")
+	 */
+	public function jsonForm()
+	{
+		$form = $this->get('add_bird')->formBuilder();
+		return ['form' => $form];
+
+	}
 
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
@@ -38,7 +49,7 @@ class DefaultController extends Controller {
 	 */
 	public function addObservationAction(Request $request)
 	{
-		$form = $this->get('add_bird')->formBuilder($request);
-		return ['form' => $form->createView()];
+		$form = $this->get('add_bird')->formBuilder();
+		return ['form' => $form];
 	}
 }
