@@ -13,7 +13,8 @@
 {% endblock %}
 {% block body %}
     <h1>Ajouter un oiseau</h1>
-    <div id="add_bird" data-props='{{ form(form) }}'>
+    {{ form(form) }}
+    <div id="add_bird" data-form='{{ form(form) }}' >
     </div>
 
 {% endblock %}

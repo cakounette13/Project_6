@@ -1,11 +1,6 @@
 import { default as React, Component } from 'react';
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps";
 import canUseDOM from "can-use-dom";
-import $ from 'jquery';
-
-var Hello = props => (
-    <div>{props.nom}</div>
-);
 
 const geolocation = (
     canUseDOM && navigator.geolocation ?
@@ -27,9 +22,6 @@ export default class GoogleMapAddBird extends React.Component {
     };
 
     componentDidMount() {
-        $.getJSON("/json_form", (json) => {
-            this.setState({form: json});
-        });
         geolocation.getCurrentPosition((position) => {
             if (this.isUnmounted) {
                 return;
@@ -53,7 +45,7 @@ export default class GoogleMapAddBird extends React.Component {
     }
 
     render() {
-        console.log(this.state.form);
+        console.log(this.props.form);
         let position = this.state.center;
         return (
             <GoogleMapLoader
@@ -78,8 +70,7 @@ export default class GoogleMapAddBird extends React.Component {
                         <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lng}></input>
                         <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lat}></input>
                         <p>Placez le marker a l'endroit exact de l'observation :</p>
-                        <Hello/>
-                    </GoogleMap>
+                     </GoogleMap>
                 }
             />
         );
