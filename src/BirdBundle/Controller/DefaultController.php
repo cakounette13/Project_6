@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 	/**
@@ -30,16 +31,16 @@ class DefaultController extends Controller {
 		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
 		return new JsonResponse($birds);
 	}
-
 	/**
-	 * @Route("/form/ajax", name="form_ajax")
+	 * @Route("/json_form", name="json_form")
 	 * @Template("default/ajax_form.html.twig")
 	 * @Method("GET")
 	 */
 	public function jsonForm()
 	{
-		$form = $this->get('add_bird')->ajaxFrom();
-		return ['form' => $form->createView()];
+		$form = $this->get('add_bird')->formBuilder();
+		return ['form' => $form];
+
 	}
 
 	/**
@@ -48,8 +49,7 @@ class DefaultController extends Controller {
 	 */
 	public function addObservationAction(Request $request)
 	{
-
-		return [
-		];
+		$form = $this->get('add_bird')->formBuilder();
+		return ['form' => $form];
 	}
 }

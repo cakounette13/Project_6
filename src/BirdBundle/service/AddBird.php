@@ -12,7 +12,6 @@ use BirdBundle\Entity\Datas;
 use BirdBundle\Form\BirdsType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactory;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -35,28 +34,10 @@ class AddBird {
 		$this->form = $form;
 	}
 
-	public function ajaxFrom()
+	public function formBuilder()
 	{
 		$bird = new Datas();
-		$form = $this->form->create(BirdsType::class, $bird);
-
+		$form = $this->form->create(BirdsType::class, $bird)->createView();
 		return $form;
-	}
-	public function formBuilder(Request $request)
-	{
-		$bird = new Datas();
-		$em = $this->em;
-		$form = $this->form->create(BirdsType::class, $bird);
-		$form->handleRequest($request);
-		if ( $form->isValid() && $form->isSubmitted() ) {
-			$em->persist($bird);
-			$em->flush();
-			return 'validate';
-		}
-		return $form;
-	}
-
-	public function formValidate(Request $request)
-	{
 	}
 }

@@ -3,6 +3,9 @@ import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps";
 import canUseDOM from "can-use-dom";
 import $ from 'jquery';
 
+var Hello = props => (
+    <div>{props.nom}</div>
+);
 
 const geolocation = (
     canUseDOM && navigator.geolocation ?
@@ -24,9 +27,9 @@ export default class GoogleMapAddBird extends React.Component {
     };
 
     componentDidMount() {
-        $( "#add_bird_form" ).load( "form/ajax", function() {
-
-            this.setState({form : form}) });
+        $.getJSON("/json_form", (json) => {
+            this.setState({form: json});
+        });
         geolocation.getCurrentPosition((position) => {
             if (this.isUnmounted) {
                 return;
@@ -50,8 +53,7 @@ export default class GoogleMapAddBird extends React.Component {
     }
 
     render() {
-        let birdForm = this.state.form;
-        console.log(birdForm);
+        console.log(this.state.form);
         let position = this.state.center;
         return (
             <GoogleMapLoader
@@ -73,24 +75,10 @@ export default class GoogleMapAddBird extends React.Component {
                                 position={new google.maps.LatLng(position.lat, position.lng)}
                                 onDragend={this.markerCoords.bind(this)}
                         />
-                        <div>
-                            <label htmlFor="form_longitude" className="required">Longitude</label>
-                            <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lng}></input>
-                        </div>
-                        <div>
-                            <label htmlFor="form_latitude" className="required">Latitude</label>
-                            <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lat}></input>
-                        </div>
-                        <div>
-                            <label htmlFor="nom" className="required">Nom</label>
-                            <input id="nom" name="form[nom]" required="required" type="text"></input>
-                        </div>
-                        <div>
-                            <label htmlFor="form_date" className="required">Date</label>
-                            <input id="form_date" name="form[date]" required="required" type="date"></input>
-                        </div>
+                        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lng}></input>
+                        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lat}></input>
                         <p>Placez le marker a l'endroit exact de l'observation :</p>
-                        <input type="submit" value="Ajouter" className="btn btn-default pull-right" />
+                        <Hello/>
                     </GoogleMap>
                 }
             />

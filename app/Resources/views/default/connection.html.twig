@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div id="fullpage">
+        <!--HOME-->
+
+        <!--CONTACT-->
+        <div class="section" data-anchor="" id="section4">
+            <div class="slide">
+                <h2>Se connecter</h2>
+                <div class="" id="c_form_mail">
+
+                    <input name="i_email" type="email" value="" placeholder="Email" />
+                    <input name="i_name" type="password" value="" placeholder="Mot de passe" />
+                    <div class="" id="oubli" name="i_name"><a href="/oubli">J'ai oublié mon mot de passe</a></div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-center">
+
+                                <button class="btn btn-primary">Se connecter</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-center">
+
+                                <button class="btn btn-primary">S'inscrire</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,828 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    border:none;
+    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
+    font-smooth: always;
+
+    font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body{
+    margin:0 !important;
+    padding:0 !important;
+    background-color:black;
+}
+
+h1{
+    font-family: 'Satisfy', cursive;
+    color: black;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    min-width: 360px;
+}
+
+h2{
+    font-family: 'Comfortaa', cursive;
+    color: #fbfbfb;
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition:0.3s cubic-bezier(.49,.32,.36,1.56);
+    margin-top: 40px;
+}
+
+.section.fp-completely h2{
+    opacity: 1;
+    margin-top: 0px;
+}
+
+h3{
+    font-family: 'Kanit', cursive;
+    color: #fbfbfb;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    opacity: 1;
+    transition:0.3s cubic-bezier(.49,.32,.36,1.56);
+    margin-top: 25%;
+}
+
+h4{
+    font-family: 'Kanit', cursive;
+    color: #fbfbfb;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    display: block;
+    width: 30%;
+    margin: auto;
+    line-height: 1;
+    min-width: 360px;
+}
+
+h5{
+    font-family: 'Kanit', cursive;
+    color: #fbfbfb;
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin: auto;
+    line-height: 1.2;
+    opacity: 0;
+    transition:0.2s ease-in;
+    transition-delay: 0.2s;
+    margin-top: 40px;
+}
+
+
+span
+{
+    font-family: 'Wendy One', sans-serif;
+    font-weight: 900;
+    font-size: inherit;
+}
+
+
+.section.fp-completely h5{
+    opacity: 1;
+    margin-top: 0px;
+}
+
+#header{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: -33px;
+    left: 0;
+    z-index: 90;
+}
+#header a{
+
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    color:#fbfbfb;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Wendy One', sans-serif;
+    text-decoration: none;
+}
+#header #c_logo{
+    height: 100%;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    float: left;
+}
+#header #c_link_beta{
+    height: 100%;
+    float: right;
+}
+
+@media only screen and (max-width: 1200px) {
+    #header #c_logo {
+        width: 110%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #header #c_logo {
+        width: 115%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #header #c_logo {
+        width: 120%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #header #c_logo {
+        width: 124%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #header #c_logo {
+        width: 135%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button{
+    height: 54px;
+    width: 160px;
+    position: relative;
+    margin: 50px auto;
+    cursor: pointer;
+    font-family: 'Satisfy', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    color:#fbfbfb;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 54px;
+    transition:0.2s cubic-bezier(.49,.32,.36,1.56);
+    transition-delay: 0.4s;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.section.fp-completely .button{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+.button a,
+#buton_nl input{
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    color:#fbfbfb !important;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 54px;
+    position: absolute;
+    background-color: transparent !important;
+    outline: none;
+    border: none;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+
+
+
+
+.bloc_text{
+    height: 240px;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.section.left_layout .bloc_text{
+    right: 14%;
+}
+.section.right_layout .bloc_text{
+    left: 14%;
+}
+
+
+.c_illus{
+    height: 90%;
+    width: 50%;
+    position: absolute;
+    top: 0%;
+
+}
+
+
+.section.left_layout .c_illus{
+    left: 0%;
+}
+.section.right_layout .c_illus{
+    right: 0%;
+}
+
+
+
+
+
+.section.fp-completely .c_illus {
+    opacity: 1;
+    transform: scale(1) rotateZ(-15deg);
+}
+
+
+
+
+
+
+
+
+.section.fp-completely .c_illus {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.section.fp-completely .shadow_phone{
+    opacity: 0.03;
+    transform: scale(1);
+}
+
+
+
+.section .c_illus .window{
+    transform-origin: bottom center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
+}
+
+.section.fp-completely .c_illus .window{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
+
+
+#section4 h2{
+
+    text-align: center;
+    margin-top: -5%;
+}
+
+#section4 .button{
+
+    font-family: 'Satisfy', cursive;
+}
+
+#c_form_mail{
+    height: 280px;
+    width: 400px;
+    margin: auto;
+}
+
+#submit
+{
+    margin-top: 20px;
+    margin-bottom:;: 20px;
+
+}
+
+#c_form_mail input,
+#c_form_mail textarea{
+    display: block;
+    height: 60px;
+    width: calc(100% - 60px);
+    background-color: #fbfbfb;
+    border: none;
+    outline: none;
+    margin-bottom: 2px;
+    padding-left: 0px;
+    background-size: 15px;
+    background-position:25px center ;
+    background-repeat: no-repeat;
+    font-family: "source sans light";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
+    opacity: 0;
+}
+
+#c_form_mail input[name="i_name"]{
+    background-image: url("../icons/user.svg");
+    transition-delay: 0.1s;
+    background-position:22px center;
+    margin-left: 30px;
+}
+
+#c_form_mail input[name="i_email"]{
+    background-image: url("../icons/envelope.svg");
+    transition-delay: 0.2s;
+    margin-left: 30px;
+}
+
+#upload{
+    transition-delay: 0.3s;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: O;
+}
+
+.custom_btn
+{
+    width: 48%;
+}
+
+#first_btn
+{
+    margin-right: 2%;
+}
+
+
+
+
+
+#c_form_mail textarea{
+    height: calc(100% - 166px);
+    margin-left: 30px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    resize: none;
+    transition-delay: 0.3s;
+}
+
+#c_lb_email{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: -100%;
+}d
+
+ #c_lb_email.open{
+     left: 0;
+ }
+
+#c_lb_email h5{
+    color: #fbfbfb;
+    opacity: 1;
+    text-align: center;
+}
+
+#lb_conf_email{
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    background-color: #fbfbfb;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
+    opacity: 0;
+}
+
+#c_lb_email.open #lb_conf_email{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.overlay{
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+#c_lb_email.open .overlay{
+    opacity: 0.5;
+}
+
+
+
+
+.section.fp-completely #c_form_mail input,
+.section.fp-completely #c_form_mail textarea{
+    opacity: 1;
+    padding-left: 60px;
+}
+
+
+
+#connexion {
+    vertical-align: top;
+    position: absolute;
+}
+
+#hamburger {
+    margin-top: 27px;
+    float: left;
+    margin-left: 30px;
+}
+
+#title {
+    font-size: x-large !important;
+    vertical-align: text-top;
+
+}
+
+/*first page map*/
+
+input#input-search {
+    margin-bottom: 10px;
+    width: 80% !important;
+    margin-left: 10% !important;
+
+}
+
+.gm-style {
+    height: 91% !important;
+}
+
+
+html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div{
+    height: 150px;
+    line-height: 1.35 !important;
+    white-space: nowrap !important;
+    color: black;
+}
+
+html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div div.gm-style-iw div div div{
+    overflow: hidden;
+}
+
+#thumbnail-preview-indicators {
+    position: relative;
+    overflow: hidden;
+}
+#thumbnail-preview-indicators .slides .slide-1,
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3 {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#thumbnail-preview-indicators,
+#thumbnail-preview-indicators .slides,
+#thumbnail-preview-indicators .slides .slide-1,
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3 {
+    height: 480px;
+}
+#thumbnail-preview-indicators .slides .slide-1 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg);
+}
+#thumbnail-preview-indicators .slides .slide-2 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg);
+}
+#thumbnail-preview-indicators .slides .slide-3 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg);
+}
+#thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
+    top: 20%;
+    bottom: inherit;
+}
+#thumbnail-preview-indicators .carousel-indicators li,
+#thumbnail-preview-indicators .carousel-indicators li.active {
+    position: relative;
+    width: 100px;
+    height: 8px;
+}
+#thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    display: none;
+    opacity: 0;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -50px;
+}
+#thumbnail-preview-indicators .carousel-indicators li:hover > .thumbnail,
+#thumbnail-preview-indicators .carousel-indicators li.active:hover > .thumbnail
+{
+    display: block;
+    opacity: .8;
+}
+#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail
+{
+    display: none;
+}
+#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail:hover{
+    opacity: 1;
+}
+
+@media screen and (max-width : 480px) {
+    #thumbnail-preview-indicators .carousel-indicators li,
+    #thumbnail-preview-indicators .carousel-indicators li.active {
+        width: 50px;
+        height: 8px;
+        position: relative;
+    }
+    #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+        width: 50px;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -25px;
+    }
+}
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb
+*/
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+span.glyphicon.glyphicon-chevron-left{
+    margin-left: 35px !important;
+}
+
+span.glyphicon.glyphicon-chevron-right{
+    margin-right: 35px !important;
+}
+
+
+
+.carousel-inner {
+    width: 80% !important;
+    margin: auto;
+}
+
+.carousel-control:hover
+{
+    opacity: 0.3 !important;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/*nouvelles observations*/
+
+#map_height
+{
+    height: 1000px;
+}
+
+#add_bird
+{
+    margin: auto !important;
+    height: 80%;
+}
+
+label
+{
+    width: 25%;
+}
+
+input
+{
+    width: 75%;
+}
+
+#observation
+{
+    margin-top: 40px;
+    height: 100%;
+
+}
+
+html.fa-events-icons-failed body div#map_height div#observation.section.container-fluid div#add_bird div div
+{
+    margin-bottom: 55px;
+}
+
+#add_bird > div > div:nth-child(2)
+{
+    margin-top: 50px;
+    height: 680px !important;
+}
+
+#add_bird > div > div:nth-child(1) > input
+{
+    width: 100% !important;
+}
+
+
+
+/*last_observations*/
+
+#panel_obs
+{
+    margin-top: 60px;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+/* Custom panel-heading colors in the panel components*/
+
+.panel-default > .panel-heading-custom3{
+    background-image: none;
+    background-color: #f07c4a;
+    color: #ffffff;
+}
+/* End custom panel-heading colors */
+
+@media all and (max-width: 640px){
+    .panel-right
+    {
+        left:5px;
+    }
+
+    .panel-left
+    {
+        right: 5px;
+    }
+}
+
+
+/*login page*/
+
+#oubli
+{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+
+
+
+
+
+@media all and (max-width: 640px)
+{
+    h1{
+        min-width: 80%;
+    }
+    h4{
+        min-width: 80%;
+    }
+    .c_illus{
+        height: 60%;
+        width: 100%;
+        top: 0;
+    }
+    .bloc_text{
+        height: 40%;
+        width: 80%;
+        top: 55%;
+        bottom:0;
+        transform: translateY(0);
+        left: 10% !important;
+        right: 10%;
+    }
+    .bloc_text h2,
+    .bloc_text h5{
+        text-align: center;
+    }
+    .bloc_text h2{
+        font-size: 20px;
+    }
+    .bloc_text h5{
+        font-size: 14px;
+    }
+    .button{
+        margin:40px auto !important;
+    }
+
+
+    .phone_right{
+        left:25%;
+    }
+
+    .phone_right svg{
+        height:90%;
+    }
+
+    #section1 .button,
+    #section2 .button,
+    #footer{
+        display: none;
+    }
+
+    #section4 h2{
+        margin-top: 10%;
+    }
+
+    #c_form_mail{
+        height: 150px;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
