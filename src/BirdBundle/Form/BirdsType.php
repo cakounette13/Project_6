@@ -15,7 +15,8 @@ class BirdsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-		$builder->add('nom',  EntityType::class, [
+		$builder
+			->add('nom',  EntityType::class, [
 			'class' => 'BirdBundle:Taxref',
 			'query_builder' => function (TaxrefRepository $er) {
 				return $er->createQueryBuilder( 't' )
@@ -25,14 +26,13 @@ class BirdsType extends AbstractType
 		])
 			->add('datevue', DateType::class)
 			->add('image', FileType::class)
-			->add('latitude', HiddenType::class)
-			->add('longitude', HiddenType::class)
 		;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
 	    $resolver->setDefaults(array(
+		    'allow_extra_fields' => true,
 		    'data_class' => 'BirdBundle\Entity\Datas',
 	    ));
     }

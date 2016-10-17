@@ -35,17 +35,11 @@ class AddBird {
 	{
 		$bird = new Datas();
 		$form = $this->form->create(BirdsType::class, $bird);
-		$latLng = $request->request->get('form');
-		$latitude = $latLng['latitude'];
-		$longitude = $latLng['longitude'];
-		$form->get('latitude')->setData($latitude);
-		$form->get('longitude')->setData($longitude);
 		$form->handleRequest($request);
 		if ($form->isValid() && $form->isSubmitted()) {
-
 			$form->getData();
 			$em = $this->em;
-			$em->persist($form);
+			$em->persist($bird);
 			$em->flush();
 		}
 		return $form;

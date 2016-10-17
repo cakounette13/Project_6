@@ -24,15 +24,6 @@
 
 {% endblock %}
 {% block javascripts %}
-    <script>
-        window.baseUrl = '{{ path('add_observation') }}';
-    </script>
-    <script>
-        $( "#birds" )
-                .change(function () {
-                })
-                .change();
-    </script>
     {% if app.environment == 'dev' %}
         <script src="http://127.0.0.1:3000/static/addBird.js">
         </script>
