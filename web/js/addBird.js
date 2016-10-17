@@ -45,7 +45,6 @@ export default class GoogleMapAddBird extends React.Component {
     }
 
     render() {
-        console.log(this.props.form);
         let position = this.state.center;
         return (
             <GoogleMapLoader
@@ -67,8 +66,9 @@ export default class GoogleMapAddBird extends React.Component {
                                 position={new google.maps.LatLng(position.lat, position.lng)}
                                 onDragend={this.markerCoords.bind(this)}
                         />
-                        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lng}></input>
-                        <input id="form_longitude" name="form[longitude]" required="required" type="text" value={position.lat}></input>
+                        {this.props.form}
+                        <input id="birds_longitude" name="birds[longitude]" required="required" type="hidden" value={position.lng}></input>
+                        <input id="birds_latitude" name="birds[latitude]" required="required" type="hidden" value={position.lat}></input>
                         <p>Placez le marker a l'endroit exact de l'observation :</p>
                      </GoogleMap>
                 }

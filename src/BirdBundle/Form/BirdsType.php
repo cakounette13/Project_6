@@ -6,8 +6,8 @@ use BirdBundle\Repository\TaxrefRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,9 +24,9 @@ class BirdsType extends AbstractType
 			'choice_label' => 'nomComplet'
 		])
 			->add('datevue', DateType::class)
-			->add('latitude', NumberType::class)
-			->add('longitude', NumberType::class)
-			->add('image', TextType::class)
+			->add('image', FileType::class)
+			->add('latitude', HiddenType::class)
+			->add('longitude', HiddenType::class)
 		;
     }
 
