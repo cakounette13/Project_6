@@ -44,6 +44,7 @@
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="assets_base_url">http://localhost:8080</parameter>
     <parameter key="locale">en</parameter>
+    <parameter key="images_directory">C:\devWeb\wamp\www\NAO\Project_6\app/../web/uploads/images</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -608,13 +609,8 @@
                   <tag name="cache.pool"/>
                   <argument>Rr0NeJmxXW</argument>
                   <argument>0</argument>
-<<<<<<< HEAD
-                  <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+                  <argument>bBp0f1RPqob5E1lvuF+F8w</argument>
                   <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
-=======
-                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
-                  <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
->>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -626,13 +622,8 @@
                   <tag name="cache.pool"/>
                   <argument>o1ae6YyOVT</argument>
                   <argument>0</argument>
-<<<<<<< HEAD
-                  <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+                  <argument>bBp0f1RPqob5E1lvuF+F8w</argument>
                   <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
-=======
-                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
-                  <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
->>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -1280,13 +1271,8 @@
       <tag name="cache.pool"/>
       <argument>BSteJM85Zc</argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+      <argument>bBp0f1RPqob5E1lvuF+F8w</argument>
       <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
-=======
-      <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
-      <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
->>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2138,11 +2124,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-<<<<<<< HEAD
-            <argument>580497c3179d48.30366846</argument>
-=======
-            <argument>58054a36289852.98801901</argument>
->>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
+            <argument>580613a43acca3.86460029</argument>
           </service>
         </argument>
       </argument>
@@ -2436,11 +2418,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-<<<<<<< HEAD
-            <argument>580497c3179d48.30366846</argument>
-=======
-            <argument>58054a36289852.98801901</argument>
->>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
+            <argument>580613a43acca3.86460029</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3478,6 +3456,7 @@
         <argument key="secret">ThisTokenIsNotSoSecretChangeIt</argument>
         <argument key="assets_base_url">http://localhost:8080</argument>
         <argument key="locale">en</argument>
+        <argument key="images_directory">C:\devWeb\wamp\www\NAO\Project_6\app/../web/uploads/images</argument>
         <argument key="fragment.renderer.hinclude.global_template">null</argument>
         <argument key="fragment.path">/_fragment</argument>
         <argument key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</argument>

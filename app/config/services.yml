@@ -16,13 +16,4 @@ services:
       class: BirdBundle\service\AddBird
       arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
-  add.image_uploader:
-      class: BirdBundle\service\UploadFile
-      arguments: ['%images_directory%']
 
-  app.doctrine_image_listener:
-      class: BirdBundle\EventListener\ImageUploadListener
-      arguments: ["@add.image_uploader"]
-      tags:
-          - { name: doctrine.event_listener, event: prePersist }
-          - { name: doctrine.event_listener, event: preUpdate }
