@@ -1,7 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 
-
+body{
+    background: #2C3E50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2C3E50 , #4CA1AF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, rgb(44, 62, 80), #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin:0 !important;
+    padding:0 !important;
+    background-color:black;
+}
 
 *{
     margin:0;
@@ -14,12 +21,6 @@
     font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
-}
-
-body{
-    margin:0 !important;
-    padding:0 !important;
-    background-color:black;
 }
 
 h1{
@@ -131,7 +132,6 @@ span
     font-size: 16px;
     color:#fbfbfb;
     text-transform: uppercase;
-    text-align: center;
     font-family: 'Wendy One', sans-serif;
     text-decoration: none;
 }
@@ -147,7 +147,7 @@ span
     float: right;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen  {
     #header #c_logo {
         width: 110%;
     }
@@ -721,7 +721,14 @@ span.glyphicon.glyphicon-chevron-right{
 
 /*nouvelles observations*/
 
-
+#lat_lng{
+    display: none;
+}
+#birds{
+    width: 80%;
+    margin: auto;
+    height: 80%;
+}
 
 .margin-top
 {

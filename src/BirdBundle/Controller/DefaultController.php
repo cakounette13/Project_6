@@ -44,7 +44,7 @@ class DefaultController extends Controller {
 	}
 
 	/**
-     * @Route("/login", name="login")
+    * @Route("/login", name="login")
      * @Template("default/connection.html.twig")
      */
 	public function login()
