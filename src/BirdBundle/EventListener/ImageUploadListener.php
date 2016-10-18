@@ -15,6 +15,9 @@ use BirdBundle\Entity\Datas;
 use BirdBundle\FileUploader;
 
 class ImageUploadListener {
+	/**
+	 * @var FileUploader
+	 */
 	private $uploader;
 
 	public function __construct(FileUploader $uploader)
