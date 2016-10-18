@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/var/www/html/Project_6/app</parameter>
+    <parameter key="kernel.root_dir">C:\devWeb\wamp\www\NAO\Project_6\app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">/var/www/html/Project_6/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/var/www/html/Project_6/var/logs</parameter>
+    <parameter key="kernel.cache_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\devWeb\wamp\www\NAO\Project_6\var\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -22,6 +22,7 @@
       <parameter key="BirdBundle">BirdBundle\BirdBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
+      <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -33,20 +34,20 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">projet_6</parameter>
+    <parameter key="database_name">nao_clean</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">Ad#Cg5#m</parameter>
+    <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
-    <parameter key="mailer_user">arthur.watier@gmail.com</parameter>
-    <parameter key="mailer_password">diwiqswoinfamnfi</parameter>
-    <parameter key="secret">K6zn5gnh</parameter>
+    <parameter key="mailer_user">null</parameter>
+    <parameter key="mailer_password">null</parameter>
+    <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="assets_base_url">http://localhost:8080</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="images_directory">/var/www/html/Project_6/app/../web/uploads/images</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
-    <parameter key="kernel.secret">K6zn5gnh</parameter>
+    <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
@@ -56,7 +57,7 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/var/www/html/Project_6/app/../var/sessions/dev</parameter>
+    <parameter key="session.save_path">C:\devWeb\wamp\www\NAO\Project_6\app/../var/sessions/dev</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -70,7 +71,7 @@
     <parameter key="translator.logging">true</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/var/www/html/Project_6/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/profiler</parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -82,13 +83,13 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">/var/www/html/Project_6/app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:\devWeb\wamp\www\NAO\Project_6\app/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.prefix"></parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/var/www/html/Project_6/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
@@ -186,8 +187,8 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">arthur.watier@gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">diwiqswoinfamnfi</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
@@ -308,7 +309,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/var/www/html/Project_6/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -320,7 +321,7 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
-    <parameter key="doctrine_migrations.dir_name">/var/www/html/Project_6/app/DoctrineMigrations</parameter>
+    <parameter key="doctrine_migrations.dir_name">C:\devWeb\wamp\www\NAO\Project_6\app/DoctrineMigrations</parameter>
     <parameter key="doctrine_migrations.namespace">Application\Migrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.name">Application Migrations</parameter>
@@ -383,6 +384,23 @@
       <parameter>Registration</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="knp_menu.factory.class">Knp\Menu\MenuFactory</parameter>
+    <parameter key="knp_menu.factory_extension.routing.class">Knp\Menu\Integration\Symfony\RoutingExtension</parameter>
+    <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
+    <parameter key="knp_menu.matcher.class">Knp\Menu\Matcher\Matcher</parameter>
+    <parameter key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</parameter>
+    <parameter key="knp_menu.menu_provider.container_aware.class">Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.menu_provider.builder_alias.class">Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider</parameter>
+    <parameter key="knp_menu.renderer_provider.class">Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.renderer.list.class">Knp\Menu\Renderer\ListRenderer</parameter>
+    <parameter key="knp_menu.renderer.list.options" type="collection"/>
+    <parameter key="knp_menu.listener.voters.class">Knp\Bundle\MenuBundle\EventListener\VoterInitializerListener</parameter>
+    <parameter key="knp_menu.voter.router.class">Knp\Menu\Matcher\Voter\RouteVoter</parameter>
+    <parameter key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</parameter>
+    <parameter key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</parameter>
+    <parameter key="knp_menu.renderer.twig.options" type="collection"/>
+    <parameter key="knp_menu.renderer.twig.template">KnpMenuBundle::menu.html.twig</parameter>
+    <parameter key="knp_menu.default_renderer">twig</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -525,7 +543,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/var/www/html/Project_6/app/Resources</argument>
+                <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -552,7 +570,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/var/www/html/Project_6/app/Resources</argument>
+                <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources</argument>
               </service>
             </argument>
             <argument type="collection"/>
@@ -565,7 +583,7 @@
             <argument type="service">
               <service class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
                 <argument type="service" id="kernel"/>
-                <argument>/var/www/html/Project_6/app</argument>
+                <argument>C:\devWeb\wamp\www\NAO\Project_6\app</argument>
                 <argument type="collection"/>
               </service>
             </argument>
@@ -597,10 +615,21 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
+<<<<<<< HEAD
                   <argument>WU3lzS7xZ9</argument>
                   <argument>0</argument>
                   <argument>ivdRgqw127-DDiQJQTSapQ</argument>
+=======
+                  <argument>Rr0NeJmxXW</argument>
+                  <argument>0</argument>
+<<<<<<< HEAD
+                  <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+                  <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
+=======
+                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -610,10 +639,21 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
+<<<<<<< HEAD
                   <argument>dp8IIoV33V</argument>
                   <argument>0</argument>
                   <argument>ivdRgqw127-DDiQJQTSapQ</argument>
+=======
+                  <argument>o1ae6YyOVT</argument>
+                  <argument>0</argument>
+<<<<<<< HEAD
+                  <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+                  <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
+=======
+                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -631,10 +671,10 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/var/www/html/Project_6/app/Resources</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
-      <argument>K6zn5gnh</argument>
+      <argument>ThisTokenIsNotSoSecretChangeIt</argument>
     </service>
     <service id="config_cache_factory" class="Symfony\Component\Config\ResourceCheckerConfigCacheFactory">
       <argument type="collection">
@@ -748,322 +788,320 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/var/www/html/Project_6/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
-          <argument key="pt" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt.yml</argument>
-          </argument>
-          <argument key="da" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.da.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.da.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.da.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.da.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.da.yml</argument>
-          </argument>
-          <argument key="en" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.en.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.en.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.en.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml</argument>
-          </argument>
-          <argument key="pt_BR" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_BR.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt_BR.yml</argument>
-          </argument>
-          <argument key="gl" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.gl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.gl.xlf</argument>
-          </argument>
-          <argument key="lt" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lt.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lt.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lt.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lt.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lt.yml</argument>
-          </argument>
-          <argument key="zh_TW" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf</argument>
-          </argument>
-          <argument key="sl" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
-          </argument>
-          <argument key="sk" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sk.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sk.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sk.yml</argument>
-          </argument>
-          <argument key="id" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.id.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.id.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.id.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.id.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.id.yml</argument>
-          </argument>
-          <argument key="no" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.no.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.no.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.no.xlf</argument>
-          </argument>
-          <argument key="sv" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sv.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sv.yml</argument>
-          </argument>
-          <argument key="ja" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ja.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ja.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ja.yml</argument>
-          </argument>
-          <argument key="hu" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hu.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hu.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hu.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hu.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hu.yml</argument>
+          <argument key="af" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.af.yml</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ar.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ar.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ar.yml</argument>
-          </argument>
-          <argument key="es" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.es.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.es.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
-          </argument>
-          <argument key="lv" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lv.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lv.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lv.yml</argument>
-          </argument>
-          <argument key="nn" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nn.xlf</argument>
-          </argument>
-          <argument key="de" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.de.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.de.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.de.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml</argument>
-          </argument>
-          <argument key="sr_Cyrl" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Cyrl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ar.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ar.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ar.yml</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.az.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.az.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.az.xlf</argument>
-          </argument>
-          <argument key="uk" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
-          </argument>
-          <argument key="sq" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
-          </argument>
-          <argument key="cy" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf</argument>
-          </argument>
-          <argument key="fa" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fa.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fa.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fa.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fa.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fa.yml</argument>
-          </argument>
-          <argument key="nl" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.nl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nl.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nl.yml</argument>
-          </argument>
-          <argument key="eu" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.eu.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.eu.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eu.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eu.yml</argument>
-          </argument>
-          <argument key="hr" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hr.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hr.yml</argument>
-          </argument>
-          <argument key="ru" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ru.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ru.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
-          </argument>
-          <argument key="hy" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hy.xlf</argument>
-          </argument>
-          <argument key="fr" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
-          </argument>
-          <argument key="th" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.th.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.th.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.th.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.th.yml</argument>
-          </argument>
-          <argument key="zh_CN" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.zh_CN.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.zh_CN.yml</argument>
-          </argument>
-          <argument key="fi" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fi.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fi.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fi.yml</argument>
-          </argument>
-          <argument key="pl" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pl.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pl.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
-          </argument>
-          <argument key="he" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.he.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.he.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.he.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.he.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.he.yml</argument>
-          </argument>
-          <argument key="af" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.af.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.af.yml</argument>
-          </argument>
-          <argument key="et" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.et.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.et.yml</argument>
-          </argument>
-          <argument key="sr_Latn" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Latn.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sr_Latn.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sr_Latn.yml</argument>
-          </argument>
-          <argument key="it" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.it.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
-          </argument>
-          <argument key="cs" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.cs.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.cs.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.cs.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.cs.yml</argument>
-          </argument>
-          <argument key="mn" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.mn.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.mn.xlf</argument>
-          </argument>
-          <argument key="lb" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lb.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lb.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lb.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lb.yml</argument>
-          </argument>
-          <argument key="tr" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.tr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.tr.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.tr.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.tr.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bg.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.bg.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.bg.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.bg.yml</argument>
-          </argument>
-          <argument key="vi" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.vi.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.vi.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.vi.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.vi.yml</argument>
-          </argument>
-          <argument key="ro" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ro.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ro.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ro.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.bg.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.bg.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.bg.yml</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ca.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ca.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ca.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ca.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ca.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ca.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ca.yml</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.cs.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.cs.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.cs.yml</argument>
+          </argument>
+          <argument key="cy" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cy.xlf</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.da.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.da.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.da.yml</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.de.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.de.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.el.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.el.xlf</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.el.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.el.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.el.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.el.yml</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.en.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.en.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.en.yml</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.es.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.es.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.es.yml</argument>
+          </argument>
+          <argument key="et" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.et.yml</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.eu.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.eu.yml</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fa.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fa.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fa.yml</argument>
+          </argument>
+          <argument key="fi" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fi.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fi.yml</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
+          </argument>
+          <argument key="gl" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.gl.xlf</argument>
+          </argument>
+          <argument key="he" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.he.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.he.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.he.yml</argument>
+          </argument>
+          <argument key="hr" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hr.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hr.yml</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hu.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hu.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hu.yml</argument>
+          </argument>
+          <argument key="hy" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hy.xlf</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.id.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.id.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.id.yml</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.it.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.it.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.it.yml</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ja.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ja.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ja.yml</argument>
+          </argument>
+          <argument key="lb" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lb.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lb.yml</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lt.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lt.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lt.yml</argument>
+          </argument>
+          <argument key="mn" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.mn.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.nl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nl.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nl.yml</argument>
+          </argument>
+          <argument key="nn" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nn.xlf</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.no.xlf</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pl.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pl.yml</argument>
+          </argument>
+          <argument key="pt" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt.yml</argument>
+          </argument>
+          <argument key="pt_BR" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt_BR.yml</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ro.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ro.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ro.yml</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ru.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ru.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ru.yml</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sk.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sk.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sk.yml</argument>
+          </argument>
+          <argument key="sl" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sl.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sl.yml</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sq.xlf</argument>
+          </argument>
+          <argument key="sr_Cyrl" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Cyrl.xlf</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sr_Latn.yml</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sv.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sv.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sv.yml</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.th.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.th.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.th.yml</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.tr.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.tr.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.tr.yml</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.uk.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.uk.yml</argument>
+          </argument>
+          <argument key="vi" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.vi.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.vi.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.vi.yml</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.zh_CN.yml</argument>
+          </argument>
+          <argument key="zh_TW" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_TW.xlf</argument>
+          </argument>
+          <argument key="lv" type="collection">
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lv.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lv.yml</argument>
           </argument>
           <argument key="pt_PT" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_PT.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_PT.xlf</argument>
           </argument>
           <argument key="ua" type="collection">
-            <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ua.xlf</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ua.xlf</argument>
           </argument>
           <argument key="ky" type="collection">
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ky.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ky.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ky.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ky.yml</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nb.yml</argument>
-            <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nb.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nb.yml</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nb.yml</argument>
           </argument>
         </argument>
       </argument>
@@ -1252,19 +1290,34 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
+<<<<<<< HEAD
       <argument>iwr4Ad3zvZ</argument>
+=======
+      <argument>wtdYgnCR2R</argument>
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
       <argument>0</argument>
-      <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
+<<<<<<< HEAD
       <argument>IVV7tBE9Jf</argument>
       <argument>0</argument>
       <argument>ivdRgqw127-DDiQJQTSapQ</argument>
+=======
+      <argument>BSteJM85Zc</argument>
+      <argument>0</argument>
+<<<<<<< HEAD
+      <argument>xOL4C41AmA7T9SSJX0bJhA</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/pools</argument>
+=======
+      <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1538,7 +1591,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>/var/www/html/Project_6/var/cache/dev</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev</argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
@@ -1568,8 +1621,8 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
-          <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/config/validation.xml</argument>
+          <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle\Resources\config\validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1590,7 +1643,7 @@
         </argument>
       </call>
       <call method="addXmlMapping">
-        <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/DependencyInjection/Compiler/../../Resources/config/storage-validation/orm.xml</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle\DependencyInjection\Compiler/../../Resources/config/storage-validation/orm.xml</argument>
       </call>
       <factory class="Symfony\Component\Validator\Validation" method="createValidatorBuilder"/>
     </service>
@@ -1610,7 +1663,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:/var/www/html/Project_6/var/cache/dev/profiler</argument>
+          <argument>file:C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/profiler</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
@@ -1931,6 +1984,14 @@
         </argument>
         <argument>0</argument>
       </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>knp_menu.listener.voters</argument>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
@@ -2108,7 +2169,15 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
             <argument>5805e742dd9f90.13581853</argument>
+=======
+<<<<<<< HEAD
+            <argument>580497c3179d48.30366846</argument>
+=======
+            <argument>58054a36289852.98801901</argument>
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
           </service>
         </argument>
       </argument>
@@ -2402,7 +2471,15 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
+<<<<<<< HEAD
             <argument>5805e742dd9f90.13581853</argument>
+=======
+<<<<<<< HEAD
+            <argument>580497c3179d48.30366846</argument>
+=======
+            <argument>58054a36289852.98801901</argument>
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
+>>>>>>> a834d3804e24a4f57a3628432439de712485c42b
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2505,7 +2582,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">/var/www/html/Project_6/var/cache/dev/twig</argument>
+        <argument key="cache">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2565,7 +2642,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>/var/www/html/Project_6/app</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -2656,6 +2733,27 @@
       </call>
       <call method="addExtension">
         <argument type="service">
+          <service class="Knp\Menu\Twig\MenuExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service">
+              <service class="Knp\Menu\Twig\Helper" public="false">
+                <argument type="service" id="knp_menu.renderer_provider"/>
+                <argument type="service" id="knp_menu.menu_provider"/>
+                <argument type="service">
+                  <service class="Knp\Menu\Util\MenuManipulator" public="false"/>
+                </argument>
+                <argument type="service" id="knp_menu.matcher"/>
+              </service>
+            </argument>
+            <argument type="service" id="knp_menu.matcher"/>
+            <argument type="service">
+              <service class="Knp\Menu\Util\MenuManipulator" public="false"/>
+            </argument>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
             <tag name="twig.extension"/>
             <argument type="service" id="var_dumper.cloner"/>
@@ -2719,7 +2817,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/var/www/html/Project_6/var/logs/dev.log</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2761,9 +2859,9 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">projet_6</argument>
+        <argument key="dbname">nao_clean</argument>
         <argument key="user">root</argument>
-        <argument key="password">Ad#Cg5#m</argument>
+        <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -2837,17 +2935,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_788a5958cf958c477937e4c25fa9fb8e7427709766ef2e9ee7aa45c48a1d28ea</argument>
+        <argument>sf2orm_default_04659ef823fdc23c5d6db5e04b3ba4332856a3a98e22e0fb0c8da33c4bc8cb7d</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_788a5958cf958c477937e4c25fa9fb8e7427709766ef2e9ee7aa45c48a1d28ea</argument>
+        <argument>sf2orm_default_04659ef823fdc23c5d6db5e04b3ba4332856a3a98e22e0fb0c8da33c4bc8cb7d</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_788a5958cf958c477937e4c25fa9fb8e7427709766ef2e9ee7aa45c48a1d28ea</argument>
+        <argument>sf2orm_default_04659ef823fdc23c5d6db5e04b3ba4332856a3a98e22e0fb0c8da33c4bc8cb7d</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2885,8 +2983,8 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>/var/www/html/Project_6/src/BirdBundle/Entity</argument>
-                        <argument>/var/www/html/Project_6/src/UserBundle/Entity</argument>
+                        <argument>C:\devWeb\wamp\www\NAO\Project_6\src\BirdBundle\Entity</argument>
+                        <argument>C:\devWeb\wamp\www\NAO\Project_6\src\UserBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2897,8 +2995,8 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>/var/www/html/Project_6/src/BirdBundle/Entity</argument>
-                        <argument>/var/www/html/Project_6/src/UserBundle/Entity</argument>
+                        <argument>C:\devWeb\wamp\www\NAO\Project_6\src\BirdBundle\Entity</argument>
+                        <argument>C:\devWeb\wamp\www\NAO\Project_6\src\UserBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2910,7 +3008,7 @@
                       <argument type="service">
                         <service class="Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator">
                           <argument type="collection">
-                            <argument key="/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/config/doctrine-mapping">FOS\UserBundle\Model</argument>
+                            <argument key="C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle\Resources\config\doctrine-mapping">FOS\UserBundle\Model</argument>
                           </argument>
                           <argument>.orm.xml</argument>
                         </service>
@@ -2923,7 +3021,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>/var/www/html/Project_6/var/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -3021,7 +3119,7 @@
     <service id="fos_js_routing.extractor" class="FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor">
       <argument type="service" id="router"/>
       <argument type="collection"/>
-      <argument>/var/www/html/Project_6/var/cache/dev</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev</argument>
       <argument type="collection">
         <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
         <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
@@ -3037,6 +3135,7 @@
         <argument key="BirdBundle">BirdBundle\BirdBundle</argument>
         <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
         <argument key="UserBundle">UserBundle\UserBundle</argument>
+        <argument key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</argument>
         <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
         <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
@@ -3067,12 +3166,12 @@
     </service>
     <service id="limenius_react.external_react_renderer" class="Limenius\ReactBundle\Renderer\ExternalServerReactRenderer">
       <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/node-server/node.sock</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources/node-server/node.sock</argument>
       <argument>false</argument>
     </service>
     <service id="limenius_react.phpexecjs_react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
       <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources/webpack/server-bundle.js</argument>
       <argument>false</argument>
     </service>
     <service id="limenius_react.render_extension" class="Limenius\ReactBundle\Twig\ReactRenderExtension">
@@ -3083,7 +3182,7 @@
     </service>
     <service id="limenius_react.react_renderer" class="Limenius\ReactBundle\Renderer\PhpExecJsReactRenderer">
       <argument type="service" id="logger"/>
-      <argument>/var/www/html/Project_6/app/Resources/webpack/server-bundle.js</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources/webpack/server-bundle.js</argument>
       <argument>false</argument>
     </service>
     <service id="fos_user.object_manager" class="Doctrine\Common\Persistence\ObjectManager" public="false">
@@ -3195,6 +3294,52 @@
     <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
       <tag name="form.type" alias="fos_user_group"/>
       <argument>UserBundle\Entity\Group</argument>
+    </service>
+    <service id="knp_menu.factory" class="Knp\Menu\MenuFactory">
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Knp\Menu\Integration\Symfony\RoutingExtension" public="false">
+            <tag name="knp_menu.factory_extension"/>
+            <argument type="service" id="router"/>
+          </service>
+        </argument>
+        <argument>0</argument>
+      </call>
+    </service>
+    <service id="knp_menu.matcher" class="Knp\Menu\Matcher\Matcher">
+      <call method="addVoter">
+        <argument type="service" id="knp_menu.voter.router"/>
+      </call>
+    </service>
+    <service id="knp_menu.renderer_provider" class="Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider">
+      <argument type="service" id="service_container"/>
+      <argument>twig</argument>
+      <argument type="collection">
+        <argument key="list">knp_menu.renderer.list</argument>
+        <argument key="twig">knp_menu.renderer.twig</argument>
+      </argument>
+    </service>
+    <service id="knp_menu.renderer.list" class="Knp\Menu\Renderer\ListRenderer">
+      <tag name="knp_menu.renderer" alias="list"/>
+      <argument type="service" id="knp_menu.matcher"/>
+      <argument type="collection"/>
+      <argument>UTF-8</argument>
+    </service>
+    <service id="knp_menu.listener.voters" class="Knp\Bundle\MenuBundle\EventListener\VoterInitializerListener">
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <call method="addVoter">
+        <argument type="service" id="knp_menu.voter.router"/>
+      </call>
+    </service>
+    <service id="knp_menu.voter.router" class="Knp\Menu\Matcher\Voter\RouteVoter">
+      <tag name="knp_menu.voter" request="1"/>
+    </service>
+    <service id="knp_menu.renderer.twig" class="Knp\Menu\Renderer\TwigRenderer">
+      <tag name="knp_menu.renderer" alias="twig"/>
+      <argument type="service" id="twig"/>
+      <argument>KnpMenuBundle::menu.html.twig</argument>
+      <argument type="service" id="knp_menu.matcher"/>
+      <argument type="collection"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3336,12 +3481,12 @@
       <argument type="service" id="hautelook_alice.faker.provider_chain"/>
       <argument>1</argument>
       <argument type="collection">
-        <argument key="kernel.root_dir">/var/www/html/Project_6/app</argument>
+        <argument key="kernel.root_dir">C:\devWeb\wamp\www\NAO\Project_6\app</argument>
         <argument key="kernel.environment">dev</argument>
         <argument key="kernel.debug">true</argument>
         <argument key="kernel.name">app</argument>
-        <argument key="kernel.cache_dir">/var/www/html/Project_6/var/cache/dev</argument>
-        <argument key="kernel.logs_dir">/var/www/html/Project_6/var/logs</argument>
+        <argument key="kernel.cache_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev</argument>
+        <argument key="kernel.logs_dir">C:\devWeb\wamp\www\NAO\Project_6\var\logs</argument>
         <argument key="kernel.bundles" type="collection">
           <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
           <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
@@ -3357,6 +3502,7 @@
           <argument key="BirdBundle">BirdBundle\BirdBundle</argument>
           <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
           <argument key="UserBundle">UserBundle\UserBundle</argument>
+          <argument key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</argument>
           <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
           <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
           <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
@@ -3368,20 +3514,20 @@
         <argument key="kernel.container_class">appDevDebugProjectContainer</argument>
         <argument key="database_host">127.0.0.1</argument>
         <argument key="database_port">null</argument>
-        <argument key="database_name">projet_6</argument>
+        <argument key="database_name">nao_clean</argument>
         <argument key="database_user">root</argument>
-        <argument key="database_password">Ad#Cg5#m</argument>
+        <argument key="database_password">null</argument>
         <argument key="mailer_transport">smtp</argument>
         <argument key="mailer_host">127.0.0.1</argument>
-        <argument key="mailer_user">arthur.watier@gmail.com</argument>
-        <argument key="mailer_password">diwiqswoinfamnfi</argument>
-        <argument key="secret">K6zn5gnh</argument>
+        <argument key="mailer_user">null</argument>
+        <argument key="mailer_password">null</argument>
+        <argument key="secret">ThisTokenIsNotSoSecretChangeIt</argument>
         <argument key="assets_base_url">http://localhost:8080</argument>
         <argument key="locale">en</argument>
         <argument key="images_directory">/var/www/html/Project_6/app/../web/uploads/images</argument>
         <argument key="fragment.renderer.hinclude.global_template">null</argument>
         <argument key="fragment.path">/_fragment</argument>
-        <argument key="kernel.secret">K6zn5gnh</argument>
+        <argument key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</argument>
         <argument key="kernel.http_method_override">true</argument>
         <argument key="kernel.trusted_hosts" type="collection"/>
         <argument key="kernel.trusted_proxies" type="collection"/>
@@ -3391,7 +3537,7 @@
           <argument key="cookie_httponly">true</argument>
           <argument key="gc_probability">1</argument>
         </argument>
-        <argument key="session.save_path">/var/www/html/Project_6/app/../var/sessions/dev</argument>
+        <argument key="session.save_path">C:\devWeb\wamp\www\NAO\Project_6\app/../var/sessions/dev</argument>
         <argument key="session.metadata.update_threshold">0</argument>
         <argument key="form.type_extension.csrf.enabled">true</argument>
         <argument key="form.type_extension.csrf.field_name">_token</argument>
@@ -3405,7 +3551,7 @@
         <argument key="translator.logging">true</argument>
         <argument key="profiler_listener.only_exceptions">false</argument>
         <argument key="profiler_listener.only_master_requests">false</argument>
-        <argument key="profiler.storage.dsn">file:/var/www/html/Project_6/var/cache/dev/profiler</argument>
+        <argument key="profiler.storage.dsn">file:C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/profiler</argument>
         <argument key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</argument>
@@ -3417,13 +3563,13 @@
         <argument key="router.request_context.host">localhost</argument>
         <argument key="router.request_context.scheme">http</argument>
         <argument key="router.request_context.base_url"></argument>
-        <argument key="router.resource">/var/www/html/Project_6/app/config/routing_dev.yml</argument>
+        <argument key="router.resource">C:\devWeb\wamp\www\NAO\Project_6\app/config/routing_dev.yml</argument>
         <argument key="router.cache_class_prefix">appDev</argument>
         <argument key="request_listener.http_port">80</argument>
         <argument key="request_listener.https_port">443</argument>
         <argument key="serializer.mapping.cache.prefix"></argument>
         <argument key="debug.error_handler.throw_at">-1</argument>
-        <argument key="debug.container.dump">/var/www/html/Project_6/var/cache/dev/appDevDebugProjectContainer.xml</argument>
+        <argument key="debug.container.dump">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/appDevDebugProjectContainer.xml</argument>
         <argument key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</argument>
         <argument key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</argument>
         <argument key="security.role_hierarchy.roles" type="collection">
@@ -3522,8 +3668,8 @@
         <argument key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</argument>
         <argument key="swiftmailer.mailer.default.transport.smtp.port">465</argument>
         <argument key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</argument>
-        <argument key="swiftmailer.mailer.default.transport.smtp.username">arthur.watier@gmail.com</argument>
-        <argument key="swiftmailer.mailer.default.transport.smtp.password">diwiqswoinfamnfi</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.username">null</argument>
+        <argument key="swiftmailer.mailer.default.transport.smtp.password">null</argument>
         <argument key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</argument>
         <argument key="swiftmailer.mailer.default.transport.smtp.timeout">30</argument>
         <argument key="swiftmailer.mailer.default.transport.smtp.source_ip">null</argument>
@@ -3644,7 +3790,7 @@
         <argument key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</argument>
         <argument key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</argument>
         <argument key="doctrine.orm.auto_generate_proxy_classes">true</argument>
-        <argument key="doctrine.orm.proxy_dir">/var/www/html/Project_6/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument key="doctrine.orm.proxy_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/doctrine/orm/Proxies</argument>
         <argument key="doctrine.orm.proxy_namespace">Proxies</argument>
         <argument key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</argument>
         <argument key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</argument>
@@ -3656,7 +3802,7 @@
         <argument key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</argument>
         <argument key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</argument>
         <argument key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</argument>
-        <argument key="doctrine_migrations.dir_name">/var/www/html/Project_6/app/DoctrineMigrations</argument>
+        <argument key="doctrine_migrations.dir_name">C:\devWeb\wamp\www\NAO\Project_6\app/DoctrineMigrations</argument>
         <argument key="doctrine_migrations.namespace">Application\Migrations</argument>
         <argument key="doctrine_migrations.table_name">migration_versions</argument>
         <argument key="doctrine_migrations.name">Application Migrations</argument>
@@ -3719,6 +3865,23 @@
           <argument>Registration</argument>
           <argument>Default</argument>
         </argument>
+        <argument key="knp_menu.factory.class">Knp\Menu\MenuFactory</argument>
+        <argument key="knp_menu.factory_extension.routing.class">Knp\Menu\Integration\Symfony\RoutingExtension</argument>
+        <argument key="knp_menu.helper.class">Knp\Menu\Twig\Helper</argument>
+        <argument key="knp_menu.matcher.class">Knp\Menu\Matcher\Matcher</argument>
+        <argument key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</argument>
+        <argument key="knp_menu.menu_provider.container_aware.class">Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider</argument>
+        <argument key="knp_menu.menu_provider.builder_alias.class">Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider</argument>
+        <argument key="knp_menu.renderer_provider.class">Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider</argument>
+        <argument key="knp_menu.renderer.list.class">Knp\Menu\Renderer\ListRenderer</argument>
+        <argument key="knp_menu.renderer.list.options" type="collection"/>
+        <argument key="knp_menu.listener.voters.class">Knp\Bundle\MenuBundle\EventListener\VoterInitializerListener</argument>
+        <argument key="knp_menu.voter.router.class">Knp\Menu\Matcher\Voter\RouteVoter</argument>
+        <argument key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</argument>
+        <argument key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</argument>
+        <argument key="knp_menu.renderer.twig.options" type="collection"/>
+        <argument key="knp_menu.renderer.twig.template">KnpMenuBundle::menu.html.twig</argument>
+        <argument key="knp_menu.default_renderer">twig</argument>
         <argument key="web_profiler.debug_toolbar.position">bottom</argument>
         <argument key="web_profiler.debug_toolbar.intercept_redirects">false</argument>
         <argument key="web_profiler.debug_toolbar.mode">2</argument>
@@ -3893,12 +4056,12 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>/var/www/html/Project_6/var/cache/dev/sessions</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>/var/www/html/Project_6/app/../var/sessions/dev</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/../var/sessions/dev</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -3926,9 +4089,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>/var/www/html/Project_6/app/config/routing_dev.yml</argument>
+      <argument>C:\devWeb\wamp\www\NAO\Project_6\app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">/var/www/html/Project_6/var/cache/dev</argument>
+        <argument key="cache_dir">C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3954,7 +4117,7 @@
       </argument>
       <argument type="service">
         <service class="Doctrine\Common\Cache\FilesystemCache" public="false">
-          <argument>/var/www/html/Project_6/var/cache/dev/annotations</argument>
+          <argument>C:\devWeb\wamp\www\NAO\Project_6\var\cache\dev/annotations</argument>
         </service>
       </argument>
       <argument>true</argument>
@@ -3979,42 +4142,49 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\knplabs\knp-menu-bundle/Resources/views</argument>
+        <argument>KnpMenu</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/app/Resources/views</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/Project_6/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\devWeb\wamp\www\NAO\Project_6\vendor\knplabs\knp-menu\src\Knp\Menu/Resources/views</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -4056,10 +4226,10 @@
               </argument>
             </argument>
             <call method="setUsername">
-              <argument>arthur.watier@gmail.com</argument>
+              <argument>null</argument>
             </call>
             <call method="setPassword">
-              <argument>diwiqswoinfamnfi</argument>
+              <argument>null</argument>
             </call>
             <call method="setAuthMode">
               <argument>login</argument>
@@ -4120,6 +4290,32 @@
     <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
       <argument type="service" id="fos_user.object_manager"/>
       <argument>UserBundle\Entity\Group</argument>
+    </service>
+    <service id="knp_menu.menu_provider" class="Knp\Menu\Provider\ChainProvider">
+      <argument type="collection">
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="service_container"/>
+            <argument type="collection"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\BuilderServiceProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="service_container"/>
+            <argument type="collection"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="knp_menu.factory"/>
+          </service>
+        </argument>
+      </argument>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>

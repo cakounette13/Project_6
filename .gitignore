@@ -2,15 +2,12 @@
 /build/
 /phpunit.xml
 /var/*
-!/var/cache
-/var/cache/*
 !var/cache/.gitkeep
 !/var/logs
 /var/logs/*
 !var/logs/.gitkeep
 !/var/sessions
 /var/sessions/*
-/var/logs/dev.log
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
@@ -20,7 +17,7 @@ bower_components/
 node_modules/
 tests/BirdBundle/
 web/assets/
-.idea/
+.idea/*
 web/js/*compiled*
 web/dist
 web/lib/GoogleApi-compiled-compiled.js

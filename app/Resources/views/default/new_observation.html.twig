@@ -8,11 +8,20 @@
             display: none;
         }
         #birds{
-            height: auto;
+            width: 80%;
+            margin: auto;
+            height: 80%;
+        }
+        body{
+            background: #2C3E50; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #2C3E50 , #4CA1AF); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #2C3E50 , #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
     </style>
 {% endblock %}
 {% block body %}
+<div id="fullpage" class="margin-top">
     <h1>Ajouter un oiseau</h1>
     {{ form_start(form) }}
         <div id="add_bird" >
