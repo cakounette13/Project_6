@@ -43,6 +43,7 @@
     <parameter key="secret">K6zn5gnh</parameter>
     <parameter key="assets_base_url">http://localhost:8080</parameter>
     <parameter key="locale">en</parameter>
+    <parameter key="images_directory">/var/www/html/Project_6/app/../web/uploads/images</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">K6zn5gnh</parameter>
@@ -475,6 +476,14 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="form.factory"/>
     </service>
+    <service id="add.image_uploader" class="BirdBundle\service\UploadFile">
+      <argument>/var/www/html/Project_6/app/../web/uploads/images</argument>
+    </service>
+    <service id="app.doctrine_image_listener" class="BirdBundle\EventListener\ImageUploadListener">
+      <tag name="doctrine.event_listener" event="prePersist"/>
+      <tag name="doctrine.event_listener" event="preUpdate"/>
+      <argument type="service" id="add.image_uploader"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -588,9 +597,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>BFunG2bYU8</argument>
+                  <argument>WU3lzS7xZ9</argument>
                   <argument>0</argument>
-                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+                  <argument>ivdRgqw127-DDiQJQTSapQ</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -601,9 +610,9 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>MF2LsIqXGl</argument>
+                  <argument>dp8IIoV33V</argument>
                   <argument>0</argument>
-                  <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+                  <argument>ivdRgqw127-DDiQJQTSapQ</argument>
                   <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1243,7 +1252,7 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>czuvmzUcD1</argument>
+      <argument>iwr4Ad3zvZ</argument>
       <argument>0</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <call method="setLogger">
@@ -1252,9 +1261,9 @@
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>wGMOVFSDX0</argument>
+      <argument>IVV7tBE9Jf</argument>
       <argument>0</argument>
-      <argument>QsSB0bgwe7NmBYDJnN93yA</argument>
+      <argument>ivdRgqw127-DDiQJQTSapQ</argument>
       <argument>/var/www/html/Project_6/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -2099,7 +2108,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58054a36289852.98801901</argument>
+            <argument>5805e742dd9f90.13581853</argument>
           </service>
         </argument>
       </argument>
@@ -2393,7 +2402,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58054a36289852.98801901</argument>
+            <argument>5805e742dd9f90.13581853</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2797,6 +2806,13 @@
               <argument>loadClassMetadata</argument>
             </argument>
             <argument type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
+          </call>
+          <call method="addEventListener">
+            <argument type="collection">
+              <argument>prePersist</argument>
+              <argument>preUpdate</argument>
+            </argument>
+            <argument type="service" id="app.doctrine_image_listener"/>
           </call>
         </service>
       </argument>
@@ -3362,6 +3378,7 @@
         <argument key="secret">K6zn5gnh</argument>
         <argument key="assets_base_url">http://localhost:8080</argument>
         <argument key="locale">en</argument>
+        <argument key="images_directory">/var/www/html/Project_6/app/../web/uploads/images</argument>
         <argument key="fragment.renderer.hinclude.global_template">null</argument>
         <argument key="fragment.path">/_fragment</argument>
         <argument key="kernel.secret">K6zn5gnh</argument>
