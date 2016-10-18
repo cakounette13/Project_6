@@ -1,12 +1,8 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
-#    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
   search_bird:
         class: BirdBundle\service\SearchService
@@ -15,3 +11,14 @@ services:
   add_bird:
       class: BirdBundle\service\AddBird
       arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
+
+  app.image_uploader:
+          class: BirdBundle\service\UploadFile
+          arguments: ['%images_directory%']
+
+  app.doctrine_images_listener:
+          class: BirdBundle\EventListener\ImageUploadListener
+          arguments: ['@app.image_uploader']
+          tags:
+              - { name: doctrine.event_listener, event: prePersist }
+              - { name: doctrine.event_listener, event: preUpdate }

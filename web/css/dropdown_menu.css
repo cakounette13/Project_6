@@ -30,8 +30,7 @@ nav > ul > li {
 nav > ul > li > i {
   -webkit-transition: -webkit-transform 0.1s ease;
   transition: -webkit-transform 0.1s ease;
-  transition: transform 0.1s ease;
-  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+    transition: transform 0.1s ease, -webkit-transform 0.1s ease;
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
@@ -60,7 +59,7 @@ nav > ul > li:last-child {
 ul.drop-menu {
   position: absolute;
   top: 100%;
-  left: 0%;
+  left: 0;
   width: 100%;
   padding: 0;
 }
@@ -74,8 +73,8 @@ ul.drop-menu li:hover {
   background: #595959;
 }
 ul.drop-menu li:last-child {
-  border-radius: 0px 0px 5px 5px;
-  border-bottom: none;
+    border-radius: 0 0 5px 5px;
+    border-bottom: none;
 }
 
 li:hover > ul.drop-menu.menu-1 {
