@@ -18,21 +18,22 @@ class BirdsType extends AbstractType
 		$builder
 			->add('nom',  EntityType::class, [
 			'class' => 'BirdBundle:Taxref',
-			'query_builder' => function (TaxrefRepository $er) {
-				return $er->createQueryBuilder( 't' )
-				          ->orderBy( 't.nomComplet', 'ASC' );
-			},
-			'choice_label' => 'nomComplet'
-		])
+			'query_builder' =>
+				function (TaxrefRepository $er) {
+					return $er->createQueryBuilder( 't' )
+					          ->orderBy( 't.nomComplet', 'ASC' );
+				},
+			'choice_label' => 'nomComplet' ])
 			->add('datevue', DateType::class)
 			->add('image', FileType::class)
+			->add('longitude', HiddenType::class)
+			->add('latitude', HiddenType::class)
 		;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
 	    $resolver->setDefaults(array(
-		    'allow_extra_fields' => true,
 		    'data_class' => 'BirdBundle\Entity\Datas',
 	    ));
     }

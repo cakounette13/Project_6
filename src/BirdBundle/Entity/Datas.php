@@ -58,7 +58,7 @@ class Datas
 	/**
 	 * @var boolean
 	 *
-	 * @ORM\Column(name="valid", type="boolean", nullable=false)
+	 * @ORM\Column(name="valid", type="boolean", nullable=true)
 	 */
 	private $valid;
 
