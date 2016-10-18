@@ -732,8 +732,7 @@ span.glyphicon.glyphicon-chevron-right{
 {
     margin: auto !important;
     width: 80%;
-    height: 80%;
-
+    height: 800px;
 }
 
 input#form_longitude
