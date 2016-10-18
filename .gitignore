@@ -31,4 +31,4 @@ webpack.dev-server-compiled.js
 webpack.dev-server-compiled.js.map
 var/*
 .idea/*
-
+var/logs/dev.log
