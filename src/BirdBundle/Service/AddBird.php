@@ -6,13 +6,12 @@
  * Time: 2:47 PM
  */
 
-namespace BirdBundle\service;
+namespace BirdBundle\Service;
 
 use BirdBundle\Entity\Datas;
 use BirdBundle\Form\BirdsType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactory;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 class AddBird {
