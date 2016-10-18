@@ -51,20 +51,20 @@ export default class GoogleMapBirds extends React.Component {
     }
 
     handleMarkerClick(marker) {
-        marker.showInfo = true;
-        this.setState(this.state);
+        marker = marker.showInfo = true;
+        this.setState({marker : marker, center: {lat: marker.lat, lng: marker.lng}});
     }
     handleMarkerClose(marker) {
-        marker.showInfo = false;
-        this.setState(this.state);
+        marker = marker.showInfo = false;
+        this.setState({marker : marker });
     }
 
     renderInfoWindow(ref, marker) {
         return (
             <InfoWindow
                 key={`${ref}_info_window`}
-                onCloseclick={this.handleMarkerClose.bind(this, marker)} >
-                    <div id="infobox">
+                onCloseclick={this.handleMarkerClose.bind(marker)} >
+                    <div>
                         <h2>{marker.nom}</h2>
                         <h2>{marker.nomValide}</h2>
                         <img src={marker.image}
@@ -95,7 +95,7 @@ export default class GoogleMapBirds extends React.Component {
                 googleMapElement={
                     <GoogleMap
                         center={this.state.center}
-                        defaultZoom={4}
+                        defaultZoom={5}
                         ref='map'
                         defaultOptions={{ styles: GoogleMapBirds.mapStyle}}
                         >
