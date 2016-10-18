@@ -64,7 +64,7 @@ export default class GoogleMapBirds extends React.Component {
             <InfoWindow
                 key={`${ref}_info_window`}
                 onCloseclick={this.handleMarkerClose.bind(this, marker)} >
-                    <div>
+                    <div id="infobox">
                         <h2>{marker.nom}</h2>
                         <h2>{marker.nomValide}</h2>
                         <img src={marker.image}
@@ -89,7 +89,6 @@ export default class GoogleMapBirds extends React.Component {
                         {...this.props}
                         style={{
                             height: '100%'
-
                         }} >
                     </div>
                 }
