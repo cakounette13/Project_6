@@ -8,7 +8,6 @@
 
 namespace BirdBundle\Service;
 
-
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;

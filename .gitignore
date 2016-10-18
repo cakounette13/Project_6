@@ -1,10 +1,8 @@
 /app/config/parameters.yml
 /build/
 /phpunit.xml
-var/*
+/var/
 !var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
@@ -22,4 +20,3 @@ webpack.config-compiled.js
 webpack.config-compiled.js.map
 webpack.dev-server-compiled.js
 webpack.dev-server-compiled.js.map
-var/logs/dev.log

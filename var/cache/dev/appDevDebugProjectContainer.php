@@ -346,7 +346,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAddBirdService()
     {
-        return $this->services['add_bird'] = new \BirdBundle\Service\AddBird($this->get('doctrine.orm.default_entity_manager'), $this->get('form.factory'));
+        return $this->services['add_bird'] = new \BirdBundle\Service\AddBird($this->get('doctrine.orm.default_entity_manager'), $this->get('form.factory'), $this->get('app.image_uploader'));
     }
 
     /**
@@ -428,7 +428,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_AppService()
     {
-        $this->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('czuvmzUcD1', 0, (__DIR__.'/pools'));
+        $this->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('iwr4Ad3zvZ', 0, (__DIR__.'/pools'));
 
         if ($this->has('monolog.logger.cache')) {
             $instance->setLogger($this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
@@ -460,7 +460,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_SystemService()
     {
-        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('wGMOVFSDX0', 0, 'P5wV5LUa7CAyc7-zjV9RtQ', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('IVV7tBE9Jf', 0, '8AQPJsJ1HFe2bTIYTg9Hbw', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -478,8 +478,8 @@ class appDevDebugProjectContainer extends Container
         $b = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer();
         $b->addPool($this->get('cache.app'));
         $b->addPool($this->get('cache.system'));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('BFunG2bYU8', 0, 'P5wV5LUa7CAyc7-zjV9RtQ', (__DIR__.'/pools'), $a));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('MF2LsIqXGl', 0, 'P5wV5LUa7CAyc7-zjV9RtQ', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('WU3lzS7xZ9', 0, '8AQPJsJ1HFe2bTIYTg9Hbw', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('dp8IIoV33V', 0, '8AQPJsJ1HFe2bTIYTg9Hbw', (__DIR__.'/pools'), $a));
 
         return $this->services['cache_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer(array(0 => $b));
     }
@@ -782,7 +782,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['doctrine.orm.default_entity_manager'] = DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['doctrine.orm.default_entity_manager'] = DoctrineORMEntityManager_000000002bbd74b4000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getDoctrine_Orm_DefaultEntityManagerService(false);
 
@@ -2129,7 +2129,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.alice.processor_chain'] = HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.alice.processor_chain'] = HautelookAliceBundleAliceProcessorChain_000000002bbd7763000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Alice_ProcessorChainService(false);
 
@@ -2170,7 +2170,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.doctrine.command.deprecated_load_command'] = HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e2000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.doctrine.command.deprecated_load_command'] = HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_000000002bbd7771000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Doctrine_Command_DeprecatedLoadCommandService(false);
 
@@ -2198,7 +2198,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.doctrine.command.load_command'] = HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e9000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.doctrine.command.load_command'] = HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_000000002bbd777a000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Doctrine_Command_LoadCommandService(false);
 
@@ -2226,7 +2226,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.doctrine.command_factory'] = HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.doctrine.command_factory'] = HautelookAliceBundleDoctrineCommandCommandFactory_000000002bbd776e000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Doctrine_CommandFactoryService(false);
 
@@ -2254,7 +2254,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.doctrine.executor.fixtures_executor'] = HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_0000000000e826d6000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.doctrine.executor.fixtures_executor'] = HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000002bbd7765000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Doctrine_Executor_FixturesExecutorService(false);
 
@@ -2312,7 +2312,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.faker'] = FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.faker'] = FakerGenerator_000000002bbd7762000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_FakerService(false);
 
@@ -2344,7 +2344,7 @@ class appDevDebugProjectContainer extends Container
     {
         if ($lazyLoad) {
 
-            return $this->services['hautelook_alice.faker.provider_chain'] = HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3397c68c91cff88c4ac0edeabbf4e67d294220::staticProxyConstructor(
+            return $this->services['hautelook_alice.faker.provider_chain'] = HautelookAliceBundleFakerProviderProviderChain_000000002bbd7764000000001caddd9973372f0925153013a2081866fb60e406::staticProxyConstructor(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) {
                     $wrappedInstance = $this->getHautelookAlice_Faker_ProviderChainService(false);
 
@@ -3125,7 +3125,7 @@ class appDevDebugProjectContainer extends Container
         $p = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $m, array(), $a);
         $p->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c, $d), 2 => $n, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $this->get('security.authentication.session_strategy'), $m, 'main', $o, $p, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58066298a29233.25404093', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $l, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $m, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $m, '/login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c, $d), 2 => $n, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $this->get('security.authentication.session_strategy'), $m, 'main', $o, $p, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '580684788c57d2.80648919', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $l, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $m, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $m, '/login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -4477,7 +4477,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58066298a29233.25404093')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('580684788c57d2.80648919')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -5140,23 +5140,23 @@ class appDevDebugProjectContainer extends Container
     }
 }
 
-class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Doctrine\ORM\EntityManager implements \ProxyManager\Proxy\VirtualProxyInterface
+class DoctrineORMEntityManager_000000002bbd74b4000000001caddd9973372f0925153013a2081866fb60e406 extends \Doctrine\ORM\EntityManager implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298c8125677018216 = null;
+    private $valueHolder58068478b68e1013475160 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298c812b705239524 = null;
+    private $initializer58068478b68e9896318211 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298c8111945547108 = array(
+    private static $publicProperties58068478b68c5458418007 = array(
         
     );
 
@@ -5165,9 +5165,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getConnection()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getConnection', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getConnection', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getConnection();
+        return $this->valueHolder58068478b68e1013475160->getConnection();
     }
 
     /**
@@ -5175,9 +5175,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getMetadataFactory()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getMetadataFactory', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getMetadataFactory', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getMetadataFactory();
+        return $this->valueHolder58068478b68e1013475160->getMetadataFactory();
     }
 
     /**
@@ -5185,9 +5185,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getExpressionBuilder()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getExpressionBuilder', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getExpressionBuilder', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getExpressionBuilder();
+        return $this->valueHolder58068478b68e1013475160->getExpressionBuilder();
     }
 
     /**
@@ -5195,9 +5195,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function beginTransaction()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'beginTransaction', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'beginTransaction', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->beginTransaction();
+        return $this->valueHolder58068478b68e1013475160->beginTransaction();
     }
 
     /**
@@ -5205,9 +5205,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getCache()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getCache', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getCache', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getCache();
+        return $this->valueHolder58068478b68e1013475160->getCache();
     }
 
     /**
@@ -5215,9 +5215,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function transactional($func)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'transactional', array('func' => $func), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'transactional', array('func' => $func), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->transactional($func);
+        return $this->valueHolder58068478b68e1013475160->transactional($func);
     }
 
     /**
@@ -5225,9 +5225,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function commit()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'commit', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'commit', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->commit();
+        return $this->valueHolder58068478b68e1013475160->commit();
     }
 
     /**
@@ -5235,9 +5235,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function rollback()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'rollback', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'rollback', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->rollback();
+        return $this->valueHolder58068478b68e1013475160->rollback();
     }
 
     /**
@@ -5245,9 +5245,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getClassMetadata($className)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getClassMetadata', array('className' => $className), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getClassMetadata', array('className' => $className), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getClassMetadata($className);
+        return $this->valueHolder58068478b68e1013475160->getClassMetadata($className);
     }
 
     /**
@@ -5255,9 +5255,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function createQuery($dql = '')
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'createQuery', array('dql' => $dql), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'createQuery', array('dql' => $dql), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->createQuery($dql);
+        return $this->valueHolder58068478b68e1013475160->createQuery($dql);
     }
 
     /**
@@ -5265,9 +5265,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function createNamedQuery($name)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'createNamedQuery', array('name' => $name), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'createNamedQuery', array('name' => $name), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->createNamedQuery($name);
+        return $this->valueHolder58068478b68e1013475160->createNamedQuery($name);
     }
 
     /**
@@ -5275,9 +5275,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function createNativeQuery($sql, \Doctrine\ORM\Query\ResultSetMapping $rsm)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'createNativeQuery', array('sql' => $sql, 'rsm' => $rsm), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->createNativeQuery($sql, $rsm);
+        return $this->valueHolder58068478b68e1013475160->createNativeQuery($sql, $rsm);
     }
 
     /**
@@ -5285,9 +5285,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function createNamedNativeQuery($name)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'createNamedNativeQuery', array('name' => $name), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->createNamedNativeQuery($name);
+        return $this->valueHolder58068478b68e1013475160->createNamedNativeQuery($name);
     }
 
     /**
@@ -5295,9 +5295,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function createQueryBuilder()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'createQueryBuilder', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'createQueryBuilder', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->createQueryBuilder();
+        return $this->valueHolder58068478b68e1013475160->createQueryBuilder();
     }
 
     /**
@@ -5305,9 +5305,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function flush($entity = null)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'flush', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'flush', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->flush($entity);
+        return $this->valueHolder58068478b68e1013475160->flush($entity);
     }
 
     /**
@@ -5315,9 +5315,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function find($entityName, $id, $lockMode = null, $lockVersion = null)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'find', array('entityName' => $entityName, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'find', array('entityName' => $entityName, 'id' => $id, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->find($entityName, $id, $lockMode, $lockVersion);
+        return $this->valueHolder58068478b68e1013475160->find($entityName, $id, $lockMode, $lockVersion);
     }
 
     /**
@@ -5325,9 +5325,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getReference($entityName, $id)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getReference', array('entityName' => $entityName, 'id' => $id), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getReference($entityName, $id);
+        return $this->valueHolder58068478b68e1013475160->getReference($entityName, $id);
     }
 
     /**
@@ -5335,9 +5335,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getPartialReference($entityName, $identifier)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getPartialReference', array('entityName' => $entityName, 'identifier' => $identifier), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getPartialReference($entityName, $identifier);
+        return $this->valueHolder58068478b68e1013475160->getPartialReference($entityName, $identifier);
     }
 
     /**
@@ -5345,9 +5345,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function clear($entityName = null)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'clear', array('entityName' => $entityName), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'clear', array('entityName' => $entityName), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->clear($entityName);
+        return $this->valueHolder58068478b68e1013475160->clear($entityName);
     }
 
     /**
@@ -5355,9 +5355,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function close()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'close', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'close', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->close();
+        return $this->valueHolder58068478b68e1013475160->close();
     }
 
     /**
@@ -5365,9 +5365,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function persist($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'persist', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'persist', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->persist($entity);
+        return $this->valueHolder58068478b68e1013475160->persist($entity);
     }
 
     /**
@@ -5375,9 +5375,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function remove($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'remove', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'remove', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->remove($entity);
+        return $this->valueHolder58068478b68e1013475160->remove($entity);
     }
 
     /**
@@ -5385,9 +5385,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function refresh($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'refresh', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'refresh', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->refresh($entity);
+        return $this->valueHolder58068478b68e1013475160->refresh($entity);
     }
 
     /**
@@ -5395,9 +5395,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function detach($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'detach', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'detach', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->detach($entity);
+        return $this->valueHolder58068478b68e1013475160->detach($entity);
     }
 
     /**
@@ -5405,9 +5405,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function merge($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'merge', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'merge', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->merge($entity);
+        return $this->valueHolder58068478b68e1013475160->merge($entity);
     }
 
     /**
@@ -5415,9 +5415,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function copy($entity, $deep = false)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'copy', array('entity' => $entity, 'deep' => $deep), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->copy($entity, $deep);
+        return $this->valueHolder58068478b68e1013475160->copy($entity, $deep);
     }
 
     /**
@@ -5425,9 +5425,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function lock($entity, $lockMode, $lockVersion = null)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'lock', array('entity' => $entity, 'lockMode' => $lockMode, 'lockVersion' => $lockVersion), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->lock($entity, $lockMode, $lockVersion);
+        return $this->valueHolder58068478b68e1013475160->lock($entity, $lockMode, $lockVersion);
     }
 
     /**
@@ -5435,9 +5435,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getRepository($entityName)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getRepository', array('entityName' => $entityName), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getRepository', array('entityName' => $entityName), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getRepository($entityName);
+        return $this->valueHolder58068478b68e1013475160->getRepository($entityName);
     }
 
     /**
@@ -5445,9 +5445,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function contains($entity)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'contains', array('entity' => $entity), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'contains', array('entity' => $entity), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->contains($entity);
+        return $this->valueHolder58068478b68e1013475160->contains($entity);
     }
 
     /**
@@ -5455,9 +5455,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getEventManager()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getEventManager', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getEventManager', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getEventManager();
+        return $this->valueHolder58068478b68e1013475160->getEventManager();
     }
 
     /**
@@ -5465,9 +5465,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getConfiguration()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getConfiguration', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getConfiguration', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getConfiguration();
+        return $this->valueHolder58068478b68e1013475160->getConfiguration();
     }
 
     /**
@@ -5475,9 +5475,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function isOpen()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'isOpen', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'isOpen', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->isOpen();
+        return $this->valueHolder58068478b68e1013475160->isOpen();
     }
 
     /**
@@ -5485,9 +5485,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getUnitOfWork()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getUnitOfWork', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getUnitOfWork', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getUnitOfWork();
+        return $this->valueHolder58068478b68e1013475160->getUnitOfWork();
     }
 
     /**
@@ -5495,9 +5495,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getHydrator($hydrationMode)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getHydrator', array('hydrationMode' => $hydrationMode), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getHydrator($hydrationMode);
+        return $this->valueHolder58068478b68e1013475160->getHydrator($hydrationMode);
     }
 
     /**
@@ -5505,9 +5505,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function newHydrator($hydrationMode)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'newHydrator', array('hydrationMode' => $hydrationMode), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->newHydrator($hydrationMode);
+        return $this->valueHolder58068478b68e1013475160->newHydrator($hydrationMode);
     }
 
     /**
@@ -5515,9 +5515,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getProxyFactory()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getProxyFactory', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getProxyFactory', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getProxyFactory();
+        return $this->valueHolder58068478b68e1013475160->getProxyFactory();
     }
 
     /**
@@ -5525,9 +5525,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function initializeObject($obj)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'initializeObject', array('obj' => $obj), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'initializeObject', array('obj' => $obj), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->initializeObject($obj);
+        return $this->valueHolder58068478b68e1013475160->initializeObject($obj);
     }
 
     /**
@@ -5535,9 +5535,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getFilters()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'getFilters', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'getFilters', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->getFilters();
+        return $this->valueHolder58068478b68e1013475160->getFilters();
     }
 
     /**
@@ -5545,9 +5545,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function isFiltersStateClean()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'isFiltersStateClean', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'isFiltersStateClean', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->isFiltersStateClean();
+        return $this->valueHolder58068478b68e1013475160->isFiltersStateClean();
     }
 
     /**
@@ -5555,9 +5555,9 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function hasFilters()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'hasFilters', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'hasFilters', array(), $this->initializer58068478b68e9896318211);
 
-        return $this->valueHolder58066298c8125677018216->hasFilters();
+        return $this->valueHolder58068478b68e1013475160->hasFilters();
     }
 
     /**
@@ -5576,7 +5576,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $instance, 'Doctrine\\ORM\\EntityManager')->__invoke($instance);
 
-        $instance->initializer58066298c812b705239524 = $initializer;
+        $instance->initializer58068478b68e9896318211 = $initializer;
 
         return $instance;
     }
@@ -5588,16 +5588,16 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298c8125677018216) {
+        if (! $this->valueHolder58068478b68e1013475160) {
             $reflection = $reflection ?: new \ReflectionClass('Doctrine\\ORM\\EntityManager');
-            $this->valueHolder58066298c8125677018216 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478b68e1013475160 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Doctrine\ORM\EntityManager $instance) {
             unset($instance->config, $instance->conn, $instance->metadataFactory, $instance->unitOfWork, $instance->eventManager, $instance->proxyFactory, $instance->repositoryFactory, $instance->expressionBuilder, $instance->closed, $instance->filterCollection, $instance->cache);
         }, $this, 'Doctrine\\ORM\\EntityManager')->__invoke($this);
 
         }
 
-        $this->valueHolder58066298c8125677018216->__construct($conn, $config, $eventManager);
+        $this->valueHolder58068478b68e1013475160->__construct($conn, $config, $eventManager);
     }
 
     /**
@@ -5605,16 +5605,16 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function & __get($name)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__get', array('name' => $name), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__get', array('name' => $name), $this->initializer58068478b68e9896318211);
 
-        if (isset(self::$publicProperties58066298c8111945547108[$name])) {
-            return $this->valueHolder58066298c8125677018216->$name;
+        if (isset(self::$publicProperties58068478b68c5458418007[$name])) {
+            return $this->valueHolder58068478b68e1013475160->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298c8125677018216;
+            $targetObject = $this->valueHolder58068478b68e1013475160;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -5622,7 +5622,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
             return;
         }
 
-        $targetObject = $this->valueHolder58066298c8125677018216;
+        $targetObject = $this->valueHolder58068478b68e1013475160;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -5640,18 +5640,18 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478b68e9896318211);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298c8125677018216;
+            $targetObject = $this->valueHolder58068478b68e1013475160;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298c8125677018216;
+        $targetObject = $this->valueHolder58068478b68e1013475160;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -5668,18 +5668,18 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function __isset($name)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__isset', array('name' => $name), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__isset', array('name' => $name), $this->initializer58068478b68e9896318211);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298c8125677018216;
+            $targetObject = $this->valueHolder58068478b68e1013475160;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298c8125677018216;
+        $targetObject = $this->valueHolder58068478b68e1013475160;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -5696,18 +5696,18 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function __unset($name)
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__unset', array('name' => $name), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__unset', array('name' => $name), $this->initializer58068478b68e9896318211);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298c8125677018216;
+            $targetObject = $this->valueHolder58068478b68e1013475160;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298c8125677018216;
+        $targetObject = $this->valueHolder58068478b68e1013475160;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -5721,16 +5721,16 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
 
     public function __clone()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__clone', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__clone', array(), $this->initializer58068478b68e9896318211);
 
-        $this->valueHolder58066298c8125677018216 = clone $this->valueHolder58066298c8125677018216;
+        $this->valueHolder58068478b68e1013475160 = clone $this->valueHolder58068478b68e1013475160;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, '__sleep', array(), $this->initializer58066298c812b705239524);
+        $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, '__sleep', array(), $this->initializer58068478b68e9896318211);
 
-        return array('valueHolder58066298c8125677018216');
+        return array('valueHolder58068478b68e1013475160');
     }
 
     public function __wakeup()
@@ -5745,7 +5745,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298c812b705239524 = $initializer;
+        $this->initializer58068478b68e9896318211 = $initializer;
     }
 
     /**
@@ -5753,7 +5753,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298c812b705239524;
+        return $this->initializer58068478b68e9896318211;
     }
 
     /**
@@ -5761,7 +5761,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298c812b705239524 && $this->initializer58066298c812b705239524->__invoke($this->valueHolder58066298c8125677018216, $this, 'initializeProxy', array(), $this->initializer58066298c812b705239524);
+        return $this->initializer58068478b68e9896318211 && $this->initializer58068478b68e9896318211->__invoke($this->valueHolder58068478b68e1013475160, $this, 'initializeProxy', array(), $this->initializer58068478b68e9896318211);
     }
 
     /**
@@ -5769,7 +5769,7 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298c8125677018216;
+        return null !== $this->valueHolder58068478b68e1013475160;
     }
 
     /**
@@ -5777,29 +5777,29 @@ class DoctrineORMEntityManager_0000000000e821a7000000005c3397c68c91cff88c4ac0ede
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298c8125677018216;
+        return $this->valueHolder58068478b68e1013475160;
     }
 
 
 }
 
-class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Faker\Generator implements \ProxyManager\Proxy\VirtualProxyInterface
+class FakerGenerator_000000002bbd7762000000001caddd9973372f0925153013a2081866fb60e406 extends \Faker\Generator implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cc099993161902 = null;
+    private $valueHolder58068478b9d51593258796 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cc09f846527708 = null;
+    private $initializer58068478b9d57714003785 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cc07d524264751 = array(
+    private static $publicProperties58068478b9d3d049961384 = array(
         
     );
 
@@ -5808,9 +5808,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function addProvider($provider)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'addProvider', array('provider' => $provider), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'addProvider', array('provider' => $provider), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->addProvider($provider);
+        return $this->valueHolder58068478b9d51593258796->addProvider($provider);
     }
 
     /**
@@ -5818,9 +5818,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function getProviders()
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'getProviders', array(), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'getProviders', array(), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->getProviders();
+        return $this->valueHolder58068478b9d51593258796->getProviders();
     }
 
     /**
@@ -5828,9 +5828,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function seed($seed = null)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'seed', array('seed' => $seed), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'seed', array('seed' => $seed), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->seed($seed);
+        return $this->valueHolder58068478b9d51593258796->seed($seed);
     }
 
     /**
@@ -5838,9 +5838,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function format($formatter, $arguments = array())
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'format', array('formatter' => $formatter, 'arguments' => $arguments), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'format', array('formatter' => $formatter, 'arguments' => $arguments), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->format($formatter, $arguments);
+        return $this->valueHolder58068478b9d51593258796->format($formatter, $arguments);
     }
 
     /**
@@ -5848,9 +5848,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function getFormatter($formatter)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'getFormatter', array('formatter' => $formatter), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'getFormatter', array('formatter' => $formatter), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->getFormatter($formatter);
+        return $this->valueHolder58068478b9d51593258796->getFormatter($formatter);
     }
 
     /**
@@ -5858,9 +5858,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function parse($string)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'parse', array('string' => $string), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'parse', array('string' => $string), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->parse($string);
+        return $this->valueHolder58068478b9d51593258796->parse($string);
     }
 
     /**
@@ -5868,9 +5868,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function __call($method, $attributes)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__call', array('method' => $method, 'attributes' => $attributes), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__call', array('method' => $method, 'attributes' => $attributes), $this->initializer58068478b9d57714003785);
 
-        return $this->valueHolder58066298cc099993161902->__call($method, $attributes);
+        return $this->valueHolder58068478b9d51593258796->__call($method, $attributes);
     }
 
     /**
@@ -5887,7 +5887,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
 
         unset($instance->providers, $instance->formatters);
 
-        $instance->initializer58066298cc09f846527708 = $initializer;
+        $instance->initializer58068478b9d57714003785 = $initializer;
 
         return $instance;
     }
@@ -5899,9 +5899,9 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cc099993161902) {
+        if (! $this->valueHolder58068478b9d51593258796) {
             $reflection = $reflection ?: new \ReflectionClass('Faker\\Generator');
-            $this->valueHolder58066298cc099993161902 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478b9d51593258796 = $reflection->newInstanceWithoutConstructor();
         unset($this->providers, $this->formatters);
 
         }
@@ -5913,16 +5913,16 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function __get($name)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__get', array('name' => $name), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__get', array('name' => $name), $this->initializer58068478b9d57714003785);
 
-        if (isset(self::$publicProperties58066298cc07d524264751[$name])) {
-            return $this->valueHolder58066298cc099993161902->$name;
+        if (isset(self::$publicProperties58068478b9d3d049961384[$name])) {
+            return $this->valueHolder58068478b9d51593258796->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc099993161902;
+            $targetObject = $this->valueHolder58068478b9d51593258796;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -5930,7 +5930,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc099993161902;
+        $targetObject = $this->valueHolder58068478b9d51593258796;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -5948,18 +5948,18 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478b9d57714003785);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc099993161902;
+            $targetObject = $this->valueHolder58068478b9d51593258796;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc099993161902;
+        $targetObject = $this->valueHolder58068478b9d51593258796;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -5976,18 +5976,18 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function __isset($name)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__isset', array('name' => $name), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__isset', array('name' => $name), $this->initializer58068478b9d57714003785);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc099993161902;
+            $targetObject = $this->valueHolder58068478b9d51593258796;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc099993161902;
+        $targetObject = $this->valueHolder58068478b9d51593258796;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -6004,18 +6004,18 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function __unset($name)
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__unset', array('name' => $name), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__unset', array('name' => $name), $this->initializer58068478b9d57714003785);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc099993161902;
+            $targetObject = $this->valueHolder58068478b9d51593258796;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc099993161902;
+        $targetObject = $this->valueHolder58068478b9d51593258796;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -6029,16 +6029,16 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
 
     public function __clone()
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__clone', array(), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__clone', array(), $this->initializer58068478b9d57714003785);
 
-        $this->valueHolder58066298cc099993161902 = clone $this->valueHolder58066298cc099993161902;
+        $this->valueHolder58068478b9d51593258796 = clone $this->valueHolder58068478b9d51593258796;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, '__sleep', array(), $this->initializer58066298cc09f846527708);
+        $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, '__sleep', array(), $this->initializer58068478b9d57714003785);
 
-        return array('valueHolder58066298cc099993161902');
+        return array('valueHolder58068478b9d51593258796');
     }
 
     public function __wakeup()
@@ -6051,7 +6051,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cc09f846527708 = $initializer;
+        $this->initializer58068478b9d57714003785 = $initializer;
     }
 
     /**
@@ -6059,7 +6059,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cc09f846527708;
+        return $this->initializer58068478b9d57714003785;
     }
 
     /**
@@ -6067,7 +6067,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cc09f846527708 && $this->initializer58066298cc09f846527708->__invoke($this->valueHolder58066298cc099993161902, $this, 'initializeProxy', array(), $this->initializer58066298cc09f846527708);
+        return $this->initializer58068478b9d57714003785 && $this->initializer58068478b9d57714003785->__invoke($this->valueHolder58068478b9d51593258796, $this, 'initializeProxy', array(), $this->initializer58068478b9d57714003785);
     }
 
     /**
@@ -6075,7 +6075,7 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cc099993161902;
+        return null !== $this->valueHolder58068478b9d51593258796;
     }
 
     /**
@@ -6083,29 +6083,29 @@ class FakerGenerator_0000000000e826d1000000005c3397c68c91cff88c4ac0edeabbf4e67d2
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cc099993161902;
+        return $this->valueHolder58068478b9d51593258796;
     }
 
 
 }
 
-class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Alice\ProcessorChain implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleAliceProcessorChain_000000002bbd7763000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Alice\ProcessorChain implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cc646276534492 = null;
+    private $valueHolder58068478ba336740951203 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cc64b053084193 = null;
+    private $initializer58068478ba33b001459616 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cc63a761445220 = array(
+    private static $publicProperties58068478ba328601736688 = array(
         
     );
 
@@ -6114,9 +6114,9 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function getProcessors()
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, 'getProcessors', array(), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, 'getProcessors', array(), $this->initializer58068478ba33b001459616);
 
-        return $this->valueHolder58066298cc646276534492->getProcessors();
+        return $this->valueHolder58068478ba336740951203->getProcessors();
     }
 
     /**
@@ -6135,7 +6135,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
             unset($instance->processors);
         }, $instance, 'Hautelook\\AliceBundle\\Alice\\ProcessorChain')->__invoke($instance);
 
-        $instance->initializer58066298cc64b053084193 = $initializer;
+        $instance->initializer58068478ba33b001459616 = $initializer;
 
         return $instance;
     }
@@ -6147,16 +6147,16 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cc646276534492) {
+        if (! $this->valueHolder58068478ba336740951203) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Alice\\ProcessorChain');
-            $this->valueHolder58066298cc646276534492 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478ba336740951203 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Hautelook\AliceBundle\Alice\ProcessorChain $instance) {
             unset($instance->processors);
         }, $this, 'Hautelook\\AliceBundle\\Alice\\ProcessorChain')->__invoke($this);
 
         }
 
-        $this->valueHolder58066298cc646276534492->__construct($processors);
+        $this->valueHolder58068478ba336740951203->__construct($processors);
     }
 
     /**
@@ -6164,16 +6164,16 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function & __get($name)
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__get', array('name' => $name), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__get', array('name' => $name), $this->initializer58068478ba33b001459616);
 
-        if (isset(self::$publicProperties58066298cc63a761445220[$name])) {
-            return $this->valueHolder58066298cc646276534492->$name;
+        if (isset(self::$publicProperties58068478ba328601736688[$name])) {
+            return $this->valueHolder58068478ba336740951203->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc646276534492;
+            $targetObject = $this->valueHolder58068478ba336740951203;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -6181,7 +6181,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc646276534492;
+        $targetObject = $this->valueHolder58068478ba336740951203;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -6199,18 +6199,18 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478ba33b001459616);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc646276534492;
+            $targetObject = $this->valueHolder58068478ba336740951203;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc646276534492;
+        $targetObject = $this->valueHolder58068478ba336740951203;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -6227,18 +6227,18 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function __isset($name)
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__isset', array('name' => $name), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__isset', array('name' => $name), $this->initializer58068478ba33b001459616);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc646276534492;
+            $targetObject = $this->valueHolder58068478ba336740951203;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc646276534492;
+        $targetObject = $this->valueHolder58068478ba336740951203;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -6255,18 +6255,18 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function __unset($name)
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__unset', array('name' => $name), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__unset', array('name' => $name), $this->initializer58068478ba33b001459616);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc646276534492;
+            $targetObject = $this->valueHolder58068478ba336740951203;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc646276534492;
+        $targetObject = $this->valueHolder58068478ba336740951203;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -6280,16 +6280,16 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
 
     public function __clone()
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__clone', array(), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__clone', array(), $this->initializer58068478ba33b001459616);
 
-        $this->valueHolder58066298cc646276534492 = clone $this->valueHolder58066298cc646276534492;
+        $this->valueHolder58068478ba336740951203 = clone $this->valueHolder58068478ba336740951203;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, '__sleep', array(), $this->initializer58066298cc64b053084193);
+        $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, '__sleep', array(), $this->initializer58068478ba33b001459616);
 
-        return array('valueHolder58066298cc646276534492');
+        return array('valueHolder58068478ba336740951203');
     }
 
     public function __wakeup()
@@ -6304,7 +6304,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cc64b053084193 = $initializer;
+        $this->initializer58068478ba33b001459616 = $initializer;
     }
 
     /**
@@ -6312,7 +6312,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cc64b053084193;
+        return $this->initializer58068478ba33b001459616;
     }
 
     /**
@@ -6320,7 +6320,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cc64b053084193 && $this->initializer58066298cc64b053084193->__invoke($this->valueHolder58066298cc646276534492, $this, 'initializeProxy', array(), $this->initializer58066298cc64b053084193);
+        return $this->initializer58068478ba33b001459616 && $this->initializer58068478ba33b001459616->__invoke($this->valueHolder58068478ba336740951203, $this, 'initializeProxy', array(), $this->initializer58068478ba33b001459616);
     }
 
     /**
@@ -6328,7 +6328,7 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cc646276534492;
+        return null !== $this->valueHolder58068478ba336740951203;
     }
 
     /**
@@ -6336,29 +6336,29 @@ class HautelookAliceBundleAliceProcessorChain_0000000000e826d0000000005c3397c68c
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cc646276534492;
+        return $this->valueHolder58068478ba336740951203;
     }
 
 
 }
 
-class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Faker\Provider\ProviderChain implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleFakerProviderProviderChain_000000002bbd7764000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Faker\Provider\ProviderChain implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cc9d4126773729 = null;
+    private $valueHolder58068478ba6f7959056681 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cc9d9990464745 = null;
+    private $initializer58068478ba6fc479193968 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cc9c8259487576 = array(
+    private static $publicProperties58068478ba6ea153713522 = array(
         
     );
 
@@ -6367,9 +6367,9 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function getProviders()
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, 'getProviders', array(), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, 'getProviders', array(), $this->initializer58068478ba6fc479193968);
 
-        return $this->valueHolder58066298cc9d4126773729->getProviders();
+        return $this->valueHolder58068478ba6f7959056681->getProviders();
     }
 
     /**
@@ -6388,7 +6388,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
             unset($instance->providers);
         }, $instance, 'Hautelook\\AliceBundle\\Faker\\Provider\\ProviderChain')->__invoke($instance);
 
-        $instance->initializer58066298cc9d9990464745 = $initializer;
+        $instance->initializer58068478ba6fc479193968 = $initializer;
 
         return $instance;
     }
@@ -6400,16 +6400,16 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cc9d4126773729) {
+        if (! $this->valueHolder58068478ba6f7959056681) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Faker\\Provider\\ProviderChain');
-            $this->valueHolder58066298cc9d4126773729 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478ba6f7959056681 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Hautelook\AliceBundle\Faker\Provider\ProviderChain $instance) {
             unset($instance->providers);
         }, $this, 'Hautelook\\AliceBundle\\Faker\\Provider\\ProviderChain')->__invoke($this);
 
         }
 
-        $this->valueHolder58066298cc9d4126773729->__construct($providers);
+        $this->valueHolder58068478ba6f7959056681->__construct($providers);
     }
 
     /**
@@ -6417,16 +6417,16 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function & __get($name)
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__get', array('name' => $name), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__get', array('name' => $name), $this->initializer58068478ba6fc479193968);
 
-        if (isset(self::$publicProperties58066298cc9c8259487576[$name])) {
-            return $this->valueHolder58066298cc9d4126773729->$name;
+        if (isset(self::$publicProperties58068478ba6ea153713522[$name])) {
+            return $this->valueHolder58068478ba6f7959056681->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc9d4126773729;
+            $targetObject = $this->valueHolder58068478ba6f7959056681;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -6434,7 +6434,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc9d4126773729;
+        $targetObject = $this->valueHolder58068478ba6f7959056681;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -6452,18 +6452,18 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478ba6fc479193968);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc9d4126773729;
+            $targetObject = $this->valueHolder58068478ba6f7959056681;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc9d4126773729;
+        $targetObject = $this->valueHolder58068478ba6f7959056681;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -6480,18 +6480,18 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function __isset($name)
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__isset', array('name' => $name), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__isset', array('name' => $name), $this->initializer58068478ba6fc479193968);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc9d4126773729;
+            $targetObject = $this->valueHolder58068478ba6f7959056681;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc9d4126773729;
+        $targetObject = $this->valueHolder58068478ba6f7959056681;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -6508,18 +6508,18 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function __unset($name)
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__unset', array('name' => $name), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__unset', array('name' => $name), $this->initializer58068478ba6fc479193968);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cc9d4126773729;
+            $targetObject = $this->valueHolder58068478ba6f7959056681;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cc9d4126773729;
+        $targetObject = $this->valueHolder58068478ba6f7959056681;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -6533,16 +6533,16 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
 
     public function __clone()
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__clone', array(), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__clone', array(), $this->initializer58068478ba6fc479193968);
 
-        $this->valueHolder58066298cc9d4126773729 = clone $this->valueHolder58066298cc9d4126773729;
+        $this->valueHolder58068478ba6f7959056681 = clone $this->valueHolder58068478ba6f7959056681;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, '__sleep', array(), $this->initializer58066298cc9d9990464745);
+        $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, '__sleep', array(), $this->initializer58068478ba6fc479193968);
 
-        return array('valueHolder58066298cc9d4126773729');
+        return array('valueHolder58068478ba6f7959056681');
     }
 
     public function __wakeup()
@@ -6557,7 +6557,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cc9d9990464745 = $initializer;
+        $this->initializer58068478ba6fc479193968 = $initializer;
     }
 
     /**
@@ -6565,7 +6565,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cc9d9990464745;
+        return $this->initializer58068478ba6fc479193968;
     }
 
     /**
@@ -6573,7 +6573,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cc9d9990464745 && $this->initializer58066298cc9d9990464745->__invoke($this->valueHolder58066298cc9d4126773729, $this, 'initializeProxy', array(), $this->initializer58066298cc9d9990464745);
+        return $this->initializer58068478ba6fc479193968 && $this->initializer58068478ba6fc479193968->__invoke($this->valueHolder58068478ba6f7959056681, $this, 'initializeProxy', array(), $this->initializer58068478ba6fc479193968);
     }
 
     /**
@@ -6581,7 +6581,7 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cc9d4126773729;
+        return null !== $this->valueHolder58068478ba6f7959056681;
     }
 
     /**
@@ -6589,29 +6589,29 @@ class HautelookAliceBundleFakerProviderProviderChain_0000000000e826d7000000005c3
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cc9d4126773729;
+        return $this->valueHolder58068478ba6f7959056681;
     }
 
 
 }
 
-class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_0000000000e826d6000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Doctrine\DataFixtures\Executor\FixturesExecutor implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000002bbd7765000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Doctrine\DataFixtures\Executor\FixturesExecutor implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cccb6428684095 = null;
+    private $valueHolder58068478baa0d876859239 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cccbb421309304 = null;
+    private $initializer58068478baa12185642119 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cccab610236431 = array(
+    private static $publicProperties58068478baa01677833995 = array(
         
     );
 
@@ -6620,9 +6620,9 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function execute(\Doctrine\Common\Persistence\ObjectManager $manager, \Hautelook\AliceBundle\Alice\DataFixtures\LoaderInterface $loader, array $fixturesFiles, $append, $loggerCallable, $truncate = false)
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, 'execute', array('manager' => $manager, 'loader' => $loader, 'fixturesFiles' => $fixturesFiles, 'append' => $append, 'loggerCallable' => $loggerCallable, 'truncate' => $truncate), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, 'execute', array('manager' => $manager, 'loader' => $loader, 'fixturesFiles' => $fixturesFiles, 'append' => $append, 'loggerCallable' => $loggerCallable, 'truncate' => $truncate), $this->initializer58068478baa12185642119);
 
-        return $this->valueHolder58066298cccb6428684095->execute($manager, $loader, $fixturesFiles, $append, $loggerCallable, $truncate);
+        return $this->valueHolder58068478baa0d876859239->execute($manager, $loader, $fixturesFiles, $append, $loggerCallable, $truncate);
     }
 
     /**
@@ -6637,7 +6637,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
         $reflection = $reflection ?: $reflection = new \ReflectionClass(__CLASS__);
         $instance = (new \ReflectionClass(get_class()))->newInstanceWithoutConstructor();
 
-        $instance->initializer58066298cccbb421309304 = $initializer;
+        $instance->initializer58068478baa12185642119 = $initializer;
 
         return $instance;
     }
@@ -6649,9 +6649,9 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cccb6428684095) {
+        if (! $this->valueHolder58068478baa0d876859239) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Doctrine\\DataFixtures\\Executor\\FixturesExecutor');
-            $this->valueHolder58066298cccb6428684095 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478baa0d876859239 = $reflection->newInstanceWithoutConstructor();
         }
     }
 
@@ -6660,16 +6660,16 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function & __get($name)
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__get', array('name' => $name), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__get', array('name' => $name), $this->initializer58068478baa12185642119);
 
-        if (isset(self::$publicProperties58066298cccab610236431[$name])) {
-            return $this->valueHolder58066298cccb6428684095->$name;
+        if (isset(self::$publicProperties58068478baa01677833995[$name])) {
+            return $this->valueHolder58068478baa0d876859239->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cccb6428684095;
+            $targetObject = $this->valueHolder58068478baa0d876859239;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -6677,7 +6677,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cccb6428684095;
+        $targetObject = $this->valueHolder58068478baa0d876859239;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -6695,18 +6695,18 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478baa12185642119);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cccb6428684095;
+            $targetObject = $this->valueHolder58068478baa0d876859239;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cccb6428684095;
+        $targetObject = $this->valueHolder58068478baa0d876859239;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -6723,18 +6723,18 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function __isset($name)
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__isset', array('name' => $name), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__isset', array('name' => $name), $this->initializer58068478baa12185642119);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cccb6428684095;
+            $targetObject = $this->valueHolder58068478baa0d876859239;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cccb6428684095;
+        $targetObject = $this->valueHolder58068478baa0d876859239;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -6751,18 +6751,18 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function __unset($name)
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__unset', array('name' => $name), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__unset', array('name' => $name), $this->initializer58068478baa12185642119);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cccb6428684095;
+            $targetObject = $this->valueHolder58068478baa0d876859239;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cccb6428684095;
+        $targetObject = $this->valueHolder58068478baa0d876859239;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -6776,16 +6776,16 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
 
     public function __clone()
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__clone', array(), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__clone', array(), $this->initializer58068478baa12185642119);
 
-        $this->valueHolder58066298cccb6428684095 = clone $this->valueHolder58066298cccb6428684095;
+        $this->valueHolder58068478baa0d876859239 = clone $this->valueHolder58068478baa0d876859239;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, '__sleep', array(), $this->initializer58066298cccbb421309304);
+        $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, '__sleep', array(), $this->initializer58068478baa12185642119);
 
-        return array('valueHolder58066298cccb6428684095');
+        return array('valueHolder58068478baa0d876859239');
     }
 
     public function __wakeup()
@@ -6797,7 +6797,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cccbb421309304 = $initializer;
+        $this->initializer58068478baa12185642119 = $initializer;
     }
 
     /**
@@ -6805,7 +6805,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cccbb421309304;
+        return $this->initializer58068478baa12185642119;
     }
 
     /**
@@ -6813,7 +6813,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cccbb421309304 && $this->initializer58066298cccbb421309304->__invoke($this->valueHolder58066298cccb6428684095, $this, 'initializeProxy', array(), $this->initializer58066298cccbb421309304);
+        return $this->initializer58068478baa12185642119 && $this->initializer58068478baa12185642119->__invoke($this->valueHolder58068478baa0d876859239, $this, 'initializeProxy', array(), $this->initializer58068478baa12185642119);
     }
 
     /**
@@ -6821,7 +6821,7 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cccb6428684095;
+        return null !== $this->valueHolder58068478baa0d876859239;
     }
 
     /**
@@ -6829,29 +6829,29 @@ class HautelookAliceBundleDoctrineDataFixturesExecutorFixturesExecutor_000000000
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cccb6428684095;
+        return $this->valueHolder58068478baa0d876859239;
     }
 
 
 }
 
-class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Doctrine\Command\CommandFactory implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleDoctrineCommandCommandFactory_000000002bbd776e000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Doctrine\Command\CommandFactory implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298ccea1642218523 = null;
+    private $valueHolder58068478bac18649371070 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298ccea5089289477 = null;
+    private $initializer58068478bac1d710445516 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cce95079899550 = array(
+    private static $publicProperties58068478bac0b659769923 = array(
         
     );
 
@@ -6860,9 +6860,9 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function createCommand($name, \Doctrine\Common\Persistence\ManagerRegistry $doctrine, \Hautelook\AliceBundle\Alice\DataFixtures\LoaderInterface $loader, \Hautelook\AliceBundle\Alice\DataFixtures\Fixtures\LoaderInterface $fixturesLoader, \Hautelook\AliceBundle\Finder\FixturesFinderInterface $fixturesFinder, \Hautelook\AliceBundle\Resolver\BundlesResolverInterface $bundlesResolver, \Hautelook\AliceBundle\Doctrine\Generator\LoaderGeneratorInterface $loaderGenerator, \Hautelook\AliceBundle\Doctrine\DataFixtures\Executor\FixturesExecutorInterface $fixturesExecutor)
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, 'createCommand', array('name' => $name, 'doctrine' => $doctrine, 'loader' => $loader, 'fixturesLoader' => $fixturesLoader, 'fixturesFinder' => $fixturesFinder, 'bundlesResolver' => $bundlesResolver, 'loaderGenerator' => $loaderGenerator, 'fixturesExecutor' => $fixturesExecutor), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, 'createCommand', array('name' => $name, 'doctrine' => $doctrine, 'loader' => $loader, 'fixturesLoader' => $fixturesLoader, 'fixturesFinder' => $fixturesFinder, 'bundlesResolver' => $bundlesResolver, 'loaderGenerator' => $loaderGenerator, 'fixturesExecutor' => $fixturesExecutor), $this->initializer58068478bac1d710445516);
 
-        return $this->valueHolder58066298ccea1642218523->createCommand($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
+        return $this->valueHolder58068478bac18649371070->createCommand($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
     }
 
     /**
@@ -6877,7 +6877,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
         $reflection = $reflection ?: $reflection = new \ReflectionClass(__CLASS__);
         $instance = (new \ReflectionClass(get_class()))->newInstanceWithoutConstructor();
 
-        $instance->initializer58066298ccea5089289477 = $initializer;
+        $instance->initializer58068478bac1d710445516 = $initializer;
 
         return $instance;
     }
@@ -6889,9 +6889,9 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298ccea1642218523) {
+        if (! $this->valueHolder58068478bac18649371070) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Doctrine\\Command\\CommandFactory');
-            $this->valueHolder58066298ccea1642218523 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478bac18649371070 = $reflection->newInstanceWithoutConstructor();
         }
     }
 
@@ -6900,16 +6900,16 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function & __get($name)
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__get', array('name' => $name), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__get', array('name' => $name), $this->initializer58068478bac1d710445516);
 
-        if (isset(self::$publicProperties58066298cce95079899550[$name])) {
-            return $this->valueHolder58066298ccea1642218523->$name;
+        if (isset(self::$publicProperties58068478bac0b659769923[$name])) {
+            return $this->valueHolder58068478bac18649371070->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298ccea1642218523;
+            $targetObject = $this->valueHolder58068478bac18649371070;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -6917,7 +6917,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
             return;
         }
 
-        $targetObject = $this->valueHolder58066298ccea1642218523;
+        $targetObject = $this->valueHolder58068478bac18649371070;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -6935,18 +6935,18 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478bac1d710445516);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298ccea1642218523;
+            $targetObject = $this->valueHolder58068478bac18649371070;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298ccea1642218523;
+        $targetObject = $this->valueHolder58068478bac18649371070;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -6963,18 +6963,18 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function __isset($name)
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__isset', array('name' => $name), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__isset', array('name' => $name), $this->initializer58068478bac1d710445516);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298ccea1642218523;
+            $targetObject = $this->valueHolder58068478bac18649371070;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298ccea1642218523;
+        $targetObject = $this->valueHolder58068478bac18649371070;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -6991,18 +6991,18 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function __unset($name)
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__unset', array('name' => $name), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__unset', array('name' => $name), $this->initializer58068478bac1d710445516);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298ccea1642218523;
+            $targetObject = $this->valueHolder58068478bac18649371070;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298ccea1642218523;
+        $targetObject = $this->valueHolder58068478bac18649371070;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -7016,16 +7016,16 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
 
     public function __clone()
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__clone', array(), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__clone', array(), $this->initializer58068478bac1d710445516);
 
-        $this->valueHolder58066298ccea1642218523 = clone $this->valueHolder58066298ccea1642218523;
+        $this->valueHolder58068478bac18649371070 = clone $this->valueHolder58068478bac18649371070;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, '__sleep', array(), $this->initializer58066298ccea5089289477);
+        $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, '__sleep', array(), $this->initializer58068478bac1d710445516);
 
-        return array('valueHolder58066298ccea1642218523');
+        return array('valueHolder58068478bac18649371070');
     }
 
     public function __wakeup()
@@ -7037,7 +7037,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298ccea5089289477 = $initializer;
+        $this->initializer58068478bac1d710445516 = $initializer;
     }
 
     /**
@@ -7045,7 +7045,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298ccea5089289477;
+        return $this->initializer58068478bac1d710445516;
     }
 
     /**
@@ -7053,7 +7053,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298ccea5089289477 && $this->initializer58066298ccea5089289477->__invoke($this->valueHolder58066298ccea1642218523, $this, 'initializeProxy', array(), $this->initializer58066298ccea5089289477);
+        return $this->initializer58068478bac1d710445516 && $this->initializer58068478bac1d710445516->__invoke($this->valueHolder58068478bac18649371070, $this, 'initializeProxy', array(), $this->initializer58068478bac1d710445516);
     }
 
     /**
@@ -7061,7 +7061,7 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298ccea1642218523;
+        return null !== $this->valueHolder58068478bac18649371070;
     }
 
     /**
@@ -7069,29 +7069,29 @@ class HautelookAliceBundleDoctrineCommandCommandFactory_0000000000e826dd00000000
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298ccea1642218523;
+        return $this->valueHolder58068478bac18649371070;
     }
 
 
 }
 
-class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e2000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_000000002bbd7771000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cd1fe264498433 = null;
+    private $valueHolder58068478baf42855108974 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cd203850659427 = null;
+    private $initializer58068478baf47629947584 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cd1ef472295851 = array(
+    private static $publicProperties58068478baf33459261421 = array(
         
     );
 
@@ -7100,9 +7100,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function ignoreValidationErrors()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'ignoreValidationErrors', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'ignoreValidationErrors', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->ignoreValidationErrors();
+        return $this->valueHolder58068478baf42855108974->ignoreValidationErrors();
     }
 
     /**
@@ -7110,9 +7110,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setApplication(\Symfony\Component\Console\Application $application = null)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setApplication', array('application' => $application), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setApplication', array('application' => $application), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setApplication($application);
+        return $this->valueHolder58068478baf42855108974->setApplication($application);
     }
 
     /**
@@ -7120,9 +7120,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setHelperSet(\Symfony\Component\Console\Helper\HelperSet $helperSet)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setHelperSet', array('helperSet' => $helperSet), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setHelperSet', array('helperSet' => $helperSet), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setHelperSet($helperSet);
+        return $this->valueHolder58068478baf42855108974->setHelperSet($helperSet);
     }
 
     /**
@@ -7130,9 +7130,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelperSet()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getHelperSet', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getHelperSet', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getHelperSet();
+        return $this->valueHolder58068478baf42855108974->getHelperSet();
     }
 
     /**
@@ -7140,9 +7140,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getApplication()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getApplication', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getApplication', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getApplication();
+        return $this->valueHolder58068478baf42855108974->getApplication();
     }
 
     /**
@@ -7150,9 +7150,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function isEnabled()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'isEnabled', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'isEnabled', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->isEnabled();
+        return $this->valueHolder58068478baf42855108974->isEnabled();
     }
 
     /**
@@ -7160,9 +7160,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function run(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'run', array('input' => $input, 'output' => $output), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'run', array('input' => $input, 'output' => $output), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->run($input, $output);
+        return $this->valueHolder58068478baf42855108974->run($input, $output);
     }
 
     /**
@@ -7170,9 +7170,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setCode(callable $code)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setCode', array('code' => $code), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setCode', array('code' => $code), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setCode($code);
+        return $this->valueHolder58068478baf42855108974->setCode($code);
     }
 
     /**
@@ -7180,9 +7180,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function mergeApplicationDefinition($mergeArgs = true)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'mergeApplicationDefinition', array('mergeArgs' => $mergeArgs), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'mergeApplicationDefinition', array('mergeArgs' => $mergeArgs), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->mergeApplicationDefinition($mergeArgs);
+        return $this->valueHolder58068478baf42855108974->mergeApplicationDefinition($mergeArgs);
     }
 
     /**
@@ -7190,9 +7190,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setDefinition($definition)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setDefinition', array('definition' => $definition), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setDefinition', array('definition' => $definition), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setDefinition($definition);
+        return $this->valueHolder58068478baf42855108974->setDefinition($definition);
     }
 
     /**
@@ -7200,9 +7200,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getDefinition()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getDefinition', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getDefinition', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getDefinition();
+        return $this->valueHolder58068478baf42855108974->getDefinition();
     }
 
     /**
@@ -7210,9 +7210,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getNativeDefinition()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getNativeDefinition', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getNativeDefinition', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getNativeDefinition();
+        return $this->valueHolder58068478baf42855108974->getNativeDefinition();
     }
 
     /**
@@ -7220,9 +7220,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addArgument($name, $mode = null, $description = '', $default = null)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'addArgument', array('name' => $name, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'addArgument', array('name' => $name, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->addArgument($name, $mode, $description, $default);
+        return $this->valueHolder58068478baf42855108974->addArgument($name, $mode, $description, $default);
     }
 
     /**
@@ -7230,9 +7230,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'addOption', array('name' => $name, 'shortcut' => $shortcut, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'addOption', array('name' => $name, 'shortcut' => $shortcut, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->addOption($name, $shortcut, $mode, $description, $default);
+        return $this->valueHolder58068478baf42855108974->addOption($name, $shortcut, $mode, $description, $default);
     }
 
     /**
@@ -7240,9 +7240,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setName($name)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setName', array('name' => $name), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setName', array('name' => $name), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setName($name);
+        return $this->valueHolder58068478baf42855108974->setName($name);
     }
 
     /**
@@ -7250,9 +7250,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setProcessTitle($title)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setProcessTitle', array('title' => $title), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setProcessTitle', array('title' => $title), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setProcessTitle($title);
+        return $this->valueHolder58068478baf42855108974->setProcessTitle($title);
     }
 
     /**
@@ -7260,9 +7260,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getName()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getName', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getName', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getName();
+        return $this->valueHolder58068478baf42855108974->getName();
     }
 
     /**
@@ -7270,9 +7270,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setDescription($description)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setDescription', array('description' => $description), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setDescription', array('description' => $description), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setDescription($description);
+        return $this->valueHolder58068478baf42855108974->setDescription($description);
     }
 
     /**
@@ -7280,9 +7280,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getDescription()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getDescription', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getDescription', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getDescription();
+        return $this->valueHolder58068478baf42855108974->getDescription();
     }
 
     /**
@@ -7290,9 +7290,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setHelp($help)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setHelp', array('help' => $help), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setHelp', array('help' => $help), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setHelp($help);
+        return $this->valueHolder58068478baf42855108974->setHelp($help);
     }
 
     /**
@@ -7300,9 +7300,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelp()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getHelp', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getHelp', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getHelp();
+        return $this->valueHolder58068478baf42855108974->getHelp();
     }
 
     /**
@@ -7310,9 +7310,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getProcessedHelp()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getProcessedHelp', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getProcessedHelp', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getProcessedHelp();
+        return $this->valueHolder58068478baf42855108974->getProcessedHelp();
     }
 
     /**
@@ -7320,9 +7320,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setAliases($aliases)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'setAliases', array('aliases' => $aliases), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'setAliases', array('aliases' => $aliases), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->setAliases($aliases);
+        return $this->valueHolder58068478baf42855108974->setAliases($aliases);
     }
 
     /**
@@ -7330,9 +7330,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getAliases()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getAliases', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getAliases', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getAliases();
+        return $this->valueHolder58068478baf42855108974->getAliases();
     }
 
     /**
@@ -7340,9 +7340,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getSynopsis($short = false)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getSynopsis', array('short' => $short), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getSynopsis', array('short' => $short), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getSynopsis($short);
+        return $this->valueHolder58068478baf42855108974->getSynopsis($short);
     }
 
     /**
@@ -7350,9 +7350,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addUsage($usage)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'addUsage', array('usage' => $usage), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'addUsage', array('usage' => $usage), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->addUsage($usage);
+        return $this->valueHolder58068478baf42855108974->addUsage($usage);
     }
 
     /**
@@ -7360,9 +7360,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getUsages()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getUsages', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getUsages', array(), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getUsages();
+        return $this->valueHolder58068478baf42855108974->getUsages();
     }
 
     /**
@@ -7370,9 +7370,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelper($name)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'getHelper', array('name' => $name), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'getHelper', array('name' => $name), $this->initializer58068478baf47629947584);
 
-        return $this->valueHolder58066298cd1fe264498433->getHelper($name);
+        return $this->valueHolder58068478baf42855108974->getHelper($name);
     }
 
     /**
@@ -7395,7 +7395,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
             unset($instance->application, $instance->name, $instance->processTitle, $instance->aliases, $instance->definition, $instance->help, $instance->description, $instance->ignoreValidationErrors, $instance->applicationDefinitionMerged, $instance->applicationDefinitionMergedWithArgs, $instance->code, $instance->synopsis, $instance->usages, $instance->helperSet);
         }, $instance, 'Symfony\\Component\\Console\\Command\\Command')->__invoke($instance);
 
-        $instance->initializer58066298cd203850659427 = $initializer;
+        $instance->initializer58068478baf47629947584 = $initializer;
 
         return $instance;
     }
@@ -7407,9 +7407,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cd1fe264498433) {
+        if (! $this->valueHolder58068478baf42855108974) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Doctrine\\Command\\LoadDataFixturesCommand');
-            $this->valueHolder58066298cd1fe264498433 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478baf42855108974 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand $instance) {
             unset($instance->bundlesResolver, $instance->doctrine, $instance->fixturesExecutor, $instance->fixturesFinder, $instance->fixturesLoader, $instance->loader, $instance->loaderGenerator);
         }, $this, 'Hautelook\\AliceBundle\\Doctrine\\Command\\LoadDataFixturesCommand')->__invoke($this);
@@ -7420,7 +7420,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
 
         }
 
-        $this->valueHolder58066298cd1fe264498433->__construct($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
+        $this->valueHolder58068478baf42855108974->__construct($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
     }
 
     /**
@@ -7428,16 +7428,16 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function & __get($name)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__get', array('name' => $name), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__get', array('name' => $name), $this->initializer58068478baf47629947584);
 
-        if (isset(self::$publicProperties58066298cd1ef472295851[$name])) {
-            return $this->valueHolder58066298cd1fe264498433->$name;
+        if (isset(self::$publicProperties58068478baf33459261421[$name])) {
+            return $this->valueHolder58068478baf42855108974->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cd1fe264498433;
+            $targetObject = $this->valueHolder58068478baf42855108974;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -7445,7 +7445,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cd1fe264498433;
+        $targetObject = $this->valueHolder58068478baf42855108974;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -7463,18 +7463,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478baf47629947584);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cd1fe264498433;
+            $targetObject = $this->valueHolder58068478baf42855108974;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cd1fe264498433;
+        $targetObject = $this->valueHolder58068478baf42855108974;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -7491,18 +7491,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __isset($name)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__isset', array('name' => $name), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__isset', array('name' => $name), $this->initializer58068478baf47629947584);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cd1fe264498433;
+            $targetObject = $this->valueHolder58068478baf42855108974;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cd1fe264498433;
+        $targetObject = $this->valueHolder58068478baf42855108974;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -7519,18 +7519,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __unset($name)
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__unset', array('name' => $name), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__unset', array('name' => $name), $this->initializer58068478baf47629947584);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cd1fe264498433;
+            $targetObject = $this->valueHolder58068478baf42855108974;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cd1fe264498433;
+        $targetObject = $this->valueHolder58068478baf42855108974;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -7544,16 +7544,16 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
 
     public function __clone()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__clone', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__clone', array(), $this->initializer58068478baf47629947584);
 
-        $this->valueHolder58066298cd1fe264498433 = clone $this->valueHolder58066298cd1fe264498433;
+        $this->valueHolder58068478baf42855108974 = clone $this->valueHolder58068478baf42855108974;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, '__sleep', array(), $this->initializer58066298cd203850659427);
+        $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, '__sleep', array(), $this->initializer58068478baf47629947584);
 
-        return array('valueHolder58066298cd1fe264498433');
+        return array('valueHolder58068478baf42855108974');
     }
 
     public function __wakeup()
@@ -7572,7 +7572,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cd203850659427 = $initializer;
+        $this->initializer58068478baf47629947584 = $initializer;
     }
 
     /**
@@ -7580,7 +7580,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cd203850659427;
+        return $this->initializer58068478baf47629947584;
     }
 
     /**
@@ -7588,7 +7588,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cd203850659427 && $this->initializer58066298cd203850659427->__invoke($this->valueHolder58066298cd1fe264498433, $this, 'initializeProxy', array(), $this->initializer58066298cd203850659427);
+        return $this->initializer58068478baf47629947584 && $this->initializer58068478baf47629947584->__invoke($this->valueHolder58068478baf42855108974, $this, 'initializeProxy', array(), $this->initializer58068478baf47629947584);
     }
 
     /**
@@ -7596,7 +7596,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cd1fe264498433;
+        return null !== $this->valueHolder58068478baf42855108974;
     }
 
     /**
@@ -7604,29 +7604,29 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cd1fe264498433;
+        return $this->valueHolder58068478baf42855108974;
     }
 
 
 }
 
-class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e9000000005c3397c68c91cff88c4ac0edeabbf4e67d294220 extends \Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand implements \ProxyManager\Proxy\VirtualProxyInterface
+class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_000000002bbd777a000000001caddd9973372f0925153013a2081866fb60e406 extends \Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder58066298cf887070339449 = null;
+    private $valueHolder58068478bd699409807321 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer58066298cf88d185059109 = null;
+    private $initializer58068478bd69f006468705 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties58066298cf876440869915 = array(
+    private static $publicProperties58068478bd685704917123 = array(
         
     );
 
@@ -7635,9 +7635,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function ignoreValidationErrors()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'ignoreValidationErrors', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'ignoreValidationErrors', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->ignoreValidationErrors();
+        return $this->valueHolder58068478bd699409807321->ignoreValidationErrors();
     }
 
     /**
@@ -7645,9 +7645,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setApplication(\Symfony\Component\Console\Application $application = null)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setApplication', array('application' => $application), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setApplication', array('application' => $application), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setApplication($application);
+        return $this->valueHolder58068478bd699409807321->setApplication($application);
     }
 
     /**
@@ -7655,9 +7655,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setHelperSet(\Symfony\Component\Console\Helper\HelperSet $helperSet)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setHelperSet', array('helperSet' => $helperSet), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setHelperSet', array('helperSet' => $helperSet), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setHelperSet($helperSet);
+        return $this->valueHolder58068478bd699409807321->setHelperSet($helperSet);
     }
 
     /**
@@ -7665,9 +7665,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelperSet()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getHelperSet', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getHelperSet', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getHelperSet();
+        return $this->valueHolder58068478bd699409807321->getHelperSet();
     }
 
     /**
@@ -7675,9 +7675,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getApplication()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getApplication', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getApplication', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getApplication();
+        return $this->valueHolder58068478bd699409807321->getApplication();
     }
 
     /**
@@ -7685,9 +7685,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function isEnabled()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'isEnabled', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'isEnabled', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->isEnabled();
+        return $this->valueHolder58068478bd699409807321->isEnabled();
     }
 
     /**
@@ -7695,9 +7695,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function run(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'run', array('input' => $input, 'output' => $output), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'run', array('input' => $input, 'output' => $output), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->run($input, $output);
+        return $this->valueHolder58068478bd699409807321->run($input, $output);
     }
 
     /**
@@ -7705,9 +7705,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setCode(callable $code)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setCode', array('code' => $code), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setCode', array('code' => $code), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setCode($code);
+        return $this->valueHolder58068478bd699409807321->setCode($code);
     }
 
     /**
@@ -7715,9 +7715,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function mergeApplicationDefinition($mergeArgs = true)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'mergeApplicationDefinition', array('mergeArgs' => $mergeArgs), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'mergeApplicationDefinition', array('mergeArgs' => $mergeArgs), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->mergeApplicationDefinition($mergeArgs);
+        return $this->valueHolder58068478bd699409807321->mergeApplicationDefinition($mergeArgs);
     }
 
     /**
@@ -7725,9 +7725,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setDefinition($definition)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setDefinition', array('definition' => $definition), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setDefinition', array('definition' => $definition), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setDefinition($definition);
+        return $this->valueHolder58068478bd699409807321->setDefinition($definition);
     }
 
     /**
@@ -7735,9 +7735,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getDefinition()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getDefinition', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getDefinition', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getDefinition();
+        return $this->valueHolder58068478bd699409807321->getDefinition();
     }
 
     /**
@@ -7745,9 +7745,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getNativeDefinition()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getNativeDefinition', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getNativeDefinition', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getNativeDefinition();
+        return $this->valueHolder58068478bd699409807321->getNativeDefinition();
     }
 
     /**
@@ -7755,9 +7755,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addArgument($name, $mode = null, $description = '', $default = null)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'addArgument', array('name' => $name, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'addArgument', array('name' => $name, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->addArgument($name, $mode, $description, $default);
+        return $this->valueHolder58068478bd699409807321->addArgument($name, $mode, $description, $default);
     }
 
     /**
@@ -7765,9 +7765,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'addOption', array('name' => $name, 'shortcut' => $shortcut, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'addOption', array('name' => $name, 'shortcut' => $shortcut, 'mode' => $mode, 'description' => $description, 'default' => $default), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->addOption($name, $shortcut, $mode, $description, $default);
+        return $this->valueHolder58068478bd699409807321->addOption($name, $shortcut, $mode, $description, $default);
     }
 
     /**
@@ -7775,9 +7775,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setName($name)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setName', array('name' => $name), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setName', array('name' => $name), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setName($name);
+        return $this->valueHolder58068478bd699409807321->setName($name);
     }
 
     /**
@@ -7785,9 +7785,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setProcessTitle($title)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setProcessTitle', array('title' => $title), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setProcessTitle', array('title' => $title), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setProcessTitle($title);
+        return $this->valueHolder58068478bd699409807321->setProcessTitle($title);
     }
 
     /**
@@ -7795,9 +7795,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getName()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getName', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getName', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getName();
+        return $this->valueHolder58068478bd699409807321->getName();
     }
 
     /**
@@ -7805,9 +7805,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setDescription($description)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setDescription', array('description' => $description), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setDescription', array('description' => $description), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setDescription($description);
+        return $this->valueHolder58068478bd699409807321->setDescription($description);
     }
 
     /**
@@ -7815,9 +7815,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getDescription()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getDescription', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getDescription', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getDescription();
+        return $this->valueHolder58068478bd699409807321->getDescription();
     }
 
     /**
@@ -7825,9 +7825,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setHelp($help)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setHelp', array('help' => $help), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setHelp', array('help' => $help), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setHelp($help);
+        return $this->valueHolder58068478bd699409807321->setHelp($help);
     }
 
     /**
@@ -7835,9 +7835,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelp()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getHelp', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getHelp', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getHelp();
+        return $this->valueHolder58068478bd699409807321->getHelp();
     }
 
     /**
@@ -7845,9 +7845,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getProcessedHelp()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getProcessedHelp', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getProcessedHelp', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getProcessedHelp();
+        return $this->valueHolder58068478bd699409807321->getProcessedHelp();
     }
 
     /**
@@ -7855,9 +7855,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setAliases($aliases)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'setAliases', array('aliases' => $aliases), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'setAliases', array('aliases' => $aliases), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->setAliases($aliases);
+        return $this->valueHolder58068478bd699409807321->setAliases($aliases);
     }
 
     /**
@@ -7865,9 +7865,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getAliases()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getAliases', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getAliases', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getAliases();
+        return $this->valueHolder58068478bd699409807321->getAliases();
     }
 
     /**
@@ -7875,9 +7875,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getSynopsis($short = false)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getSynopsis', array('short' => $short), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getSynopsis', array('short' => $short), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getSynopsis($short);
+        return $this->valueHolder58068478bd699409807321->getSynopsis($short);
     }
 
     /**
@@ -7885,9 +7885,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function addUsage($usage)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'addUsage', array('usage' => $usage), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'addUsage', array('usage' => $usage), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->addUsage($usage);
+        return $this->valueHolder58068478bd699409807321->addUsage($usage);
     }
 
     /**
@@ -7895,9 +7895,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getUsages()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getUsages', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getUsages', array(), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getUsages();
+        return $this->valueHolder58068478bd699409807321->getUsages();
     }
 
     /**
@@ -7905,9 +7905,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getHelper($name)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'getHelper', array('name' => $name), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'getHelper', array('name' => $name), $this->initializer58068478bd69f006468705);
 
-        return $this->valueHolder58066298cf887070339449->getHelper($name);
+        return $this->valueHolder58068478bd699409807321->getHelper($name);
     }
 
     /**
@@ -7930,7 +7930,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
             unset($instance->application, $instance->name, $instance->processTitle, $instance->aliases, $instance->definition, $instance->help, $instance->description, $instance->ignoreValidationErrors, $instance->applicationDefinitionMerged, $instance->applicationDefinitionMergedWithArgs, $instance->code, $instance->synopsis, $instance->usages, $instance->helperSet);
         }, $instance, 'Symfony\\Component\\Console\\Command\\Command')->__invoke($instance);
 
-        $instance->initializer58066298cf88d185059109 = $initializer;
+        $instance->initializer58068478bd69f006468705 = $initializer;
 
         return $instance;
     }
@@ -7942,9 +7942,9 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
     {
         static $reflection;
 
-        if (! $this->valueHolder58066298cf887070339449) {
+        if (! $this->valueHolder58068478bd699409807321) {
             $reflection = $reflection ?: new \ReflectionClass('Hautelook\\AliceBundle\\Doctrine\\Command\\LoadDataFixturesCommand');
-            $this->valueHolder58066298cf887070339449 = $reflection->newInstanceWithoutConstructor();
+            $this->valueHolder58068478bd699409807321 = $reflection->newInstanceWithoutConstructor();
         \Closure::bind(function (\Hautelook\AliceBundle\Doctrine\Command\LoadDataFixturesCommand $instance) {
             unset($instance->bundlesResolver, $instance->doctrine, $instance->fixturesExecutor, $instance->fixturesFinder, $instance->fixturesLoader, $instance->loader, $instance->loaderGenerator);
         }, $this, 'Hautelook\\AliceBundle\\Doctrine\\Command\\LoadDataFixturesCommand')->__invoke($this);
@@ -7955,7 +7955,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
 
         }
 
-        $this->valueHolder58066298cf887070339449->__construct($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
+        $this->valueHolder58068478bd699409807321->__construct($name, $doctrine, $loader, $fixturesLoader, $fixturesFinder, $bundlesResolver, $loaderGenerator, $fixturesExecutor);
     }
 
     /**
@@ -7963,16 +7963,16 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function & __get($name)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__get', array('name' => $name), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__get', array('name' => $name), $this->initializer58068478bd69f006468705);
 
-        if (isset(self::$publicProperties58066298cf876440869915[$name])) {
-            return $this->valueHolder58066298cf887070339449->$name;
+        if (isset(self::$publicProperties58068478bd685704917123[$name])) {
+            return $this->valueHolder58068478bd699409807321->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cf887070339449;
+            $targetObject = $this->valueHolder58068478bd699409807321;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -7980,7 +7980,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cf887070339449;
+        $targetObject = $this->valueHolder58068478bd699409807321;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -7998,18 +7998,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __set($name, $value)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer58068478bd69f006468705);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cf887070339449;
+            $targetObject = $this->valueHolder58068478bd699409807321;
 
             return $targetObject->$name = $value;
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cf887070339449;
+        $targetObject = $this->valueHolder58068478bd699409807321;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -8026,18 +8026,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __isset($name)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__isset', array('name' => $name), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__isset', array('name' => $name), $this->initializer58068478bd69f006468705);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cf887070339449;
+            $targetObject = $this->valueHolder58068478bd699409807321;
 
             return isset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cf887070339449;
+        $targetObject = $this->valueHolder58068478bd699409807321;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -8054,18 +8054,18 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function __unset($name)
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__unset', array('name' => $name), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__unset', array('name' => $name), $this->initializer58068478bd69f006468705);
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder58066298cf887070339449;
+            $targetObject = $this->valueHolder58068478bd699409807321;
 
             unset($targetObject->$name);
             return;
         }
 
-        $targetObject = $this->valueHolder58066298cf887070339449;
+        $targetObject = $this->valueHolder58068478bd699409807321;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -8079,16 +8079,16 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
 
     public function __clone()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__clone', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__clone', array(), $this->initializer58068478bd69f006468705);
 
-        $this->valueHolder58066298cf887070339449 = clone $this->valueHolder58066298cf887070339449;
+        $this->valueHolder58068478bd699409807321 = clone $this->valueHolder58068478bd699409807321;
     }
 
     public function __sleep()
     {
-        $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, '__sleep', array(), $this->initializer58066298cf88d185059109);
+        $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, '__sleep', array(), $this->initializer58068478bd69f006468705);
 
-        return array('valueHolder58066298cf887070339449');
+        return array('valueHolder58068478bd699409807321');
     }
 
     public function __wakeup()
@@ -8107,7 +8107,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer58066298cf88d185059109 = $initializer;
+        $this->initializer58068478bd69f006468705 = $initializer;
     }
 
     /**
@@ -8115,7 +8115,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getProxyInitializer()
     {
-        return $this->initializer58066298cf88d185059109;
+        return $this->initializer58068478bd69f006468705;
     }
 
     /**
@@ -8123,7 +8123,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function initializeProxy() : bool
     {
-        return $this->initializer58066298cf88d185059109 && $this->initializer58066298cf88d185059109->__invoke($this->valueHolder58066298cf887070339449, $this, 'initializeProxy', array(), $this->initializer58066298cf88d185059109);
+        return $this->initializer58068478bd69f006468705 && $this->initializer58068478bd69f006468705->__invoke($this->valueHolder58068478bd699409807321, $this, 'initializeProxy', array(), $this->initializer58068478bd69f006468705);
     }
 
     /**
@@ -8131,7 +8131,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function isProxyInitialized() : bool
     {
-        return null !== $this->valueHolder58066298cf887070339449;
+        return null !== $this->valueHolder58068478bd699409807321;
     }
 
     /**
@@ -8139,7 +8139,7 @@ class HautelookAliceBundleDoctrineCommandLoadDataFixturesCommand_0000000000e826e
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder58066298cf887070339449;
+        return $this->valueHolder58068478bd699409807321;
     }
 
 

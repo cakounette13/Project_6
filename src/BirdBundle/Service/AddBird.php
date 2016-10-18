@@ -24,11 +24,16 @@ class AddBird {
 	 * @var FormFactory
 	 */
 	private $form;
+	/**
+	 * @var UploadFile
+	 */
+	private $uploadFile;
 
-	public function __construct(EntityManager $em, FormFactory $form)
+	public function __construct(EntityManager $em, FormFactory $form, UploadFile $uploadFile)
 	{
 		$this->em = $em;
 		$this->form = $form;
+		$this->uploadFile = $uploadFile;
 	}
 
 	public function formBuilder(Request $request)
@@ -37,7 +42,10 @@ class AddBird {
 		$form = $this->form->create(BirdsType::class, $bird);
 		$form->handleRequest($request);
 		if ($form->isValid() && $form->isSubmitted()) {
+			$file = $bird->getImage();
 			$form->getData();
+			$fileName = $this->uploadFile->upload($file);
+			$bird->setImage($fileName);
 			$em = $this->em;
 			$em->persist($bird);
 			$em->flush();
