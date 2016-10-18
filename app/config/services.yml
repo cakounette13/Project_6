@@ -5,15 +5,15 @@ parameters:
 services:
 
   search_bird:
-        class: BirdBundle\service\SearchService
+        class: BirdBundle\Service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
   add_bird:
-      class: BirdBundle\service\AddBird
+      class: BirdBundle\Service\AddBird
       arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
   app.image_uploader:
-          class: BirdBundle\service\UploadFile
+          class: BirdBundle\Service\UploadFile
           arguments: ['%images_directory%']
 
   app.doctrine_images_listener:

@@ -21,8 +21,6 @@ class ImageUploadListener {
 	 */
 	private $uploader;
 
-
-
 	public function __construct(UploadFile $uploader)
 	{
 		$this->uploader = $uploader;
