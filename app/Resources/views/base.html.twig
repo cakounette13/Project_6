@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <style>
-                #birds {
-                    width: 500px;
-                    margin-left: 0;
-                    height: 500px;
-                }
-                #add_bird {
-                    width: 500px;
-                    margin-left: 0;
-                    height: 800px;
-                }
-                input::-webkit-calendar-picker-indicator {
-                    display: none;
-                }
-            </style>
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
-                  rel="stylesheet">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div class="container">
-            {% block body %}
-            {% endblock %}
-        </div>
-        {% block javascripts %}
-        {% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}NAO{% endblock %}</title>
+    {% block stylesheets %}
+        <style>
+            #birds {
+
+                margin: auto;
+                height: 100%;
+                margin-top: 60px;
+
+            }
+
+            input::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+
+
+        </style>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css') }}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/jquery.fullpage.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/navbar-fixed-top.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/dropdown_menu.css') }}">
+        <script src="https://use.fontawesome.com/57214ed58f.js"></script>
+
+
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<!--HEADER-->
+<nav id="header">
+    <!-- hamburger menu -->
+
+    <ul id="c_logo">
+        <li class="off-1">
+            <i id="hamburger" class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            <ul class="drop-menu menu-1">
+                {{ knp_menu_render('BirdBundle:Builder:mainMenu') }}
+            </ul>
+        </li>
+    </ul>
+
+
+    <span id="title" >NAO</span>
+    <div id="c_link_beta" >
+
+        <a href="" target="_blank" ><i id="connexion" class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+    </div>
+</nav>
+    {% block body %}
+
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery-3.1.0.js') }}"></script>
+        <script src="{{ asset('js/jquery.fullpage.min.js') }}"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/npm.js') }}"></script>
+        <script src="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#fullpage').fullpage();
+            });
+        </script>
+
+
+
+        <script>
+            {# set a base url to '/' or maybe '/app_dev.php' #}
+            window.baseUrl = '{{ path('bird') }}';
+        </script>
+        {% if app.environment == 'dev' %}
+        <script src="http://127.0.0.1:3000/static/bundle.js"></script>
+        {% else %}
+        <script src="{{ asset('dist/bundle.js') }}"></script>
+        {% endif %}
+    {% endblock %}
+</body>
 </html>

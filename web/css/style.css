@@ -386,6 +386,18 @@ span
     margin-left: 30px;
 }
 
+#c_form_mail input[name="i_date"]{
+    background-image: url("../icons/calendar.svg");
+    transition-delay: 0.2s;
+    margin-left: 30px;
+}
+
+#c_form_mail input[name="i_pwd"]{
+    background-image: url("../icons/keywords.svg");
+    transition-delay: 0.2s;
+    margin-left: 30px;
+}
+
 #upload{
     transition-delay: 0.3s;
     margin-left: 30px;
@@ -495,15 +507,30 @@ span
 
 /*first page map*/
 
-input#input-search {
+input#input-search{
     margin-bottom: 10px;
     width: 80% !important;
     margin-left: 10% !important;
-
+    border-radius: 5px !important;
+    box-shadow: 10px 5px 18px #888888 !important;
 }
 
-.gm-style {
-    height: 91% !important;
+#birds > div > div:nth-child(2)
+
+{
+    box-shadow: 10px 5px 18px #888888;
+    height: 85% !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*border-radius*/
+
+
+#birds > div > div:nth-child(2) > div > div:nth-child(1)
+{
+    border-radius: 10px;
 }
 
 
@@ -671,17 +698,72 @@ span.glyphicon.glyphicon-chevron-right{
     }
 }
 
+
+
+
+.carousel .item {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0);
+
+    overflow: hidden;
+
+}
+.carousel-control {
+    border-radius: 10px;
+
+}
+
+/*gradients background*/
+
+#section0 {
+    background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
+    background: -webkit-linear-gradient(#4BBFC3, #7BAABE);
+    background: linear-gradient(#4BBFC3, #7BAABE);
+}
+
+#section1{
+    background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
+    background: -webkit-linear-gradient(#969AC6, #636F8F);
+    background: linear-gradient(#969AC6,#636F8F);
+}
+
+#section4{
+    background: #00d2ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #00d2ff , #928DAB); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 /*nouvelles observations*/
 
-#map_height
+
+
+.margin-top
 {
-    height: 1000px;
+    margin-top: 55px;
 }
 
 #add_bird
 {
     margin: auto !important;
+    width: 80%;
     height: 80%;
+
+}
+
+input#form_longitude
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+input#form_latitude
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 10px 5px 18px #888888 !important;
 }
 
 label
@@ -694,21 +776,20 @@ input
     width: 75%;
 }
 
-#observation
-{
-    margin-top: 40px;
-    height: 100%;
 
-}
 
 html.fa-events-icons-failed body div#map_height div#observation.section.container-fluid div#add_bird div div
 {
     margin-bottom: 55px;
 }
 
+#add_bird > div > div:nth-child(1) > p
+{
+    margin-top: 5px;
+}
+
 #add_bird > div > div:nth-child(2)
 {
-    margin-top: 50px;
     height: 680px !important;
 }
 
@@ -750,6 +831,38 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 
 /*login page*/
+
+.input_top
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px !important;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+.input-bottom
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 10px 5px 18px #888888 !important;
+
+}
+
+.btn{
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+#third_input
+{
+    margin-top: 10px;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+#second_input
+{
+    box-shadow: 10px 5px 18px #888888 !important;
+}
 
 #oubli
 {
@@ -814,12 +927,10 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
         display: none;
     }
 
-    #section4 h2{
-        margin-top: 10%;
-    }
+
 
     #c_form_mail{
-        height: 150px;
+
         width: 100%;
         margin: auto;
         margin-top: 10px;

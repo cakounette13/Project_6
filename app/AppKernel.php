@@ -22,6 +22,7 @@ class AppKernel extends Kernel
 	        new BirdBundle\BirdBundle(),
             new FOS\UserBundle\FOSUserBundle(),
 	        new UserBundle\UserBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

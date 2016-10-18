@@ -38,6 +38,8 @@ return array(
     'Negotiation\\' => array($vendorDir . '/willdurand/negotiation/src/Negotiation'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Limenius\\ReactBundle\\' => array($vendorDir . '/limenius/react-bundle'),
+    'Knp\\Menu\\' => array($vendorDir . '/knplabs/knp-menu/src/Knp/Menu'),
+    'Knp\\Bundle\\MenuBundle\\' => array($vendorDir . '/knplabs/knp-menu-bundle'),
     'Incenteev\\ParameterHandler\\' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Hautelook\\AliceBundle\\' => array($vendorDir . '/hautelook/alice-bundle/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),

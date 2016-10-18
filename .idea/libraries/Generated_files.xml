@@ -2,26 +2,11 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/web/js/add.react-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/JsonToGEOJson-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/vendor/limenius/react-bundle/Tests/Renderer/Fixtures/server-bundle-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/dist/addBird-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/dist/searchBird-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/addBird-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
-        <item url="file://$PROJECT_DIR$/webpack.config-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
-        <item url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/webpack.dev-server-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -36,17 +21,17 @@
       <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/dist/searchBird-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/addBird-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/webpack.config-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/webpack.dev-server-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>

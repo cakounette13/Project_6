@@ -75,6 +75,11 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         array (
             'Limenius\\ReactBundle\\' => 21,
         ),
+        'K' => 
+        array (
+            'Knp\\Menu\\' => 9,
+            'Knp\\Bundle\\MenuBundle\\' => 22,
+        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -235,6 +240,14 @@ class ComposerStaticInit4350c4b47b8164975aab279adc126b48
         'Limenius\\ReactBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/limenius/react-bundle',
+        ),
+        'Knp\\Menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu/src/Knp/Menu',
+        ),
+        'Knp\\Bundle\\MenuBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (

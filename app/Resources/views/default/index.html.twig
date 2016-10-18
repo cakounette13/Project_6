@@ -1,12 +1,86 @@
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-    {{ parent() }}
+    {{ parent ()}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&libraries=geometry,visualization"></script>
 {% endblock %}
 {% block body %}
-    <div id="birds"></div>
+    <div id="fullpage">
+        <!--HOME-->
+        <div class="section" data-anchor="firstPage" id="section0">
+
+            <div id="thumbnail-preview-indicators" class="carousel carousel-fade slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#thumbnail-preview-indicators" data-slide-to="0" class="active">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg">
+                        </div>
+                    </li>
+                    <li data-target="#thumbnail-preview-indicators" data-slide-to="1">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg">
+                        </div>
+                    </li>
+                    <li data-target="#thumbnail-preview-indicators" data-slide-to="2">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg">
+                        </div>
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item slides active">
+                        <div class="slide-1"></div>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>New carousel layout</h1>
+                                <p>Responsive thumbnail preview in carousel indicators.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slides">
+                        <div class="slide-2"></div>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>Another example headline.</h1>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slides">
+                        <div class="slide-3"></div>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>One more for good measure.</h1>
+                                <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+
+
+        </div>
+
+        <div class="section container-fluid" data-anchor="secondPage" id="section1">
+            <div id="birds"></div>
+        </div>
+        <!--CONTACT-->
+
+
+
+    </div>
+    </div>
+
+
 {% endblock %}
 {% block javascripts %}
+    {{ parent() }}
     <script>
         {# set a base url to '/' or maybe '/app_dev.php' #}
         window.baseUrl = '{{ path('bird') }}';
