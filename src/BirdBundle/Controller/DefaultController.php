@@ -32,17 +32,6 @@ class DefaultController extends Controller {
 		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
 		return new JsonResponse($birds);
 	}
-	/**
-	 * @Route("/json_form", name="json_form")
-	 * @Template("default/ajax_form.html.twig")
-	 * @Method("GET")
-	 */
-	public function jsonForm()
-	{
-		$form = $this->get('add_bird')->formBuilder();
-		return ['form' => $form];
-
-	}
 
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
@@ -50,8 +39,8 @@ class DefaultController extends Controller {
 	 */
 	public function addObservationAction(Request $request)
 	{
-		$form = $this->get('add_bird')->formBuilder();
-		return ['form' => $form];
+		$form = $this->get('add_bird')->formBuilder($request);
+		return ['form' => $form->createView()];
 	}
 
 	/**

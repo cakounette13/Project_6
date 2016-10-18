@@ -6,8 +6,8 @@ use BirdBundle\Repository\TaxrefRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,18 +15,19 @@ class BirdsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-		$builder->add('nom',  EntityType::class, [
+		$builder
+			->add('nom',  EntityType::class, [
 			'class' => 'BirdBundle:Taxref',
-			'query_builder' => function (TaxrefRepository $er) {
-				return $er->createQueryBuilder( 't' )
-				          ->orderBy( 't.nomComplet', 'ASC' );
-			},
-			'choice_label' => 'nomComplet'
-		])
+			'query_builder' =>
+				function (TaxrefRepository $er) {
+					return $er->createQueryBuilder( 't' )
+					          ->orderBy( 't.nomComplet', 'ASC' );
+				},
+			'choice_label' => 'nomComplet' ])
 			->add('datevue', DateType::class)
-			->add('latitude', NumberType::class)
-			->add('longitude', NumberType::class)
-			->add('image', TextType::class)
+			->add('image', FileType::class)
+			->add('longitude', HiddenType::class)
+			->add('latitude', HiddenType::class)
 		;
     }
 

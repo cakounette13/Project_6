@@ -2,30 +2,82 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+<<<<<<< HEAD
         <item url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
         <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
+=======
+        <item url="file://$PROJECT_DIR$/web/js/add.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/dist/addBird-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/dist/searchBird-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/jquery-3.1.0-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/addBird-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/jquery.fullpage-compiled.js" />
+        <item url="file://$PROJECT_DIR$/webpack.config-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/jquery.fullpage.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/JsonToGEOJson-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vendor/limenius/react-bundle/Tests/Renderer/Fixtures/server-bundle-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/script_front-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/script-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/npm-compiled.js" />
+        <item url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
+        <item url="file://$PROJECT_DIR$/webpack.dev-server-compiled.js" />
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/web/dist/bundle-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/dist/bundle-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/add.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/dist/addBird-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/dist/searchBird-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/jquery-3.1.0-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/addBird-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/jquery.fullpage-compiled.js" />
+      <root url="file://$PROJECT_DIR$/webpack.config-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/jquery.fullpage.min-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/app.react-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/map.react-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/JsonToGEOJson-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/vendor/limenius/react-bundle/Tests/Renderer/Fixtures/server-bundle-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/dist/addBird-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled-compiled.js" />
-      <root url="file://$PROJECT_DIR$/web/dist/searchBird-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled-compiled.js" />
+<<<<<<< HEAD
       <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/Markers.react-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/addBird-compiled.js" />
       <root url="file://$PROJECT_DIR$/webpack.config-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/GeoCoding-compiled-compiled.js" />
+=======
+      <root url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/searchBirds-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/lib/GoogleApi-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/script_front-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/script-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/map.react-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/npm-compiled.js" />
+      <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
+>>>>>>> 47ec7ef9374cf4bf9d8c022010becdfaa347b472
       <root url="file://$PROJECT_DIR$/webpack.dev-server-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/GetBirdsDatas-compiled.js" />
       <root url="file://$PROJECT_DIR$/web/js/app.react-compiled.js" />

@@ -12,10 +12,7 @@ use BirdBundle\Entity\Datas;
 use BirdBundle\Form\BirdsType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactory;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\HttpFoundation\Request;
 
 class AddBird {
 
@@ -34,10 +31,17 @@ class AddBird {
 		$this->form = $form;
 	}
 
-	public function formBuilder()
+	public function formBuilder(Request $request)
 	{
 		$bird = new Datas();
-		$form = $this->form->create(BirdsType::class, $bird)->createView();
+		$form = $this->form->create(BirdsType::class, $bird);
+		$form->handleRequest($request);
+		if ($form->isValid() && $form->isSubmitted()) {
+			$form->getData();
+			$em = $this->em;
+			$em->persist($bird);
+			$em->flush();
+		}
 		return $form;
 	}
 }
