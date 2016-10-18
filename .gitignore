@@ -1,16 +1,9 @@
 /app/config/parameters.yml
 /build/
 /phpunit.xml
-/var/*
-!/var/cache
-/var/cache/*
+var/*
 !var/cache/.gitkeep
-!/var/logs
-/var/logs/*
 !var/logs/.gitkeep
-!/var/sessions
-/var/sessions/*
-/var/logs/dev.log
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
@@ -20,7 +13,7 @@ bower_components/
 node_modules/
 tests/BirdBundle/
 web/assets/
-.idea/
+.idea/*
 web/js/*compiled*
 web/dist
 web/lib/GoogleApi-compiled-compiled.js
@@ -29,6 +22,5 @@ webpack.config-compiled.js
 webpack.config-compiled.js.map
 webpack.dev-server-compiled.js
 webpack.dev-server-compiled.js.map
-var/*
-.idea/*
-var/logs/*
+
+
