@@ -39,7 +39,7 @@ h1{
 
 h2{
     font-family: 'Comfortaa', cursive;
-    color: #fbfbfb;
+
     text-align: left;
     font-weight: normal;
     font-style: normal;
@@ -58,7 +58,7 @@ h2{
 
 h3{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+
     text-align: center;
     font-weight: normal;
     font-style: normal;
@@ -72,7 +72,7 @@ h3{
 
 h4{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+
     text-align: center;
     font-weight: normal;
     font-style: normal;
@@ -86,7 +86,7 @@ h4{
 
 h5{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+
     text-align: left;
     font-weight: normal;
     font-style: normal;
@@ -927,3 +927,15 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     }
 }
 
+/*infowindow styles*/
+
+#infoNom #infobox #infoNomValide {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #48b5e9;
+    color: black;
+    margin: 1px;
+    border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+}

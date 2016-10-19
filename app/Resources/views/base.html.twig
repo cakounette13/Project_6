@@ -42,7 +42,7 @@
         <li class="off-1">
             <i id="hamburger" class="fa fa-bars fa-2x" aria-hidden="true"></i>
             <ul class="drop-menu menu-1">
-                {{ knp_menu_render('BirdBundle:Builder:mainMenu') }}
+                {{ knp_menu_render('main') }}
             </ul>
         </li>
     </ul>
@@ -67,9 +67,6 @@
                 $('#fullpage').fullpage();
             });
         </script>
-
-
-
         <script>
             {# set a base url to '/' or maybe '/app_dev.php' #}
             window.baseUrl = '{{ path('bird') }}';
