@@ -2,12 +2,9 @@
 /* CSS Document */
 
 body{
-    background: #2C3E50; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2C3E50 , #4CA1AF); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, rgb(44, 62, 80), #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin:0 !important;
     padding:0 !important;
-    background-color:black;
+    background-color: #9BB22C;
 }
 
 *{
@@ -24,8 +21,8 @@ body{
 }
 
 h1{
-    font-family: 'Satisfy', cursive;
-    color: black;
+
+    color: #7E7F79;
     text-align: center;
     font-weight: normal;
     font-style: normal;
@@ -39,7 +36,7 @@ h1{
 
 h2{
     font-family: 'Comfortaa', cursive;
-    color: #fbfbfb;
+    color: #7E7F79;
     text-align: left;
     font-weight: normal;
     font-style: normal;
@@ -58,7 +55,7 @@ h2{
 
 h3{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+    color: #7E7F79;
     text-align: center;
     font-weight: normal;
     font-style: normal;
@@ -72,7 +69,7 @@ h3{
 
 h4{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+    color: #7E7F79;
     text-align: center;
     font-weight: normal;
     font-style: normal;
@@ -86,7 +83,7 @@ h4{
 
 h5{
     font-family: 'Kanit', cursive;
-    color: #fbfbfb;
+    color: #7E7F79;
     text-align: left;
     font-weight: normal;
     font-style: normal;
@@ -130,11 +127,13 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
-    color:#fbfbfb;
+    color: #7E7F79;
     text-transform: uppercase;
     font-family: 'Wendy One', sans-serif;
     text-decoration: none;
 }
+
+/*noinspection ALL*/
 #header #c_logo{
     height: 100%;
     width: 120px;
@@ -142,36 +141,48 @@ span
     background: no-repeat center;
     float: left;
 }
+
+/*noinspection ALL*/
 #header #c_link_beta{
     height: 100%;
     float: right;
 }
 
+/*noinspection ALL*/
 @media only screen  {
+    /*noinspection ALL*/
     #header #c_logo {
         width: 110%;
     }
 }
 
+/*noinspection ALL*/
 @media only screen and (max-width: 1024px) {
+    /*noinspection ALL*/
     #header #c_logo {
         width: 115%;
     }
 }
 
+/*noinspection ALL*/
 @media only screen and (max-width: 768px){
+    /*noinspection ALL*/
     #header #c_logo {
         width: 120%;
     }
 }
 
+/*noinspection ALL*/
 @media only screen and (max-width: 640px) {
+    /*noinspection ALL*/
     #header #c_logo {
         width: 124%;
     }
 }
 
+/*noinspection ALL*/
 @media only screen and (max-width: 480px) {
+    /*noinspection ALL*/
     #header #c_logo {
         width: 135%;
     }
@@ -199,7 +210,7 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
-    color:#fbfbfb;
+    color: #7E7F79;
     text-transform: uppercase;
     text-align: center;
     line-height: 54px;
@@ -225,7 +236,7 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
-    color:#fbfbfb !important;
+    color: #7E7F79 !important;
     text-transform: uppercase;
     text-align: center;
     line-height: 54px;
@@ -237,10 +248,7 @@ span
     cursor: pointer;
 }
 
-
-
-
-
+/*noinspection ALL*/
 .bloc_text{
     height: 240px;
     width: 30%;
@@ -249,14 +257,17 @@ span
     transform: translateY(-50%);
 }
 
+/*noinspection ALL*/
 .section.left_layout .bloc_text{
     right: 14%;
 }
+
+/*noinspection ALL*/
 .section.right_layout .bloc_text{
     left: 14%;
 }
 
-
+/*noinspection ALL*/
 .c_illus{
     height: 90%;
     width: 50%;
@@ -265,36 +276,29 @@ span
 
 }
 
-
+/*noinspection ALL*/
 .section.left_layout .c_illus{
     left: 0;
 }
+
+/*noinspection ALL*/
 .section.right_layout .c_illus{
     right: 0;
 }
 
-
-
-
-
+/*noinspection ALL*/
 .section.fp-completely .c_illus {
     opacity: 1;
     transform: scale(1) rotateZ(-15deg);
 }
 
-
-
-
-
-
-
-
+/*noinspection ALL*/
 .section.fp-completely .c_illus {
     opacity: 1;
     transform: scale(1);
 }
 
-
+/*noinspection ALL*/
 .section.fp-completely .shadow_phone{
     opacity: 0.03;
     transform: scale(1);
@@ -353,7 +357,7 @@ span
     margin-bottom: 2px;
     background-size: 15px;
 
-    background: #fbfbfb no-repeat 25px center;
+    background: #fbfbfb no-repeat 22px center;
     font-family: "source sans light", sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -364,24 +368,28 @@ span
 
 #c_form_mail input[name="i_name"]{
     transition-delay: 0.1s;
-    background: url("../icons/user.svg") 22px center;
+    background-image: url("../icons/user.svg");
+    background-size: 22px;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_email"]{
     background-image: url("../icons/envelope.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_date"]{
     background-image: url("../icons/calendar.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_pwd"]{
     background-image: url("../icons/keywords.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
@@ -392,11 +400,13 @@ span
     margin-right: 30px;
 }
 
+/*noinspection ALL*/
 .custom_btn
 {
     width: 48%;
 }
 
+/*noinspection ALL*/
 #first_btn
 {
     margin-right: 2%;
@@ -416,6 +426,7 @@ span
     transition-delay: 0.3s;
 }
 
+/*noinspection ALL*/
 #c_lb_email{
     position: absolute;
     height: 100%;
@@ -424,7 +435,8 @@ span
     left: -100%;
 }
 
- #c_lb_email.open{
+/*noinspection ALL*/
+#c_lb_email.open{
      left: 0;
  }
 
@@ -434,6 +446,7 @@ span
     text-align: center;
 }
 
+/*noinspection ALL*/
 #lb_conf_email{
     position: absolute;
     height: 300px;
@@ -446,11 +459,13 @@ span
     opacity: 0;
 }
 
+/*noinspection ALL*/
 #c_lb_email.open #lb_conf_email{
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
+/*noinspection ALL*/
 .overlay{
     position: absolute;
     background-color: black;
@@ -460,6 +475,7 @@ span
     transition: 0.2s ease-in;
 }
 
+/*noinspection ALL*/
 #c_lb_email.open .overlay{
     opacity: 0.5;
 }
@@ -473,13 +489,13 @@ span
     padding-left: 60px;
 }
 
-
-
+/*noinspection ALL*/
 #connexion {
     vertical-align: top;
     position: absolute;
 }
 
+/*noinspection ALL*/
 #hamburger {
     margin-top: 27px;
     float: left;
@@ -721,13 +737,65 @@ span.glyphicon.glyphicon-chevron-right{
 
 /*nouvelles observations*/
 
+/*noinspection ALL*/
 #lat_lng{
     display: none;
 }
 #birds{
-    width: 80%;
+    width: 60%;
     margin: auto;
-    height: 80%;
+    height: 60%;
+}
+
+div.container{
+    width: 62%;
+    margin-top: 2%;
+}
+
+#fullpage > form:nth-child(2)
+{
+    height: 800px;;
+}
+
+select
+{
+    width: 75%;
+    border-radius: 5px;
+}
+
+/*noinspection ALL*/
+#birds_datevue
+{
+    width:75%;
+    display: inline;
+}
+
+/*noinspection ALL*/
+#birds_datevue_year{
+    width:33%;
+}
+
+/*noinspection ALL*/
+#birds_datevue_month
+{
+    width: 33%;
+}
+
+/*noinspection ALL*/
+#birds_datevue_day
+{
+    width: 9%;
+}
+
+/*noinspection ALL*/
+#birds_image
+{
+    display: inline;
+}
+
+input.btn:nth-child(4)
+{
+    width: 100%;
 }
 
 .margin-top
@@ -738,10 +806,11 @@ span.glyphicon.glyphicon-chevron-right{
 #add_bird
 {
     margin: auto !important;
-    width: 80%;
-    height: 800px;
+    width: 60%;
+    height: 60%;
 }
 
+/*noinspection ALL*/
 input#form_longitude
 {
     border-top-left-radius: 10px;
@@ -750,6 +819,7 @@ input#form_longitude
     box-shadow: 10px 5px 18px #888888 !important;
 }
 
+/*noinspection ALL*/
 input#form_latitude
 {
     border-bottom-left-radius: 10px;
@@ -783,6 +853,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #add_bird > div > div:nth-child(2)
 {
     height: 680px !important;
+    position: static !important;
 }
 
 #add_bird > div > div:nth-child(1) > input
@@ -790,10 +861,17 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     width: 100% !important;
 }
 
+#add_bird > div:nth-child(1)
+{
+    border-radius: 10px; !important;
+
+}
+
 
 
 /*last_observations*/
 
+/*noinspection ALL*/
 #panel_obs
 {
     margin-top: 60px;
@@ -802,6 +880,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 /* CSS used here will be applied after bootstrap.css */
 /* Custom panel-heading colors in the panel components*/
 
+/*noinspection ALL*/
 .panel-default > .panel-heading-custom3{
     background: #f07c4a none;
     color: #ffffff;
@@ -862,11 +941,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     margin-left: 30px;
 }
 
-
-
-
-
-
+/*noinspection ALL*/
 @media all and (max-width: 640px)
 {
     h1{
@@ -875,11 +950,15 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     h4{
         min-width: 80%;
     }
+
+    /*noinspection ALL*/
     .c_illus{
         height: 60%;
         width: 100%;
         top: 0;
     }
+
+    /*noinspection ALL*/
     .bloc_text{
         height: 40%;
         width: 80%;
@@ -903,7 +982,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
         margin:40px auto !important;
     }
 
-
+    /*noinspection ALL*/
     .phone_right{
         left:25%;
     }
@@ -927,3 +1006,16 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     }
 }
 
+/*infowindow styles*/
+
+/*noinspection ALL*/
+#infoNom #infobox #infoNomValide {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #48b5e9;
+    color: black;
+    margin: 1px;
+    border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+}

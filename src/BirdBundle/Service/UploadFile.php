@@ -6,12 +6,11 @@
  * Time: 10:45 AM
  */
 
-namespace BirdBundle\Service;
+namespace BirdBundle\service;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class UploadFile {
-	
 	private $targetDir;
 
 	public function __construct($targetDir)

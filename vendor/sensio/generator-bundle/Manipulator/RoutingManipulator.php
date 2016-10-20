@@ -25,6 +25,8 @@ class RoutingManipulator extends Manipulator
     private $file;
 
     /**
+     * Constructor.
+     *
      * @param string $file The YAML routing file path
      */
     public function __construct($file)
@@ -40,7 +42,7 @@ class RoutingManipulator extends Manipulator
      * @param string $prefix
      * @param string $path
      *
-     * @return bool Whether the operation succeeded
+     * @return bool true if it worked, false otherwise
      *
      * @throws \RuntimeException If bundle is already imported
      */
@@ -77,7 +79,7 @@ class RoutingManipulator extends Manipulator
     }
 
     /**
-     * Checks if the routing file contains a line for the bundle.
+     * Check if the routing file contain a line for the bundle.
      *
      * @param string $bundle
      *
@@ -103,7 +105,7 @@ class RoutingManipulator extends Manipulator
     }
 
     /**
-     * Adds an annotation controller resource.
+     * Add an annotation controller resource.
      *
      * @param string $bundle
      * @param string $controller

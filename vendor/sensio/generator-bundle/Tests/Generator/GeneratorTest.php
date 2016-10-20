@@ -20,7 +20,7 @@ abstract class GeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->tmpDir = sys_get_temp_dir().'/sf';
+        $this->tmpDir = sys_get_temp_dir().'/sf2';
         $this->filesystem = new Filesystem();
         $this->filesystem->remove($this->tmpDir);
     }

@@ -6,7 +6,7 @@
  * Time: 11:54 AM
  */
 
-namespace BirdBundle\Service;
+namespace BirdBundle\service;
 
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactory;

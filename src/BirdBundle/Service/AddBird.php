@@ -6,7 +6,7 @@
  * Time: 2:47 PM
  */
 
-namespace BirdBundle\Service;
+namespace BirdBundle\service;
 
 use BirdBundle\Entity\Datas;
 use BirdBundle\Form\BirdsType;
@@ -42,10 +42,7 @@ class AddBird {
 		$form = $this->form->create(BirdsType::class, $bird);
 		$form->handleRequest($request);
 		if ($form->isValid() && $form->isSubmitted()) {
-			$file = $bird->getImage();
 			$form->getData();
-			$fileName = $this->uploadFile->upload($file);
-			$bird->setImage($fileName);
 			$em = $this->em;
 			$em->persist($bird);
 			$em->flush();

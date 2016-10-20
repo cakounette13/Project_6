@@ -82,7 +82,7 @@ class KernelManipulatorTest extends GeneratorTest
     }
 
     /**
-     * Copies stub file to tmp.
+     * Copy stub file to tmp.
      *
      * @param string $kernelOriginFilePath
      *

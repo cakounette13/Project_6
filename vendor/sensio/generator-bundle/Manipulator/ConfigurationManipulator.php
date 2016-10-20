@@ -25,6 +25,8 @@ class ConfigurationManipulator extends Manipulator
     private $file;
 
     /**
+     * Constructor.
+     *
      * @param string $file The YAML configuration file path
      */
     public function __construct($file)
@@ -51,7 +53,11 @@ class ConfigurationManipulator extends Manipulator
         $currentContents = file_get_contents($this->file);
         // Don't add same bundle twice
         if (false !== strpos($currentContents, $code)) {
-            throw new \RuntimeException(sprintf('The %s configuration file from %s is already imported', $bundle->getServicesConfigurationFilename(), $bundle->getName()));
+            throw new \RuntimeException(sprintf(
+                'The %s configuration file from %s is already imported',
+                $bundle->getServicesConfigurationFilename(),
+                $bundle->getName()
+            ));
         }
 
         // find the "imports" line and add this at the end of that list

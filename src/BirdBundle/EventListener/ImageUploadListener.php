@@ -12,16 +12,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use BirdBundle\Entity\Datas;
-use BirdBundle\Service\UploadFile;
+use BirdBundle\FileUploader;
 
 class ImageUploadListener {
-
-	/**
-	 * @var UploadFile
-	 */
 	private $uploader;
 
-	public function __construct(UploadFile $uploader)
+	public function __construct(FileUploader $uploader)
 	{
 		$this->uploader = $uploader;
 	}
@@ -47,7 +43,7 @@ class ImageUploadListener {
 			return;
 		}
 
-		$file = $entity->getImage();
+		$file = $entity->getBrochure();
 
 		// only upload new files
 		if (!$file instanceof UploadedFile) {

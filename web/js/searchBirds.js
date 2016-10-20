@@ -19,6 +19,17 @@ export default class GoogleMapBirds extends React.Component {
         "width": `400px`,
     };
 
+    static infoboxStyle = {
+        "font-family": 'Open Sans Condensed',
+        "font-size": '22px',
+        "font-weight": '400',
+        "padding": '10px',
+        "background-color": '#48b5e9',
+        "color": 'red',
+        "margin": '1px',
+        "border-radius": '2px 2px 0 0',
+    };
+
     static mapStyle = [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},
         {'gamma':0.72}]},
         {"featureType":"road","elementType":"labels.icon"},
@@ -62,22 +73,23 @@ export default class GoogleMapBirds extends React.Component {
     }
 
     handleMarkerClick(marker) {
-        marker = marker.showInfo = true;
-        this.setState({marker : marker, center: {lat: marker.lat, lng: marker.lng}});
+        marker.showInfo = true;
+        this.setState(this.state);
     }
     handleMarkerClose(marker) {
-        marker = marker.showInfo = false;
-        this.setState({marker : marker });
+        marker.showInfo = false;
+        this.setState(this.state);
     }
 
     renderInfoWindow(ref, marker) {
         return (
             <InfoWindow
                 key={`${ref}_info_window`}
-                onCloseclick={this.handleMarkerClose.bind(marker)} >
-                    <div>
-                        <h2>{marker.nom}</h2>
-                        <h2>{marker.nomValide}</h2>
+                onCloseclick={this.handleMarkerClose.bind(this, marker)}
+                defaultOptions={{ styles: GoogleMapBirds.infoboxStyle}}>
+                    <div id="infobox">
+                        <h3 id="infoNom">{marker.nom}</h3>
+                        <h3 id="infoNomValide">{marker.nomValide}</h3>
                         <img src={marker.image}
                              width="160px" height="160px">
                         </img>
@@ -106,7 +118,7 @@ export default class GoogleMapBirds extends React.Component {
                 googleMapElement={
                     <GoogleMap
                         center={this.state.center}
-                        defaultZoom={5}
+                        defaultZoom={4}
                         ref='map'
                         defaultOptions={{ styles: GoogleMapBirds.mapStyle}}
                         >
