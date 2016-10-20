@@ -21,3 +21,4 @@ webpack.config-compiled.js.map
 webpack.dev-server-compiled.js
 webpack.dev-server-compiled.js.map
 /web/uploads/images/
+/app/bootstrap.php.cache
