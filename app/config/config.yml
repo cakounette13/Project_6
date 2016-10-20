@@ -100,7 +100,6 @@ fos_user:
                 sender_name:    Demo Resetting
 
 knp_menu:
-
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:
         template: Knp_Menu.html.twig
