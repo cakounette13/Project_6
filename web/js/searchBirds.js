@@ -78,7 +78,7 @@ export default class GoogleMapBirds extends React.Component {
                     <div>
                         <h2>{marker.nom}</h2>
                         <h2>{marker.nomValide}</h2>
-                        <img src={`file:///var/www/html/Project_6/web/uploads/images/` + marker.image}
+                        <img src={marker.image}
                              width="160px" height="160px">
                         </img>
                     </div>
