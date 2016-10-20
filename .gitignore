@@ -19,10 +19,5 @@ web/lib/GoogleApi-compiled-compiled.js.map
 webpack.config-compiled.js
 webpack.config-compiled.js.map
 webpack.dev-server-compiled.js
-<<<<<<< HEAD
 webpack.dev-server-compiled.js.map
-=======
-webpack.dev-server-compiled.js.map
-
-
->>>>>>> 446de1778ec0f221854fa3667750710a68daad8c
+/web/uploads/images/
