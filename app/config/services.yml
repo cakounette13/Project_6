@@ -9,10 +9,9 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
   search_bird:
-        class: BirdBundle\service\SearchService
+        class: BirdBundle\Service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
-<<<<<<< HEAD
   app.image_uploader:
           class: BirdBundle\Service\UploadFile
           arguments: ['%images_directory%']
@@ -26,14 +25,9 @@ services:
   add_bird:
         class: BirdBundle\Service\AddBird
         arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader']
-=======
-  add_bird:
-      class: BirdBundle\service\AddBird
-      arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
   app.menu_builder:
       class: BirdBundle\Menu\MenuBuilder
       arguments: ["@knp_menu.factory"]
       tags:
           - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
->>>>>>> 446de1778ec0f221854fa3667750710a68daad8c
