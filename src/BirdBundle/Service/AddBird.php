@@ -24,11 +24,16 @@ class AddBird {
 	 * @var FormFactory
 	 */
 	private $form;
+	/**
+	 * @var UploadFile
+	 */
+	private $uploadFile;
 
-	public function __construct(EntityManager $em, FormFactory $form)
+	public function __construct(EntityManager $em, FormFactory $form, UploadFile $uploadFile)
 	{
 		$this->em = $em;
 		$this->form = $form;
+		$this->uploadFile = $uploadFile;
 	}
 
 	public function formBuilder(Request $request)

@@ -9,12 +9,22 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
   search_bird:
-        class: BirdBundle\service\SearchService
+        class: BirdBundle\Service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
+  app.image_uploader:
+          class: BirdBundle\Service\UploadFile
+          arguments: ['%images_directory%']
+
+  app.doctrine_images_listener:
+          class: BirdBundle\EventListener\ImageUploadListener
+          arguments: ['@app.image_uploader']
+          tags:
+              - { name: doctrine.event_listener, event: prePersist }
+              - { name: doctrine.event_listener, event: preUpdate }
   add_bird:
-      class: BirdBundle\service\AddBird
-      arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
+        class: BirdBundle\Service\AddBird
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader']
 
   app.menu_builder:
       class: BirdBundle\Menu\MenuBuilder
