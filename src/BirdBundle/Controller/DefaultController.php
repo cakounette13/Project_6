@@ -74,4 +74,12 @@ class DefaultController extends Controller {
     public function oubli()
     {
     }
+
+    /**
+     * @Route("/dernieres_observations", name="last_observations")
+     * @Template("default/last_observations.html.twig")
+     */
+    public function lastObservations()
+    {
+    }
 }
