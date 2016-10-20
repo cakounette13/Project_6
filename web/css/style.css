@@ -725,9 +725,55 @@ span.glyphicon.glyphicon-chevron-right{
     display: none;
 }
 #birds{
-    width: 80%;
+    width: 60%;
     margin: auto;
-    height: 80%;
+    height: 60%;
+}
+
+div.container{
+    width: 62%;
+    margin-top: 2%;
+}
+
+#fullpage > form:nth-child(2)
+{
+    height: 800px;;
+}
+
+select
+{
+    width: 75%;
+    border-radius: 5px;
+}
+
+#birds_datevue
+{
+    width:75%;
+    display: inline;
+}
+
+#birds_datevue_year{
+    width:33%;
+}
+
+#birds_datevue_month
+{
+    width: 33%;
+}
+
+#birds_datevue_day
+{
+    width: 9%;
+}
+
+#birds_image
+{
+    display: inline;
+}
+
+input.btn:nth-child(4)
+{
+    width: 100%;
 }
 
 .margin-top
@@ -738,8 +784,8 @@ span.glyphicon.glyphicon-chevron-right{
 #add_bird
 {
     margin: auto !important;
-    width: 80%;
-    height: 800px;
+    width: 60%;
+    height: 60%;
 }
 
 input#form_longitude
@@ -783,11 +829,18 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #add_bird > div > div:nth-child(2)
 {
     height: 680px !important;
+    position: static !important;
 }
 
 #add_bird > div > div:nth-child(1) > input
 {
     width: 100% !important;
+}
+
+#add_bird > div:nth-child(1)
+{
+    border-radius: 10px; !important;
+
 }
 
 
