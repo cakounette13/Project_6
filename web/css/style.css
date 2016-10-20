@@ -353,7 +353,7 @@ span
     margin-bottom: 2px;
     background-size: 15px;
 
-    background: #fbfbfb no-repeat 25px center;
+    background: #fbfbfb no-repeat 22px center;
     font-family: "source sans light", sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -364,24 +364,28 @@ span
 
 #c_form_mail input[name="i_name"]{
     transition-delay: 0.1s;
-    background: url("../icons/user.svg") 22px center;
+    background-image: url("../icons/user.svg");
+    background-size: 22px;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_email"]{
     background-image: url("../icons/envelope.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_date"]{
     background-image: url("../icons/calendar.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
 
 #c_form_mail input[name="i_pwd"]{
     background-image: url("../icons/keywords.svg");
+    background-size: 22px;
     transition-delay: 0.2s;
     margin-left: 30px;
 }
