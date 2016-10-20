@@ -5,19 +5,9 @@
     <title>{% block title %}NAO{% endblock %}</title>
     {% block stylesheets %}
         <style>
-            #birds {
-
-                margin: auto;
-                height: 100%;
-                margin-top: 60px;
-
-            }
-
             input::-webkit-calendar-picker-indicator {
                 display: none;
             }
-
-
         </style>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css') }}">
@@ -34,7 +24,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-<!--HEADER-->
 <nav id="header">
     <!-- hamburger menu -->
 
@@ -46,7 +35,6 @@
             </ul>
         </li>
     </ul>
-
 
     <span id="title" >NAO</span>
     <div id="c_link_beta" >
