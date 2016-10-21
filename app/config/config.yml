@@ -91,13 +91,13 @@ fos_user:
     registration:
        confirmation:
            from_email:
-               address:        registration@example.com
-               sender_name:    Demo Registration
+               address:    naoiseaux@gmail.com
+               sender_name:    NAO enregistrement
     resetting:
         email:
             from_email:
-                address:        resetting@example.com
-                sender_name:    Demo Resetting
+                address:        naoiseaux@gmail.com
+                sender_name:    NAO oublie de mot de passe
 
 # KnpMenuBundle
 knp_menu:
