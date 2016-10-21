@@ -23,4 +23,5 @@ class Group extends BaseGroup
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $id;
+
 }

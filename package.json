@@ -43,7 +43,8 @@
     "redux-thunk": "^2.0.1",
     "remarkable": "^1.6.2",
     "request": "latest",
-    "webpack": "^1.12.8"
+    "webpack": "^1.12.8",
+    "twig": "latest"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

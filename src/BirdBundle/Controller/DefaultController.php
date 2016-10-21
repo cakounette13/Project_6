@@ -41,38 +41,6 @@ class DefaultController extends Controller {
 		return ['form' => $form->createView()];
 	}
 
-	/**
-    * @Route("/login", name="login")
-     * @Template("default/connection.html.twig")
-     */
-	public function login()
-    {
-    }
-
-    /**
-     * @Route("/logout", name="logout")
-     * @Template("default/deconnection.html.twig")
-     */
-    public function logout()
-    {
-    }
-
-    /**
-     * @Route("/inscription", name="inscription")
-     * @Template("default/inscription.html.twig")
-     */
-    public function inscription()
-    {
-    }
-
-    /**
-     * @Route ("/oubli", name="oubli")
-     * @Template("default/oubli.html.twig")
-     */
-    public function oubli()
-    {
-    }
-
     /**
      * @Route("/dernieres_observations", name="last_observations")
      * @Template("default/last_observations.html.twig")

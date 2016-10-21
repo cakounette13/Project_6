@@ -1,7 +1,7 @@
 import { default as React, Component } from 'react';
 import $ from 'jquery';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
-
+import Twig from 'twig';
 export default class GoogleMapBirds extends React.Component {
 
     static inputStyle = {

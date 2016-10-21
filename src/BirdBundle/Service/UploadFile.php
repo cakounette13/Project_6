@@ -18,6 +18,9 @@ class UploadFile {
 		$this->targetDir = $targetDir;
 	}
 
+	public function getDirectory(){
+		return $this->targetDir;
+	}
 	public function upload(UploadedFile $file)
 	{
 		$fileName = md5(uniqid()).'.'.$file->guessExtension();
