@@ -566,13 +566,13 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     height: 480px;
 }
 #thumbnail-preview-indicators .slides .slide-1 {
-    background-image: url(https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg);
+    background-image: url(http://localhost:8000/pics/blossom.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-2 {
-    background-image: url(https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg);
+    background-image: url(http://localhost:8000/pics/cranes.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-3 {
-    background-image: url(https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg);
+    background-image: url(http://localhost:8000/pics/peacock.jpg);
 }
 #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
     top: 20%;
