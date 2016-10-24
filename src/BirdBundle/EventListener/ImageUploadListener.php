@@ -50,6 +50,6 @@ class ImageUploadListener {
 			return;
 		}
 		$fileName = $this->uploader->upload($file);
-		$entity->setImage("file://".$this->uploader->getDirectory()."/".$fileName);
+		$entity->setImage("http://localhost:3000/web/uploads/images/".$fileName);
 	}
 }

@@ -7,10 +7,10 @@ var config = {
         "searchBird": [
             'webpack-dev-server/client?http://127.0.0.1:3000',
             'webpack/hot/only-dev-server',
-            './web/js/app.react.js',
+            './web/react/app.react.js',
         ],
         "addBird": [
-            './web/js/add.react.js']
+            './web/react/add.react.js']
     },
     output: {
         path: path.join(__dirname, 'web/dist'),
@@ -27,8 +27,12 @@ var config = {
     module: {
         loaders: [
             {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                include: path.join(__dirname, 'web/uploads/images')
+            },
+            {
                 test: /\.jsx?$/,
-                include: path.join(__dirname, 'web/js'),
+                include: path.join(__dirname, 'web/react'),
                 loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-runtime'],
             }
         ]
