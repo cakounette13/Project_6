@@ -6,7 +6,7 @@
  * Time: 2:47 PM
  */
 
-namespace BirdBundle\service;
+namespace BirdBundle\Service;
 
 use BirdBundle\Entity\Datas;
 use BirdBundle\Form\BirdsType;

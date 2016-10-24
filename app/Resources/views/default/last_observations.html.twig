@@ -1,50 +1,267 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="fullpage">
-        <!--HOME-->
-        <div class="section active" data-anchor="firstPage" id="section0">
-            <div class="container">
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
 
-                        Panel content
+        <!--HOME-->
+<div class=" container-fluid panel panel-default target">
+        <div class="panel-body">
+            <div class="row">
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
-                        Panel content
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
-                        Panel content
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
-                        Panel content
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
-                        Panel content
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 panel panel-default">
-                    <div class="panel-body">
-                        Panel content
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="thumbnail">
+                        <img class="borderRadius img-responsive" src="{{ asset('pics/bird_1.jpeg') }}">
+                        <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
+                    </div>
+                    <div class=" champs text-center">
+                        <div id="nomObs" >Nom prénom</div>
+                        <div id="nomOiseau">Nom de l'oiseau</div>
+                    </div>
+                    <div class="borderRadius no_padding panel-footer">
+                        <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
+                            <div id="dateObs">01/12/16</div>
+                        </div>
+                        <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
+                            <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                            <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+</div>
+
 
 {% endblock %}
 

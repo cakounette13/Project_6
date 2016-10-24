@@ -121,8 +121,9 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="57214ed58f" level="application" />
     <orderEntry type="module-library">
-      <library name="PHP">
+      <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
@@ -255,6 +256,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="57214ed58f" level="application" />
   </component>
 </module>

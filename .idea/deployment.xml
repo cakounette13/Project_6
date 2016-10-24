@@ -5,7 +5,7 @@
       <paths name="NAO_clean">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web=":8000/" />
+            <mapping local="$PROJECT_DIR$" web="localhost:8000/" />
           </mappings>
         </serverdata>
       </paths>
