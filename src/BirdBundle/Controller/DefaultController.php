@@ -6,10 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 	/**
@@ -42,38 +40,6 @@ class DefaultController extends Controller {
 		$form = $this->get('add_bird')->formBuilder($request);
 		return ['form' => $form->createView()];
 	}
-
-	/**
-    * @Route("/login", name="login")
-     * @Template("default/connection.html.twig")
-     */
-	public function login()
-    {
-    }
-
-    /**
-     * @Route("/logout", name="logout")
-     * @Template("default/deconnection.html.twig")
-     */
-    public function logout()
-    {
-    }
-
-    /**
-     * @Route("/inscription", name="inscription")
-     * @Template("default/inscription.html.twig")
-     */
-    public function inscription()
-    {
-    }
-
-    /**
-     * @Route ("/oubli", name="oubli")
-     * @Template("default/oubli.html.twig")
-     */
-    public function oubli()
-    {
-    }
 
     /**
      * @Route("/dernieres_observations", name="last_observations")

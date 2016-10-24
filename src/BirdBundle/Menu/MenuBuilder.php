@@ -35,7 +35,6 @@ class MenuBuilder
         // you can also add sub level's to your menu's as follows
         $menu->addChild('Se déconnecter', array('route' => 'add_observation'));
 
-
         return $menu;
     }
 }

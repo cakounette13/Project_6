@@ -75,7 +75,7 @@ doctrine_cache:
                 directory: /tmp/doctrine_cache
 
 
-# Swiftmailer Configuration
+# Swiftmailer Config
 swiftmailer:
     transport: gmail
     username:  "%mailer_user%"
@@ -91,24 +91,26 @@ fos_user:
     registration:
        confirmation:
            from_email:
-               address:        registration@example.com
-               sender_name:    Demo Registration
+               address:    naoiseaux@gmail.com
+               sender_name:    NAO enregistrement
     resetting:
         email:
             from_email:
-                address:        resetting@example.com
-                sender_name:    Demo Resetting
+                address:        naoiseaux@gmail.com
+                sender_name:    NAO oublie de mot de passe
 
+
+# KnpMenuBundle
 knp_menu:
-
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:
-        template: Knp_Menu.html.twig
+        template: KnpMenuBundle::menu.html.twig
     #  if true, enables the helper for PHP templates
     templating: false
     # the renderer to use, list is also available by default
     default_renderer: twig
 
+# Assetic
 assetic:
     debug:  '%kernel.debug%'
     use_controller: '%kernel.debug%'
