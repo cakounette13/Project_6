@@ -29,6 +29,9 @@
                                 <div class="text-center">
 
                                     <button class="btn btn-primary">S'inscrire</button>
+                                    {% block content %}
+                                        {% fos_user_content %}{% endblock %}
+                                    {% endblock %}
                                 </div>
                             </div>
                         </div>

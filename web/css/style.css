@@ -1010,6 +1010,27 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 }
 
+#username, #password
+{
+    width: 100% !important;
+    opacity: 1 !important;
+}
+
+#remember_me
+{
+    margin-top: 40px;
+    width: 100% !important;
+    padding-left: 0px;
+    opacity:1 !important;
+}
+
+#_submit
+{
+    opacity:1 !important;
+    padding-left: 0px!important;
+    width:100% !important;
+}
+
 .btn{
     box-shadow: 10px 5px 18px #888888 !important;
     width:100%;
