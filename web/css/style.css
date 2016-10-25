@@ -868,35 +868,34 @@ select
     border-radius: 5px;
 }
 
-/*noinspection ALL*/
-#birds_datevue
+.add-on
 {
-    width:75%;
-    display: inline;
+    border-right: 0px !important;
 }
 
-/*noinspection ALL*/
-#birds_datevue_year{
-    width:33%;
-}
 
-/*noinspection ALL*/
-#birds_datevue_month
+#datePicker
 {
-    width: 33%;
-}
-
-/*noinspection ALL*/
-#birds_datevue_day
-{
-    width: 9%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;;
 }
 
 /*noinspection ALL*/
 #birds_image
 {
     display: inline;
+    width:50%;
+    float: right;
 }
+
+#birds_nom
+{
+    width: 50%;
+    float: right;
+}
+
+
 
 input.btn:nth-child(4)
 {
@@ -973,6 +972,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #add_bird > div:nth-child(1)
 {
     border-radius: 10px; !important;
+    height: 95% !important;
 
 }
 
@@ -1012,6 +1012,8 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 .btn{
     box-shadow: 10px 5px 18px #888888 !important;
+    width:100%;
+    background-color: inherit;
 }
 
 #third_input

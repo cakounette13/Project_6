@@ -10,20 +10,23 @@
 {% block body %}
 <div id="fullpage" class="margin-top">
     <h1>Ajouter un oiseau</h1>
+
     {{ form_start(form) }}
         <div id="add_bird" >
             {{ form_row(form.latitude) }}
             {{ form_row(form.longitude) }}
         </div>
+
         <div class="container">
+        <p id="marker">Placez le marker a l'endroit exact de l'observation</p>
         {{ form_row(form.nom) }}
          <div class="form-group">
                     {# Génération du label. #}
-                    {{ form_label(form.datevue, "", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+                    {{ form_label(form.datevue, "", {'label_attr': {'class': 'no_padding col-sm-6 col-lg-6 col-md-6 col-xs-6 control-label'}}) }}
                     {{ form_errors(form.datevue) }}
-                    <div class="col-sm-6">
+                    <div class="no_padding col-sm-6">
                         <div class="input-group input-append date" id="datePicker">
-                            {{ form_widget(form.datevue, {'attr': {'class': 'form-control', 'name': 'date'}}) }}
+                            {{ form_widget(form.datevue, {'attr': {'class': 'text-center form-control', 'name': 'date'}}) }}
                             <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                         </div>
                     </div>
@@ -59,7 +62,8 @@
                         weekStart: 1,
                         autoclose: true,
                         format: 'dd/mm/yyyy',
-                        endDate: 'NOW'
+                        endDate: 'NOW',
+                        todayHighlight: true
                     });
         });
     </script>
