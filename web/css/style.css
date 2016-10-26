@@ -4,7 +4,7 @@
 body{
     margin:0 !important;
     padding:0 !important;
-    background-color: #9BB22C;
+    background-color: #A5C700;
 }
 
 *{
@@ -210,7 +210,7 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
-    color: #7E7F79;
+    color: #A5C500;
     text-transform: uppercase;
     text-align: center;
     line-height: 54px;
@@ -248,61 +248,7 @@ span
     cursor: pointer;
 }
 
-/*noinspection ALL*/
-.bloc_text{
-    height: 240px;
-    width: 30%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
-/*noinspection ALL*/
-.section.left_layout .bloc_text{
-    right: 14%;
-}
-
-/*noinspection ALL*/
-.section.right_layout .bloc_text{
-    left: 14%;
-}
-
-/*noinspection ALL*/
-.c_illus{
-    height: 90%;
-    width: 50%;
-    position: absolute;
-    top: 0;
-
-}
-
-/*noinspection ALL*/
-.section.left_layout .c_illus{
-    left: 0;
-}
-
-/*noinspection ALL*/
-.section.right_layout .c_illus{
-    right: 0;
-}
-
-/*noinspection ALL*/
-.section.fp-completely .c_illus {
-    opacity: 1;
-    transform: scale(1) rotateZ(-15deg);
-}
-
-/*noinspection ALL*/
-.section.fp-completely .c_illus {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/*noinspection ALL*/
-.section.fp-completely .shadow_phone{
-    opacity: 0.03;
-    transform: scale(1);
-}
 
 
 
@@ -509,6 +455,15 @@ span
 }
 
 /*first page map*/
+#birds {
+
+    height: 100%;
+    margin: 60px auto auto;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
 
 input#input-search{
     margin-bottom: 10px;
@@ -714,26 +669,176 @@ span.glyphicon.glyphicon-chevron-right{
     border-radius: 10px;
 
 }
-
-/*gradients background*/
+/*background*/
 
 #section0 {
-    background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
-    background: -webkit-linear-gradient(#4BBFC3, #7BAABE);
-    background: linear-gradient(#4BBFC3, #7BAABE);
+    background-color: #A5C700;
 }
 
 #section1{
-    background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
-    background: -webkit-linear-gradient(#969AC6, #636F8F);
-    background: linear-gradient(#969AC6,#636F8F);
+    background-color: #7E7F79;
 }
 
 #section4{
-    background: #00d2ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #00d2ff , #928DAB); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #9BB22C;
 }
+
+
+/*dernières observations*/
+
+.thumbnail
+{
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid #7E7F79;
+    box-shadow: 10px 5px 18px #888888 !important;
+    border-bottom: 0px;
+}
+
+.champs
+{
+    border:2px solid #7E7F79;
+    background-color: white;
+    box-shadow: 10px 5px 18px #888888 !important;
+    border-top-width: 0px;
+}
+
+panel-body
+{
+    background-color: transparent;
+}
+
+.border
+{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.thumbnail
+{
+    margin-bottom: 0px;
+}
+
+.no_padding
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.margin
+{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.panel
+{
+    Background-color: transparent;
+
+}
+
+.panel-footer
+{
+    background-color: transparent;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 43px;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border: 2px solid #7E7F79;
+    border-top-width: 0px;
+
+}
+
+#delete, #download
+{
+    height: 100%;
+    width:25%;
+}
+
+#download
+{
+    border-radius: 0 0 10px 0;
+}
+
+.download
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    width:100%;
+    background-color: #A5C700;
+    border-bottom-right-radius: 10px;
+    height:100%;
+    border-left: 1px solid #7E7F79;
+}
+
+#deleteBtn
+{
+    height:100%;
+    width: 100%;
+    border-radius: 0%;
+}
+
+.fa-trash-o
+{
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
+    transform: translateY(-10%);
+}
+
+.observation
+{
+    margin-top: 30px;
+}
+
+.panel-body
+{
+    margin-top: 55px;
+    padding-bottom: 12px;
+}
+
+#nomObs, #nomOiseau
+{
+    border-top: 2px solid #7E7F79;
+}
+
+.date
+{
+    height:100% !important;
+    border-right: 2px solid #7E7F79 !important;
+    background-color: white !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+#dateObs
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+/*noinspection ALL*/
+#panel_obs
+{
+    margin-top: 60px;
+}
+
+
+
+.roudedShadow
+{
+    border-radius: 10px !important;
+    box-shadow: 10px 10px 5px grey;
+    margin-bottom: 10px !important;
+}
+
+.borderRadius
+{
+    border-radius: 10px;
+}
+
+
 
 /*nouvelles observations*/
 
@@ -763,39 +868,39 @@ select
     border-radius: 5px;
 }
 
-/*noinspection ALL*/
-#birds_datevue
+.add-on
 {
-    width:75%;
-    display: inline;
+    border-right: 0px !important;
 }
 
-/*noinspection ALL*/
-#birds_datevue_year{
-    width:33%;
-}
 
-/*noinspection ALL*/
-#birds_datevue_month
+#datePicker
 {
-    width: 33%;
-}
-
-/*noinspection ALL*/
-#birds_datevue_day
-{
-    width: 9%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;;
 }
 
 /*noinspection ALL*/
 #birds_image
 {
     display: inline;
+    width:50%;
+    float: right;
 }
+
+#birds_nom
+{
+    width: 50%;
+    float: right;
+}
+
+
 
 input.btn:nth-child(4)
 {
     width: 100%;
+    background-color: #9BB22C;
 }
 
 .margin-top
@@ -812,7 +917,10 @@ input.btn:nth-child(4)
 
 /*noinspection ALL*/
 input#form_longitude
-{
+{#128
+        #129
+        #130
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-bottom: 5px;
@@ -864,28 +972,11 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #add_bird > div:nth-child(1)
 {
     border-radius: 10px; !important;
+    height: 95% !important;
 
 }
 
 
-
-/*last_observations*/
-
-/*noinspection ALL*/
-#panel_obs
-{
-    margin-top: 60px;
-}
-
-/* CSS used here will be applied after bootstrap.css */
-/* Custom panel-heading colors in the panel components*/
-
-/*noinspection ALL*/
-.panel-default > .panel-heading-custom3{
-    background: #f07c4a none;
-    color: #ffffff;
-}
-/* End custom panel-heading colors */
 
 @media all and (max-width: 640px){
     .panel-right
@@ -919,8 +1010,31 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 }
 
+#username, #password
+{
+    width: 100% !important;
+    opacity: 1 !important;
+}
+
+#remember_me
+{
+    margin-top: 40px;
+    width: 100% !important;
+    padding-left: 0px;
+    opacity:1 !important;
+}
+
+#_submit
+{
+    opacity:1 !important;
+    padding-left: 0px!important;
+    width:100% !important;
+}
+
 .btn{
     box-shadow: 10px 5px 18px #888888 !important;
+    width:100%;
+    background-color: inherit;
 }
 
 #third_input
@@ -939,71 +1053,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     text-align: center;
     margin-right: 30px;
     margin-left: 30px;
-}
-
-/*noinspection ALL*/
-@media all and (max-width: 640px)
-{
-    h1{
-        min-width: 80%;
-    }
-    h4{
-        min-width: 80%;
-    }
-
-    /*noinspection ALL*/
-    .c_illus{
-        height: 60%;
-        width: 100%;
-        top: 0;
-    }
-
-    /*noinspection ALL*/
-    .bloc_text{
-        height: 40%;
-        width: 80%;
-        top: 55%;
-        bottom:0;
-        transform: translateY(0);
-        left: 10% !important;
-        right: 10%;
-    }
-    .bloc_text h2,
-    .bloc_text h5{
-        text-align: center;
-    }
-    .bloc_text h2{
-        font-size: 20px;
-    }
-    .bloc_text h5{
-        font-size: 14px;
-    }
-    .button{
-        margin:40px auto !important;
-    }
-
-    /*noinspection ALL*/
-    .phone_right{
-        left:25%;
-    }
-
-    .phone_right svg{
-        height:90%;
-    }
-
-    #section1 .button,
-    #section2 .button,
-    #footer{
-        display: none;
-    }
-
-
-
-    #c_form_mail{
-
-        width: 100%;
-        margin: 10px auto auto;
-    }
 }
 
 /*infowindow styles*/

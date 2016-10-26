@@ -66,7 +66,7 @@ export default class GoogleMapAddBird extends React.Component {
                     <div
                         {...this.props}
                         style={{
-                            height: '100%'
+                            height: '80%'
                         }} >
                     </div>
                 }
@@ -84,7 +84,10 @@ export default class GoogleMapAddBird extends React.Component {
                         {this.props.form}
                         <input id="birds_longitude" name="birds[longitude]" type="hidden" value={position.lng}></input>
                         <input id="birds_latitude" name="birds[latitude]" type="hidden" value={position.lat}></input>
-                        <p>Placez le marker a l'endroit exact de l'observation :</p>
+
+
+                        <p id="marker" >Placez le marker a l'endroit exact de l'observation :</p>
+
                      </GoogleMap>
                 }
             />
