@@ -42,7 +42,10 @@
     </div>
 </nav>
     {% block body %}
-
+        <div class="full_page">
+            {% block view %}
+            {% endblock %}
+        </div>
     {% endblock %}
     {% block javascripts %}
         <script src="{{ asset('js/jquery-3.1.0.js') }}"></script>
