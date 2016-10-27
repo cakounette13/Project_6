@@ -20,23 +20,8 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-<nav id="header">
-    <!-- hamburger menu -->
+    {{ include('header.html.twig') }}
 
-    <ul id="c_logo">
-        <li class="off-1">
-            <i id="hamburger" class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            <ul class="drop-menu menu-1">
-                {{ knp_menu_render('main') }}
-            </ul>
-        </li>
-    </ul>
-
-    <span id="title" >NAO</span>
-    <div id="c_link_beta" >
-        <a href="/login" target="_blank" ><i id="connexion" class="fa fa-user fa-2x" aria-hidden="true"></i></a>
-    </div>
-</nav>
     {% block body %}
 
     {% endblock %}

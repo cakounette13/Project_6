@@ -281,7 +281,6 @@ span
 }
 
 #c_form_mail{
-    height: 280px;
     width: 400px;
     margin: auto;
 }
@@ -700,6 +699,9 @@ span.glyphicon.glyphicon-chevron-right{
     background-color: white;
     box-shadow: 10px 5px 18px #888888 !important;
     border-top-width: 0px;
+    text-align: center;
+    width: 100% !important;
+    padding:0 !important;
 }
 
 .panel-body
@@ -992,7 +994,60 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 /*register page*/
 
+#fos_user_registration_form_email
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px !important;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
 
+#fos_user_registration_form_plainPassword_first
+{
+    margin-top: 10px;
+}
+
+#fos_user_registration_form_plainPassword_second
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+#submit_register, #changePasswordSubmit
+{
+    margin-top: 30px;
+    padding: 0 !important;
+}
+
+#c_form_mail > form > div.text-center > label:nth-child(7)
+{
+    width: 100%;
+}
+
+/*change-pwd page*/
+
+#fos_user_change_password_form_current_password
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px !important;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+#fos_user_change_password_form_plainPassword_second
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 10px 5px 18px #888888 !important;
+}
+
+#c_form_mail > form > div.text-center > label
+{
+    width: 100%;
+}
 
 /*login page*/
 
