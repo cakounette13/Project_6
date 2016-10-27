@@ -45,7 +45,8 @@ class DefaultController extends Controller {
      * @Route("/dernieres_observations", name="last_observations")
      * @Template("default/last_observations.html.twig")
      */
-    public function lastObservations()
+    public function lastObservationsAction()
     {
+
     }
 }
