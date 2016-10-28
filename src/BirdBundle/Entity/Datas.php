@@ -56,6 +56,11 @@ class Datas
     private $nom;
 
 	/**
+	 * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+	 * @ORM\JoinColumn(nullable=false)
+	 */
+	private $member;
+	/**
 	 * @var boolean
 	 *
 	 * @ORM\Column(name="valid", type="boolean", nullable=true)
@@ -192,5 +197,19 @@ class Datas
 	 */
 	public function setValid( $valid ) {
 		$this->valid = $valid;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getMember() {
+		return $this->member;
+	}
+
+	/**
+	 * @param mixed $member
+	 */
+	public function setMember( $member ) {
+		$this->member = $member;
 	}
 }

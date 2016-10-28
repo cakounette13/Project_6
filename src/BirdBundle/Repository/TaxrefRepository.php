@@ -11,11 +11,4 @@ use Doctrine\ORM\EntityRepository;
  */
 class TaxrefRepository extends EntityRepository
 {
-    public function findBirdName()
-    {
-        return $this->createQueryBuilder('taxref')
-	        ->addOrderBy('taxref.nomVern', 'ASC')
-            ->getQuery()
-            ->getResult();
-    }
 }

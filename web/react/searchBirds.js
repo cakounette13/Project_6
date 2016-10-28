@@ -1,7 +1,6 @@
 import { default as React, Component } from 'react';
 import $ from 'jquery';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
-import Twig from 'twig';
 export default class GoogleMapBirds extends React.Component {
 
     static inputStyle = {
@@ -30,8 +29,8 @@ export default class GoogleMapBirds extends React.Component {
         "border-radius": '2px 2px 0 0',
     };
 
-    static mapStyle = [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},
-        {'gamma':0.72}]},
+    static mapStyle = [{"elementType":"geometry","stylers":
+        [{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4}, {'gamma':0.72}]},
         {"featureType":"road","elementType":"labels.icon"},
         {"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},
         {"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},
@@ -49,8 +48,8 @@ export default class GoogleMapBirds extends React.Component {
             lng: 2.329102,
         },
         markers: [{
-            nom: "",
             nomValide: "",
+            nomVern: "",
             showInfo: "",
             image: "",
             lat: "",
@@ -63,7 +62,8 @@ export default class GoogleMapBirds extends React.Component {
     componentDidMount() {
         $.getJSON("/json", (json) => {
             let datas = JSON.parse(json);
-            var markers = Object.keys(datas).map(function(k) { return datas[k] });
+            var markers = Object.keys(datas).map(function(k) {return datas[k]});
+            console.log(markers);
             this.setState({markers: markers});
         });
     }
@@ -88,9 +88,9 @@ export default class GoogleMapBirds extends React.Component {
                 onCloseclick={this.handleMarkerClose.bind(this, marker)}
                 defaultOptions={{ styles: GoogleMapBirds.infoboxStyle}}>
                     <div id="infobox">
-                        <h3 id="infoNom">{marker.nom}</h3>
+                        <h3 id="infoNom">{marker.nomVern}</h3>
                         <h3 id="infoNomValide">{marker.nomValide}</h3>
-                        <img src={marker.image}
+                        <img src={"http://localhost:3000/web/uploads/images/"+marker.image}
                              width="160px" height="160px">
                         </img>
                     </div>
@@ -99,10 +99,11 @@ export default class GoogleMapBirds extends React.Component {
     }
 
     render() {
+        console.log(this.state.markers);
         let birds = this.state.markers.filter(
             (marker) => {
-                if (marker.nom === null) marker.nom = marker.nomValide;
-                return marker.nom.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+                if (marker.nomVern === null) marker.nomVern = marker.nomValide;
+                return marker.nomVern.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }
         );
         return (
@@ -133,9 +134,9 @@ export default class GoogleMapBirds extends React.Component {
                                 const ref = `marker_${index}`;
                                 return ( <option key={index}
                                                  ref={ref}
-                                                 value={marker.nom}
+                                                 value={marker.Vern}
                                     >
-                                        {marker.nom}
+                                        {marker.nomVern}
                                     </option>
                                 )
                             })}
@@ -148,7 +149,7 @@ export default class GoogleMapBirds extends React.Component {
                                         ref={ref}
                                         position={new google.maps.LatLng(marker.lat, marker.lng)}
                                         image={marker.image}
-                                        nom={marker.nom}
+                                        nomVern={marker.nomVern}
                                         nomValide={marker.nomValide}
                                         onClick={this.handleMarkerClick.bind(this, marker)}>
                                         {marker.showInfo ? this.renderInfoWindow(ref, marker) : null}
