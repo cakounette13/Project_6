@@ -11,4 +11,27 @@ use Doctrine\ORM\EntityRepository;
  */
 class DatasRepository extends EntityRepository
 {
+	public function findValidBirds(){
+		return $this->createQueryBuilder('d')
+			->select('d.latitude', 'd.longitude', 'd.image')
+			->join('d.nom', 'dn')
+			->addSelect('dn.nomValide', 'dn.nomVern')
+			->where('d.valid = :valid')
+			->setParameter('valid', true)
+			->getQuery()
+			->execute();
+	}
+
+	public function findInvalidBirds() {
+		return $this->createQueryBuilder('d')
+            ->select('d.latitude', 'd.longitude', 'd.image')
+            ->join('d.nom', 'dn')
+			->addSelect('dn.nomValide', 'dn.nomVern')
+			->join('d.member', 'dm')
+			->addSelect('dm.username')
+            ->where('d.valid = :valid')
+            ->setParameter('valid', false)
+            ->getQuery()
+            ->execute();
+	}
 }

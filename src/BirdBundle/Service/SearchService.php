@@ -27,30 +27,14 @@ class SearchService
         $this->em = $em;
     }
 
-    public function FindBirdsEncodeJson()
+    public function encodeValidBirds()
     {
-        $datas = $this->em->getRepository('BirdBundle:Datas')->findAll();
-	    $birds = array();
-	    $i = 0;
-	    foreach ($datas as $item)
-	    {
-		    $birds[] =
-			    $bird[] = [
-			    	'key' => $i,
-				    'nomValide' => $item->getNom()->getNomValide(),
-				    'nom' => $item->getNom()->getNomVern(),
-				    'lat' => $item->getLatitude(),
-				    'lng' => $item->getLongitude(),
-				    'image' => $item->getImage(),
-				    'showInfo' => false
-			    ];
-		    $i++;
-	    }
-        $encode = array(new XmlEncoder(), new JsonEncoder());
-        $normalizer = array(new ObjectNormalizer());
+	    $datas = $this->em->getRepository('BirdBundle:Datas')->findValidBirds();
+	    $encode = array(new XmlEncoder(), new JsonEncoder());
+	    $normalizer = array(new ObjectNormalizer());
 
-        $serializer = new Serializer($normalizer, $encode);
+	    $serializer = new Serializer($normalizer, $encode);
 
-        return $serializer->serialize($birds, 'json');
+	    return $serializer->serialize($datas, 'json');
     }
 }

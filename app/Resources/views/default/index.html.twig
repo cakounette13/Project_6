@@ -13,11 +13,6 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage();
-        });
-    </script>
     <script>
         {# set a base url to '/' or maybe '/app_dev.php' #}
         window.baseUrl = '{{ path('bird') }}';

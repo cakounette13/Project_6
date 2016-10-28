@@ -36,20 +36,18 @@ class ImageUploadListener {
 		$this->uploadFile($entity);
 	}
 
-	private function uploadFile($entity)
+	public function uploadFile($entity)
 	{
-		// upload only works for Product entities
 		if (!$entity instanceof Datas) {
 			return;
 		}
 
 		$file = $entity->getImage();
 
-		// only upload new files
 		if (!$file instanceof UploadedFile) {
 			return;
 		}
 		$fileName = $this->uploader->upload($file);
-		$entity->setImage("http://localhost:3000/web/uploads/images/".$fileName);
+		$entity->setImage($fileName);
 	}
 }

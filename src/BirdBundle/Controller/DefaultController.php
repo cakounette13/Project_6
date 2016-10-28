@@ -3,6 +3,7 @@
 namespace BirdBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -15,10 +16,7 @@ class DefaultController extends Controller {
 	 * @Template("default/index.html.twig")
 	 */
 	public function indexAction() {
-		$birds  = $this->get('search_bird')->FindBirdsEncodeJson();
-		return [
-			'birds'  => $birds
-		];
+		return;
 	}
 
 	/**
@@ -27,7 +25,7 @@ class DefaultController extends Controller {
 	 */
 	public function jsonDatas()
 	{
-		$birds  = $this->get( 'search_bird' )->FindBirdsEncodeJson();
+		$birds  = $this->get( 'search_bird' )->encodeValidBirds();
 		return new JsonResponse($birds);
 	}
 
@@ -44,9 +42,11 @@ class DefaultController extends Controller {
     /**
      * @Route("/dernieres_observations", name="last_observations")
      * @Template("default/last_observations.html.twig")
+     * @Security("has_role('ROLE_SUPER_USER')")
      */
     public function lastObservationsAction()
     {
-
+	    $notValidYet = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
+	    return ['birds' => $notValidYet];
     }
 }
