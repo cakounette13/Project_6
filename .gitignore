@@ -22,3 +22,6 @@ webpack.dev-server-compiled.js
 webpack.dev-server-compiled.js.map
 /web/uploads/images/
 /app/bootstrap.php.cache
+src/BirdBundle/DataFixtures/ORM/Datas.yml
+
+
