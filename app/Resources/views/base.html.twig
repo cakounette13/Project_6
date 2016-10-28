@@ -4,35 +4,25 @@
     <meta charset="UTF-8" />
     <title>{% block title %}NAO{% endblock %}</title>
     {% block stylesheets %}
-        <style>
-            input::-webkit-calendar-picker-indicator {
-                display: none;
-            }
-        </style>
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css') }}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/jquery.fullpage.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/navbar-fixed-top.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-        <link rel="stylesheet" href="{{ asset('css/dropdown_menu.css') }}">
         <script src="https://use.fontawesome.com/57214ed58f.js"></script>
-
-
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
     {{ include('header.html.twig') }}
+
     {% block body %}
     {% endblock %}
+
     {% block javascripts %}
-        <script src="{{ asset('js/jquery-3.1.0.js') }}"></script>
-        <script src="{{ asset('js/jquery.fullpage.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="{{ asset('js/script.js') }}"></script>
-        <script src="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/npm.js') }}"></script>
-        <script src="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
     {% endblock %}
 </body>
 </html>

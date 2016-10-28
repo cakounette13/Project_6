@@ -1,0 +1,10 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, { 'action': path('fos_user_group_new'), 'attr': { 'class': 'fos_user_group_new' } }) }}
+    <div class="text-center">
+        {{ form_widget(form.group, {'attr': {'class': 'champs', 'placeholder': 'Entrez votre email'}}) }}
+        <div>
+            <input class="champs btn btn-default" type="submit" value="{{ 'group.new.submit'|trans }}" />
+        </div>
+    </div>
+{{ form_end(form) }}
