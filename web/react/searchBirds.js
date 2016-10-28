@@ -52,8 +52,8 @@ export default class GoogleMapBirds extends React.Component {
             nomVern: "",
             showInfo: "",
             image: "",
-            lat: "",
-            lng: "",
+            latitude: "",
+            longitude: "",
         }],
         search: "",
         suggestions: []
@@ -134,7 +134,7 @@ export default class GoogleMapBirds extends React.Component {
                                 const ref = `marker_${index}`;
                                 return ( <option key={index}
                                                  ref={ref}
-                                                 value={marker.Vern}
+                                                 value={marker.nomVern}
                                     >
                                         {marker.nomVern}
                                     </option>
@@ -147,7 +147,7 @@ export default class GoogleMapBirds extends React.Component {
                                 return ( <Marker
                                         key={index}
                                         ref={ref}
-                                        position={new google.maps.LatLng(marker.lat, marker.lng)}
+                                        position={new google.maps.LatLng(marker.latitude, marker.longitude)}
                                         image={marker.image}
                                         nomVern={marker.nomVern}
                                         nomValide={marker.nomValide}
