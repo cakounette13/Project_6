@@ -4,45 +4,28 @@
     <meta charset="UTF-8" />
     <title>{% block title %}NAO{% endblock %}</title>
     {% block stylesheets %}
-        <style>
-            input::-webkit-calendar-picker-indicator {
-                display: none;
-            }
-        </style>
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css') }}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/jquery.fullpage.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/navbar-fixed-top.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<<<<<<< HEAD
         <link rel="stylesheet" href="{{ asset('css/dropdown_menu.css') }}">
 
+=======
+        <script src="https://use.fontawesome.com/57214ed58f.js"></script>
+>>>>>>> 6c0d350b046b0c255f81b98d759bd99f5c9a66b2
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-<nav id="header">
-    <!-- hamburger menu -->
-
-    <ul id="c_logo">
-        <li class="off-1">
-            <i id="hamburger" class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            <ul class="drop-menu menu-1">
-                {{ knp_menu_render('main') }}
-            </ul>
-        </li>
-    </ul>
-
-    <span id="title" >NAO</span>
-    <div id="c_link_beta" >
-        <a href="" target="_blank" ><i id="connexion" class="fa fa-user fa-2x" aria-hidden="true"></i></a>
-    </div>
-</nav>
+    {{ include('header.html.twig') }}
     {% block body %}
     {% endblock %}
     {% block javascripts %}
-        <script src="{{ asset('js/jquery-3.1.0.js') }}"></script>
-        <script src="{{ asset('js/jquery.fullpage.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="{{ asset('js/script.js') }}"></script>
     {% endblock %}
 </body>
