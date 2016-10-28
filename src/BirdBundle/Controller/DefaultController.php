@@ -46,5 +46,7 @@ class DefaultController extends Controller {
      */
     public function lastObservationsAction()
     {
+	    $notValidYet = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
+	    return ['birds' => $notValidYet];
     }
 }
