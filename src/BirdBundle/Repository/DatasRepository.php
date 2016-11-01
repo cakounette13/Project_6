@@ -24,7 +24,7 @@ class DatasRepository extends EntityRepository
 
 	public function findInvalidBirds() {
 		return $this->createQueryBuilder('d')
-            ->select('d.latitude', 'd.longitude', 'd.image')
+            ->select('d.latitude', 'd.longitude', 'd.image', 'd.id')
             ->join('d.nom', 'dn')
 			->addSelect('dn.nomValide', 'dn.nomVern')
 			->join('d.member', 'dm')

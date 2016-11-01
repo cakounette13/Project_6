@@ -44,9 +44,11 @@ class DefaultController extends Controller {
      * @Template("default/last_observations.html.twig")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
-    public function lastObservationsAction()
+    public function lastObservationsAction(Request $request)
     {
 	    $notValidYet = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
-	    return ['birds' => $notValidYet];
+	    return [
+	    	'birds' => $notValidYet,
+	    ];
     }
 }

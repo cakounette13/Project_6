@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-        <!--HOME-->
+{{ dump(birds) }}
 <div class=" container-fluid panel panel-default target">
         <div class="panel-body">
             <div class="row">
@@ -21,10 +20,10 @@
                                 <div id="dateObs">01/12/16</div>
                             </div>
                             <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
-                                <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+                                <button id="deleteBtn" class=" btn" value="{{ bird.id }}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
                             </div>
                             <div id="download" class=" no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                                <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
+                                <button class="download btn" value="{{ bird.id }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>

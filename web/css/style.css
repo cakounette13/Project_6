@@ -689,10 +689,10 @@ span.glyphicon.glyphicon-chevron-right{
 
 .thumbnail
 {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
     border: 2px solid #7E7F79;
     box-shadow: 10px 5px 18px #888888 !important;
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 .champs
@@ -700,7 +700,7 @@ span.glyphicon.glyphicon-chevron-right{
     border:2px solid #7E7F79;
     background-color: white;
     box-shadow: 10px 5px 18px #888888 !important;
-    border-top-width: 0px;
+    border-top-width: 0;
     text-align: center;
     width: 100% !important;
     padding:0 !important;
@@ -719,7 +719,7 @@ span.glyphicon.glyphicon-chevron-right{
 
 .thumbnail
 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .no_padding
@@ -749,7 +749,7 @@ span.glyphicon.glyphicon-chevron-right{
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     border: 2px solid #7E7F79;
-    border-top-width: 0px;
+    border-top-width: 0;
 
 }
 
@@ -766,8 +766,8 @@ span.glyphicon.glyphicon-chevron-right{
 
 .download
 {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
     width:100%;
     background-color: #A5C700;
     border-bottom-right-radius: 10px;
@@ -779,7 +779,7 @@ span.glyphicon.glyphicon-chevron-right{
 {
     height:100%;
     width: 100%;
-    border-radius: 0%;
+    border-radius: 0;
 }
 
 .fa-trash-o
@@ -874,7 +874,7 @@ select
 
 .add-on
 {
-    border-right: 0px !important;
+    border-right: 0 !important;
 }
 
 
@@ -921,10 +921,7 @@ input.btn:nth-child(4)
 
 /*noinspection ALL*/
 input#form_longitude
-{#128
-        #129
-        #130
-
+{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-bottom: 5px;
@@ -1080,14 +1077,14 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 {
     margin-top: 40px;
     width: 100% !important;
-    padding-left: 0px;
+    padding-left: 0;
     opacity:1 !important;
 }
 
 #_submit
 {
     opacity:1 !important;
-    padding-left: 0px!important;
+    padding-left: 0 !important;
     width:100% !important;
 }
 
@@ -1113,20 +1110,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     text-align: center;
     margin-right: 30px;
     margin-left: 30px;
-}
-
-/*infowindow styles*/
-
-/*noinspection ALL*/
-#infoNom #infobox #infoNomValide {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    padding: 10px;
-    background-color: #48b5e9;
-    color: black;
-    margin: 1px;
-    border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
 }
 
 /*dropdown menu*/
