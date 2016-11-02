@@ -9,13 +9,13 @@
 namespace BirdBundle\Service;
 
 use BirdBundle\Entity\Datas;
-use BirdBundle\Form\DeleteBird;
+use BirdBundle\Form\ValidateBird;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
 
-class DeleteBirdService {
+class ValidateBirdService {
 	/**
 	 * @var EntityManager
 	 */
@@ -37,26 +37,17 @@ class DeleteBirdService {
 		$deleteForm = array();
 		foreach ($birds as $bird)
 		{
-			$deleteForm[] = $this->form->create(DeleteBird::class, array($bird['id']))
-				->add('id', HiddenType::class);
+			$form = $this->form->create(ValidateBird::class, $bird)
+				->add('id', HiddenType::class, array('data' => $bird['id']));
+			$deleteForm[] = $form->createView();
 		}
+		dump($deleteForm);
 		return $deleteForm;
 	}
 
 	public function DeleteBirdForm(Request $request)
 	{
 		$form = $this->createDeleteForms();
-		$form->bind($request);
-		if ($form->isValid()) {
-			$em = $this->em;
-			$entity = $em->getRepository('BirdBundle:Datas')
-				->find();
-			if (!$entity) {
-				throw $this->createNotFoundException('L\'oiseau n\'existe pas.');
-			}
-			$em->remove($entity);
-			$em->flush();
-		}
 		return $form;
 	}
 }

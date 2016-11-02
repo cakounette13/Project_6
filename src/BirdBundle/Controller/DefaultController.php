@@ -46,9 +46,11 @@ class DefaultController extends Controller {
      */
     public function lastObservationsAction(Request $request)
     {
-	    $notValidYet = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
+	    $birds = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
+	    $notValidYet = $this->get('delete_bird')->DeleteBirdForm($request);
 	    return [
-	    	'birds' => $notValidYet,
+	    	'forms' => $notValidYet,
+		    'birds' => $birds
 	    ];
     }
 }

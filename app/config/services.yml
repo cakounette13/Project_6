@@ -13,7 +13,7 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
   delete_bird:
-        class: BirdBundle\Service\DeleteBirdService
+        class: BirdBundle\Service\ValidateBirdService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
   app.image_uploader:
