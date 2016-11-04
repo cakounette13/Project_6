@@ -129,7 +129,7 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
-    color: white;
+    color: #d0fb00;
     text-transform: uppercase;
     font-family: 'Wendy One', sans-serif;
     text-decoration: none;
@@ -212,7 +212,7 @@ span
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
-    color: #A5C500;
+    color: #A5C700;
     text-transform: uppercase;
     text-align: center;
     line-height: 54px;
@@ -415,7 +415,7 @@ span
 /*noinspection ALL*/
 .overlay{
     position: absolute;
-    background-color: black;
+    background-color: #40442C;
     height: 100%;
     width: 100%;
     opacity: 0;
@@ -471,13 +471,13 @@ input#input-search{
     width: 80% !important;
     margin-left: 10% !important;
     border-radius: 5px !important;
-    box-shadow: 10px 5px 18px #888888 !important;
+    box-shadow: 10px 5px 18px #7E7F79 !important;
 }
 
 #birds > div > div:nth-child(2)
 
 {
-    box-shadow: 10px 5px 18px #888888;
+    box-shadow: 10px 5px 18px #7E7F79;
     height: 85% !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -497,7 +497,7 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     height: 150px;
     line-height: 1.35 !important;
     white-space: nowrap !important;
-    color: black;
+    color: #40442C;
 }
 
 html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div div.gm-style-iw div div div{
@@ -533,6 +533,7 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
     top: 20%;
     bottom: inherit;
+    color: #d0fb00;
 }
 #thumbnail-preview-indicators .carousel-indicators li,
 #thumbnail-preview-indicators .carousel-indicators li.active {
@@ -608,6 +609,7 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 
 .carousel-fade .carousel-control {
     z-index: 2;
+    color: #d0fb00;
 }
 
 span.glyphicon.glyphicon-chevron-left{
@@ -618,7 +620,7 @@ span.glyphicon.glyphicon-chevron-right{
     margin-right: 35px !important;
 }
 
-
+.carou
 
 .carousel-inner {
     width: 80% !important;
@@ -677,7 +679,7 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 #section1{
-    background-color: #7E7F79;
+    background-color: #9BB22C;
 }
 
 #section3{
@@ -1147,9 +1149,9 @@ nav > ul > li {
     letter-spacing: 2px;
     font-size: 10px;
     font-weight: bold;
-    color: azure;
+    color: #d0fb00;
     cursor: pointer;
-    border-right: solid thin SeaGreen;
+    border-right: solid thin #7E7F79;
 }
 nav > ul > li > i {
     -webkit-transition: -webkit-transform 0.1s ease;
@@ -1160,7 +1162,7 @@ nav > ul > li > i {
 }
 nav > ul > li:hover {
 
-    color: Azure;
+    color: #d0fb00;
     opacity: 0.9;
 }
 nav > ul > li:hover > i {
@@ -1188,13 +1190,13 @@ ul.drop-menu {
     padding: 0;
 }
 ul.drop-menu li {
-    background: #607D8B;
-    color: rgba(255, 255, 255, 0.7);
+    background: #7E7F79;
+    color: #d0fb00;
     border-bottom: solid thin #595959;
     display: none;
 }
 ul.drop-menu li:hover {
-    background: #595959;
+    background: #40442c;
 }
 ul.drop-menu li:last-child {
     border-radius: 0 0 5px 5px;

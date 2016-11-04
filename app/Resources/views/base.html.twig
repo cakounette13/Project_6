@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 {% block head %}
-    <meta charset="UTF-8" />
-    <title>{% block title %}NAO{% endblock %}</title>
-    {% block stylesheets %}
-       {{ include('stylesheet.html.twig') }}
-        <script src="https://use.fontawesome.com/57214ed58f.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Accueil - {% block title %}NAO{% endblock %}</title>
+{% block stylesheets %}
+    {{ include('stylesheet.html.twig') }}
+    <script src="https://use.fontawesome.com/57214ed58f.js"></script>
 {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 {% endblock %}
+
 <body>
-    {{ include('header.html.twig') }}
-    <div id="fullpage">
+{{ include('header.html.twig') }}
+
+<div id="fullpage">
     {% block body %}
     {% endblock %}
     </div>
-    {% block javascripts %}
-       {{ include('javascript.html.twig') }}
-    {% endblock %}
+
+{% block javascripts %}
+    {{ include('javascript.html.twig') }}
+{% endblock %}
 </body>
+
 </html>
