@@ -2,6 +2,7 @@
 
 namespace BirdBundle\Controller;
 
+use BirdBundle\Form\ValidateBird;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -46,11 +47,9 @@ class DefaultController extends Controller {
      */
     public function lastObservationsAction(Request $request)
     {
-	    $birds = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
-	    $notValidYet = $this->get('delete_bird')->DeleteBirdForm($request);
+	    $forms = $this->get('validate_bird')->DeleteBirdForm($request);
 	    return [
-	    	'forms' => $notValidYet,
-		    'birds' => $birds
+		    'birds' => dump($forms)
 	    ];
     }
 }

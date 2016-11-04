@@ -3,32 +3,7 @@
 <div class=" container-fluid panel panel-default target">
         <div class="panel-body">
             <div class="row">
-                {% for bird in birds %}
-                    {% for form in forms %}
-                    <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
-                        <div class="thumbnail">
-                            <img class="borderRadius img-responsive" src="{{ asset('uploads/images') ~ '/' ~ bird.image }}">
-                            <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
-                        </div>
-                        <div class=" champs text-center">
-                            <div id="nomObs" >Observateur: {{ bird.username }}</div>
-                            <div id="nomOiseau">Nom de l'oiseau : {{ bird.nomVern }}</div>
-                        </div>
-                        <div class="borderRadius no_padding panel-footer">
-                            <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
-                                <div id="dateObs">{{ bird.datevue|date('d-m-Y') }}</div>
-                            </div>
-                            {% form_theme form _self %}
-                            {{ form_start(form) }}
-                            {% block _validate_bird_supprimer %}
 
-                            {% endblock %}
-                                {{ form_widget(form.valider) }}
-                            {{ form_end(form) }}
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endfor %}
             </div>
         </div>
 </div>

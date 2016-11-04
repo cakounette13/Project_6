@@ -753,13 +753,13 @@ span.glyphicon.glyphicon-chevron-right{
 
 }
 
-#delete, #download
+#validate_bird_supprimer, #validate_bird_valider
 {
     height: 100%;
     width:25%;
 }
 
-#download
+#validate_bird_valider
 {
     border-radius: 0 0 10px 0;
 }

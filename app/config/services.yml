@@ -12,7 +12,7 @@ services:
         class: BirdBundle\Service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
-  delete_bird:
+  validate_bird:
         class: BirdBundle\Service\ValidateBirdService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
