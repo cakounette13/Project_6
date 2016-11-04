@@ -10,6 +10,7 @@ namespace BirdBundle\Menu;
 
 
 use Knp\Menu\FactoryInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 
 class MenuBuilder
@@ -28,13 +29,14 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('Espèces observées', array('route' => 'add_observation'));
+        $menu->addChild('Observations', array('route' => 'add_observation'));
 
         // create another menu item
-        $menu->addChild('Dernières observations', array('route' => 'add_observation'));
+        $menu->addChild('Dernières observations', array('route' => 'last_observations'));
         // you can also add sub level's to your menu's as follows
-        $menu->addChild('Se déconnecter', array('route' => 'add_observation'));
+        $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
 
         return $menu;
     }
+
 }

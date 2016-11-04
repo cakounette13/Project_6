@@ -2,7 +2,6 @@
 
 namespace BirdBundle\Controller;
 
-use BirdBundle\Form\ValidateBird;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -12,7 +11,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
-	/**
+
+    /**
 	 * @Route("/", name="bird")
 	 * @Template("default/index.html.twig")
 	 */
@@ -52,4 +52,16 @@ class DefaultController extends Controller {
 		    'birds' => dump($forms)
 	    ];
     }
+
+    /**
+     * @Route("/utilisateurs", name="nao_user")
+     * @Template("default/dashboard.html.twig")
+     */
+    public function usersAction()
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+        return $this->render('dashboard.html.twig', array('users' => $users));
+    }
+
 }

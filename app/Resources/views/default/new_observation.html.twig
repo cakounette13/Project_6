@@ -2,13 +2,13 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js" integrity="sha256-it5nQKHTz+34HijZJQkpNBIHsjpV8b6QzMJs9tmOBSo="crossorigin="anonymous"></script></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&libraries=geometry,visualization"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
 {% endblock %}
 
 {% block body %}
-<div id="fullpage" class="margin-top">
+
     <h1>Ajouter un oiseau</h1>
 
     {{ form_start(form) }}
@@ -18,21 +18,21 @@
         </div>
 
         <div class="container">
-        <p id="marker">Placez le marker a l'endroit exact de l'observation</p>
-        {{ form_row(form.nom) }}
-         <div class="form-group">
-                    {# Génération du label. #}
-                    {{ form_label(form.datevue, "", {'label_attr': {'class': 'no_padding col-sm-6 col-lg-6 col-md-6 col-xs-6 control-label'}}) }}
-                    {{ form_errors(form.datevue) }}
-                    <div class="no_padding col-sm-6">
-                        <div class="input-group input-append date" id="datePicker">
-                            {{ form_widget(form.datevue, {'attr': {'class': 'text-center form-control', 'name': 'date'}}) }}
-                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-                        </div>
+            <p id="marker">Placez le marker a l'endroit exact de l'observation</p>
+            {{ form_row(form.nom) }}
+             <div class="form-group">
+                        {# Génération du label. #}
+                        {{ form_label(form.datevue, "", {'label_attr': {'class': 'no_padding col-sm-6 col-lg-6 col-md-6 col-xs-6 control-label'}}) }}
+                        {{ form_errors(form.datevue) }}
+                <div class="no_padding col-sm-6">
+                    <div class="input-group input-append date" id="datePicker">
+                        {{ form_widget(form.datevue, {'attr': {'class': 'text-center form-control', 'name': 'date'}}) }}
+                        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
-          </div>
-        {{ form_row(form.image) }}
-        <input class="btn" type="submit"/>
+                </div>
+             </div>
+            {{ form_row(form.image) }}
+            <input class="btn" type="submit"/>
         </div>
     {{ form_end(form) }}
 {% endblock %}
