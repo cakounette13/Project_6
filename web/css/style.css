@@ -522,13 +522,13 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     height: 480px;
 }
 #thumbnail-preview-indicators .slides .slide-1 {
-    background-image: url(http://localhost:8000/pics/blossom.jpg);
+    background-image: url(http://localhost:8000/images/blossom.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-2 {
-    background-image: url(http://localhost:8000/pics/cranes.jpg);
+    background-image: url(http://localhost:8000/images/cranes.jpg);
 }
 #thumbnail-preview-indicators .slides .slide-3 {
-    background-image: url(http://localhost:8000/pics/peacock.jpg);
+    background-image: url(http://localhost:8000/images/peacock.jpg);
 }
 #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
     top: 20%;
@@ -753,26 +753,10 @@ span.glyphicon.glyphicon-chevron-right{
 
 }
 
-#delete, #download
+#delete
 {
-    height: 100%;
-    width:25%;
-}
-
-#download
-{
-    border-radius: 0 0 10px 0;
-}
-
-.download
-{
-    padding-left: 0px;
-    padding-right: 0px;
-    width:100%;
-    background-color: #A5C700;
-    border-bottom-right-radius: 10px;
-    height:100%;
-    border-left: 1px solid #7E7F79;
+    height: 50%;
+    width:80%%;
 }
 
 #deleteBtn
@@ -1563,4 +1547,30 @@ li:hover > ul.drop-menu.menu-4 li:nth-child(4) {
         -webkit-transform: rotateX(0deg);
         transform: rotateX(0deg);
     }
+}
+
+
+/*styled table*/
+
+#mytable
+{
+    width: 1%;
+}
+
+.table-centered
+{
+    margin: 0 auto;
+    float: none;
+}
+
+.vertical-align
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.table-responsive
+{
+    text-align: center;
 }

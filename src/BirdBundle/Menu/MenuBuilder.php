@@ -10,6 +10,7 @@ namespace BirdBundle\Menu;
 
 
 use Knp\Menu\FactoryInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 
 class MenuBuilder
@@ -37,4 +38,5 @@ class MenuBuilder
 
         return $menu;
     }
+
 }

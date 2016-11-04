@@ -7,11 +7,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
-	/**
+
+    /**
 	 * @Route("/", name="bird")
 	 * @Template("default/index.html.twig")
 	 */
@@ -49,4 +51,19 @@ class DefaultController extends Controller {
 	    $notValidYet = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
 	    return ['birds' => $notValidYet];
     }
+
+    /**
+     * @Route("/utilisateurs", name="nao_user")
+     * @Template("default/dashboard.html.twig")
+     */
+    public function usersAction()
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+
+        dump($users);
+
+        return $this->render('dashboard.html.twig', array('users' => $users));
+    }
+
 }
