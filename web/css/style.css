@@ -1,7 +1,30 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face {
+    font-family: 'lobster';
+    src: url('../fonts/Lobster and Cabin/lobster/lobster.eot');
+    src: url('../fonts/Lobster and Cabin/lobster/lobster.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lobster and Cabin/lobster/lobster.woff') format('woff'),
+    url('../fonts/Lobster and Cabin/lobster/lobster.ttf') format('truetype'),
+    url('../fonts/Lobster and Cabin/lobster/lobster.svg#lobster') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cabinregular';
+    src: url('../fonts/Lobster and Cabin/cabin/cabin-regular-webfont.eot');
+    src: url('../fonts/Lobster and Cabin/cabin/cabin-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lobster and Cabin/cabin/cabin-regular-webfont.woff') format('woff'),
+    url('../fonts/Lobster and Cabin/cabin/cabin-regular-webfont.ttf') format('truetype'),
+    url('../fonts/Lobster and Cabin/cabin/cabin-regular-webfont.svg#cabinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
+    font-family: cabinregular;
     margin:0 !important;
     padding:0 !important;
     background-color: #A5C700;
@@ -23,9 +46,9 @@ body{
 }
 
 h1{
-
     color: #7E7F79;
     text-align: center;
+    font-family: 'lobster', cursive;
     font-weight: normal;
     font-style: normal;
     font-size: 30px;
@@ -37,7 +60,7 @@ h1{
 }
 
 h2{
-    font-family: 'Comfortaa', cursive;
+    font-family: 'lobster', cursive;
     color: #7E7F79;
     text-align: left;
     font-weight: normal;
@@ -56,7 +79,7 @@ h2{
 }
 
 h3{
-    font-family: 'Kanit', cursive;
+    font-family: 'lobster', cursive;
     color: #7E7F79;
     text-align: center;
     font-weight: normal;
@@ -70,7 +93,7 @@ h3{
 }
 
 h4{
-    font-family: 'Kanit', cursive;
+    font-family: 'lobster', cursive;
     color: #7E7F79;
     text-align: center;
     font-weight: normal;
@@ -84,7 +107,7 @@ h4{
 }
 
 h5{
-    font-family: 'Kanit', cursive;
+    font-family: 'lobster', cursive;
     color: #7E7F79;
     text-align: left;
     font-weight: normal;
@@ -102,7 +125,7 @@ h5{
 
 span
 {
-    font-family: 'Wendy One', sans-serif;
+    font-family: 'lobster', sans-serif;
     font-weight: 900;
     font-size: inherit;
 }
@@ -131,7 +154,7 @@ span
     font-size: 16px;
     color: #d0fb00;
     text-transform: uppercase;
-    font-family: 'Wendy One', sans-serif;
+    font-family: 'cabinregular', sans-serif;
     text-decoration: none;
 }
 
@@ -194,21 +217,13 @@ span
 
 
 
-
-
-
-
-
-
-
-
 .button{
     height: 54px;
     width: 160px;
     position: relative;
     margin: 50px auto;
     cursor: pointer;
-    font-family: 'Satisfy', cursive;
+    font-family: 'cabinregular', cursive;
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
@@ -234,7 +249,7 @@ span
     display: block;
     height: 100%;
     width: 100%;
-    font-family: 'Satisfy', cursive;
+    font-family: 'cabinregular', cursive;
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
@@ -279,7 +294,7 @@ span
 
 #section3 .button{
 
-    font-family: 'Satisfy', cursive;
+    font-family: 'cabinregular', cursive;
 }
 
 #c_form_mail{
@@ -305,7 +320,7 @@ span
     background-size: 15px;
 
     background: #fbfbfb no-repeat 22px center;
-    font-family: "source sans light", sans-serif;
+    font-family: "cabinregular", sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
@@ -467,6 +482,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 input#input-search{
+    font-family: cabinregular;
     margin-bottom: 10px;
     width: 80% !important;
     margin-left: 10% !important;
@@ -1123,7 +1139,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 /*noinspection ALL*/
 #infoNom #infobox #infoNomValide {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'cabinregular', sans-serif;
     font-size: 22px;
     font-weight: 400;
     padding: 10px;
