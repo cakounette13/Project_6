@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block body %}
+    <div id="corps">
+        <h1>Ajouter un oiseau</h1>
 
-    <h1>Ajouter un oiseau</h1>
-
-    {{ form_start(form) }}
+    {{ form_start(form, {'attr': {'id': 'bodyHeight'}}) }}
         <div id="add_bird" >
             {{ form_row(form.latitude) }}
             {{ form_row(form.longitude) }}
@@ -35,6 +35,7 @@
             <input class="btn" type="submit"/>
         </div>
     {{ form_end(form) }}
+    </div>
 {% endblock %}
 
 {% block javascripts %}
