@@ -89,7 +89,7 @@ h3{
     width: 100%;
     opacity: 1;
     transition:0.3s cubic-bezier(.49,.32,.36,1.56);
-    margin: 25% auto 20px;
+    margin: 5px auto 10px;
 }
 
 h4{
