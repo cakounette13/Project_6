@@ -63,7 +63,6 @@ export default class GoogleMapBirds extends React.Component {
         $.getJSON("/json", (json) => {
             let datas = JSON.parse(json);
             var markers = Object.keys(datas).map(function(k) {return datas[k]});
-            console.log(markers);
             this.setState({markers: markers});
         });
     }
@@ -74,11 +73,11 @@ export default class GoogleMapBirds extends React.Component {
 
     handleMarkerClick(marker) {
         marker.showInfo = true;
-        this.setState(this.state);
+        this.setState({center: {lat: marker.latitude, lng: marker.longitude},marker});
     }
     handleMarkerClose(marker) {
         marker.showInfo = false;
-        this.setState(this.state);
+        this.setState({showInfo : false});
     }
 
     renderInfoWindow(ref, marker) {
@@ -102,7 +101,7 @@ export default class GoogleMapBirds extends React.Component {
         let birds = this.state.markers.filter(
             (marker) => {
                 if (marker.nomVern === null) marker.nomVern = marker.nomValide;
-                return marker.nomVern.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+                return (marker.nomVern.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)
             }
         );
         return (
@@ -122,7 +121,6 @@ export default class GoogleMapBirds extends React.Component {
                         ref='map'
                         defaultOptions={{ styles: GoogleMapBirds.mapStyle}}
                     >
-
                         <input list="hints"
                                placeholder="Rechercher un oiseau"
                                style={GoogleMapBirds.inputStyle}
@@ -131,13 +129,13 @@ export default class GoogleMapBirds extends React.Component {
                         <datalist id="hints">
                             {birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
-                                return ( <option key={index}
-                                                 ref={ref}
-                                                 value={marker.nomVern}
-                                    >
-                                        {marker.nomVern}
-                                    </option>
-                                )
+                                    return ( <option key={index}
+                                                     ref={ref}
+                                                     value={marker.nomVern}
+                                        >
+                                            {marker.nomVern}
+                                        </option>
+                                    )
                             })}
                         </datalist>
                         {
@@ -146,6 +144,8 @@ export default class GoogleMapBirds extends React.Component {
                                 return ( <Marker
                                         key={index}
                                         ref={ref}
+                                        lat={marker.latitude}
+                                        lng={marker.longitude}
                                         position={new google.maps.LatLng(marker.latitude, marker.longitude)}
                                         image={marker.image}
                                         nomVern={marker.nomVern}
