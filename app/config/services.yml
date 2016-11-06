@@ -28,6 +28,6 @@ services:
 
   app.menu_builder:
       class: BirdBundle\Menu\MenuBuilder
-      arguments: ["@knp_menu.factory"]
+      arguments: ["@knp_menu.factory", "@security.authorization_checker"]
       tags:
           - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }

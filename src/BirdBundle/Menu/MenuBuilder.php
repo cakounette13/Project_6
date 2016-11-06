@@ -10,33 +10,64 @@ namespace BirdBundle\Menu;
 
 
 use Knp\Menu\FactoryInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 
-class MenuBuilder
+class MenuBuilder implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     private $factory;
 
     /**
      * @param FactoryInterface $factory
      */
-    public function __construct(FactoryInterface $factory)
+    public function __construct(FactoryInterface $factory, AuthorizationCheckerInterface $authorizationChecker)
     {
         $this->factory = $factory;
+        $this->checker = $authorizationChecker;
     }
 
     public function createMainMenu(array $options)
     {
         $menu = $this->factory->createItem('root');
-
+        $menu->addChild('Accueil', array('route' => 'bird'));
         $menu->addChild('Observations', array('route' => 'add_observation'));
+        $menu->addChild('Inscription', array('route' => 'fos_user_registration_register'));
 
-        // create another menu item
-        $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-        // you can also add sub level's to your menu's as follows
-        $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+        if ($this->checker->isGranted('ROLE_ADMIN')) {
+            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('Accueil', array('route' => 'bird'));
+            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
+            $menu->addChild('Administration', array('route' => 'nao_user'));
+            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
+            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
+            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
+            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+
+        }
+
+        if ($this->checker->isGranted('ROLE_USER')) {
+            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('Accueil', array('route' => 'bird'));
+            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
+            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
+            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+        }
+
+        if ($this->checker->isGranted('ROLE_SUPER_USER')) {
+            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('Accueil', array('route' => 'bird'));
+            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
+            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
+            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
+        }
 
         return $menu;
     }
+
 
 }
