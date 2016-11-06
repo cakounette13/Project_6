@@ -779,7 +779,6 @@ span.glyphicon.glyphicon-chevron-right{
 
 #deleteBtn
 {
-    height:100%;
     width: 100%;
     border-radius: 0%;
 }
@@ -842,6 +841,20 @@ span.glyphicon.glyphicon-chevron-right{
 .borderRadius
 {
     border-radius: 10px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 640px) {
+    .fa-2x {
+        font-size: 1em !important;
+    }
+    #delete, #download
+    {
+        height:100%;
+    }
+    .download, #deleteBtn
+    {
+        height: 100%;
+    }
 }
 
 
