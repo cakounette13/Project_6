@@ -5,5 +5,4 @@ Feature: Search
 
   @javascript
   Scenario: Adding a new bird i just saw
-    Given I am on "/nouvelle_observation"
-    When I want to add a new bird
+    Given I am on "/"
