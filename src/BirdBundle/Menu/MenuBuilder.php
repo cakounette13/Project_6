@@ -34,11 +34,13 @@ class MenuBuilder implements ContainerAwareInterface
     {
         $menu = $this->factory->createItem('root');
         $menu->addChild('Accueil', array('route' => 'bird'));
-        $menu->addChild('Observations', array('route' => 'add_observation'));
         $menu->addChild('Inscription', array('route' => 'fos_user_registration_register'));
 
-        if ($this->checker->isGranted('ROLE_USER')) {
+
+        if ($this->checker->isGranted('ROLE_ADMIN')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
+            $menu->addChild('Administration', array('route' => 'nao_user'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
         }
@@ -50,16 +52,13 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
         }
 
-        if ($this->checker->isGranted('ROLE_ADMIN')) {
+        if ($this->checker->isGranted('ROLE_USER')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
-            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-            $menu->addChild('Administration', array('route' => 'nao_user'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
         }
 
         return $menu;
     }
-
 
 }

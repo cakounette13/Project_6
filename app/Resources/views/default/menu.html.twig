@@ -1,19 +1,11 @@
 {% extends base.html.twig %}
 
-<ul>
-    <li class="current first">
-        <a href="/">Accueil</a>
-    </li>
-    <li class="current_ancestor">
-        <a href="new_observation.html.twig">Observations</a>
-    <li class="current_ancestor">
-        <a href="fos_user_registration_register">Se déconnnecter</a>
-    </li>
-    <li class="current_ancestor">
-        <a href="#route_to/edit_profile">Se déconnnecter</a>
-    </li>
-    <li class="current_ancestor">
-        <a href="/logout">Se déconnnecter</a>
-    </li>
-</ul>
+{% block list %}
+    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
+        {% import _self as knp_menu %}
+        <ul{{ knp_menu.attributes(listAttributes) }}>
+            {{ block('children') }}
+        </ul>
+    {% endif %}
+{% endblock %}
 
