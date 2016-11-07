@@ -125,6 +125,7 @@ export default class GoogleMapBirds extends React.Component {
                                placeholder="Rechercher un oiseau"
                                style={GoogleMapBirds.inputStyle}
                                id="input-search"
+                               name="inputSearch"
                                onChange={this.updateSearch.bind(this)} />
                         <datalist id="hints">
                             {birds.map((marker, index) => {
