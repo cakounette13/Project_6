@@ -12,6 +12,10 @@ services:
         class: BirdBundle\Service\SearchService
         arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
 
+  validate_bird:
+        class: BirdBundle\Service\ValidateBirdService
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory"]
+
   app.image_uploader:
           class: BirdBundle\Service\UploadFile
           arguments: ['%images_directory%']
@@ -24,7 +28,7 @@ services:
               - { name: doctrine.event_listener, event: preUpdate }
   add_bird:
         class: BirdBundle\Service\AddBird
-        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader']
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader', '@security.token_storage', '@security.authorization_checker']
 
   app.menu_builder:
       class: BirdBundle\Menu\MenuBuilder

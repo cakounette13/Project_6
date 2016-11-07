@@ -1,6 +1,6 @@
 Project 6 N.A.O
 
-! Require last Node version to work !
+! Require last Node version and php7 to work !
     
     Install:
         

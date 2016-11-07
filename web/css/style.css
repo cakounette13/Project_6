@@ -26,10 +26,9 @@
 body{
     font-family: cabinregular;
     margin:0 !important;
-    padding:0 !important;
     background-color: #A5C700;
     min-height: 200px;
-    padding-top: 70px;
+    padding: 0 !important;
 }
 
 *{
@@ -705,10 +704,10 @@ span.glyphicon.glyphicon-chevron-right{
 
 .thumbnail
 {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
     border: 2px solid #7E7F79;
     box-shadow: 10px 5px 18px #888888 !important;
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 .champs
@@ -716,7 +715,7 @@ span.glyphicon.glyphicon-chevron-right{
     border:2px solid #7E7F79;
     background-color: white;
     box-shadow: 10px 5px 18px #888888 !important;
-    border-top-width: 0px;
+    border-top-width: 0;
     text-align: center;
     width: 100% !important;
     padding:0 !important;
@@ -735,7 +734,7 @@ span.glyphicon.glyphicon-chevron-right{
 
 .thumbnail
 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .no_padding
@@ -765,20 +764,40 @@ span.glyphicon.glyphicon-chevron-right{
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     border: 2px solid #7E7F79;
-    border-top-width: 0px;
+    border-top-width: 0;
 
 }
 
+#validate_bird_supprimer, #validate_bird_valider
+{
+    height: 100%;
+    width:25%;
+}
+
+#validate_bird_valider
+{
+    border-radius: 0 0 10px 0;
+}
+
+.download {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    background-color: #A5C700;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    border-left: 1px solid #7E7F79;
+}
 #delete
 {
     height: 50%;
-    width:80%%;
+    width:80%;
 }
 
 #deleteBtn
 {
     width: 100%;
-    border-radius: 0%;
+    border-radius: 0;
 }
 
 .fa-trash-o
@@ -887,7 +906,7 @@ select
 
 .add-on
 {
-    border-right: 0px !important;
+    border-right: 0 !important;
 }
 
 
@@ -945,10 +964,7 @@ input.btn:nth-child(4)
 
 /*noinspection ALL*/
 input#form_longitude
-{#128
-        #129
-        #130
-
+{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-bottom: 5px;
@@ -1103,7 +1119,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #remember_me
 {
     width: 100% !important;
-    padding-left: 0px;
+    padding-left: 0;
     opacity:1 !important;
     height: 20px !important;
 
@@ -1112,7 +1128,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #_submit
 {
     opacity:1 !important;
-    padding-left: 0px!important;
+    padding-left: 0 !important;
     width:100% !important;
 }
 
@@ -1159,7 +1175,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     margin: 1px;
     border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
 }
-
 /*dropdown menu*/
 
 nav {

@@ -16,7 +16,6 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        {# set a base url to '/' or maybe '/app_dev.php' #}
         window.baseUrl = '{{ path('bird') }}';
     </script>
     {% if app.environment == 'dev' %}
