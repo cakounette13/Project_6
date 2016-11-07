@@ -502,13 +502,6 @@ input#input-search{
 
 /*border-radius*/
 
-
-#birds > div > div:nth-child(2) > div > div:nth-child(1)
-{
-    border-radius: 10px;
-}
-
-
 html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div{
     height: 150px;
     line-height: 1.35 !important;
@@ -518,6 +511,11 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 
 html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div div.gm-style-iw div div div{
     overflow: hidden;
+}
+
+.gm-style
+{
+    border-radius: 10px;
 }
 
 #thumbnail-preview-indicators {

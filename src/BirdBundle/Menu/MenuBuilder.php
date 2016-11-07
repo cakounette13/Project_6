@@ -37,33 +37,25 @@ class MenuBuilder implements ContainerAwareInterface
         $menu->addChild('Observations', array('route' => 'add_observation'));
         $menu->addChild('Inscription', array('route' => 'fos_user_registration_register'));
 
-        if ($this->checker->isGranted('ROLE_ADMIN')) {
-            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
-            $menu->addChild('Accueil', array('route' => 'bird'));
-            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-            $menu->addChild('Administration', array('route' => 'nao_user'));
-            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
-            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
-            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
-
-        }
-
         if ($this->checker->isGranted('ROLE_USER')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
-            $menu->addChild('Accueil', array('route' => 'bird'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
             $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
-            $menu->addChild('Accueil', array('route' => 'bird'));
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Edition du profil', array('route' => 'fos_user_profile_edit'));
+            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+        }
+
+        if ($this->checker->isGranted('ROLE_ADMIN')) {
+            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
+            $menu->addChild('Administration', array('route' => 'nao_user'));
+            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
+            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
         }
 
         return $menu;
