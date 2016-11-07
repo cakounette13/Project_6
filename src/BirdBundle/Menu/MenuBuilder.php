@@ -42,20 +42,20 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Administration', array('route' => 'nao_user'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+
         }
 
         if ($this->checker->isGranted('ROLE_USER')) {
             $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Se déconnecter', array('route' => 'fos_user_security_logout'));
+
         }
 
         return $menu;

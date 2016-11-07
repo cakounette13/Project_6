@@ -1,11 +1,7 @@
 {% extends base.html.twig %}
 
-{% block list %}
-    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-        {% import _self as knp_menu %}
-        <ul{{ knp_menu.attributes(listAttributes) }}>
-            {{ block('children') }}
-        </ul>
-    {% endif %}
+{% block root %}
+    {% set listAttributes = item.childrenAttributes %}
+    {{ block('list') -}}
 {% endblock %}
 
