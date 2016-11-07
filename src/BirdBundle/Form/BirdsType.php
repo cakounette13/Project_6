@@ -31,7 +31,9 @@ class BirdsType extends AbstractType
                 'format' => 'dd/MM/yyyy',
 			    'html5' => false,
             ])
-			->add('image', FileType::class)
+			->add('image', FileType::class, array(
+			    'label' => 'Image au format .jpg ou .pdf (facultative)',
+            ))
 			->add('longitude', HiddenType::class)
 			->add('latitude', HiddenType::class)
 		;
