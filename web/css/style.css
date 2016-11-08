@@ -633,8 +633,6 @@ span.glyphicon.glyphicon-chevron-right{
     margin-right: 35px !important;
 }
 
-.carou
-
 .carousel-inner {
     width: 80% !important;
     margin: auto;
@@ -1068,7 +1066,12 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     width: 100%;
 }
 
+/*profile page*/
 
+#accueil
+{
+    margin-top: 20px;
+}
 
 
 
