@@ -1,11 +1,6 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\MinkExtension\Context\MinkContext;
-use Behat\Mink\Mink;
-use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
 
 /**
@@ -29,14 +24,14 @@ class FeatureContext extends RawMinkContext implements Context
 	}
 
 	/**
-	 * @When I fill in the search box with :searchTerm
+	 * @When I fill in the search box with :term
 	 *
 	 */
-	public function iFillInTheSearchBoxWith($searchTerm)
+	public function iFillInTheSearchBoxWith($term)
 	{
 		$searchBox = $this->getPage()
-			->find('css', '[name="inputSearch"]');
-		$searchBox->setValue($searchTerm);
+			->find('css', 'input[name="searchTerm"]');
+		$searchBox->setValue($term);
 	}
 
 	/**

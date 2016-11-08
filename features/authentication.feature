@@ -6,3 +6,4 @@ Feature: Authentication
   Scenario: Loggin in
     Given I am on "/"
     When i follow "login"
+    And I fill in ""
