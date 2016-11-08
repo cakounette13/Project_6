@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 	        new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-	        new Limenius\ReactBundle\LimeniusReactBundle(),
 	        new BirdBundle\BirdBundle(),
             new FOS\UserBundle\FOSUserBundle(),
 	        new UserBundle\UserBundle(),

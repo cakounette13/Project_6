@@ -1,13 +1,6 @@
 {% extends base.html.twig %}
 
-<ul>
-    <li class="current first">
-        <a href="#/nouvelle_observation">Espèces observées</a>
-    </li>
-    <li class="current_ancestor">
-        <a href="#bird_default_observations/">Dernières observations</a>
-    <li class="current first last">
-        <a href="#route_to/edit_profile">Se déconnnecter</a>
-    </li>
-</ul>
-
+{% block root %}
+    {% set listAttributes = item.childrenAttributes %}
+    {{ block('list') -}}
+{% endblock %}

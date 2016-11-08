@@ -1,0 +1,5 @@
+{% if app.user %}
+    <a href="/logout" ><i id="connexion" class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+{% else %}
+    <a href="/login" ><i id="connexion" class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+{% endif %}
