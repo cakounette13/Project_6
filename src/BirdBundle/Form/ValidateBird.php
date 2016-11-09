@@ -12,9 +12,9 @@ class ValidateBird extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 	    $builder->add('supprimer', SubmitType::class, array(
-	    	'attr'=> array('class'=>'col-lg-6 col-md-6 col-xs-6 col-sm-6 col-xs-6')))
+	    	'attr'=> array('class'=>'deleteBtn btn')))
 	    ->add('valider', SubmitType::class,  array(
-		    'attr'=> array('class'=> 'col-lg-6 col-md-6 col-xs-6 col-sm-6 col-xs-6')));
+		    'attr'=> array('class'=> 'download btn')));
     }
 
     public function configureOptions(OptionsResolver $resolver)
