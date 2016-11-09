@@ -593,6 +593,10 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     }
 }
 
+.carousel-indicators{
+    bottom: 75%;
+}
+
 /*
   Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
   CSS from:       http://codepen.io/transportedman/pen/NPWRGq
@@ -623,6 +627,7 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 .carousel-fade .carousel-control {
     z-index: 2;
     color: #d0fb00;
+    width: 30%;
 }
 
 span.glyphicon.glyphicon-chevron-left{
@@ -1145,17 +1150,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     background-color: inherit;
 }
 
-#third_input
-{
-    margin-top: 10px;
-    box-shadow: 10px 5px 18px #888888 !important;
-}
-
-#second_input
-{
-    box-shadow: 10px 5px 18px #888888 !important;
-}
-
 #oubli
 {
     text-align: center;
@@ -1166,7 +1160,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 #inscription
 {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 /*infowindow styles*/
