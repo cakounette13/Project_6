@@ -482,9 +482,8 @@ input::-webkit-calendar-picker-indicator {
 
 input#input-search{
     font-family: cabinregular;
-    margin-bottom: 10px;
-    width: 80% !important;
-    margin-left: 10% !important;
+    margin-bottom: 30px;
+    width: 100% !important;
     border-radius: 5px !important;
     box-shadow: 10px 5px 18px #7E7F79 !important;
 }
@@ -627,7 +626,9 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 .carousel-fade .carousel-control {
     z-index: 2;
     color: #d0fb00;
-    width: 30%;
+    width: 45%;
+    position: fixed;
+    top: -4%;
 }
 
 span.glyphicon.glyphicon-chevron-left{
@@ -639,8 +640,10 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 .carousel-inner {
-    width: 80% !important;
+    width: 60% !important;
     margin: auto;
+    box-shadow: 10px 5px 18px #888888 !important;
+    border-radius: 10px;
 }
 
 .carousel-control:hover
@@ -680,7 +683,6 @@ span.glyphicon.glyphicon-chevron-right{
 .carousel .item {
     border-radius: 10px;
     background-color: rgba(0,0,0,0);
-
     overflow: hidden;
 
 }
@@ -888,7 +890,7 @@ span.glyphicon.glyphicon-chevron-right{
 #birds{
     width: 60%;
     margin: auto;
-    height: 60%;
+    height: 63%;
 }
 
 div.container{
