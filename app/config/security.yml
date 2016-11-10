@@ -15,16 +15,21 @@ security:
 
     firewalls:
         main:
-            pattern: ^/
+            pattern: .*
+            context: user
             form_login:
                 provider: fos_userbundle
+                login_path: /connexion
+                check_path: /verification
+                failure_path: null
                 csrf_token_generator: security.csrf.token_manager
-            logout:       true
+            logout:
+                path: /deconnexion
             anonymous:    true
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/connexion$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/inscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/reinitialiser, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/nouvelle_observation, role: ROLE_USER }
         - { path: ^/dernieres_observations, role: ROLE_SUPER_USER }
