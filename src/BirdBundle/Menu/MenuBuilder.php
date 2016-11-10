@@ -45,7 +45,6 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Gestion des profils', array('route' => 'fos_user_profile_edit'));
             $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
-
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
@@ -54,7 +53,6 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
-
         }
 
         if ($this->checker->isGranted('ROLE_USER')) {
@@ -62,7 +60,6 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
-
         }
 
         return $menu;
