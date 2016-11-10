@@ -1,6 +1,6 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Profil - {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}

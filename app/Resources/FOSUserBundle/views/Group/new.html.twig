@@ -1,6 +1,6 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% block title %}Nouveau groupe{% endblock %}
+{% block title %}Nouveau groupe - {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
     {% include "FOSUserBundle:Group:new_content.html.twig" %}
