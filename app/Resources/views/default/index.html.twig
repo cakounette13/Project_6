@@ -6,7 +6,6 @@
     {{ parent ()}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFroHBrDo8zJfboSR3r5Z_YWnLv9HEaxw&libraries=geometry,visualization"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -25,4 +24,5 @@
     {% else %}
         <script src="{{ asset('dist/searchBird.js') }}"></script>
     {% endif %}
+    <script src="{{ asset('js/script.js') }}"></script>
 {% endblock %}

@@ -2,12 +2,14 @@
 
 use Behat\Behat\Context\Context;
 use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Symfony2Extension\Context\KernelDictionary;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext extends RawMinkContext implements Context
 {
+	use KernelDictionary;
     /**
      * Initializes context.
      *
@@ -18,6 +20,17 @@ class FeatureContext extends RawMinkContext implements Context
     public function __construct()
     {
     }
+
+	public function getKernel()
+	{
+		return $this->kernel;
+	}
+	
+	public function getContainer()
+	{
+		return $this->kernel->getContainer();
+	}
+
 	private function getPage()
 	{
 		return $this->getSession()->getPage();

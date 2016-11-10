@@ -3,7 +3,7 @@ Feature: Authentication
   As an admin user
   I need to be able to login and logout
 
-  Scenario: Loggin in
+  Scenario: Login in
     Given I am on "/"
     When i follow "login"
     And I fill in ""

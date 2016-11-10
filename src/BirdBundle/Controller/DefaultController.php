@@ -50,7 +50,6 @@ class DefaultController extends Controller {
 	    $forms = $this->get('validate_bird')->validateBirdForm($request);
 	    return [
 		    'birds' => $forms,
-		    dump($forms)
 	    ];
     }
 
