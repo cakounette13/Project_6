@@ -481,10 +481,16 @@ input::-webkit-calendar-picker-indicator {
 }
 
 input#input-search{
+<<<<<<< HEAD
     font-family: cabinregular, sans-serif;
     margin-bottom: 10px;
     width: 80% !important;
     margin-left: 10% !important;
+=======
+    font-family: cabinregular;
+    margin-bottom: 30px;
+    width: 100% !important;
+>>>>>>> 0650d9fcb4dedc3139811208204fb73a82c55764
     border-radius: 5px !important;
     box-shadow: 10px 5px 18px #7E7F79 !important;
 }
@@ -593,6 +599,10 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     }
 }
 
+.carousel-indicators{
+    bottom: 75%;
+}
+
 /*
   Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
   CSS from:       http://codepen.io/transportedman/pen/NPWRGq
@@ -623,6 +633,8 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 .carousel-fade .carousel-control {
     z-index: 2;
     color: #d0fb00;
+    width: 45%;
+    top: -4%;
 }
 
 span.glyphicon.glyphicon-chevron-left{
@@ -634,13 +646,10 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 .carousel-inner {
-    width: 80% !important;
+    width: 60% !important;
     margin: auto;
-}
-
-.carousel-control:hover
-{
-    opacity: 0.3 !important;
+    box-shadow: 10px 5px 18px #888888 !important;
+    border-radius: 10px;
 }
 
 /*
@@ -675,7 +684,6 @@ span.glyphicon.glyphicon-chevron-right{
 .carousel .item {
     border-radius: 10px;
     background-color: rgba(0,0,0,0);
-
     overflow: hidden;
 
 }
@@ -882,7 +890,7 @@ span.glyphicon.glyphicon-chevron-right{
 #birds{
     width: 60%;
     margin: auto;
-    height: 60%;
+    height: 63%;
 }
 
 div.container{
@@ -1144,17 +1152,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     background-color: inherit;
 }
 
-#third_input
-{
-    margin-top: 10px;
-    box-shadow: 10px 5px 18px #888888 !important;
-}
-
-#second_input
-{
-    box-shadow: 10px 5px 18px #888888 !important;
-}
-
 #oubli
 {
     text-align: center;
@@ -1165,7 +1162,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 
 #inscription
 {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 /*infowindow styles*/

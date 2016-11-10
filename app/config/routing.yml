@@ -13,4 +13,71 @@ fos_user:
 
 fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /group
+    prefix: /groupe
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_security_login:
+    path:      /connexion
+    defaults:  { _controller: FOSUserBundle:Security:login, _method: POST }
+
+fos_user_security_logout:
+    path:      /deconnexion
+    defaults:  { _controller: FOSUserBundle:Security:logout, _method: POST }
+
+fos_user_security_check:
+    path:     /verification
+    defaults: { _controller: FOSUserBundle:Security:check, _method: POST }
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profil
+
+fos_user_profile_edit:
+    path:      /profil/editer
+    defaults:  { _controller: FOSUserBundle:Profile:edit, _method: POST }
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /inscription
+
+fos_user_registration_check_email:
+    path:   /inscription/verification_email
+    defaults: { _controller: FOSUserBundle:Registration:checkEmail, method: POST }
+
+fos_user_registration_confirm:
+    path:   /inscription/confirmer/{token}
+    defaults: { _controller: FOSUserBundle:Registration:confirm, method: POST }
+
+fos_user_registration_confirmed:
+    path:   /inscription/confirmation
+    defaults: { _controller: FOSUserBundle:Registration:confirmed, method: POST }
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /reinitialiser
+
+fos_user_resetting_request:
+    path:    /reinitialiser/requete
+    defaults: { _controller: FOSUserBundle:Resetting:request, _method: POST }
+
+fos_user_resetting_send_email:
+    path:    /reinitialiser/envoi_mail
+    defaults: { _controller: FOSUserBundle:Resetting:sendEmail, _method: POST }
+
+fos_user_resetting_check_email:
+    path:    /reinitialiser/verification
+    defaults: { _controller: FOSUserBundle:Resetting:checkEmail, _method: POST }
+
+fos_user_resetting_reset:
+    path:    /reinitialiser/{token}
+    defaults: { _controller: FOSUserBundle:Resetting:reset, _method: POST }
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /changer
+
+fos_user_change_password:
+    path:     /changer/changerMDP
+    defaults: { _controller: FOSUserBundle:ChangePassword:changePassword, _method: POST }
