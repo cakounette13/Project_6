@@ -645,11 +645,6 @@ span.glyphicon.glyphicon-chevron-right{
     border-radius: 10px;
 }
 
-.carousel-control:hover
-{
-    opacity: 0.3 !important;
-}
-
 /*
   WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
   Need to override the 3.3 new styles for modern browsers & apply opacity
