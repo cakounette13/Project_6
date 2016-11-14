@@ -34,7 +34,7 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "knplabs/knp-menu-bundle": "^2.0",
         "symfony/assetic-bundle": "^2.8",
-        "symfony/dependency-injection": "3.1.x-dev"
+        "symfony/dependency-injection": "3.1.x-dev",
         "behat/mink-extension": "^2.2",
         "behat/mink-goutte-driver": "^1.2",
         "behat/mink-selenium2-driver": "^1.3"

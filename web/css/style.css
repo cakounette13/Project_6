@@ -213,7 +213,26 @@ span
 }
 
 
+/*index page*/
 
+#birds > div{
+    overflow: visible !important;
+}
+
+#upArrow, #downArrow
+{
+    float: right;
+}
+
+#up, #down
+{
+    float: right;
+}
+
+.fa-arrow-circle-up, .fa-arrow-circle-down
+{
+    line-height: inherit;
+}
 
 
 .button{
@@ -516,6 +535,13 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
     border-radius: 10px;
 }
 
+#thumbnail-preview-indicators > div {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #thumbnail-preview-indicators {
     position: relative;
     overflow: hidden;
@@ -624,7 +650,6 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 }
 
 .carousel-fade .carousel-control {
-    z-index: 2;
     color: #d0fb00;
     width: 45%;
     top: -4%;
@@ -682,7 +707,7 @@ span.glyphicon.glyphicon-chevron-right{
 }
 .carousel-control {
     border-radius: 10px;
-
+    display: none;
 }
 /*background*/
 
@@ -894,7 +919,7 @@ div.container{
 
 #fullpage > form:nth-child(2)
 {
-    height: 800px;;
+    height: 800px;
 }
 
 select
@@ -952,8 +977,12 @@ input.btn:nth-child(4)
 
 #corps
 {
-    margin-top: 100px;
+    margin-top: 8%;
     float: none;
+}
+
+#titre {
+    margin-bottom: 3%;
 }
 
 #bodyHeight

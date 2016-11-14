@@ -38,7 +38,7 @@ class MenuBuilder implements ContainerAwareInterface
 
 
         if ($this->checker->isGranted('ROLE_ADMIN')) {
-            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->removeChild('Inscription');
             $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Administration', array('route' => 'nao_user'));
@@ -48,7 +48,7 @@ class MenuBuilder implements ContainerAwareInterface
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
-            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->removeChild('Inscription');
             $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
@@ -56,7 +56,7 @@ class MenuBuilder implements ContainerAwareInterface
         }
 
         if ($this->checker->isGranted('ROLE_USER')) {
-            $menu->removeChild('Inscription', array('route' => 'fos_user_registration_register'));
+            $menu->removeChild('Inscription');
             $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
             $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));

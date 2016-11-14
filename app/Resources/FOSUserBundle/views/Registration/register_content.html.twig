@@ -4,12 +4,16 @@
 <div id="blocInscription" class="text-center">
 
     {{ form_widget(form.username, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre nom et prénom'}}) }}
+    {{ form_errors(form.username) }}
 
     {{ form_widget(form.email, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre e-mail'}}) }}
+    {{ form_errors(form.email) }}
 
     {{ form_widget(form.plainPassword.first, {'attr':{'class': 'champs', 'placeholder': 'Mot de passe'}}) }}
+    {{ form_errors(form.plainPassword.first) }}
 
     {{ form_widget(form.plainPassword.second, {'attr':{'class': 'champs', 'placeholder': 'Confirmation Mot de passe'}}) }}
+    {{ form_errors(form.plainPassword.second) }}
 
 </div>
     <div>
