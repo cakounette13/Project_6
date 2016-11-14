@@ -1,0 +1,10 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div>
+        <input type="text" class="champs" id="username" name="username" placeholder="Nom d'utilisateur" required="required" />
+    </div>
+    <div>
+        <input class="champs btn btn-default" type="submit" value="Changement de mote de passe" />
+    </div>
+</form>

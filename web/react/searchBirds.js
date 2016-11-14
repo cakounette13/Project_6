@@ -86,7 +86,7 @@ export default class GoogleMapBirds extends React.Component {
                 key={`${ref}_info_window`}
                 onCloseclick={this.handleMarkerClose.bind(this, marker)}
                 defaultOptions={{ styles: GoogleMapBirds.infoboxStyle}}>
-                <div id="infobox">
+                <div id="infobox" >
                     <h3 id="infoNom">{marker.nomVern}</h3>
                     <h3 id="infoNomValide">{marker.nomValide}</h3>
                     <img src={"http://localhost:3000/web/uploads/images/"+marker.image}
