@@ -30,14 +30,21 @@ class ValidateBirdService {
 		$this->form = $form;
 	}
 
-	public function DeleteBirdForm(Request $request)
+	public function validateBirdForm(Request $request)
 	{
 		$birds = $this->em->getRepository('BirdBundle:Datas')->findInvalidBirds();
 		$forms = array();
 		foreach ($birds as $bird)
 		{
-			$forms[] = $this->form->createNamedBuilder('bird_form_'.$bird->getId(), ValidateBird::class, $bird)->getForm();
+			$forms[] = [
+				'image' => $bird->getImage(),
+				'user' => $bird->getMember(),
+				'nom' => $bird->getNom()->getNomVern(),
+				'date' => $bird->getDatevue(),
+				'form' => $this->form->createNamedBuilder('bird_form_'.$bird->getId(), ValidateBird::class, $bird)->getForm()->createView()
+			];
 		}
+
 		return $forms;
 	}
 }

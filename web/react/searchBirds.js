@@ -122,9 +122,11 @@ export default class GoogleMapBirds extends React.Component {
                         defaultOptions={{ styles: GoogleMapBirds.mapStyle}}
                     >
                         <input list="hints"
+                               htmlFor="searchTerm"
+                               id="input-search"
                                placeholder="Rechercher un oiseau"
                                style={GoogleMapBirds.inputStyle}
-                               id="input-search"
+                               name="inputSearch"
                                onChange={this.updateSearch.bind(this)} />
                         <datalist id="hints">
                             {birds.map((marker, index) => {
@@ -142,6 +144,7 @@ export default class GoogleMapBirds extends React.Component {
                             birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
                                 return ( <Marker
+                                        label={"Marker_"+marker.nomVern}
                                         key={index}
                                         ref={ref}
                                         lat={marker.latitude}

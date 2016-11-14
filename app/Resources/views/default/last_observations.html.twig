@@ -1,31 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dernières observations{% endblock %}
+{% block title %}Dernières observations - {{ parent() }}{% endblock %}
 
 {% block body %}
 <div class=" container-fluid panel panel-default target">
         <div class="panel-body">
             <div class="row">
                 {% for bird in birds %}
-                    <div class="observation col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                    <div class="observation col-lg-4 col-md-4 col-xs-12 col-sm-6">
                         <div class="thumbnail">
                             <img class="borderRadius img-responsive" src="{{ asset('uploads/images') ~ '/' ~ bird.image }}">
                             <div class="text-center"><a>voir sur la carte <i class="fa fa-eye" aria-hidden="true"></i></a></div>
                         </div>
                         <div class=" champs text-center">
-                            <div id="nomObs" >Observateur: {{ bird.username }}</div>
-                            <div id="nomOiseau">Nom de l'oiseau : {{ bird.nomVern }}</div>
+                            <div id="nomObs" >Observateur: {{ bird.user }}</div>
+                            <div id="nomOiseau">Nom de l'oiseau : {{ bird.nom }}</div>
                         </div>
                         <div class="borderRadius no_padding panel-footer">
-                            <div class="date col-lg-6 col-md-6 col-xs-6 col-sm-6 text-center">
-                                <div id="dateObs">01/12/16</div>
+                            <div class="date col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+                                <div id="dateObs">vue le : {{ bird.date|date("d-m-Y") }}</div>
                             </div>
-                            <div id="delete" class=" no_padding col-lg-2 col-md-2 col-xs-2 col-sm-2 text-center">
-                                <button id="deleteBtn" class=" btn"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="download no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                                <button class="download btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></button>
-                            </div>
+                            {% form_theme bird.form ':form:submit.html.twig' %}
+                            {{ form_start(bird.form, {'attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-6'}}) }}
+                                <div class="no_padding col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                                    {{ form_widget(bird.form.supprimer, {'fa' : 'fa-trash-o fa-2x','right' : true}) }}
+                                </div>
+                                <div class="no_padding col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    {{ form_widget(bird.form.valider, {'fa' : 'fa-download fa-2x','right' : true}) }}
+                                </div>
+                            {{ form_end(bird.form) }}
                         </div>
                     </div>
                 {% endfor %}

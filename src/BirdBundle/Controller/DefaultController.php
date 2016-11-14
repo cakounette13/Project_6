@@ -47,9 +47,9 @@ class DefaultController extends Controller {
      */
     public function lastObservationsAction(Request $request)
     {
-	    $forms = $this->get('validate_bird')->DeleteBirdForm($request);
+	    $forms = $this->get('validate_bird')->validateBirdForm($request);
 	    return [
-		    'birds' => dump($forms)
+		    'birds' => $forms,
 	    ];
     }
 

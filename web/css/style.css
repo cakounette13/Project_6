@@ -500,6 +500,9 @@ input::-webkit-calendar-picker-indicator {
 }
 
 input#input-search{
+
+    font-family: cabinregular, sans-serif;
+    margin-left: 10% !important;
     font-family: cabinregular;
     margin-bottom: 30px;
     width: 100% !important;
@@ -818,7 +821,7 @@ span.glyphicon.glyphicon-chevron-right{
     width:80%;
 }
 
-#deleteBtn
+.deleteBtn
 {
     width: 100%;
     border-radius: 0;
@@ -902,7 +905,6 @@ span.glyphicon.glyphicon-chevron-right{
 
 /*nouvelles observations*/
 
-/*noinspection ALL*/
 #lat_lng{
     display: none;
 }
