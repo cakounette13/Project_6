@@ -734,6 +734,7 @@ span.glyphicon.glyphicon-chevron-right{
 .formHeight
 {
     height: 100%;
+    padding-top: 0px;
 }
 
 .form
@@ -744,6 +745,11 @@ span.glyphicon.glyphicon-chevron-right{
 .deleteBtn, .download
 {
     height:100%;
+}
+
+.download
+{
+    border-top-right-radius: 0;
 }
 
 .thumbnail
