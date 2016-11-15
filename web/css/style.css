@@ -938,7 +938,7 @@ span.glyphicon.glyphicon-chevron-right{
 #birds{
     width: 60%;
     height: 63%;
-    margin: 25% auto auto;
+    margin: 10% auto auto;
 }
 
 div.container{
@@ -2220,10 +2220,10 @@ li:hover > ul.drop-menu.menu-7 li:nth-child(7) {
 }
 
 #dashboard {
-    margin-top: 28%;
+    margin-top: 20%;
 }
 
 #FOSU
 {
-    margin-top: 25%;
+    margin-top: 15%;
 }
