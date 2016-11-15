@@ -1,9 +1,6 @@
 {% use 'form_div_layout.html.twig' %}
 {% block submit_widget %}
     {% set type = type|default('submit') %}
-    {% if label is empty %}
-        {% set label = '' %}
-    {% endif %}
     <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>
         {% if fa is defined %}
             {% if left is defined and left %}

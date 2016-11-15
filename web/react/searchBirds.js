@@ -144,7 +144,6 @@ export default class GoogleMapBirds extends React.Component {
                             birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
                                 return ( <Marker
-                                        label={"Marker_"+marker.nomVern}
                                         key={index}
                                         ref={ref}
                                         lat={marker.latitude}
