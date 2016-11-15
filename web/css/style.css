@@ -23,7 +23,7 @@
     font-style: normal;
 }
 
-body{
+body {
     font-family: cabinregular;
     margin:0 !important;
     background-color: #a0b39c;
@@ -712,15 +712,15 @@ span.glyphicon.glyphicon-chevron-right{
 /*background*/
 
 #section0 {
-    background-color: #ccccff;
+    background-color: #f5f5ef;
 }
 
 #section1{
-    background-color: #ccccff;
+    background-color: #f5f5ef;
 }
 
 #section3{
-    background-color: #ccccff;
+    background-color: #f5f5ef;
 }
 
 
@@ -734,7 +734,7 @@ span.glyphicon.glyphicon-chevron-right{
 .formHeight
 {
     height: 100%;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .form
