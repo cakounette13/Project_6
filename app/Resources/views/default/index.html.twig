@@ -11,12 +11,14 @@
 {% block body %}
         {{ include('carousel.html.twig') }}
         <div class="section container-fluid" data-anchor="Rechercher" id="section1">
-            <div class="container">
-                <a href="#Accueil"><button class="btn">Retour à l'accueil</button></a>
-            </div>
             <div id="birds"></div>
+            <div id="upArrow">
+                <a href="#Accueil">
+                    <button id="up" class="btn">
+                        <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
+                    </button></a>
+            </div>
         </div>
-{% endblock %}
 {% block javascripts %}
     {{ parent() }}
     <script>
@@ -27,5 +29,6 @@
     {% else %}
         <script src="{{ asset('dist/searchBird.js') }}"></script>
     {% endif %}
+{% endblock %}
     <script src="{{ asset('js/script.js') }}"></script>
 {% endblock %}

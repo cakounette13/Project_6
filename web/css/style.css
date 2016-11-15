@@ -23,10 +23,10 @@
     font-style: normal;
 }
 
-body{
+body {
     font-family: cabinregular;
     margin:0 !important;
-    background-color: #A5C700;
+    background-color: #f5f5ef;
     min-height: 200px;
     padding: 0 !important;
 }
@@ -38,7 +38,6 @@ body{
     border:none;
     text-rendering: optimizeLegibility;
     font-smooth: always;
-
     font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
@@ -213,7 +212,26 @@ span
 }
 
 
+/*index page*/
 
+#birds > div{
+    overflow: visible !important;
+}
+
+#upArrow, #downArrow
+{
+    float: right;
+}
+
+#up, #down
+{
+    float: right;
+}
+
+.fa-arrow-circle-up, .fa-arrow-circle-down
+{
+    line-height: inherit;
+}
 
 
 .button{
@@ -481,16 +499,10 @@ input::-webkit-calendar-picker-indicator {
 }
 
 input#input-search{
-<<<<<<< HEAD
+
     font-family: cabinregular, sans-serif;
-    margin-bottom: 10px;
-    width: 80% !important;
-    margin-left: 10% !important;
-=======
-    font-family: cabinregular;
     margin-bottom: 30px;
     width: 100% !important;
->>>>>>> 0650d9fcb4dedc3139811208204fb73a82c55764
     border-radius: 5px !important;
     box-shadow: 10px 5px 18px #7E7F79 !important;
 }
@@ -521,6 +533,13 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 .gm-style
 {
     border-radius: 10px;
+}
+
+#thumbnail-preview-indicators > div {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #thumbnail-preview-indicators {
@@ -631,7 +650,6 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 }
 
 .carousel-fade .carousel-control {
-    z-index: 2;
     color: #d0fb00;
     width: 45%;
     top: -4%;
@@ -689,24 +707,50 @@ span.glyphicon.glyphicon-chevron-right{
 }
 .carousel-control {
     border-radius: 10px;
-
+    display: none;
 }
 /*background*/
 
 #section0 {
-    background-color: #A5C700;
+    background-color: #f5f5ef;
 }
 
 #section1{
-    background-color: #9BB22C;
+    background-color: #f5f5ef;
 }
 
 #section3{
-    background-color: #9BB22C;
+    background-color: #f5f5ef;
 }
 
 
 /*dernières observations*/
+
+.fp-viewing--1
+{
+    overflow: auto !important;
+}
+
+.formHeight
+{
+    height: 100%;
+    padding-top: 0;
+}
+
+.form
+{
+    height: 43px !important;
+}
+
+.deleteBtn, .download
+{
+    height:100%;
+}
+
+.download
+{
+    border-top-right-radius: 0;
+}
 
 .thumbnail
 {
@@ -900,7 +944,7 @@ div.container{
 
 #fullpage > form:nth-child(2)
 {
-    height: 800px;;
+    height: 800px;
 }
 
 select
@@ -958,8 +1002,12 @@ input.btn:nth-child(4)
 
 #corps
 {
-    margin-top: 100px;
+    margin-top: 8%;
     float: none;
+}
+
+#titre {
+    margin-bottom: 3%;
 }
 
 #bodyHeight
@@ -1022,6 +1070,7 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 {
     border-radius: 10px; !important;
     height: 95% !important;
+    box-shadow: 10px 5px 18px #7E7F79 !important;
 
 }
 
@@ -1149,7 +1198,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 .btn{
     box-shadow: 10px 5px 18px #888888 !important;
     width:100%;
-    background-color: inherit;
 }
 
 #oubli
@@ -1178,6 +1226,11 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     margin: 1px;
     border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
 }
+
+#infobox {
+    text-align: center;
+}
+
 /*dropdown menu*/
 
 nav {
@@ -1338,6 +1391,18 @@ li:hover > ul.drop-menu.menu-1 li:nth-child(6) {
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
+li:hover > ul.drop-menu.menu-1 li:nth-child(7) {
+    -webkit-animation-name: menu-1;
+    animation-name: menu-1;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
 @-webkit-keyframes menu-1 {
     0% {
         opacity: 0;
@@ -1435,6 +1500,19 @@ li:hover > ul.drop-menu.menu-2 li:nth-child(5) {
     z-index: 3;
 }
 li:hover > ul.drop-menu.menu-2 li:nth-child(6) {
+    -webkit-animation-name: menu-2;
+    animation-name: menu-2;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+li:hover > ul.drop-menu.menu-2 li:nth-child(7) {
     -webkit-animation-name: menu-2;
     animation-name: menu-2;
     -webkit-animation-duration: 300ms;
@@ -1566,6 +1644,20 @@ li:hover > ul.drop-menu.menu-3 li:nth-child(6) {
     animation-fill-mode: forwards;
     z-index: 3;
 }
+li:hover > ul.drop-menu.menu-3 li:nth-child(7) {
+    -webkit-animation-name: menu-3;
+    animation-name: menu-3;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+
 @-webkit-keyframes menu-3 {
     0% {
         opacity: 0;
@@ -1683,6 +1775,19 @@ li:hover > ul.drop-menu.menu-4 li:nth-child(6) {
     animation-fill-mode: forwards;
     z-index: 3;
 }
+li:hover > ul.drop-menu.menu-4 li:nth-child(7) {
+    -webkit-animation-name: menu-4;
+    animation-name: menu-4;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
 @-webkit-keyframes menu-4 {
     0% {
         opacity: 0;
@@ -1723,8 +1828,8 @@ li:hover > ul.drop-menu.menu-5 li {
     opacity: 0;
 }
 li:hover > ul.drop-menu.menu-5 li:nth-child(1) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 0ms;
@@ -1736,8 +1841,8 @@ li:hover > ul.drop-menu.menu-5 li:nth-child(1) {
     z-index: 0;
 }
 li:hover > ul.drop-menu.menu-5 li:nth-child(2) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 120ms;
@@ -1749,8 +1854,8 @@ li:hover > ul.drop-menu.menu-5 li:nth-child(2) {
     z-index: 1;
 }
 li:hover > ul.drop-menu.menu-5 li:nth-child(3) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 240ms;
@@ -1762,8 +1867,8 @@ li:hover > ul.drop-menu.menu-5 li:nth-child(3) {
     z-index: 2;
 }
 li:hover > ul.drop-menu.menu-5 li:nth-child(4) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 360ms;
@@ -1775,8 +1880,8 @@ li:hover > ul.drop-menu.menu-5 li:nth-child(4) {
     z-index: 3;
 }
 li:hover > ul.drop-menu.menu-5 li:nth-child(5) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 480ms;
@@ -1790,6 +1895,19 @@ li:hover > ul.drop-menu.menu-5 li:nth-child(5) {
 li:hover > ul.drop-menu.menu-5 li:nth-child(6) {
     -webkit-animation-name: menu-4;
     animation-name: menu-4;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(7) {
+    -webkit-animation-name: menu-5;
+    animation-name: menu-5;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 600ms;
@@ -1840,8 +1958,8 @@ li:hover > ul.drop-menu.menu-6 li {
     opacity: 0;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(1) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 0ms;
@@ -1853,8 +1971,8 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(1) {
     z-index: 0;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(2) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 150ms;
@@ -1866,8 +1984,8 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(2) {
     z-index: 1;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(3) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 300ms;
@@ -1879,8 +1997,8 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(3) {
     z-index: 2;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(4) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 450ms;
@@ -1892,8 +2010,8 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(4) {
     z-index: 3;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(5) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 600ms;
@@ -1905,8 +2023,8 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(5) {
     z-index: 3;
 }
 li:hover > ul.drop-menu.menu-6 li:nth-child(6) {
-    -webkit-animation-name: menu-4;
-    animation-name: menu-4;
+    -webkit-animation-name: menu-6;
+    animation-name: menu-6;
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
     -webkit-animation-delay: 750ms;
@@ -1920,20 +2038,134 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(6) {
 @-webkit-keyframes menu-6 {
     0% {
         opacity: 0;
-        -webkit-transform: rotateX(-90deg);
-        transform: rotateX(-90deg);
+        -webkit-transform: skewX(-30deg) translateX(40px);
+        transform: skewX(-30deg) translateX(40px);
     }
-    60% {
-        -webkit-transform: rotateX(45deg);
-        transform: rotateX(45deg);
+    80% {
+        -webkit-transform: skewX(10deg) translateX(-10px);
+        transform: skewX(10deg) translateX(-10px);
     }
     100% {
         opacity: 1;
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
+        -webkit-transform: skewX(0deg) translateX(0);
+        transform: skewX(0deg) translateX(0);
     }
 }
 @keyframes menu-6 {
+    0% {
+        opacity: 0;
+        -webkit-transform: skewX(-30deg) translateX(40px);
+        transform: skewX(-30deg) translateX(40px);
+    }
+    80% {
+        -webkit-transform: skewX(10deg) translateX(-10px);
+        transform: skewX(10deg) translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: skewX(0deg) translateX(0);
+        transform: skewX(0deg) translateX(0);
+    }
+}
+li:hover > ul.drop-menu.menu-7 {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+li:hover > ul.drop-menu.menu-7 li {
+    opacity: 0;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(1) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 0ms;
+    animation-delay: 0ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 0;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(2) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 150ms;
+    animation-delay: 150ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(3) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(4) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 450ms;
+    animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(5) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(6) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 750ms;
+    animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+li:hover > ul.drop-menu.menu-7 li:nth-child(7) {
+    -webkit-animation-name: menu-7;
+    animation-name: menu-7;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-delay: 750ms;
+    animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+@-webkit-keyframes menu-7 {
     0% {
         opacity: 0;
         -webkit-transform: rotateX(-90deg);
@@ -1949,7 +2181,22 @@ li:hover > ul.drop-menu.menu-6 li:nth-child(6) {
         transform: rotateX(0deg);
     }
 }
-
+@keyframes menu-7 {
+    0% {
+        opacity: 0;
+        -webkit-transform: rotateX(-90deg);
+        transform: rotateX(-90deg);
+    }
+    60% {
+        -webkit-transform: rotateX(45deg);
+        transform: rotateX(45deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+    }
+}
 
 /*styled table*/
 
