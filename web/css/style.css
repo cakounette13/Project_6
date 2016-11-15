@@ -31,6 +31,15 @@ body {
     padding: 0 !important;
 }
 
+#index {
+    height:1000px;
+    margin-top:15%;
+}
+
+#indexMap {
+    height:100%;
+}
+
 *{
     margin:0;
     padding: 1px;
@@ -342,7 +351,6 @@ span
     font-style: normal;
     font-size: 14px;
     transition:0.4s cubic-bezier(.49,.32,.36,1.56);
-    opacity: 0;
 }
 
 #c_form_mail input[name="i_name"]{
@@ -616,10 +624,6 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
         margin-top: -50px;
         margin-left: -25px;
     }
-}
-
-.carousel-indicators{
-    bottom: 75%;
 }
 
 /*
@@ -933,8 +937,8 @@ span.glyphicon.glyphicon-chevron-right{
 }
 #birds{
     width: 60%;
-    margin: auto;
     height: 63%;
+    margin: 25% auto auto;
 }
 
 div.container{
@@ -2210,14 +2214,16 @@ li:hover > ul.drop-menu.menu-7 li:nth-child(7) {
     float: none;
 }
 
-.vertical-align
-{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
 .table-responsive
 {
     text-align: center;
+}
+
+#dashboard {
+    margin-top: 28%;
+}
+
+#FOSU
+{
+    margin-top: 25%;
 }

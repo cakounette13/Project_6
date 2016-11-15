@@ -43,7 +43,6 @@ class MenuBuilder implements ContainerAwareInterface
             $menu->addChild('Dernières observations', array('route' => 'last_observations'));
             $menu->addChild('Administration', array('route' => 'nao_user'));
             $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Gestion des profils', array('route' => 'fos_user_profile_edit'));
             $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
         }
 

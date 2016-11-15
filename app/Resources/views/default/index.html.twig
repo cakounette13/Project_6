@@ -9,16 +9,12 @@
 {% endblock %}
 
 {% block body %}
+    <div id="index">
         {{ include('carousel.html.twig') }}
-        <div class="section container-fluid" data-anchor="Rechercher" id="section1">
+        <div id='indexMap' class="container-fluid">
             <div id="birds"></div>
-            <div id="upArrow">
-                <a href="#Accueil">
-                    <button id="up" class="btn">
-                        <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
-                    </button></a>
-            </div>
         </div>
+    </div>
 {% block javascripts %}
     {{ parent() }}
     <script>

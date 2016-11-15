@@ -3,7 +3,7 @@
 {% block title %}Administration - {{ parent() }} {% endblock %}
 
 {% block body %}
-    <div class="vertical-align">
+    <div id="dashboard">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -17,7 +17,7 @@
                             <th class="text-center">Statut</th>
                             <th class="text-center">Promouvoir</th>
                             <th class="text-center">Rétrograder</th>
-                            <th class="text-center">S</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -26,23 +26,15 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><input type="checkbox" class="checkthis" /></td>
-                            <td><input type="checkbox" class="checkthis" /></td>
-                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            <td><a><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
+                            <td><a><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+
                         </tr>
 
                         </tbody>
                     </table>
                     <div class="clearfix"></div>
-                    <ul class="pagination">
-                        <li class="disabled"><a href="#"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><span></span></a></li>
-                    </ul>
+
                 </div>
             </div>
         </div>
