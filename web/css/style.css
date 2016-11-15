@@ -1308,7 +1308,6 @@ ul.drop-menu li:hover {
     background: #40442c;
 }
 ul.drop-menu li:last-child {
-    border-radius: 0 0 5px 5px;
     border-bottom: none;
 }
 
