@@ -137,12 +137,6 @@ span
     font-size: inherit;
 }
 
-
-.section.fp-completely h5{
-    opacity: 1;
-    margin-top: 0;
-}
-
 #header{
     width: 100%;
     height: 80px;
@@ -544,8 +538,6 @@ html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fu
 }
 
 #thumbnail-preview-indicators > div {
-    padding-left: 15px;
-    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1006,7 +998,7 @@ input.btn:nth-child(4)
 
 #corps
 {
-    margin-top: 8%;
+    margin-top: 10%;
     float: none;
 }
 
