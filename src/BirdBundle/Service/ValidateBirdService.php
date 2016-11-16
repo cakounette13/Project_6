@@ -31,8 +31,4 @@ class ValidateBirdService {
 		$this->form = $form;
 	}
 
-	public function validateBirdForm(Request $request)
-	{
-
-	}
 }

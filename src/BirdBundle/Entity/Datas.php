@@ -195,7 +195,7 @@ class Datas
 	/**
 	 * @param mixed $valid
 	 */
-	public function setValid( $valid ) {
+	public function setValid($valid) {
 		$this->valid = $valid;
 	}
 

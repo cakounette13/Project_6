@@ -30,11 +30,11 @@ class WrongRouteListener {
 
 		if ( $exception instanceof NotFoundHttpException ) {
 			$route = 'bird';
-			if ( $route === $event->getRequest()->get( '_route' ) ) {
+			if ( $route === $event->getRequest()->get('_route') ) {
 				return;
 			}
-			$url = $this->router->generate( $route );
-			$response = new RedirectResponse( $url );
+			$url = $this->router->generate($route);
+			$response = new RedirectResponse($url);
 			$event->setResponse( $response );
 		}
 	}
