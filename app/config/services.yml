@@ -26,6 +26,14 @@ services:
           tags:
               - { name: doctrine.event_listener, event: prePersist }
               - { name: doctrine.event_listener, event: preUpdate }
+
+  app.exception_listener:
+      class: BirdBundle\EventListener\WrongRouteListener
+      arguments:
+          router: "@router"
+      tags:
+          - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
   add_bird:
         class: BirdBundle\Service\AddBird
         arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader', '@security.token_storage', '@security.authorization_checker']

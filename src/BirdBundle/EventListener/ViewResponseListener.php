@@ -9,8 +9,6 @@
 namespace BirdBundle\EventListener;
 
 use FOS\RestBundle\Controller\Annotations\View;
-use JMS\DiExtraBundle\Annotation\Observe;
-use JMS\DiExtraBundle\Annotation\Service;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 
 
