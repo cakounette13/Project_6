@@ -3,6 +3,7 @@
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 <div id="blocInscription" class="text-center">
 
+
     {{ form_widget(form.username, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre nom et prénom'}}) }}
     {{ form_errors(form.username) }}
 

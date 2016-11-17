@@ -4,6 +4,8 @@
 
 {% block title %}Confirmation - {{ parent() }}{% endblock %}
 
+{% block formTitle %}<h1>Confirmation</h1>{% endblock %}
+
 {% block fos_user_content %}
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}

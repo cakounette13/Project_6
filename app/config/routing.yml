@@ -75,9 +75,5 @@ fos_user_resetting_reset:
     defaults: { _controller: FOSUserBundle:Resetting:reset, _method: POST }
 
 fos_user_change_password:
-    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /changer
-
-fos_user_change_password:
-    path:     /changer/changerMDP
+    path:     /changerMDP
     defaults: { _controller: FOSUserBundle:ChangePassword:changePassword, _method: POST }

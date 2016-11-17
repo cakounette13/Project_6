@@ -10,8 +10,8 @@
                     <table id="mytable" class="table table-bordered table-hover table-centered">
                         <thead>
                             <tr>
-                                <th class="text-center">{{ 'Utilisateur'|trans }}</th>
-                                <th class="text-center">{{ 'Adresse email'|trans }}</th>
+                                <th class="text-center">{{ 'profile.show.username'|trans }}</th>
+                                <th class="text-center">{{ 'profile.show.email'|trans }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -21,8 +21,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn" id="accueil" name="i_name"><a href="/">Retour à l'accueil</a></button>
                 </div>
+                <button class="btn" id="accueil" name="i_name"><a href={{ path("bird") }}>Retour à l'accueil</a></button>
             </div>
         </div>
     </div>

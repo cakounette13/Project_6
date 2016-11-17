@@ -2,6 +2,10 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
+{% block title %}Vérification - {{ parent() }}{% endblock %}
+
+{% block formTitle %}<h1>Vérification de l'email</h1>{% endblock %}
+
 {% block fos_user_content %}
     <p>
         {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime}) }}
