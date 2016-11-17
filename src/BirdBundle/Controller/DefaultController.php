@@ -79,7 +79,7 @@ class DefaultController extends Controller {
     }
 
     /**
-     * @Route("/utilisateurs", name="nao_user")
+     * @Route("/administration", name="nao_user")
      * @Template("dashboard.html.twig")
      */
     public function usersAction()
