@@ -38,7 +38,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 	 */
 	public function iFollow($button)
 	{
-		$this->getPage()->find('css', 'connexion');
+		$this->getPage()->find('css', 'inscription');
 	}
 
 }
