@@ -23,21 +23,16 @@
     font-style: normal;
 }
 
-html{
-    height: 1000px;;
-}
-
 body {
     font-family: cabinregular;
     margin:0 !important;
     background-color: #f5f5ef;
     min-height: 200px;
     padding: 0 !important;
-    font-size: calc(0.75em + 1vmin);
-    height: 80%;
 }
 
 #index {
+    height: 1000px;
     margin-top:15%;
 }
 
@@ -323,7 +318,7 @@ span
 }
 
 #c_form_mail{
-    width: 60%;
+    width: 400px;
     margin: auto;
 }
 
@@ -495,6 +490,11 @@ span
 }
 
 /*first page map*/
+#birds {
+
+    height: 100%;
+    margin: 60px auto auto;
+}
 
 input::-webkit-calendar-picker-indicator {
     display: none;
@@ -513,7 +513,7 @@ input#input-search{
 
 {
     box-shadow: 10px 5px 18px #7E7F79;
-
+    height: 85% !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -2177,6 +2177,10 @@ li:hover > ul.drop-menu.menu-7 li:nth-child(7) {
 
 /*styled table*/
 
+#mytable
+{
+    width: 1%;
+}
 
 .table-centered
 {
@@ -2192,8 +2196,6 @@ li:hover > ul.drop-menu.menu-7 li:nth-child(7) {
 #dashboard {
     margin-top: 20%;
 }
-
-
 
 #FOSU
 {

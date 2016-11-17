@@ -9,31 +9,31 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Naturalistes</h2>
-                <div class="table-responsive">
-                    <table id="mytable" class="table table-bordered table-condensed table-centered">
-                        <thead>
-                            <tr>
-                                <th class="text-center">Email</th>
-                                <th class="text-center">Nom</th>
-                                <th class="text-center">Statut</th>
-                                <th class="text-center">Rétrograder</th>
-                                <th class="text-center">Supprimer</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for user in users %}
-                            {% if user.roles. %}
-                            <tr>
-                                <td>{{ user.email }}</td>
-                                <td>{{ user.username }}</td>
-                                <td></td>
-                                <td><a href="{{ path('promote_user', {'id': user.id}) }}" title="promouvoir"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
-                                <td><a href="{{ path('demote_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                    <div class="clearfix"></div>
+                <div class="panel panel-default">
+                    <div class="table-bordered">
+                        <table id="mytable" class="table table-bordered table-condensed table-centered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Statut</th>
+                                    <th class="text-center">Rétrograder</th>
+                                    <th class="text-center">Supprimer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in users %}
+                                <tr>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.username }}</td>
+                                    <td></td>
+                                    <td><a href="{{ path('promote_user', {'id': user.id}) }}" title="promouvoir"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
+                                    <td><a href="{{ path('demote_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12">
