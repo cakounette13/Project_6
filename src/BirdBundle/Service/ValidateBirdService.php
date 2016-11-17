@@ -9,26 +9,34 @@
 namespace BirdBundle\Service;
 
 use BirdBundle\Entity\Datas;
-use BirdBundle\Form\ValidateBird;
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ValidateBirdService {
 	/**
 	 * @var EntityManager
 	 */
 	private $em;
-	/**
-	 * @var FormFactory
-	 */
-	private $form;
+    /**
+     * @var Session
+     */
+    private $session;
 
-	public function __construct(EntityManager $em, FormFactory $form)
+    public function __construct(EntityManager $em, Session $session)
 	{
 		$this->em = $em;
-		$this->form = $form;
-	}
+        $this->session = $session;
+    }
 
+	public function birdIsValid(Request $request)
+    {
+        $id = $request->query->get('id');
+        $bird = $this->em->find('BirdBundle:Datas',$id );
+        if($bird instanceof Datas) {
+            $bird->setValid(true);
+            $this->em->flush();
+            return $this->session->getFlashBag()->add('validation', 'oiseau ajouté');
+        }
+    }
 }

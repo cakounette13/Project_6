@@ -8,10 +8,12 @@
 {% endblock %}
 
 {% block body %}
+    <div id="index" class="col-lg-10 col-lg-offset-1 col-xs-12">
         {{ include('carousel.html.twig') }}
-        <div class="section container-fluid" data-anchor="Rechercher" id="section1">
+        <div id='indexMap' class="container-fluid">
             <div id="birds"></div>
         </div>
+    </div>
 {% block javascripts %}
     {{ parent() }}
     <script>
@@ -23,5 +25,4 @@
         <script src="{{ asset('dist/searchBird.js') }}"></script>
     {% endif %}
 {% endblock %}
-    <script src="{{ asset('js/script.js') }}"></script>
 {% endblock %}

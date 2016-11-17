@@ -2,7 +2,6 @@
 
 namespace BirdBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,12 +21,13 @@ class DefaultController extends Controller {
 
 	/**
 	 * @Route("/json", name="json_birds")
-	 * @Method("GET")
 	 */
 	public function jsonDatas()
 	{
-		$birds  = $this->get( 'search_bird' )->encodeValidBirds();
-		return new JsonResponse($birds);
+		$birds  = $this->get('search_bird')->encodeValidBirds();
+		$response = new JsonResponse($birds, 200, array());
+		$response->setCallback('birds');
+		return $response;
 	}
 
 	/**
@@ -45,23 +45,32 @@ class DefaultController extends Controller {
      * @Template("default/last_observations.html.twig")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
-    public function lastObservationsAction(Request $request)
+    public function lastObservationsAction()
     {
-	    $forms = $this->get('validate_bird')->validateBirdForm($request);
-	    return [
-		    'birds' => $forms,
-	    ];
+	   $invalidBirds = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
+	   return[
+	     'birds'=>$invalidBirds,
+       ];
     }
 
     /**
-     * @Route("/utilisateurs", name="nao_user")
-     * @Template("default/dashboard.html.twig")
+     * @Route("/dernieres_observations/valider", name="validate_last_bird")
+     * @Security("has_role('ROLE_SUPER_USER')")
      */
-    public function usersAction()
+    public function validObs(Request $request)
     {
-        $userManager = $this->get('fos_user.user_manager');
-        $users = $userManager->findUsers();
-        return $this->render('dashboard.html.twig', array('users' => $users));
+        $validation = $this->get('validate_bird')->birdIsValid($request);
+        Return $this->redirectToRoute('last_observations', array('validation', $validation));
     }
 
+
+    /**
+     * @Route("/dernieres_observations/supprimer", name="delete_last_bird")
+     * @Security("has_role('ROLE_SUPER_USER')")
+     */
+    public function deleteObs(Request $request)
+    {
+        $deletion = $this->get('delete_bird')->deleteBird($request);
+        Return $this->redirectToRoute('last_observations', array('deletion', $deletion));
+    }
 }
