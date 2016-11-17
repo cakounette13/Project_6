@@ -1,10 +1,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-<div id="blocInscription" class="text-center">
+<div class="text-center">
 
 
-    {{ form_widget(form.username, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre nom et prénom'}}) }}
+    {{ form_widget(form.username, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre nom'}}) }}
     {{ form_errors(form.username) }}
 
     {{ form_widget(form.email, {'attr':{'class': 'champs', 'placeholder': 'Entrez votre e-mail'}}) }}
