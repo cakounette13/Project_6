@@ -41,4 +41,126 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 		$this->getPage()->find('css', 'connexion');
 	}
 
+    /**
+     * @When I fill in ""
+     */
+    public function iFillIn()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given |I am logged in as moi
+     */
+    public function iAmLoggedInAsMoi()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given |I am on :arg1
+     */
+    public function iAmOn($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When |I
+     */
+    public function i()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given there is user:
+     */
+    public function thereIsUser(TableNode $table)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given |I am
+     */
+    public function iAm()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I click :arg1
+     */
+    public function iClick($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I should see :arg1 user
+     */
+    public function iShouldSeeUser($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given there are :arg1 user
+     */
+    public function thereAreUser($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When |I fill :arg1 with :arg2
+     */
+    public function iFillWith($arg1, $arg2)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When |I press :arg1
+     */
+    public function iPress($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then |I should see :arg1
+     */
+    public function iShouldSee($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given |I am :arg1
+     */
+    public function iAm2($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When |I click :arg1
+     */
+    public function iClick2($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then |I should see :arg1 user
+     */
+    public function iShouldSeeUser2($arg1)
+    {
+        throw new PendingException();
+    }
+
+
+
 }
