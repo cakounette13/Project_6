@@ -24,10 +24,8 @@ class DefaultController extends Controller {
 	 */
 	public function jsonDatas()
 	{
-		$birds  = $this->get('search_bird')->encodeValidBirds();
-		$response = new JsonResponse($birds, 200, array());
-		$response->setCallback('birds');
-		return $response;
+		$birds  = $this->get( 'search_bird' )->encodeValidBirds();
+		return new JsonResponse($birds);
 	}
 
 	/**

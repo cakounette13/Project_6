@@ -3,7 +3,7 @@
   As an anonymous user
   I need to be able to register
 
-  Scenario: Register
-    Given I am on "/"
-    When i follow "inscription"
-    And i fill in ""
+   Scenario: Register
+     Given I am on the homepage
+     And I follow "Inscription"
+     Then I should be on "/inscription/"

@@ -1,7 +1,6 @@
 import { default as React, Component } from 'react';
 import $ from 'jquery';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
-
 export default class GoogleMapBirds extends React.Component {
 
     static inputStyle = {
@@ -61,23 +60,10 @@ export default class GoogleMapBirds extends React.Component {
     };
 
     componentDidMount() {
-        this.loadDatas();
-    }
-
-    loadDatas() {
-        $.ajax({
-            url: '/json',
-            async: true,
-            jsonpCallback: 'callback',
-            contentType: "application/json",
-            dataType: 'jsonp',
-            success: function (datas) {
-                var data = JSON.parse(datas);
-                var markers = Object.keys(data).map(function (k) {
-                    return data[k]
-                });
-                this.setState({markers: markers});
-            }.bind(this)
+        $.getJSON("/json", (json) => {
+            let datas = JSON.parse(json);
+            var markers = Object.keys(datas).map(function(k) {return datas[k]});
+            this.setState({markers: markers});
         });
     }
 
@@ -120,6 +106,14 @@ export default class GoogleMapBirds extends React.Component {
         );
         return (
             <GoogleMapLoader
+                containerElement={
+                    <div
+                        {...this.props}
+                        style={{
+                            height: '100%'
+                        }} >
+                    </div>
+                }
                 googleMapElement={
                     <GoogleMap
                         center={this.state.center}
@@ -137,13 +131,13 @@ export default class GoogleMapBirds extends React.Component {
                         <datalist id="hints">
                             {birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
-                                    return ( <option key={index}
-                                                     ref={ref}
-                                                     value={marker.nomVern}
-                                        >
-                                            {marker.nomVern}
-                                        </option>
-                                    )
+                                return ( <option key={index}
+                                                 ref={ref}
+                                                 value={marker.nomVern}
+                                    >
+                                        {marker.nomVern}
+                                    </option>
+                                )
                             })}
                         </datalist>
                         {

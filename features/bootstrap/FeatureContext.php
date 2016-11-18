@@ -1,44 +1,29 @@
 <?php
 
+/**
+ * Created by PhpStorm.
+ * User: arthur
+ * Date: 11/18/16
+ * Time: 1:09 AM
+ */
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\MinkExtension\Context\MinkContext;
-use Behat\Mink\Mink;
-use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
 
+require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
-    public function __construct()
-    {
-    }
-	private function getPage()
-	{
-		return $this->getSession()->getPage();
-	}
-
 	/**
-	 * @return \Behat\Mink\Element\DocumentElement
+	 * Initializes context.
+	 *
+	 * Every scenario gets its own context instance.
+	 * You can also pass arbitrary arguments to the
+	 * context constructor through behat.yml.
 	 */
-
-	/**
-	 * @When i follow :button
-	 */
-	public function iFollow($button)
+	public function __construct()
 	{
-		$this->getPage()->find('css', 'inscription');
 	}
-
 }
