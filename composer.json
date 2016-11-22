@@ -32,7 +32,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "knplabs/knp-menu-bundle": "^2.0",
         "symfony/assetic-bundle": "^2.8",
-        "symfony/dependency-injection": "3.1.x-dev"
+        "symfony/dependency-injection": "3.1.x-dev",
+        "knplabs/friendly-contexts": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

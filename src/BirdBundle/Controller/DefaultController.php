@@ -47,7 +47,7 @@ class DefaultController extends Controller {
     {
 	   $invalidBirds = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
 	   return[
-	     'birds'=>$invalidBirds,
+	     'birds' => $invalidBirds,
        ];
     }
 

@@ -6,6 +6,16 @@
     <div id="dashboard">
         <h1>Gestion des membres</h1>
     <div class="container-fluid">
+        {% for deletion in app.session.flashbag.get('deletion') %}
+            <div class="observation col-lg-12 col-xs-offset-6 col-md-12 col-xs-12 col-sm-12">
+                {{ deletion }}
+            </div>
+        {% endfor %}
+        {% for validation in app.session.flashbag.get('validation') %}
+            <div class="observation col-lg-12 col-md-12 col-sm-12 col-xs-12  col-xs-offset-5">
+                {{ validation }}
+            </div>
+        {% endfor %}
         <div class="row">
             <div class="col-md-12">
                 <h2>Naturalistes</h2>
@@ -26,7 +36,7 @@
                                 <tr>
                                     <td>{{ user.email }}</td>
                                     <td>{{ user.username }}</td>
-                                    <td></td>
+                                    <td>{{ user.roles|join(', ') }}</td>
                                     <td><a href="{{ path('promote_user', {'id': user.id}) }}" title="promouvoir"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
                                     <td><a href="{{ path('demote_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
                                 </tr>

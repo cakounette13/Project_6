@@ -9,6 +9,9 @@
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Symfony2Extension\Context\KernelDictionary;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+use UserBundle\Entity\User;
 
 require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 /**
@@ -16,6 +19,7 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
  */
 class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
+	use KernelDictionary;
 	/**
 	 * Initializes context.
 	 *
@@ -25,5 +29,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 	 */
 	public function __construct()
 	{
+	}
+	/**
+	 * @Given I click on :link
+	 */
+	public function iClickOn($link)
+	{
+		$page = $this->getSession()->getPage();
+		$element = $page->find('css', $link);
+		$element->click();
 	}
 }

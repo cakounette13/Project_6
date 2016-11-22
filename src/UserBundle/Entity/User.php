@@ -30,6 +30,12 @@ class User extends BaseUser
 	public function __construct()
 	{
 		parent::__construct();
-		// your own logic
+
+	}
+	/**
+	 * @param string $salt
+	 */
+	public function setSalt( $salt ) {
+		$this->salt = $salt;
 	}
 }
