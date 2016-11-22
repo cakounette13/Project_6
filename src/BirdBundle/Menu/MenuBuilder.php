@@ -33,35 +33,32 @@ class MenuBuilder implements ContainerAwareInterface
     public function createMainMenu(array $options)
     {
         $menu = $this->factory->createItem('root');
-        $menu->addChild('Accueil', array('route' => 'bird'));
-        $menu->addChild('Inscription', array('route' => 'fos_user_registration_register'));
+        $menu->setChildrenAttribute('class', 'nav menu');
+        $menu->addChild(' Accueil', array('route' => 'bird'))->setLinkAttribute('class', 'fa fa-home');
+        $menu->addChild(' Inscription', array('route' => 'fos_user_registration_register'))->setLinkAttribute('class', 'fa fa-eye');
 
 
         if ($this->checker->isGranted('ROLE_ADMIN')) {
-            $menu->removeChild('Inscription');
-            $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
-            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-            $menu->addChild('Administration', array('route' => 'nao_user'));
-            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
+            $menu->removeChild(' Inscription');
+            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
+            $menu->addChild(' Contributions', array('route' => 'last_observations'))->setLinkAttribute('class', 'fa fa-calendar');
+            $menu->addChild(' Administration', array('route' => 'nao_user'))->setLinkAttribute('class', 'fa fa-newspaper-o');
+            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa-male ');
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
-            $menu->removeChild('Inscription');
-            $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
-            $menu->addChild('Dernières observations', array('route' => 'last_observations'));
-            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
+            $menu->removeChild(' Inscription');
+            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
+            $menu->addChild(' Contributions', array('route' => 'last_observations'))->setLinkAttribute('class', 'fa fa-calendar');
+            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa fa-male');
         }
 
         if ($this->checker->isGranted('ROLE_USER')) {
-            $menu->removeChild('Inscription');
-            $menu->addChild('Nouvelle observation', array('route' => 'add_observation'));
-            $menu->addChild('Profil', array('route' => 'fos_user_profile_show'));
-            $menu->addChild('Deconnection', array('route' => 'fos_user_security_logout'));
+            $menu->removeChild(' Inscription');
+            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
+            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa fa-male');
         }
 
         return $menu;
     }
-
 }

@@ -17,7 +17,7 @@ class DefaultController extends Controller {
 
     /**
 	 * @Route("/", name="bird")
-	 * @Template("default/index.html.twig")
+	 * @Template("index/index.html.twig")
 	 */
 	public function indexAction() {
 		return;
@@ -35,7 +35,7 @@ class DefaultController extends Controller {
 
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
-	 * @Template("default/new_observation.html.twig")
+	 * @Template("nouvelle observations/new_observation.html.twig")
 	 */
 	public function addObservationAction(Request $request)
 	{
@@ -45,7 +45,7 @@ class DefaultController extends Controller {
 
     /**
      * @Route("/dernieres_observations", name="last_observations")
-     * @Template("default/last_observations.html.twig")
+     * @Template("dernieres observations/last_observations.html.twig")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
     public function lastObservationsAction()
@@ -80,13 +80,13 @@ class DefaultController extends Controller {
 
     /**
      * @Route("/administration", name="nao_user")
-     * @Template("dashboard.html.twig")
+     * @Template("administration/dashboard.html.twig")
      */
     public function usersAction()
     {
         $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
-        return $this->render('dashboard.html.twig', array('users' => $users));
+        return $this->render('administration/dashboard.html.twig', array('users' => $users));
     }
 
 }

@@ -9,11 +9,16 @@ use Behat\Mink\Mink;
 use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
 
+require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
+
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
+
+    private $output;
+
     /**
      * Initializes context.
      *
@@ -24,141 +29,78 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     public function __construct()
     {
     }
+
+    /**
+     * @BeforeScenario
+     */
+    public function moveIntoTestDir()
+    {
+        if (!is_dir('test')){
+            mkdir('test');
+        }
+        chdir('test');
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function moveOutOfTestDir()
+    {
+        chdir("..");
+        if (is_dir('test')){
+            system('rm -r '.realpath('test'));
+        }
+    }
+
 	private function getPage()
 	{
 		return $this->getSession()->getPage();
 	}
 
-	/**
-	 * @return \Behat\Mink\Element\DocumentElement
-	 */
-
-	/**
-	 * @When i follow :button
-	 */
-	public function iFollow($button)
-	{
-		$this->getPage()->find('css', 'connexion');
-	}
-
+	/*ls feature*/
     /**
-     * @When I fill in ""
+     * @Given there a file named :filename
      */
-    public function iFillIn()
+    public function thereAFileNamed($filename)
     {
-        throw new PendingException();
+        touch($filename);
     }
 
     /**
-     * @Given |I am logged in as moi
+     * @When I run :arg1
      */
-    public function iAmLoggedInAsMoi()
+    public function iRun($command)
     {
-        throw new PendingException();
+        $this->output = shell_exec($command);
     }
 
     /**
-     * @Given |I am on :arg1
+     * @Then I should see :string in the output
      */
-    public function iAmOn($arg1)
+    public function iShouldSeeInTheOutput($string)
     {
-        throw new PendingException();
+        assertContains(
+            $string,
+            $this->output,
+            sprintf('Did not see "%s" in output "%s"', $string, $this->output)
+
+        );
     }
 
     /**
-     * @When |I
+     * @Given I have a dir named :dir
      */
-    public function i()
+    public function iHaveADirNamed($dir)
     {
-        throw new PendingException();
+        mkdir($dir);
     }
 
     /**
-     * @Given there is user:
+     * @Given I have a file named :filename
      */
-    public function thereIsUser(TableNode $table)
+    public function iHaveAFileNamed($filename)
     {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given |I am
-     */
-    public function iAm()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I click :arg1
-     */
-    public function iClick($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then I should see :arg1 user
-     */
-    public function iShouldSeeUser($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given there are :arg1 user
-     */
-    public function thereAreUser($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When |I fill :arg1 with :arg2
-     */
-    public function iFillWith($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When |I press :arg1
-     */
-    public function iPress($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then |I should see :arg1
-     */
-    public function iShouldSee($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given |I am :arg1
-     */
-    public function iAm2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When |I click :arg1
-     */
-    public function iClick2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then |I should see :arg1 user
-     */
-    public function iShouldSeeUser2($arg1)
-    {
-        throw new PendingException();
+        touch($filename);
     }
 
 

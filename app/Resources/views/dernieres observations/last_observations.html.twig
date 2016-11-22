@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Dernières observations - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class=" container-fluid panel panel-default target">
+        <div class="panel-body">
+            <div class="row">
+                {% for deletion in app.session.flashbag.get('deletion') %}
+                <div class="observation col-lg-4 col-md-4 col-xs-12 col-sm-6">
+                    {{ deletion }}
+                </div>
+                {% endfor %}
+                {% for validation in app.session.flashbag.get('validation') %}
+                    <div class="observation col-lg-4 col-md-4 col-xs-12 col-sm-6">
+                        {{ validation }}
+                    </div>
+                {% endfor %}
+                {% for bird in birds %}
+                    <div class="observation col-lg-2 col-md-2 col-xs-6 col-sm-6">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="{{ asset('../uploads/images/') ~ '/' ~ bird.image }}">
+                        </div>
+                        <div class="text-center">
+                            <div >Observateur: {{ bird.member }}</div>
+                            <div>Nom de l'oiseau : {{ bird.nom.nomVern }}</div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="date col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <div id="dateObs">vue le : {{ bird.dateVue|date("d-m-Y") }}</div>
+                            </div>
+                            <div class="text-center col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                <a href="{{ path('delete_last_bird', {'id': bird.id })}}" class="btn" ><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{{ path('validate_last_bird', {'id': bird.id })}}" class="btn"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+

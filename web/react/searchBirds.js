@@ -15,7 +15,8 @@ export default class GoogleMapBirds extends React.Component {
         "outline": `none`,
         "padding": `0 12px`,
         "textOverflow": `ellipses`,
-        "width": `400px`,
+        "width": `100%`,
+        "margin-bottom": `3%`,
     };
 
     static infoboxStyle = {

@@ -7,7 +7,7 @@
     <title>{% block title %}NAO{% endblock %}</title>
 
 {% block stylesheets %}
-    {{ include('stylesheet.html.twig') }}
+    {{ include('assets/stylesheet.html.twig') }}
     <script src="https://use.fontawesome.com/57214ed58f.js"></script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
@@ -24,15 +24,15 @@
 
 
 <body>
-{{ include('header.html.twig') }}
+{{ include('header/header.html.twig') }}
 
-<div class="container-fluid">
+<div>
     {% block body %}
     {% endblock %}
 </div>
 
 {% block javascripts %}
-    {{ include('javascript.html.twig') }}
+    {{ include('assets/javascript.html.twig') }}
 {% endblock %}
 </body>
 </html>

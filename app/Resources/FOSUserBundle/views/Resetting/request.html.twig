@@ -1,8 +1,6 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% block title %}Oublié - {{ parent() }}{% endblock %}
-
-{% block formTitle %}<h1>Mot de passe oublié</h1>{% endblock %}
+{% block title %}Mot de passe oublié - {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
     {% include "FOSUserBundle:Resetting:request_content.html.twig" %}

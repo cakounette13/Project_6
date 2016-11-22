@@ -6,4 +6,10 @@
   Scenario: Login in
     Given I am on "/"
     When i follow "login"
-    And I fill in ""
+    When I fill "username" with "moi"
+    When I fill "password" with "moi"
+
+  Scenario: Logout
+    Given I am on "/"
+    When i follow "logout"
+    Then I should be on "/"
