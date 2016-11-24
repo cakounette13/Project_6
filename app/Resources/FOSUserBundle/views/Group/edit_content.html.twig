@@ -1,8 +1,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, { 'action': path('fos_user_group_edit', {'groupName': group_name}), 'attr': { 'class': 'fos_user_group_edit' } }) }}
+    <div class="form-group">
+    {{ form_label(form) }}
     {{ form_widget(form) }}
     {{ form_errors(form) }}
+    </div>
     <div>
         <input type="submit" value="{{ 'group.edit.submit'|trans }}" />
     </div>

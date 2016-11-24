@@ -111,7 +111,7 @@ export default class GoogleMapBirds extends React.Component {
                     <div
                         {...this.props}
                         style={{
-                            height: '100%'
+                            height: '600px'
                         }} >
                     </div>
                 }

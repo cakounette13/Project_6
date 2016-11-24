@@ -34,29 +34,29 @@ class MenuBuilder implements ContainerAwareInterface
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav menu');
-        $menu->addChild(' Accueil', array('route' => 'bird'))->setLinkAttribute('class', 'fa fa-home');
-        $menu->addChild(' Inscription', array('route' => 'fos_user_registration_register'))->setLinkAttribute('class', 'fa fa-eye');
+        $menu->addChild(' <span class="hidden-xs">Accueil</span>', array('route' => 'bird', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-home')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Accueil');
+        $menu->addChild(' <span class="hidden-xs">Inscription</span>', array('route' => 'fos_user_registration_register', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-user')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Inscription');
 
 
         if ($this->checker->isGranted('ROLE_ADMIN')) {
-            $menu->removeChild(' Inscription');
-            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
-            $menu->addChild(' Contributions', array('route' => 'last_observations'))->setLinkAttribute('class', 'fa fa-calendar');
-            $menu->addChild(' Administration', array('route' => 'nao_user'))->setLinkAttribute('class', 'fa fa-newspaper-o');
-            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa-male ');
+            $menu->removeChild(' <span class="hidden-xs">Inscription</span>');
+            $menu->addChild(' <span class="hidden-xs">Observation</span>', array('route' => 'add_observation', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-eye')->setLinkAttribute('data-toggle', 'tooltip')->setlinkattribute('title', 'Observation');
+            $menu->addChild(' <span class="hidden-xs">Contributions</span>', array('route' => 'last_observations', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-calendar')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Contribution');
+            $menu->addChild(' <span class="hidden-xs">Administration</span>', array('route' => 'nao_user', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-newspaper-o')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Administration');
+            $menu->addChild(' <span class="hidden-xs">Profil</span>', array('route' => 'fos_user_profile_show', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa-male ')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Profil');
         }
 
         if ($this->checker->isGranted('ROLE_SUPER_USER')) {
-            $menu->removeChild(' Inscription');
-            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
-            $menu->addChild(' Contributions', array('route' => 'last_observations'))->setLinkAttribute('class', 'fa fa-calendar');
-            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa fa-male');
+            $menu->removeChild(' <span class="hidden-xs">Inscription</span>');
+            $menu->addChild(' <span class="hidden-xs">Observation</span>', array('route' => 'add_observation', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-eye')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Observation');
+            $menu->addChild(' <span class="hidden-xs">Contributions</span>', array('route' => 'last_observations', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-calendar')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Contribution');
+            $menu->addChild(' <span class="hidden-xs">Profil</span>', array('route' => 'fos_user_profile_show', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-male')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Profil');
         }
 
         if ($this->checker->isGranted('ROLE_USER')) {
-            $menu->removeChild(' Inscription');
-            $menu->addChild(' Observation', array('route' => 'add_observation'))->setLinkAttribute('class', 'fa fa-eye');
-            $menu->addChild(' Profil', array('route' => 'fos_user_profile_show'))->setLinkAttribute('class', 'fa fa-male');
+            $menu->removeChild(' <span class="hidden-xs">Inscription</span>');
+            $menu->addChild(' <span class="hidden-xs">Observation</span>', array('route' => 'add_observation', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-eye')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Observation');
+            $menu->addChild(' <span class="hidden-xs">Profil</span>', array('route' => 'fos_user_profile_show', 'extras' => array('safe_label' => true)))->setLinkAttribute('class', 'fa fa-male')->setLinkAttribute('data-toggle', 'tooltip')->setLinkAttribute('title', 'Profil');
         }
 
         return $menu;

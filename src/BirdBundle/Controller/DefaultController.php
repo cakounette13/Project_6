@@ -34,8 +34,8 @@ class DefaultController extends Controller {
 	}
 
 	/**
-	 * @Route("/nouvelle_observation", name="add_observation")
-	 * @Template("nouvelle observations/new_observation.html.twig")
+	 * @Route("/observation", name="add_observation")
+	 * @Template("observation/observation.html.twig")
 	 */
 	public function addObservationAction(Request $request)
 	{
@@ -44,8 +44,8 @@ class DefaultController extends Controller {
 	}
 
     /**
-     * @Route("/dernieres_observations", name="last_observations")
-     * @Template("dernieres observations/last_observations.html.twig")
+     * @Route("/contribution", name="last_observations")
+     * @Template("contribution/contribution.html.twig")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
     public function lastObservationsAction()
@@ -58,7 +58,7 @@ class DefaultController extends Controller {
     }
 
     /**
-     * @Route("/dernieres_observations/valider", name="validate_last_bird")
+     * @Route("/contribution/valider", name="validate_last_bird")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
     public function validObs(Request $request)
@@ -80,13 +80,13 @@ class DefaultController extends Controller {
 
     /**
      * @Route("/administration", name="nao_user")
-     * @Template("administration/dashboard.html.twig")
+     * @Template("administration/administration.html.twig")
      */
     public function usersAction()
     {
         $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
-        return $this->render('administration/dashboard.html.twig', array('users' => $users));
+        return $this->render('administration/administration.html.twig', array('users' => $users));
     }
 
 }
