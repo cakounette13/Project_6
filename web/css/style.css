@@ -221,20 +221,6 @@ span
     overflow: visible !important;
 }
 
-#upArrow, #downArrow
-{
-    float: right;
-}
-
-#up, #down
-{
-    float: right;
-}
-
-.fa-arrow-circle-up, .fa-arrow-circle-down
-{
-    line-height: inherit;
-}
 
 
 .button{
@@ -257,10 +243,6 @@ span
     transform: scale(0.5);
 }
 
-.section.fp-completely .button{
-    opacity: 1;
-    transform: scale(1);
-}
 
 
 
@@ -285,40 +267,8 @@ span
     cursor: pointer;
 }
 
-
-
-
-
-.section .c_illus .window{
-    transform-origin: bottom center;
-    opacity: 0;
-    transform: scale(0.8);
-    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
-}
-
-.section.fp-completely .c_illus .window{
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-
-
-
-
-#section3 h2{
-
-    text-align: center;
-    margin-top: -5%;
-}
-
-#section3 .button{
-
-    font-family: 'cabinregular', cursive;
-}
-
 #c_form_mail{
-    width: 400px;
+    width: 60%;
     margin: auto;
 }
 
@@ -331,144 +281,12 @@ span
 
 #c_form_mail input,
 #c_form_mail textarea{
-    display: block;
     height: 60px;
-    width: calc(100% - 60px);
     border: none;
-    outline: none;
-    margin-bottom: 2px;
-    background-size: 15px;
-
-    background: #fbfbfb no-repeat 22px center;
-    font-family: "cabinregular", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 14px;
-    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
-}
-
-#c_form_mail input[name="i_name"]{
-    transition-delay: 0.1s;
-    background-image: url("../icons/user.svg");
-    background-size: 22px;
-    margin-left: 30px;
-}
-
-#c_form_mail input[name="i_email"]{
-    background-image: url("../icons/envelope.svg");
-    background-size: 22px;
-    transition-delay: 0.2s;
-    margin-left: 30px;
-}
-
-#c_form_mail input[name="i_date"]{
-    background-image: url("../icons/calendar.svg");
-    background-size: 22px;
-    transition-delay: 0.2s;
-    margin-left: 30px;
-}
-
-#c_form_mail input[name="i_pwd"]{
-    background-image: url("../icons/keywords.svg");
-    background-size: 22px;
-    transition-delay: 0.2s;
-    margin-left: 30px;
-}
-
-#upload{
-    transition-delay: 0.3s;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-/*noinspection ALL*/
-.custom_btn
-{
-    width: 48%;
-}
-
-/*noinspection ALL*/
-#first_btn
-{
-    margin-right: 2%;
 }
 
 
 
-
-
-#c_form_mail textarea{
-    height: calc(100% - 166px);
-    margin-left: 30px;
-    padding-right: 60px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    resize: none;
-    transition-delay: 0.3s;
-}
-
-/*noinspection ALL*/
-#c_lb_email{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: -100%;
-}
-
-/*noinspection ALL*/
-#c_lb_email.open{
-     left: 0;
- }
-
-#c_lb_email h5{
-    color: #fbfbfb;
-    opacity: 1;
-    text-align: center;
-}
-
-/*noinspection ALL*/
-#lb_conf_email{
-    position: absolute;
-    height: 300px;
-    width: 500px;
-    background-color: #fbfbfb;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.2);
-    transition:0.4s cubic-bezier(.49,.32,.36,1.56);
-    opacity: 0;
-}
-
-/*noinspection ALL*/
-#c_lb_email.open #lb_conf_email{
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
-/*noinspection ALL*/
-.overlay{
-    position: absolute;
-    background-color: #40442C;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.2s ease-in;
-}
-
-/*noinspection ALL*/
-#c_lb_email.open .overlay{
-    opacity: 0.5;
-}
-
-
-
-
-.section.fp-completely #c_form_mail input,
-.section.fp-completely #c_form_mail textarea{
-    opacity: 1;
-    padding-left: 60px;
-}
 
 /*noinspection ALL*/
 #connexion {
@@ -490,11 +308,7 @@ span
 }
 
 /*first page map*/
-#birds {
 
-    height: 100%;
-    margin: 60px auto auto;
-}
 
 input::-webkit-calendar-picker-indicator {
     display: none;
@@ -520,17 +334,6 @@ input#input-search{
 }
 
 /*border-radius*/
-
-html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div{
-    height: 150px;
-    line-height: 1.35 !important;
-    white-space: nowrap !important;
-    color: #40442C;
-}
-
-html.fa-events-icons-ready.fp-enabled body.fp-viewing-secondPage div#fullpage.fullpage-wrapper div#section1.section.left_layout.container-fluid.fp-section.fp-table.active.fp-completely div.fp-tableCell div#birds div#test div div.gm-style div div div div div.gm-style-iw div div div{
-    overflow: hidden;
-}
 
 .gm-style
 {
@@ -692,9 +495,6 @@ span.glyphicon.glyphicon-chevron-right{
     }
 }
 
-
-
-
 .carousel .item {
     border-radius: 10px;
     background-color: rgba(0,0,0,0);
@@ -721,11 +521,6 @@ span.glyphicon.glyphicon-chevron-right{
 
 
 /*dernières observations*/
-
-.fp-viewing--1
-{
-    overflow: auto !important;
-}
 
 .formHeight
 {
@@ -759,12 +554,10 @@ span.glyphicon.glyphicon-chevron-right{
 .champs
 {
     border:2px solid #7E7F79;
-    background-color: white;
     box-shadow: 10px 5px 18px #888888 !important;
     border-top-width: 0;
     text-align: center;
-    width: 100% !important;
-    padding:0 !important;
+    width: 100%;
 }
 
 .panel-body
@@ -938,16 +731,7 @@ div.container{
     margin-top: 2%;
 }
 
-#fullpage > form:nth-child(2)
-{
-    height: 800px;
-}
 
-select
-{
-    width: 75%;
-    border-radius: 5px;
-}
 
 .add-on
 {
@@ -1029,15 +813,7 @@ input#form_latitude
     box-shadow: 10px 5px 18px #888888 !important;
 }
 
-label
-{
-    width: 25%;
-}
 
-input
-{
-    width: 75%;
-}
 
 
 
@@ -1068,20 +844,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
     height: 95% !important;
     box-shadow: 10px 5px 18px #7E7F79 !important;
 
-}
-
-
-
-@media all and (max-width: 640px){
-    .panel-right
-    {
-        left:5px;
-    }
-
-    .panel-left
-    {
-        right: 5px;
-    }
 }
 
 /*register page*/

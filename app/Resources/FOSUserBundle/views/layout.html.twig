@@ -5,16 +5,15 @@
 
 {% block body %}
 
-    <div id="FOSU">
+<div id="row">
+    <div class="formulaire">
 
-        <div id="c_form_mail">
-            {% block formTitle %}{% endblock %}
-            {% block fos_user_content %}
-            {% endblock fos_user_content %}
-        </div>
+{% block fos_user_content %}
+{% endblock fos_user_content %}
     </div>
-
+</div>
 {% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
 {% endblock %}

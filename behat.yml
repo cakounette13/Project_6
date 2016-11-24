@@ -1,13 +1,25 @@
 default:
-    suites:
-        default:
-            contexts:
-                - FeatureContext
-                - Behat\MinkExtension\Context\MinkContext
     extensions:
         Behat\MinkExtension:
-            browser_name: chrome
             base_url: http://localhost:8000
+            browser_name: chrome
             goutte: ~
             selenium2: ~
         Behat\Symfony2Extension: ~
+    suites:
+        user:
+            contexts:
+                - FeatureContext
+                - UserContext
+                - Behat\MinkExtension\Context\MinkContext
+            paths: [ %paths.base%/features/user ]
+        super_user:
+            contexts:
+                - FeatureContext
+                - Behat\MinkExtension\Context\MinkContext
+            paths: [ %paths.base%/features/superUser ]
+        admin:
+            contexts:
+                - FeatureContext
+                - Behat\MinkExtension\Context\MinkContext
+            paths: [ %paths.base%/features/admin ]

@@ -6,15 +6,14 @@
 
     <title>{% block title %}NAO{% endblock %}</title>
 
-    {% block stylesheets %}
-        {{ include('stylesheet.html.twig') }}
-        <script src="https://use.fontawesome.com/57214ed58f.js"></script>
-        <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-        <script type="text/javascript">
-            window.cookieconsent_options = {"message":"Ce site web utilise les cookies. Les cookies sont utilisés pour analyser l'utilisation du site par les visiteurs afin de l'améliorer.","dismiss":"Accepter","learnMore":"En savoir plus.","link":null,"theme":"light-floating"};
-        </script>
-
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+{% block stylesheets %}
+    {{ include('assets/stylesheet.html.twig') }}
+    <script src="https://use.fontawesome.com/57214ed58f.js"></script>
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {"message":"Ce site web utilise les cookies. Les cookies sont utilisés pour analyser l'utilisation du site par les visiteurs afin de l'améliorer.","dismiss":"Accepter","learnMore":"En savoir plus.","link":null,"theme":"light-floating"};
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
 
     {% endblock %}
@@ -23,15 +22,15 @@
 
 
 <body>
-{{ include('header.html.twig') }}
+{{ include('header/header.html.twig') }}
 
-<div class="container-fluid">
+<div>
     {% block body %}
     {% endblock %}
 </div>
 
 {% block javascripts %}
-    {{ include('javascript.html.twig') }}
+    {{ include('assets/javascript.html.twig') }}
 {% endblock %}
 </body>
 </html>

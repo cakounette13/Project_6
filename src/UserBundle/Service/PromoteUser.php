@@ -33,9 +33,9 @@ class PromoteUser {
 		$userId = $request->get('id');
 		$user = $this->em->find('UserBundle:User', $userId);
 		if ($user instanceof User){
-			$user->setRoles(['ROLE_SUPER_USER']);
+			$user->setRoles( [ 'ROLE_SUPER_USER' ] );
 			$this->em->flush();
-			return $this->session->getFlashBag()->add('validation', 'Utilisateur '.$user->getUsername().' promu.' );
+			return $this->session->getFlashBag()->add( 'validation', 'Utilisateur ' . $user->getUsername() . ' promu comme Naturaliste.' );
 		}
 		return $this->session->getFlashBag()->add('validation', 'Mauvais utilisateur pour cette operation');
 	}

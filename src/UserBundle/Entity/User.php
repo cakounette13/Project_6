@@ -18,15 +18,6 @@ class User extends BaseUser
 	 */
 	protected $id;
 
-	/**
-	 * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Group")
-	 * @ORM\JoinTable(name="fos_user_user_group",
-	 *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-	 *     inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-	 * )
-	 */
-	protected $groups;
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -37,5 +28,12 @@ class User extends BaseUser
 	 */
 	public function setSalt( $salt ) {
 		$this->salt = $salt;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
 	}
 }

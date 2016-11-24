@@ -10,14 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
 	/**
-	 * @Route("/utilisateurs", name="nao_user")
-	 * @Template("dashboard.html.twig")
+	 * @Route("/administration", name="nao_user")
+	 * @Template("administration/dashboard.html.twig")
 	 */
 	public function usersAction()
 	{
 		$users = $this->get('fos_user.user_manager')->findUsers();
 		return [ 'users' => $users,
-			dump($users)
 		];
 	}
 
@@ -38,6 +37,16 @@ class DefaultController extends Controller
 	 */
 	public function demoteUser(Request $request){
 		$user = $this->get('demote_user')->demoteUser($request);
+		return $this->redirectToRoute('nao_user', ['result', $user]);
+	}
+
+	/**
+	 * @param Request $request
+	 * @Route("/utilisateur/supprimer", name="delete_user")
+	 * @return \Symfony\Component\HttpFoundation\RedirectResponse
+	 */
+	public function deleteUser(Request $request){
+		$user = $this->get('delete_user')->deleteUser($request);
 		return $this->redirectToRoute('nao_user', ['result', $user]);
 	}
 }

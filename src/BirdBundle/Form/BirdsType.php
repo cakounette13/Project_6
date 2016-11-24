@@ -32,7 +32,7 @@ class BirdsType extends AbstractType
 			    'html5' => false,
             ])
 			->add('image', FileType::class, array(
-			    'label' => 'Image au format .jpg ou .pdf (facultative)',
+			    'label' => 'Image au format .jpg ou .png (facultative)',
 			    'required' => false
             ))
 			->add('longitude', HiddenType::class)

@@ -34,7 +34,7 @@ class DemoteUser {
 		$user = $this->em->find('UserBundle:User', $userId);
 		if ($user instanceof User){
 			$user->setRoles(['ROLE_USER']);
-			$flash = $this->session->getFlashBag()->add('validation', 'Utilisateur '.$user->getUsername().' supprime.' );
+			$flash = $this->session->getFlashBag()->add('validation', 'Utilisateur '.$user->getUsername().' retrograde au rang d\'Observateur.' );
 			$this->em->flush();
 			return $flash;
 		}

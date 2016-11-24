@@ -11,8 +11,21 @@ namespace BirdBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Nelmio\Alice\Fixtures;
-class LoadFixtures implements FixtureInterface
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+class LoadFixtures implements FixtureInterface, ContainerAwareInterface
 {
+	/**
+	 * @var ContainerInterface
+	 */
+	private $container;
+
+	public function setContainer(ContainerInterface $container = null)
+	{
+		$this->container = $container;
+	}
+
 	public function load(ObjectManager $manager)
 	{
 		Fixtures::load(__DIR__.'/Taxref.yml', $manager);

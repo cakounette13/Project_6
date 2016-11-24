@@ -1,0 +1,278 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/*style for navbar with knpmenu*/
+
+.navbar-brand {
+     transform: translateX(-50%);
+     left: 50%;
+     position: absolute;
+ }
+
+#logoNavbar {
+    top: 15px;
+    position: absolute;
+    left: 20px;
+}
+
+.menu {
+    display: inline-flex;
+}
+
+/*index page*/
+
+#birds {
+    height: 500px;
+    width: 80%;
+    margin: 3% auto 10%;
+}
+
+#birds > div {
+    overflow: visible !important;
+}
+
+/*carousel*/
+
+#thumbnail-preview-indicators {
+    position: relative;
+    overflow: hidden;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators .slides .slide-1,
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3 {
+    background-size: cover;
+    background: no-repeat center center;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators,
+#thumbnail-preview-indicators .slides,
+#thumbnail-preview-indicators .slides .slide-1,
+#thumbnail-preview-indicators .slides .slide-2,
+#thumbnail-preview-indicators .slides .slide-3 {
+    height: 480px;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators .slides .slide-1 {
+    background-image: url(http://localhost:8000/images/blossom.jpg);
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators .slides .slide-2 {
+    background-image: url(http://localhost:8000/images/cranes.jpg);
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators .slides .slide-3 {
+    background-image: url(http://localhost:8000/images/peacock.jpg);
+}
+
+#thumbnail-preview-indicators .carousel-indicators li,
+#thumbnail-preview-indicators .carousel-indicators li.active {
+    position: relative;
+    width: 100px;
+    height: 8px;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators li > .thumbnail {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    display: none;
+    opacity: 0;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -50px;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators li:hover > .thumbnail,
+#thumbnail-preview-indicators li.active:hover > .thumbnail
+{
+    display: block;
+    opacity: .8;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators li.active > .thumbnail
+{
+    display: none;
+}
+
+/*noinspection ALL*/
+#thumbnail-preview-indicators  li.active > .thumbnail:hover{
+    opacity: 1;
+}
+
+@media screen and (max-width : 480px) {
+    #thumbnail-preview-indicators li,
+    #thumbnail-preview-indicators li.active {
+        width: 50px;
+        height: 8px;
+        position: relative;
+    }
+
+    /*noinspection ALL*/
+    #thumbnail-preview-indicators li > .thumbnail {
+        width: 50px;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -25px;
+    }
+}
+
+/*noinspection ALL*/
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+/*noinspection ALL*/
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+/*noinspection ALL*/
+.carousel-fade .carousel-control {
+    color: #d0fb00;
+    width: 45%;
+    top: -4%;
+}
+
+
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+    /*noinspection ALL*/
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    /*noinspection ALL*/
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    /*noinspection ALL*/
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/*formulaires*/
+
+
+body
+{background: #456;font-family: 'Open Sans', sans-serif;}
+.formulaire
+{ width: 400px;margin: 16px auto;font-size: 16px;}
+/* Reset top and bottom margins from certain elements */
+.formulaire-header,.formulaire p { margin-top: 0;margin-bottom: 0;}
+/* The triangle form is achieved by a CSS hack */
+.formulaire-triangle {width: 0;margin-right: auto;margin-left: auto;border: 12px solid transparent;border-bottom-color: #28d;}
+.formulaire-header {background: #28d;padding: 20px;font-size: 1.4em;font-weight: normal;text-align: center;text-transform: uppercase;color: #fff;}
+.formulaire-container {background: #ebebeb;padding: 12px;}
+/* Every row inside .formulaire-container is defined with p tags */
+.formulaire p {padding: 12px;}
+.formulaire input {box-sizing: border-box;display: block;width: 100%;border-width: 1px;border-style: solid;padding: 16px;outline: 0;font-family: inherit;font-size: 0.95em;}
+.formulaire input[type="email"],.formulaire input[type="password"],.formulaire input[type="text"] {background: #fff;border-color: #bbb;color: #555;}
+/* Text fields' focus effect */
+.formulaire input[type="email"]:focus, .formulaire input[type="password"]:focus,.formulaire input[type="text"]:focus {  border-color: #888;}
+.formulaire input[type="submit"] {background: #28d;border-color: transparent;color: #fff;cursor: pointer;}
+.formulaire input[type="submit"]:hover {background: #17c;}
+/* Buttons' focus effect */
+.formulaire input[type="submit"]:focus {border-color: #05a;}
+@media all and (max-width:450px){
+    .formulaire {width: 95%;}
+}
+
+
+
+/*navbar breakpoint*/
+
+@media (max-width: 1550px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+
+/*add birds*/
+
+#add_bird {
+    height: 400px;
+}
+
+#newBird {
+    margin-top: 4%;
+}
+
+/*last obs*/
+
+.observation {
+    border-radius: 2px;
+}
+
+.champs {
+    height: 50px;
+}
+
+.panel-footer {
+    height: 85px;
+    padding: 0;
+}

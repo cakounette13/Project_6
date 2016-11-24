@@ -4,20 +4,29 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<form class="text-center" action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
 
-    <input class="test, champs" placeholder="Nom d'utilisateur" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+<div class="formulaire-triangle"></div>
+<h2 class="formulaire-header">{% block formTitle %}Connexion{% endblock %}</h2>
+<form class="text-center formulaire-container" action="{{ path("fos_user_security_check") }}" method="post">
+{% if csrf_token %}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+{% endif %}
+    <div class="form-group">
+        <p><label for="username">{{ 'security.login.username'|trans }}</label></p>
+        <p><input  placeholder="Nom d'utilisateur" type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></p>
+    </div>
 
-    <input class="champs" type="password" placeholder="Mot de passe" id="password" name="_password" required="required" />
+    <div class="form-group">
+        <p><label for="password">{{ 'security.login.password'|trans }}</label></p>
+        <p><input type="password" placeholder="Mot de passe" id="password" name="_password" required="required" /></p>
+    </div>
+    <div class="checkbox">
+        <p><input type="checkbox" id="remember_me" name="_remember_me" value="on" /></p>
+        <p><label for="remember_me">{{ 'security.login.remember_me'|trans }}</label></p>
+    </div>
 
-    <input class="test" type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">Se souvenir de moi</label>
+    <input class="btn" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
-    <input class="btn" type="submit" id="_submit" name="_submit" value="Connexion" />
-
+    <div><a href={{ path("fos_user_resetting_request") }}>J'ai oublié mon mot de passe</a></div>
+<button class="btn"><a href={{ path("fos_user_registration_register") }}>S'inscrire</a></button>
 </form>
-+<div id="oubli"><a href={{ path("fos_user_resetting_request") }}>J'ai oublié mon mot de passe</a></div>
-<a href={{ path("fos_user_registration_register") }}><button class="btn" id="inscription" name="i_name">S'inscrire</button></a>

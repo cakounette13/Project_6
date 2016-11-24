@@ -13,7 +13,7 @@ class DefaultController extends Controller {
 
     /**
 	 * @Route("/", name="bird")
-	 * @Template("default/index.html.twig")
+	 * @Template("index/index.html.twig")
 	 */
 	public function indexAction() {
 		return;
@@ -30,17 +30,19 @@ class DefaultController extends Controller {
 
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
-	 * @Template("default/new_observation.html.twig")
+	 * @Template("nouvelle observations/new_observation.html.twig")
 	 */
 	public function addObservationAction(Request $request)
 	{
 		$form = $this->get('add_bird')->formBuilder($request);
-		return ['form' => $form->createView()];
+		return ['form' => $form->createView(),
+			dump($form->createView())
+		];
 	}
 
     /**
      * @Route("/dernieres_observations", name="last_observations")
-     * @Template("default/last_observations.html.twig")
+     * @Template("dernieres observations/last_observations.html.twig")
      * @Security("has_role('ROLE_SUPER_USER')")
      */
     public function lastObservationsAction()

@@ -4,11 +4,17 @@
 
 {% block title %}Confirmation - {{ parent() }}{% endblock %}
 
-{% block formTitle %}<h1>Confirmation</h1>{% endblock %}
-
 {% block fos_user_content %}
+<div>
+    <div class="text-center">
+    <h2>{% block formTitle %}Confirmation{% endblock %}</h2>
+
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}
         <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}
+    <button class="btn"><a href={{ path("bird") }}>Retour à l'accueil</a></button>
+    </div>
+</div>
 {% endblock fos_user_content %}
+

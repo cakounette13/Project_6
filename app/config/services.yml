@@ -55,3 +55,7 @@ services:
   demote_user:
       class: UserBundle\Service\DemoteUser
       arguments: ["@doctrine.orm.entity_manager","@session"]
+
+  delete_user:
+      class: UserBundle\Service\DeleteUser
+      arguments: ["@doctrine.orm.entity_manager","@session", "@fos_user.user_manager"]

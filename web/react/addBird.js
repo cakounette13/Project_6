@@ -66,7 +66,7 @@ export default class GoogleMapAddBird extends React.Component {
                     <div
                         {...this.props}
                         style={{
-                            height: '80%'
+                            height: '100%'
                         }} >
                     </div>
                 }
