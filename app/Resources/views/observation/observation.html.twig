@@ -13,6 +13,11 @@
 
 {% block body %}
     <div id="row">
+        {% for observation in app.session.flashbag.get('nouvelle_observation') %}
+            <div class="col-xs-12 text-center">
+                <h3 class="formulaire-header">{{ observation }}</h3>
+            </div>
+        {% endfor %}
         <h2 class="formulaire-header">{% block formTitle %}Ajouter un oiseau{% endblock %}</h2>
         {{ form_start(form, {'attr': {'class': 'text-center formulaire-container'}}) }}
             <div id="add_bird" >
@@ -22,25 +27,24 @@
             <div id="newBird" class="container">
                 <h3 id="marker">Placez le marker a l'endroit exact de l'observation</h3>
                 <div class="form-group">
-                    <p>{{ form_label(form.nom, "Nom de l'èspèce",  {'label_attr': {'class': 'col-xs-12'}}) }}</p>
-                    <p>{{ form_errors(form.nom) }}</p>
-                    <p>{{ form_widget(form.nom, {'attr': {'class': 'btn btn-default col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8'}}) }}</p>
-                </div>
+                    {{ form_label(form.nom, "Nom de l'èspèce",  {'label_attr': {'class': 'col-xs-12'}}) }}
+                    {{ form_errors(form.nom) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'btn btn-default col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8'}}) }}
                 <div class="form-group">
                     {# Génération du label. #}
-                    <p>{{ form_label(form.datevue, "Date de la vue",  {'label_attr': {'class': 'col-xs-12'}}) }}</p>
-                    <p>{{ form_errors(form.datevue) }}</p>
+                    {{ form_label(form.datevue, "Date de la vue",  {'label_attr': {'class': 'col-xs-12'}}) }}
+                    {{ form_errors(form.datevue) }}
                     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 input-group date btn btn-default" id="datePicker">
                         {{ form_widget(form.datevue, {'attr': {'class': 'text-center form-control', 'name': 'date'}}) }}
                         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                 </div>
                 <div></div>
-                <p>{{ form_label(form.image,"Image facultative (.jpg ou .png)", {'attr': {'class': 'col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4'}}) }}</p>
-                <p>{{ form_errors(form.image) }}</p>
-                <p>{{ form_widget(form.image, {'attr': {'class': 'btn btn-default col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset- col-md-8 col-lg-offset-2 col-lg-8'}}) }}</p>
+                {{ form_label(form.image,"Image facultative (.jpg ou .png)", {'attr': {'class': 'col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4'}}) }}
+                {{ form_errors(form.image) }}
+                {{ form_widget(form.image, {'attr': {'class': 'btn btn-default col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset- col-md-8 col-lg-offset-2 col-lg-8'}}) }}
                 <div>
-                    <input id="submitObs" class="btn btn-md col-xs-offset-4 col-xs-4 col-sm-offset-4 col-sm-14 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4" type="submit"/>
+                    <input id="submitObs" class="btn btn-md col-xs-offset-4 col-xs-4 col-sm-offset-4 col-sm-14 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4" type="submit" value="Envoyer"/>
                 </div>
             </div>
         {{ form_end(form) }}

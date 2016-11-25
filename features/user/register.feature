@@ -16,5 +16,3 @@ Feature: Register
     Then I should be on "/inscription/confirmation"
     And I follow "Accueil"
     Then I should be on the homepage
-
-  Scenario: Forget password
