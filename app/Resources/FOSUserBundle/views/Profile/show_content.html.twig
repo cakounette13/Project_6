@@ -20,7 +20,10 @@
                 </tbody>
             </table>
         </div>
-        <a class="btn btn-success" href={{ path("bird") }}>Retour à l'accueil</a>
-        <a class="btn btn-danger" href={{ path("fos_user_change_password") }}>Changement de mot de passe</a>
+        <div class="row btn-group-vertical">
+            <a class="btn btn-success" href={{ path("bird") }}>Retour à l'accueil</a>
+            <a class="btn btn-danger" href={{ path("fos_user_profile_edit") }}>Edition du profil</a>
+            <a class="btn btn-info" href={{ path("fos_user_change_password") }}>Changement de mot de passe</a>
+        </div>
     </div>
 </div>

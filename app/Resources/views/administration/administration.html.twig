@@ -4,7 +4,7 @@
 
 {% block body %}
     <div id="dashboard">
-        <h1 class="col-xs-offset-5">Gestion des membres</h1>
+        <h1 class="text-center">Gestion des membres</h1>
         <div class="container-fluid">
             {% for deletion in app.session.flashbag.get('deletion') %}
                 <div class="col-xs-12 col-xs-offset-4 col-lg-offset-5">
@@ -18,7 +18,7 @@
             {% endfor %}
             <div class="row">
                 <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    <h2 class="col-xs-offset-5">Observateurs</h2>
+                    <h2 class="text-center">Observateurs</h2>
                     <div class="panel panel-default">
                         <div class="table-bordered">
                             <table id="mytable" class="table table-bordered table-condensed table-centered">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    <h2 class="col-xs-offset-5">Naturalistes</h2>
+                    <h2 class="text-center">Naturalistes</h2>
                     <div class="panel panel-default">
                     <div class="table-bordered">
                         <div class="table-responsive">

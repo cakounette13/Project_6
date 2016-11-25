@@ -5,9 +5,9 @@
 
 {{ form_start(form, { 'action': path('fos_user_group_new'), 'attr': { 'class': 'fos_user_group_new text-center' } }) }}
     <div class="form-group">
-        <p>{{ form_label(form.name) }}</p>
-        <p>{{ form_widget(form.name, {'attr':{'placeholder': 'Entrez le nom du groupe', 'class': 'text-center'}}) }}</p>
-        <p>{{ form_errors(form.name) }}</p>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, {'attr':{'placeholder': 'Entrez le nom du groupe', 'class': 'text-center'}}) }}
+        {{ form_errors(form.name) }}
     </div>
     <div>
         <input type="submit" value="{{ 'group.new.submit'|trans }}" />

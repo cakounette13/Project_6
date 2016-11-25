@@ -4,9 +4,9 @@
 <div class="formulaire-triangle"></div>
 <h2 class="formulaire-header">{% block formTitle %}Inscription{% endblock %}</h2>
 {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset text-center formulaire-container' } }) }}
-    <p>{{ form_label(form.username) }}</p>
-    <p>{{ form_widget(form.username) }}</p>
-    <p>{{ form_errors(form.username) }}</p>
+    {{ form_label(form.username) }}
+    {{ form_widget(form.username) }}
+    {{ form_errors(form.username) }}
     <div>
         <input class="btn btn-default" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
     </div>

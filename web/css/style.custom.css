@@ -23,8 +23,7 @@ body
 .formulaire-triangle {width: 0;margin-right: auto;margin-left: auto;border: 12px solid transparent;border-bottom-color: #28d;}
 .formulaire-header {background: #28d;padding: 20px;font-size: 1.4em;font-weight: normal;text-align: center;text-transform: uppercase;color: #fff;}
 .formulaire-container {background: #5f9ea0;padding: 12px;}
-/* Every row inside .formulaire-container is defined with p tags */
-.formulaire p {padding: 12px;}
+
 .formulaire input {box-sizing: border-box;display: block;width: 100%;border-width: 1px;border-style: solid;padding: 16px;outline: 0;font-family: inherit;font-size: 0.95em;}
 .formulaire input[type="email"],.formulaire input[type="password"],.formulaire input[type="text"] {background: #fff;border-color: #bbb;color: #555;}
 /* Text fields' focus effect */
@@ -56,7 +55,6 @@ body
 /*observations*/
 #add_bird {height: 400px;}
 #newBird {margin-top: 2%;}
-#submitObs {margin-top: 2%;}
 #birds_image {overflow: hidden;}
 
 /*contribution*/
@@ -74,3 +72,9 @@ body
 /*infobox*/
 
 #infobox { text-align: center;}
+
+/*button*/
+
+.btn {
+    margin-top: 1%;
+}
