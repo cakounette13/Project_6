@@ -71,5 +71,5 @@ fos_user_resetting_reset:
     defaults: { _controller: FOSUserBundle:Resetting:reset, _method: POST }
 
 fos_user_change_password:
-    path:     /profil/changer_mot_de_passe
+    path:     /changement
     defaults: { _controller: FOSUserBundle:ChangePassword:changePassword, _method: POST }
