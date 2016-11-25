@@ -11,12 +11,12 @@
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 {% endif %}
     <div class="form-group">
-        <p><label for="username">{{ 'security.login.username'|trans }}</label></p>
-        <p><input  class="text-center" placeholder="Nom d'utilisateur" type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></p>
+        <label for="username">{{ 'security.login.username'|trans }}</label>
+        <input  class="text-center" placeholder="Nom d'utilisateur" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
     </div>
     <div class="form-group">
-        <p><label for="password">{{ 'security.login.password'|trans }}</label></p>
-        <p><input class="text-center" type="password" placeholder="Mot de passe" id="password" name="_password" required="required" /></p>
+        <label for="password">{{ 'security.login.password'|trans }}</label>
+        <input class="text-center" type="password" placeholder="Mot de passe" id="password" name="_password" required="required" />
     </div>
     <div class="checkbox">
         <p><input type="checkbox" id="remember_me" name="_remember_me" value="on" /></p>
