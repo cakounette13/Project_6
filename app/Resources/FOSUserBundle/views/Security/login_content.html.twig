@@ -18,11 +18,6 @@
         <label for="password">{{ 'security.login.password'|trans }}</label>
         <input class="text-center" type="password" placeholder="Mot de passe" id="password" name="_password" required="required" />
     </div>
-    <div class="checkbox">
-        <p><input type="checkbox" id="remember_me" name="_remember_me" value="on" /></p>
-        <p><label for="remember_me">{{ 'security.login.remember_me'|trans }}</label></p>
-    </div>
-
     <input class="btn" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
     <div><a href={{ path("fos_user_resetting_request") }}>J'ai oublié mon mot de passe</a></div>
