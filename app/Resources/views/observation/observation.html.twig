@@ -51,6 +51,13 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    {{ include('observation/datepicker.html.twig') }}
+    {% if app.environment == 'dev' %}
+    <script src="http://127.0.0.1:3000/static/addBird.js">
+    </script>
+    {% else %}
+    <script src="{{ asset('dist/addBird.js') }} ></script>
+    {% endif %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/datepicker.js') }}"></script>
 {% endblock %}
