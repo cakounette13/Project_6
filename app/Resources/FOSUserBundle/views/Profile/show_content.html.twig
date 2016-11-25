@@ -3,8 +3,13 @@
 
 <div class="fos_user_user_show">
     <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 text-center">
+        {% for success in app.session.flashbag.get('success') %}
+            <div class="col-xs-12 text-center">
+                <h4>{{ success }}</h4>
+            </div>
+        {% endfor %}
         <h1>Profil</h1>
-        <div class="table-responsive">
+        <div class="col-xs-12 col-md-8">
             <table class="table table-bordered table-condensed table-striped">
                 <thead>
                     <tr>

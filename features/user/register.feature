@@ -16,3 +16,12 @@ Feature: Register
     Then I should be on "/inscription/confirmation"
     And I follow "Accueil"
     Then I should be on the homepage
+
+  Scenario: password Forgotten
+    Given I am on the homepage
+    And I click on "#logoNavbar"
+    Then I follow "J'ai oublié mon mot de passe"
+    Then I should be on "/reinitialiser/requete"
+    And fill in "username" with "arthur"
+    And I press "Mot de passe oublié"
+    Then I should see "Un e-mail a été envoyé."

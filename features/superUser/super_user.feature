@@ -3,6 +3,7 @@ Feature: Super User
   As a Super User
   I need to login as Super User
   then need to be able to validate or delete the last observations
+  Or i can do modifications on my profile
 
   Background:
     Given I am on the homepage
@@ -35,3 +36,15 @@ Feature: Super User
     And I attach the file "/var/www/html/Project_6/web/images/bird_1.jpeg" to "birds[image]"
     And I press "Envoyer"
     Then I should see "Votre observation est valide et visible des maintenant"
+
+  Scenario: Change my username
+    And I follow "Profil"
+    Then I should be on "/profil/"
+    Then I follow "Edition du profil"
+    Then I should be on "/profil/editer"
+    And I fill in "fos_user_profile_form[username]" with "bobMarley"
+    And I fill in "fos_user_profile_form[email]" with "bob.marley@gmail.com"
+    And I fill in "fos_user_profile_form[current_password]" with "qwerty"
+    And I press "Mettre à jour"
+    Then I should be on "/profil/"
+    And I should see "Le profil a été mis à jour"
