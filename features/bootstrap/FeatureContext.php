@@ -28,6 +28,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 	public function __construct()
 	{
 	}
+
+	/**
+	 * @Given I should see :arg1 inside :arg2 element
+	 */
+	public function iShouldSeeInsideElement($text, $arg2)
+	{
+	}
+
+
 	/**
 	 * @Given I click on :link
 	 */
@@ -36,6 +45,18 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 		$page = $this->getSession()->getPage();
 		$element = $page->find('css', $link);
 		$element->click();
+	}
+
+	/**
+	 * @Then break
+	 */
+	public function iBreak()
+	{
+		fwrite(STDOUT, "\033[s    \033[93m[Breakpoint] Press \033[1;93m[RETURN]\033[0;93m to continue...\033[0m");
+		while (fgets(STDIN, 1024) == '') {
+		}
+		fwrite(STDOUT, "\033[u");
+		return;
 	}
 
 	/**

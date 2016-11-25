@@ -18,4 +18,21 @@ class AdminContext extends RawMinkContext implements Context, SnippetAcceptingCo
 	public function __construct()
 	{
 	}
+	/**
+	 * @Then I should see the following table portion:
+	 */
+	public function iShouldSeeTheFollowingTablePortion(TableNode $table)
+	{
+		throw new PendingException();
+	}
+	/**
+	 * @Then I should see a table with :arg1 inside
+	 */
+	public function iShouldSeeATableWithInside($username)
+	{
+		$row = $this->getSession()->getPage()->find('css', sprintf('table tr:contains("%s")', $username));
+		if (!$row) {
+			throw new \Exception(sprintf('Cannot find any row on the page containing the text "%s"', $username));
+		}
+	}
 }

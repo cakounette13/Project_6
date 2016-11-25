@@ -3,6 +3,7 @@
 namespace BirdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Datas
@@ -32,6 +33,8 @@ class Datas
      * @var string
      *
      * @ORM\Column(name="Image", type="string", length=255, nullable=true)
+     * @Assert\File(maxSize="4M", mimeTypes = {"image/png","image/jpeg","image/jpg"},
+     *      mimeTypesMessage = "Merci de choisir un fichier valide de maximum 4M")
      */
     private $image;
 

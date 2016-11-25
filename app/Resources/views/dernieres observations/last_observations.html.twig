@@ -9,13 +9,13 @@
         <div class="panel-body">
             <div class="row">
                 {% for deletion in app.session.flashbag.get('deletion') %}
-                <div class="col-xs-12 col-xs-offset-5">
-                    {{ deletion }}
+                <div class="col-xs-12">
+                    <h3 class="formulaire-header">{{ deletion }}</h3>
                 </div>
                 {% endfor %}
                 {% for validation in app.session.flashbag.get('validation') %}
-                    <div class="col-xs-12 col-xs-offset-5">
-                        {{ validation }}
+                    <div class="col-xs-12">
+                        <h3 class="formulaire-header">{{ validation }}</h3>
                     </div>
                 {% endfor %}
             {% for bird in birds %}

@@ -31,13 +31,13 @@ class DefaultController extends Controller {
 	/**
 	 * @Route("/nouvelle_observation", name="add_observation")
 	 * @Template("nouvelle observations/new_observation.html.twig")
+	 * @Security("has_role('ROLE_USER')")
+
 	 */
 	public function addObservationAction(Request $request)
 	{
 		$form = $this->get('add_bird')->formBuilder($request);
-		return ['form' => $form->createView(),
-			dump($form->createView())
-		];
+		return ['form' => $form->createView()];
 	}
 
     /**

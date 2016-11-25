@@ -33,3 +33,4 @@ security:
         - { path: ^/reinitialiser, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/nouvelle_observation, role: ROLE_USER }
         - { path: ^/dernieres_observations, role: ROLE_SUPER_USER }
+        - { path: ^/administration, role: ROLE_ADMIN }

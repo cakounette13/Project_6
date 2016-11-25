@@ -2,6 +2,7 @@
 
 namespace UserBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -12,6 +13,7 @@ class DefaultController extends Controller
 	/**
 	 * @Route("/administration", name="nao_user")
 	 * @Template("administration/dashboard.html.twig")
+	 * @Security("has_role('ROLE_ADMIN')")
 	 */
 	public function usersAction()
 	{
@@ -23,6 +25,7 @@ class DefaultController extends Controller
 	/**
 	 * @param Request $request
 	 * @Route("/utilisateurs/promote", name="promote_user")
+	 * @Security("has_role('ROLE_ADMIN')")
 	 * @return \Symfony\Component\HttpFoundation\RedirectResponse
 	 */
 	public function promoteUser(Request $request){
@@ -33,6 +36,7 @@ class DefaultController extends Controller
 	/**
 	 * @param Request $request
 	 * @Route("/utilisateurs/demote", name="demote_user")
+	 * @Security("has_role('ROLE_ADMIN')")
 	 * @return \Symfony\Component\HttpFoundation\RedirectResponse
 	 */
 	public function demoteUser(Request $request){

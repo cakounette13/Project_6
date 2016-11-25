@@ -40,7 +40,7 @@ services:
 
   add_bird:
         class: BirdBundle\Service\AddBird
-        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@image_uploader', '@security.token_storage', '@security.authorization_checker']
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@image_uploader', '@security.token_storage', '@security.authorization_checker', '@session']
 
   menu_builder:
       class: BirdBundle\Menu\MenuBuilder
