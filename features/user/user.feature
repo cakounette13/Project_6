@@ -16,7 +16,7 @@ Feature: User
   Scenario: Add a new observation
     When I click on ".navbar-toggle"
     Then I click on ".fa-eye"
-    And I should be on "/nouvelle_observation"
+    And I should be on "/observation"
     When I select "Carduelis serinus" from "birds[nom]"
     And I fill in "birds[datevue]" with "24/11/2016"
     And I attach the file "/var/www/html/Project_6/web/images/bird_1.jpeg" to "birds[image]"

@@ -13,21 +13,23 @@ Feature: Super User
     Then I should be on the homepage
 
   Scenario: Delete last observations
-    And I follow "Contributions"
+    And I follow "Contribution"
+    And I should be on "/contribution"
     And I should see "quentin"
     Then I click on "a[href='/dernieres_observations/supprimer?id=51']"
     And I should see "oiseau supprimé"
 
   Scenario: Validate last observations
-    And I follow "Contributions"
-    Then I click on "a[href='/dernieres_observations/valider?id=48']"
+    And I follow "Contribution"
+    And I should be on "/contribution"
+    Then I click on "a[href='/contribution/valider?id=48']"
     And I should see "oiseau ajouté"
 
   @javascript
   Scenario: Add a new observation
     When I click on ".navbar-toggle"
     Then I click on ".fa-eye"
-    And I should be on "/nouvelle_observation"
+    And I should be on "/observation"
     When I select "Carduelis serinus" from "birds[nom]"
     And I fill in "birds[datevue]" with "23/11/2016"
     And I attach the file "/var/www/html/Project_6/web/images/bird_1.jpeg" to "birds[image]"
