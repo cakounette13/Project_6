@@ -132,13 +132,13 @@ export default class GoogleMapBirds extends React.Component {
                         <datalist id="hints">
                             {birds.map((marker, index) => {
                                 const ref = `marker_${index}`;
-                                    return ( <option key={index}
-                                                     ref={ref}
-                                                     value={marker.nomVern}
-                                        >
-                                            {marker.nomVern}
-                                        </option>
-                                    )
+                                return ( <option key={index}
+                                                 ref={ref}
+                                                 value={marker.nomVern}
+                                    >
+                                        {marker.nomVern}
+                                    </option>
+                                )
                             })}
                         </datalist>
                         {

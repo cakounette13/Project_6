@@ -29,11 +29,6 @@ class ValidateBirdService {
         $this->session = $session;
     }
 
-	public function invalidBirds()
-	{
-        return $this->em->getRepository("BirdBundle:Datas")->findInvalidBirds();
-	}
-
 	public function birdIsValid(Request $request)
     {
         $id = $request->query->get('id');

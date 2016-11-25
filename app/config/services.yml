@@ -20,22 +20,42 @@ services:
         class: BirdBundle\Service\DeleteBirdService
         arguments:  ["@doctrine.orm.entity_manager", "@session"]
 
-  app.image_uploader:
+  image_uploader:
           class: BirdBundle\Service\UploadFile
           arguments: ['%images_directory%']
 
-  app.doctrine_images_listener:
+  doctrine_images_listener:
           class: BirdBundle\EventListener\ImageUploadListener
-          arguments: ['@app.image_uploader']
+          arguments: ['@image_uploader']
           tags:
               - { name: doctrine.event_listener, event: prePersist }
               - { name: doctrine.event_listener, event: preUpdate }
+
+  exception_listener:
+      class: BirdBundle\EventListener\WrongRouteListener
+      arguments:
+          router: "@router"
+      tags:
+          - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
   add_bird:
         class: BirdBundle\Service\AddBird
-        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@app.image_uploader', '@security.token_storage', '@security.authorization_checker']
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", '@image_uploader', '@security.token_storage', '@security.authorization_checker', '@session']
 
-  app.menu_builder:
+  menu_builder:
       class: BirdBundle\Menu\MenuBuilder
       arguments: ["@knp_menu.factory", "@security.authorization_checker"]
       tags:
           - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
+
+  promote_user:
+      class: UserBundle\Service\PromoteUser
+      arguments: ["@doctrine.orm.entity_manager","@session"]
+
+  demote_user:
+      class: UserBundle\Service\DemoteUser
+      arguments: ["@doctrine.orm.entity_manager","@session"]
+
+  delete_user:
+      class: UserBundle\Service\DeleteUser
+      arguments: ["@doctrine.orm.entity_manager","@session", "@fos_user.user_manager"]

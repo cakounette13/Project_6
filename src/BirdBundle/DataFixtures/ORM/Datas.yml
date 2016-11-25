@@ -2,12 +2,13 @@ UserBundle\Entity\User:
     user_{1..10}:
         username: <userName()>
         email: <email()>
-        password: qwerty
-
+        plainpassword: 'qwerty'
+        lastLogin: <dateTimeThisMonth($max = 'now')>
+        enabled: true
 BirdBundle\Entity\Datas:
     datas_{1..50}:
         nom: <numberBetween($min = 1, $max = 1425)>
-        image: <file($sourceDir = 'F:/wamp/www/Project_6/web/fixtures/', $targetDir = 'F:/wamp/www/Project_6/web/uploads/images', false)>
+        image: <file($sourceDir = '/var/www/html/Project_6/web/fixtures', $targetDir = '/var/www/html/Project_6/web/uploads/images', false)>
         dateVue: <dateTimeThisMonth($max = 'now')>
         latitude: <latitude($min = 45, $max = 50)>
         longitude: <longitude($min = -5, $max = 5)>

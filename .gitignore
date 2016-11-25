@@ -24,3 +24,5 @@ webpack.dev-server-compiled.js.map
 /app/bootstrap.php.cache
 src/BirdBundle/DataFixtures/ORM/Datas.yml
 composer.lock
+chromedriver
+/selenium-server-standalone-2.53.1.jar

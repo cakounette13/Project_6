@@ -32,7 +32,7 @@ body {
 }
 
 #index {
-    height:1000px;
+    height: 1000px;
     margin-top:15%;
 }
 
@@ -722,7 +722,7 @@ span.glyphicon.glyphicon-chevron-right{
 }
 #birds{
     width: 60%;
-    height: 63%;
+    height: 100%;
     margin: 10% auto auto;
 }
 
@@ -969,24 +969,6 @@ html.fa-events-icons-failed body div#map_height div#observation.section.containe
 #inscription
 {
     margin-top: 20px;
-}
-
-/*infowindow styles*/
-
-/*noinspection ALL*/
-#infoNom #infobox #infoNomValide {
-    font-family: 'cabinregular', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    padding: 10px;
-    background-color: #48b5e9;
-    color: black;
-    margin: 1px;
-    border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
-}
-
-#infobox {
-    text-align: center;
 }
 
 /*dropdown menu*/

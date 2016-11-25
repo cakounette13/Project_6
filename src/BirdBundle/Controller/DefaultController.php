@@ -2,16 +2,12 @@
 
 namespace BirdBundle\Controller;
 
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -25,7 +21,6 @@ class DefaultController extends Controller {
 
 	/**
 	 * @Route("/json", name="json_birds")
-	 * @Method("GET")
 	 */
 	public function jsonDatas()
 	{
@@ -36,6 +31,7 @@ class DefaultController extends Controller {
 	/**
 	 * @Route("/observation", name="add_observation")
 	 * @Template("observation/observation.html.twig")
+	 * @Security("has_role('ROLE_USER')")
 	 */
 	public function addObservationAction(Request $request)
 	{
@@ -50,10 +46,9 @@ class DefaultController extends Controller {
      */
     public function lastObservationsAction()
     {
-	   $invalidBirds = $this->get('validate_bird')->invalidBirds();
+	   $invalidBirds = $this->getDoctrine()->getRepository('BirdBundle:Datas')->findInvalidBirds();
 	   return[
-	     'birds'=>$invalidBirds,
-         dump($invalidBirds)
+	     'birds' => $invalidBirds,
        ];
     }
 
@@ -77,6 +72,7 @@ class DefaultController extends Controller {
         $deletion = $this->get('delete_bird')->deleteBird($request);
         Return $this->redirectToRoute('last_observations', array('deletion', $deletion));
     }
+
 
     /**
      * @Route("/administration", name="nao_user")

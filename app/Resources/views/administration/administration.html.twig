@@ -3,59 +3,85 @@
 {% block title %}Administration - {{ parent() }} {% endblock %}
 
 {% block body %}
-<div class="text-center">
-    <h1>Gestion des membres</h1>
-    <div class="row">
-        <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
-            <h1>Naturalistes</h1>
-            <div class="table-responsive">
-                <table  class="mytable table table-bordered table-condensed table-centered">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Nom</th>
-                            <th class="text-center">Statut</th>
-                            <th class="text-center">Rétrograder</th>
-                            <th class="text-center">Supprimer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a id="demoteUser"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
-                            <td><a id="deleteUser"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
-            <h1>Observateurs</h1>
-            <div class="table-responsive">
-                <table class="mytable table table-bordered table-condensed table-centered">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Nom</th>
-                            <th class="text-center">Statut</th>
-                            <th class="text-center">Promouvoir</th>
-                            <th class="text-center">Supprimer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a id="promoteUser"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
-                            <td><a id="deleteUser"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div id="dashboard">
+        <h1 class="col-xs-offset-5">Gestion des membres</h1>
+        <div class="container-fluid">
+            {% for deletion in app.session.flashbag.get('deletion') %}
+                <div class="col-xs-12 col-xs-offset-4 col-lg-offset-5">
+                    {{ deletion }}
+                </div>
+            {% endfor %}
+            {% for validation in app.session.flashbag.get('validation') %}
+                <div class="col-lg-12 col-xs-offset-4 col-lg-offset-5">
+                    {{ validation }}
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <h2 class="col-xs-offset-5">Observateurs</h2>
+                    <div class="panel panel-default">
+                        <div class="table-bordered">
+                            <table id="mytable" class="table table-bordered table-condensed table-centered">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Promouvoir</th>
+                                    <th class="text-center">Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                        {% if 'ROLE_ADMIN' not in user.roles %}
+                                        {% if 'ROLE_SUPER_USER' not in user.roles %}
+                                        <tr>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.username }}</td>
+                                            <td><a href="{{ path('promote_user', {'id': user.id}) }}" title="promouvoir"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
+                                            <td><a href="{{ path('delete_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+                                        </tr>
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <h2 class="col-xs-offset-5">Naturalistes</h2>
+                    <div class="panel panel-default">
+                    <div class="table-bordered">
+                        <div class="table-responsive">
+                            <table id="mytable" class="table table-bordered table-condensed table-centered">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Rétrograder</th>
+                                    <th class="text-center">Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                        {% if 'ROLE_ADMIN' not in user.roles %}
+                                            {% if 'ROLE_SUPER_USER' in user.roles %}
+                                                <tr>
+                                                    <td>{{ user.email }}</td>
+                                                    <td>{{ user.username }}</td>
+                                                    <td><a href="{{ path('demote_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+                                                    <td><a href="{{ path('delete_user', {'id': user.id}) }}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

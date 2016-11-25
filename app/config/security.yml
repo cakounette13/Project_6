@@ -5,9 +5,10 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        Administrateur: [ROLE_ADMIN, ROLE_SUPER_USER, ROLE_USER]
-        Naturaliste: [ROLE_SUPER_USER, ROLE_USER]
-        Observateur: ROLE_USER
+
+        ROLE_ADMIN: [ROLE_ADMIN, ROLE_SUPER_USER, ROLE_USER]
+        ROLE_SUPER_USER: [ROLE_SUPER_USER, ROLE_USER]
+        ROLE_USER: []
 
     providers:
         fos_userbundle:
@@ -33,3 +34,5 @@ security:
         - { path: ^/reinitialiser, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/observation, role: ROLE_USER }
         - { path: ^/contribution, role: ROLE_SUPER_USER }
+        - { path: ^/administration, role: ROLE_ADMIN }
+
