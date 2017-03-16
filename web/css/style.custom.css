@@ -11,6 +11,7 @@
 
 #birds > div > div:nth-child(2) {margin-top: 80px; overflow: hidden;}
 .gm-style {max-height: 520px;}
+
 /*formulaires*/
 
 body
@@ -40,8 +41,8 @@ body
 
 /*navbar breakpoint*/
 @media (min-width: 1550px) {
-    .connexion {font-size: 1em; display: inline-flex; margin: 10px}
-    .deconnexion {font-size: 1em; display: inline-flex; margin: 10px}
+    .connexion {font-size: 1em; display: inline-flex; margin: 10px;}
+    .deconnexion {font-size: 1em; display: inline-flex; margin: 10px;}
 }
 
 @media (max-width: 1550px) {
