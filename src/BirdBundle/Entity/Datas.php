@@ -53,14 +53,14 @@ class Datas
     private $longitude;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Taxref", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="Taxref", fetch="EAGER", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $nom;
 
 	/**
-	 * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-	 * @ORM\JoinColumn(nullable=false)
+	 * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="Datas")
+	 * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
 	 */
 	private $member;
 	/**

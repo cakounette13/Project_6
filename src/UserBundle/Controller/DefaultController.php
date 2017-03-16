@@ -47,6 +47,7 @@ class DefaultController extends Controller
 	/**
 	 * @param Request $request
 	 * @Route("/utilisateur/supprimer", name="delete_user")
+     * @Security("has_role('ROLE_ADMIN')")
 	 * @return \Symfony\Component\HttpFoundation\RedirectResponse
 	 */
 	public function deleteUser(Request $request){

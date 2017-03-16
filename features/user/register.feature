@@ -22,6 +22,6 @@ Feature: Register
     And I click on "#logoNavbar"
     Then I follow "J'ai oublié mon mot de passe"
     Then I should be on "/reinitialiser/requete"
-    And fill in "username" with "arthur"
+    And fill in "username" with "carine"
     And I press "Mot de passe oublié"
     Then I should see "Un e-mail a été envoyé."

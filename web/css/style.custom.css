@@ -9,8 +9,8 @@
 
 /*index page*/
 
-#birds > div {overflow: visible !important;}
-
+#birds > div > div:nth-child(2) {margin-top: 80px; overflow: hidden;}
+.gm-style {max-height: 520px;}
 /*formulaires*/
 
 body
@@ -34,9 +34,15 @@ body
 .formulaire input[type="submit"]:focus {border-color: #05a;}
 @media all and (max-width:450px){
     .formulaire {width: 95%;}
+    .connexion {font-size: smaller; display: inline-flex; margin: 10px}
+    .deconnexion {font-size: smaller; display: inline-flex; margin: 10px}
 }
 
 /*navbar breakpoint*/
+@media (min-width: 1550px) {
+    .connexion {font-size: 1em; display: inline-flex; margin: 10px}
+    .deconnexion {font-size: 1em; display: inline-flex; margin: 10px}
+}
 
 @media (max-width: 1550px) {
     .navbar-header {float: none;}
@@ -50,6 +56,8 @@ body
     /* since 3.1.0 */
     .navbar-collapse.collapse.in {display: block!important;}
     .collapsing {overflow: hidden!important;}
+    .connexion {font-size: 1em; display: inline-flex; margin: 10px}
+    .deconnexion {font-size: 1em; display: inline-flex; margin: 10px}
 }
 
 /*observations*/

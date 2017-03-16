@@ -10,7 +10,8 @@ namespace BirdBundle\Service;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class UploadFile {
+class UploadFile
+{
 	private $targetDir;
 
 	public function __construct($targetDir)

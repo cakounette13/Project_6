@@ -1,6 +1,7 @@
 import { default as React, Component } from 'react';
 import $ from 'jquery';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from "react-google-maps";
+
 export default class GoogleMapBirds extends React.Component {
 
     static inputStyle = {
@@ -16,7 +17,7 @@ export default class GoogleMapBirds extends React.Component {
         "padding": `0 12px`,
         "textOverflow": `ellipses`,
         "width": `100%`,
-        "margin-bottom": `3%`,
+        "marginBottom": `3%`,
     };
 
     static infoboxStyle = {
@@ -128,7 +129,7 @@ export default class GoogleMapBirds extends React.Component {
                                placeholder="Rechercher un oiseau"
                                style={GoogleMapBirds.inputStyle}
                                name="inputSearch"
-                               onChange={this.updateSearch.bind(this)} />
+                                    onChange={this.updateSearch.bind(this)} />
                         <datalist id="hints">
                             {birds.map((marker, index) => {
                                 const ref = `marker_${index}`;

@@ -64,13 +64,11 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 	 */
 	static function iNeedToCreateDatabaseUsing()
 	{
-		shell_exec('php bin/console d:d:d --force');
-		shell_exec('php bin/console d:d:c');
-		shell_exec('php bin/console d:s:u --force');
-		shell_exec('Y | php bin/console d:f:l');
 		shell_exec('php bin/console f:u:create arthur arthur@gmail.com qwerty');
 		shell_exec('php bin/console f:u:promote arthur ROLE_ADMIN');
 		shell_exec('php bin/console f:u:create bob bob@gmail.com qwerty');
 		shell_exec('php bin/console f:u:promote bob ROLE_SUPER_USER');
+        shell_exec('php bin/console f:u:create carine carinedelrieux@gmail.com qwerty');
+        shell_exec('php bin/console f:u:promote carine ROLE_ADMIN');
 	}
 }

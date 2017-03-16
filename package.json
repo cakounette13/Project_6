@@ -10,7 +10,7 @@
     "start": "node webpack.dev-server.js",
     "build": "webpack"
   },
-  "author": "Arthur",
+  "author": "Carine",
   "license": "ISC",
   "dependencies": {
     "ajax": "latest",

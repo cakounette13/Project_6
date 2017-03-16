@@ -5,9 +5,10 @@ Feature: Super User
   then need to be able to validate or delete the last observations
   Or i can do modifications on my profile
 
-  Background:
+  Background: Logging
     Given I am on the homepage
     And I click on "#logoNavbar"
+    And |I should be on "/connexion"
     And I fill in "_username" with "bob"
     And I fill in "_password" with "qwerty"
     And I press "Connexion"
@@ -16,8 +17,8 @@ Feature: Super User
   Scenario: Delete last observations
     And I follow "Contribution"
     And I should be on "/contribution"
-    And I should see "quentin"
-    Then I click on "a[href='/dernieres_observations/supprimer?id=51']"
+    And I should see "emoen"
+    Then I click on "a[href='/dernieres_observations/supprimer?id=7']"
     And I should see "oiseau supprimé"
 
   Scenario: Validate last observations
@@ -30,10 +31,10 @@ Feature: Super User
   Scenario: Add a new observation
     When I click on ".navbar-toggle"
     Then I click on ".fa-eye"
-    And I should be on "/observation"
+    And I should be on "/observation/"
     When I select "Carduelis serinus" from "birds[nom]"
     And I fill in "birds[datevue]" with "23/11/2016"
-    And I attach the file "/var/www/html/Project_6/web/images/bird_1.jpeg" to "birds[image]"
+    And I attach the file "D:wamp64/www/Project_6/web/images/bird_1.jpeg" to "birds[image]"
     And I press "Envoyer"
     Then I should see "Votre observation est valide et visible des maintenant"
 

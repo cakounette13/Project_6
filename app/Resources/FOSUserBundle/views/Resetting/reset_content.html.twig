@@ -4,10 +4,14 @@
 <div class="formulaire-triangle"></div>
 <h2 class="formulaire-header">{% block formTitle %}Inscription{% endblock %}</h2>
 {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset text-center formulaire-container' } }) }}
-    {{ form_label(form.username) }}
-    {{ form_widget(form.username) }}
-    {{ form_errors(form.username) }}
-    <div>
-        <input class="btn btn-default" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
-    </div>
+    {{ form_label(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first) }}
+    {{ form_errors(form.plainPassword.first) }}
+
+    {{ form_label(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second) }}
+    {{ form_errors(form.plainPassword.second) }}
+<div>
+    <input class="btn btn-default" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+</div>
 {{ form_end(form) }}
